@@ -1,8 +1,32 @@
 # Step-3: Framework time!
 
+The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER](http://www.warp10.io/reference/frameworks/framework-filter/), [BUCKETIZE](http://www.warp10.io/reference/frameworks/framework-bucketize/), [MAP](http://www.warp10.io/reference/frameworks/framework-map/), [REDUCE](http://www.warp10.io/reference/frameworks/framework-reduce/) and [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/). Let's start with the FILTER framework.
+
 ## FILTER 
 
-TODO: 
+### The framework
+
+The first framework we discover in this tutorial is [FILTER](http://www.warp10.io/reference/frameworks/framework-filter/). It provides the tooling to select specific sub-set of Time-series in a list thereof. 
+
+Let's resume what we have on the stack: first the kepler-11 GTS are loaded using the [FETCH](http://www.warp10.io/reference/functions/function_FETCH/) function. Then the data are split according to a quiesce period using [TIMESPLIT](http://www.warp10.io/reference/functions/function_TIMESPLIT/). 
+
+### Input parameters
+
+The filter function takes a list containing 3 elements as input parameter
+```
+// Filter framwork
+[
+    $gts                                // Series list or Singleton
+    []                                  // Labels to compute equivalence class
+    filter.                             // A selector function 
+]
+FILTER
+
+```
+
+### HEW step 
+
+The script should now start with something similar to the following example:
 
 ```
 // FETCH
@@ -29,35 +53,46 @@ TODO:
 
 TIMESPLIT
 
+```
+
+In our data-flow, the goal is now to select only 2 to 3 records of those series to see if's possible to visualize some drops in those series and if we can start to build a working method to detect exo-planet. You can use Variable as seen in the first step to place the Time-series list in first position of the element list, or use the following stack manipulation function: [SWAP](http://www.warp10.io/reference/functions/function_SWAP/). The SWAP function is used to invert the position of the top two elements on the stack. 
+
+The filter function we will use in our case corresponds to [filter.bylabels](). This function expects a selector map on top of the stack that have to be specify. 
+As an example you can try to use the selector labels map specifies in the follozing spec in your filter function.
+
+```
+{ 'record' '~[2-5]' } 'labelsSelector' STORE
+
 // FILTER Framework
 [
-    SWAP                                // Series list or Singleton
-    []                                  // Labels to compute equivalence class
-    { 'record' '~[2-5]' }               // Labels map for selector
-    filter.bylabels                     // Filter function operator 
+                                    // Series list or Singleton
+                                    // Labels to compute equivalence class
+                                    // Labels map for selector
+                                    // Filter function operator 
 ]
 FILTER
 ```
 
 ## BUCKETIZE
 
-# The BUCKETIZE framework
+### The framework
 
-The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available, in this tutorial we will discover the [BUCKETIZE framework](http://www.warp10.io/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.  
+In this tutorial we will also discover the [BUCKETIZE framework](http://www.warp10.io/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.  
 We will use this bucket to downsample our data, try it! 
 
 ```
+```
 
 
-
-## BUCKETIZE parameters
+### Input parameters
 
 The BUCKETIZE framework takes a list of elements as parameter. This list contains one or several GTS list, a [bucketizer function](http://www.warp10.io/reference/reference/#framework-bucketizers), a lastbucket that specify when start the last bucket (0 mean this will be computed automatically), a bucketcount which is the duration of the bucket (if 0 WarpScript will compute it), and finally a bucketcount which is the number of buckets (if 0 WarpScript will compute it). 
+
+### HEW step
 
 Let's do it! Try the bucketizer.min with a bucketize window of 2 h
 
 ```
-
 // BUCKETIZE Framework
 [
     SWAP                                // Series list or Singleton
@@ -67,6 +102,7 @@ Let's do it! Try the bucketizer.min with a bucketize window of 2 h
     0                                   // Bucketcount
 ]
 BUCKETIZE
+
 ```
 
 Did you get why the SWAP is needed here?

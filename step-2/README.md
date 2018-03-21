@@ -27,7 +27,7 @@ The one that we are looking for has a label called '', can you see it? Change th
 
 ## FETCH 
 
-Now that we found the right star, let's get some data using FETCH! It is like a fetch, but with more arguments which are giving a window to get raw datapoints.
+Now that we found the right star, let's get some data using [FETCH](http://www.warp10.io/reference/functions/function_FETCH/)! It is like a fetch, but with more arguments which are giving a window to get raw datapoints.
 
 ```
 // FETCH
@@ -60,7 +60,7 @@ The parameter are :
 * the minimum number of values each resulting GTS should have
 * the name of the label which will hold the sequence of the resulting GTS (1 being the oldest).
 
-Go ahead and TIMESPLIT the GTS! 
+Go ahead and [TIMESPLIT](http://www.warp10.io/reference/functions/function_TIMESPLIT/) the GTS! 
 
 ### Pro tips: You can use a function called h to easily compute time. For example, putting 1 h into the stack will result with the number of microsecond in a hour in the stack
 

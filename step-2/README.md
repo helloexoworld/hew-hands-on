@@ -27,7 +27,7 @@ The one that we are looking for has a label called '', can you see it? Change th
 
 ## FETCH 
 
-Now that we found the right star, let's get some data using FETCH! It is like a fetch, but with more arguments which are giving a window to get raw datapoints.
+Now that we found the right star, let's get some data using [FETCH](http://www.warp10.io/reference/functions/function_FETCH/)! It is like a fetch, but with more arguments which are giving a window to get raw datapoints.
 
 ```
 // FETCH
@@ -46,9 +46,9 @@ You can click on Execute then Plot. You will see a list of GTS, click on one to 
 
 What is the type of the result? You can use TYPEOF to see it. because it is a single list holding only one element, you can push back the first element by calling 0 GET after the FETCH instruction
 
-# Handling time 
+## Handling time 
 
-As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let's clean that. There is a function called TIMESPLIT that will be able to help us! As stated by the documentation:
+As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let's clean that. There is a function called [TIMESPLIT](http://www.warp10.io/reference/functions/function_TIMESPLIT/) that will be able to help us! As stated by the documentation:
 
 > The TIMESPLIT function takes a GTS or a list of GTS and splits each Geo Time SeriesTM into a list multiple GTS instances, cutting the original GTS when it encounters quiet periods when there are no measurements.
 

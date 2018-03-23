@@ -1,0 +1,8 @@
+// Storing the token into a variable
+'abcd' 'token' STORE 
+
+// Start the find with the token as first parameter
+[ $token '~.*' {} ] FIND
+
+// Select only Kepler-11 series
+[ $token '~.*' { 'id' '006541920' } ] FIND

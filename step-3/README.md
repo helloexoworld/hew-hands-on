@@ -80,7 +80,6 @@ FILTER
 In this tutorial we will also discover the [BUCKETIZE framework](http://www.warp10.io/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.  
 We will use this bucket to downsample our data, let's give it a try! 
 
-
 ### Input parameters
 
 The BUCKETIZE framework takes a list of elements as parameter. This list contains one or several GTS list, a [bucketizer function](http://www.warp10.io/reference/reference/#framework-bucketizers), a lastbucket that specify when start the last bucket (0 mean this will be computed automatically), a bucketcount which is the duration of the bucket (if 0 WarpScript will compute it), and finally a bucketcount which is the number of buckets (if 0 WarpScript will compute it). 
@@ -98,7 +97,6 @@ The BUCKETIZE framework takes a list of elements as parameter. This list contain
 ]
 BUCKETIZE
 ```
-
 
 ### HEW step
 
@@ -143,6 +141,7 @@ MAP
 **Pro tips: A mmapper with the pre, post and occurence parameters at zero is called a single value mapper, meaning that the mapper function will be applied to all points of a series!**
 
 ### HEW step
+
 In previous step we saw how to downsample the data, but what if to get a correct sense we would to compute an approximate trend? Usics basic static, we could try to use a moving average as example. In WarpScript, the map framework can be used to approximate such a computation. For a example we can define a window containing 5 elements before and as many after the current point and compute the mean value.
 
 Let's try it! Try the mapper.mean with a moving window!

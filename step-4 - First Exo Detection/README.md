@@ -23,8 +23,36 @@ MAP
 
 ## APPLY 
 
+Yet an other WarpScript framework: APPLY! It's a framework used to compute operation on multiple set of series (like add, sub or mask). In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series! The following example show you a quick demonstration on how to use it with the sub operator. In this example 4 series are creater and put in two diffrent set. The sub operation will be applied on the series which have the same label0. This will compute series-1 minus series-3 and series-2 minus series-4. The two resulting series will be put in the same result list.
+
 ```
-[ $bucketizedSeries $trend  [ 'record' ] op.sub ] APPLY 
+[
+  [
+    NEWGTS "series-1" RENAME 
+    { 'label0' '42' } RELABEL
+    10 NaN NaN NaN 46.5 ADDVALUE
+    20 NaN NaN NaN  23  ADDVALUE
+    NEWGTS "series-2" RENAME 
+    { 'label0' '53' } RELABEL
+    10 NaN NaN NaN 46.5 ADDVALUE
+    20 NaN NaN NaN  23  ADDVALUE
+    30 NaN NaN NaN  42  ADDVALUE
+  ]
+  [
+    NEWGTS "series-3" RENAME 
+    { 'label0' '42' } RELABEL
+    10 NaN NaN NaN  4.5 ADDVALUE
+    20 NaN NaN NaN  -19 ADDVALUE
+    NEWGTS "series-4" RENAME 
+    { 'label0' '53' } RELABEL
+    10 NaN NaN NaN  4.5 ADDVALUE
+    15 NaN NaN NaN  0.4 ADDVALUE
+    20 NaN NaN NaN  -19 ADDVALUE
+  ]
+  [ 'label0' ]
+  op.sub
+]
+APPLY
 ```
 
 ## Display things nicely

@@ -28,3 +28,19 @@ FETCH
 'record'
 
 TIMESPLIT
+
+//
+// FILTER block:
+//
+
+// Store a labels map selector
+{ 'record' '~[2-5]' } 'labelsSelector' STORE
+
+// FILTER Framework
+[
+    SWAP                            // Series list or Singleton
+    []                              // Labels to compute equivalence class
+    $labelsSelector                 // Labels map for selector
+    filter.bylabels                 // Filter function operator 
+]
+FILTER

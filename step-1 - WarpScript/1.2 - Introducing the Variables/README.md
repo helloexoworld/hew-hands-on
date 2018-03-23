@@ -13,13 +13,16 @@ Then to push back the element on the stack, write the variable name **precede of
 Let's try it, save the following string in a variable and then push it back several time on the stack!
 
 ```
-
 // A WarpScript string
 'Hello World!'
 
-// Save this string in Variable
+// Save this string in variable
 
-// Play with the Varaible saved
+
+// Play with the saved variable
+
+
+
 ```
 
 # To be continued

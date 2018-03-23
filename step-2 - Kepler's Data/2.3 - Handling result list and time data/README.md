@@ -37,13 +37,15 @@ Go ahead and TIMESPLIT the GTS!
 	'2013-05-11T12:02:06.000000Z' 		// End date
 ] FETCH
 
-// TIMESPLIT
+// TIMESPLIT block:
+
 // Quiesce period
 
 
 // Minimal numbers of points per series 
 
-TIMESPLIT
+
+ 
 ```
 
 # To be continued

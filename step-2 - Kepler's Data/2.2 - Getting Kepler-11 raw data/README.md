@@ -4,17 +4,18 @@ Now that you are used to play with the stack and know the available series, let'
 
 ## FETCH 
 
-Now that we found the right star, let's get some data using [FETCH](http://www.warp10.io/reference/functions/function_FETCH/)! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints.
+Now that we found the right star, let's get some data using [FETCH](http://www.warp10.io/reference/functions/function_FETCH/)! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints. The UTC start date is *2009-05-02T00:56:10.000000Z* and the end date is *2013-05-11T12:02:06.000000Z*.
 
 ```
 // FETCH
 [ 
-	$token 								// Application authentication
-	'kepler.sap.flux' 					// selector for classname
-    { 'id' '006541920' }            	// Selector for labels
-	'2009-05-02T00:56:10.000000Z' 		// Start date
-	'2013-05-11T12:02:06.000000Z' 		// End date
-] FETCH
+										// Application authentication
+					 					// selector for classname
+    					            	// Selector for labels
+								 		// Start date
+								 		// End date
+] 
+FETCH
 ```
 
 You can click on Execute then Plot. You will see a list of GTS, click on one to view it.

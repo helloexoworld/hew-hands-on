@@ -45,7 +45,7 @@ Let's try it, copy that empty WarpScript in Quantum and implement the simple spe
 // Compute previous result + 0.42
 
 
-// Compute 'Hello' + ' world'
+// Compute 'Hello' + ' world!'
 ```
 
 # To be continued

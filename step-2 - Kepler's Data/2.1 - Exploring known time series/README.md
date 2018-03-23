@@ -17,10 +17,12 @@ The label selectors are packed in a MAP whose keys are the label names and the v
 Here a preloaded WarpScript that you can use, find all the GTS available!
 
 ```
-'abcd' 'token' STORE // storing the token into a variable
-// you can push back the variable into the stack using $token for example
+// Storing the token into a variable
+'abcd' 'token' STORE
 
-[ $token  ] FIND 
+// Start the find with the token as first parameter
+[ $token  ] FIND
+
 ```
 
 The one that we are looking for has a label called '', can you see it? Change the FIND to have only one result: Kepler-11!

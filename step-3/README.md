@@ -157,3 +157,7 @@ Let's try it! Try the mapper.mean with a moving window!
 ]
 MAP
 ```
+
+## To be continued
+
+Congrats, you reached the end of the framework step! Understanding the help that provide those framework is really important to help a developper working on Time Series analytics. In the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-4) we will focus, now that we have all the needed tools, on writing a working exploratory script to discover the existing exo-planet for kepler-11!

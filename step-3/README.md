@@ -102,6 +102,7 @@ BUCKETIZE
 
 ### HEW step
 
+Only a single amount of series were kept in our previous step, it's already possible to observe some drops in the data. Now we would like to write a script automasing the detection of those drops. But first, to gain some data readibilty, a downsampling step is included. In our case we are intersted in a downsampling conserving the minimal point of each generated bucket for each series.
 Let's do it! Try the bucketizer.min with a bucketize window of 2 h.
 
 ```
@@ -117,14 +118,43 @@ BUCKETIZE
 
 ```
 
-Did you get why the SWAP is needed here?
-
-
 ## MAP 
 
-Now it is time to update the values of a set of GTS using the [MAP framework](http://www.warp10.io/reference/frameworks/framework-map/). The MAP framework allows you to apply a function on values of a Geo Time SeriesTM that fall into a sliding window. In this tutorial, you will use the mapper to convert all prices in dollars, to compute the derivation of those GTS and finally to kept only the value of GTS superior to 1.08 euros of the 20 stations nearest the Brest airport.
+### The framework
+
+Now it is time to update the values of a set of GTS using the [MAP framework](http://www.warp10.io/reference/frameworks/framework-map/). The MAP framework allows you to apply a function on values of a Geo Time SeriesTM that fall into a sliding window.
 
 ### MAP parameters
 
 Map takes as input a list of parameters. The first element of this list can be one or several lists of GTS. Then there is a [mapper function](www.warp10.io/reference/reference/#framework-mappers). The third and the fourth elements are related to the sliding window, with first an element corresponding to "pre", the width of the sliding window before the value, and in second an element corresponding to "post", the width of the sliding window after the value. The last element corresponds to "occurences" which is the limit of computation of a number. For all elements except the set of GTS and the mapper function a default value 0 can be used, when those elements aren't required.
 
+```
+// MAP Framework
+[
+    SWAP                                // Series list or Singleton
+    mapper.                             // Mapper function operator
+    0                                   // pre               
+    0                                   // post
+    0                                   // occurence
+]
+MAP
+```
+
+**Pro tips: A mmapper with the pre, post and occurence parameters at zero is called a single value mapper, meaning that the mapper function will be applied to all points of a series!**
+
+### HEW step
+In previous step we saw how to downsample the data, but what if to get a correct sense we would to compute an approximate trend? Usics basic static, we could try to use a moving average as example. In WarpScript, the map framework can be used to approximate such a computation. For a example we can define a window containing 5 elements before and as many after the current point and compute the mean value.
+
+Let's try it! Try the mapper.mean with a moving window!
+
+```
+// MAP Framework
+[
+                                        // Series list or Singleton
+                                        // Mapper function operator
+                                        // pre               
+                                        // post
+                                        // occurence
+]
+MAP
+```

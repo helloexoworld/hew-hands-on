@@ -4,7 +4,7 @@ Now that you are used to play with the stack, let's manipulate some data!
 
 ## FIND
 
-We preloaded our platform with some stars (around 30). Let's it the index to see and find the one that we want! We are going to use a function called [FIND](http://www.warp10.io/reference/functions/function_FIND/).
+We preloaded our platform with some stars (around 30). Let's observe the series structures and find the one that we want! We are going to use a function called [FIND](http://www.warp10.io/reference/functions/function_FIND/).
 
 The FIND function finds Geo Time SeriesTM matching some criteria.
 
@@ -27,7 +27,7 @@ The one that we are looking for has a label called '', can you see it? Change th
 
 ## FETCH 
 
-Now that we found the right star, let's get some data using [FETCH](http://www.warp10.io/reference/functions/function_FETCH/)! It is like a fetch, but with more arguments which are giving a window to get raw datapoints.
+Now that we found the right star, let's get some data using [FETCH](http://www.warp10.io/reference/functions/function_FETCH/)! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints.
 
 ```
 // FETCH
@@ -44,7 +44,7 @@ You can click on Execute then Plot. You will see a list of GTS, click on one to 
 
 ## Handling a list 
 
-What is the type of the result? You can use TYPEOF to see it. because it is a single list holding only one element, you can push back the first element by calling 0 GET after the FETCH instruction
+What is the type of the result? You can use TYPEOF to see it. because it is a single list holding only one element, you can push back the first element by calling 0 GET after the FETCH instruction.
 
 ## Handling time 
 
@@ -52,9 +52,9 @@ As you may have seen, the data-window is pretty long, and they are drops. Drops 
 
 > The TIMESPLIT function takes a GTS or a list of GTS and splits each Geo Time SeriesTM into a list multiple GTS instances, cutting the original GTS when it encounters quiet periods when there are no measurements.
 
-That is perfect! Let´s use it, here's the parameters:
+That is perfect! Let´s use it!
 
-The parameter are :
+The needed parameter are :
 
 * the length of the quiet period (in microseconds)
 * the minimum number of values each resulting GTS should have

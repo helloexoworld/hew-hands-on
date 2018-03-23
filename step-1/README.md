@@ -9,17 +9,17 @@ WarpScript is a programming language specific to Geo Time Series® analysis. For
 
 As WarpScript is a stack language, you will learn some basic information about the stack manipulation before starting some data-mining.
 
-# WarpScript Stack
+### WarpScript Stack
 
 WarpScript is a stack related programming language. This means that to compute an operation you first have to put all the parameters on the stack, then put the operator. Then if a result is produced, it will be pushed on top of the stack.
 
-## Single operator
+### Single operator
 
 Let's start with a simple WarpScript function: [NOW](http://www.warp10.io/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch.
 
 Open Quantum with the URL above and type "NOW" in it. Then click execute. Congratulation, you wrote your first WarpScript! You should see the current time (in microsecond) in the answer session.
 
-## Basic operation in WarpScript
+### Basic operation in WarpScript
 
 Let's compute an operation in WarpScript, but first, in WarpScript, you will find commentary and variable types. 
 The following WarpScript example list all the available basic types.
@@ -48,7 +48,7 @@ Let's try it, copy that empty WarpScript in Quantum and implement the simple spe
 // Compute 'Hello' + ' world'
 ```
 
-## Variables
+### Variables
 
 As any other programming language, WarpScript implements the Variables concept. In WarpScript you can save a specific stack element in a variable (java pointer). This is done using the function [STORE](http://www.warp10.io/reference/functions/function_STORE/). 
 
@@ -70,7 +70,7 @@ Let's try it, save the following string in a variable and then push it back seve
 // Play with the Varaible saved
 ```
 
-## Structure and function
+### Structure and function
 
 In WarpScript hundreds of functions are available, you can access the documentation [here](http://www.warp10.io/reference/reference/).
 In WarpScript, it's possible to build structure as [List or Map](http://www.warp10.io/reference/reference/#functions-lists-maps).

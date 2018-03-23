@@ -62,7 +62,7 @@ The needed parameter are :
 
 Go ahead and TIMESPLIT the GTS! 
 
-### Pro tips: You can use a function called h to easily compute time. For example, putting 1 h into the stack will result with the number of microsecond in a hour in the stack
+**Pro tips: You can use a function called h to easily compute time. For example, putting 1 h into the stack will result with the number of microsecond in a hour in the stack!**
 
 ```
 [ 

@@ -55,9 +55,9 @@ TIMESPLIT
 
 ```
 
-In our data-flow, the goal is now to select only 2 to 3 records of those series to see if's possible to visualize some drops in those series and if we can start to build a working method to detect exo-planet. You can use Variable as seen in the first step to place the Time-series list in first position of the element list, or use the following stack manipulation function: [SWAP](http://www.warp10.io/reference/functions/function_SWAP/). The SWAP function is used to invert the position of the top two elements on the stack. 
+In our data-flow, the goal is now to select only 2 to 3 records of those series to see if it's possible to visualize some drops in those series and if we can start to build a working method to detect exo-planet. You can use a Variable as seen in the first step to place the Time-series list in first position of the element list, or use the following stack manipulation function: [SWAP](http://www.warp10.io/reference/functions/function_SWAP/). The SWAP function is used to invert the position of the top two elements on the stack. 
 
-The filter function we will use in our case corresponds to [filter.bylabels](). This function expects a selector map on top of the stack that have to be specify. 
+The filter function we will use in our case corresponds to [filter.bylabels](http://www.warp10.io/reference/frameworks/filter_bylabels/). This function expects a selector map on top of the stack that have to be specify. 
 As an example you can try to use the selector labels map specifies in the follozing spec in your filter function.
 
 ```
@@ -78,28 +78,40 @@ FILTER
 ### The framework
 
 In this tutorial we will also discover the [BUCKETIZE framework](http://www.warp10.io/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.  
-We will use this bucket to downsample our data, try it! 
-
-```
-```
+We will use this bucket to downsample our data, let's give it a try! 
 
 
 ### Input parameters
 
 The BUCKETIZE framework takes a list of elements as parameter. This list contains one or several GTS list, a [bucketizer function](http://www.warp10.io/reference/reference/#framework-bucketizers), a lastbucket that specify when start the last bucket (0 mean this will be computed automatically), a bucketcount which is the duration of the bucket (if 0 WarpScript will compute it), and finally a bucketcount which is the number of buckets (if 0 WarpScript will compute it). 
 
-### HEW step
-
-Let's do it! Try the bucketizer.min with a bucketize window of 2 h
+**Pro tips: In order to get a correct number of buckets either Bucketspan or Bucketcount have to be specified!**
 
 ```
 // BUCKETIZE Framework
 [
     SWAP                                // Series list or Singleton
-    bucketizer.min                      // Bucketize function operator
-    0                                   // Lastbucket 				
-    2 h                                 // Bucketspan
+    bucketizer.                         // Bucketize function operator
+    0                                   // Lastbucket               
+    1 d                                 // Bucketspan
     0                                   // Bucketcount
+]
+BUCKETIZE
+```
+
+
+### HEW step
+
+Let's do it! Try the bucketizer.min with a bucketize window of 2 h.
+
+```
+// BUCKETIZE Framework
+[
+                                        // Series list or Singleton
+                                        // Bucketize function operator
+                                        // Lastbucket 				
+                                        // Bucketspan
+                                        // Bucketcount
 ]
 BUCKETIZE
 

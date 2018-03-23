@@ -30,20 +30,25 @@ Go ahead and TIMESPLIT the GTS!
 
 ```
 [ 
-	$token 								// Application authentication
-	'kepler.sap.flux' 					// selector for classname
-    { 'id' '006541920' }            	// Selector for labels
-	'2009-05-02T00:56:10.000000Z' 		// Start date
-	'2013-05-11T12:02:06.000000Z' 		// End date
+    $token                              // Application authentication
+    'kepler.sap.flux'                   // selector for classname
+    { 'id' '006541920' }                // Selector for labels
+    '2009-05-02T00:56:10.000000Z'       // Start date
+    '2013-05-11T12:02:06.000000Z'       // End date
 ] FETCH
 
+//
 // TIMESPLIT block:
+//
 
 // Quiesce period
 
 
 // Minimal numbers of points per series 
 
+
+// Labels for each splitted series
+'record'
 
  
 ```

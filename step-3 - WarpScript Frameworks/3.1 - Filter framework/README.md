@@ -24,41 +24,13 @@ FILTER
 
 ## HEW step 
 
-The script should now start with something similar to the following example:
-
-```
-// FETCH
-[ 
-	$token 								// Application authentication
-	'kepler.sap.flux' 					// selector for classname
-    { 'id' '006541920' }            	// Selector for labels
-	'2009-05-02T00:56:10.000000Z' 		// Start date
-	'2013-05-11T12:02:06.000000Z' 		// End date
-] FETCH
-
-// Get Singleton series
-0 GET
-
-// TIMESPLIT
-// Quiesce period
-6 h 
-
-// Minimal numbers of points per series 
-100 
-
-// GTS split label
-'record' 
-
-TIMESPLIT
-
-```
-
 In our data-flow, the goal is now to select only 2 to 3 records of those series to see if it's possible to visualize some drops in those series and if we can start to build a working method to detect exo-planet. You can use a Variable as seen in the first step to place the Time-series list in first position of the element list, or use the following stack manipulation function: [SWAP](http://www.warp10.io/reference/functions/function_SWAP/). The SWAP function is used to invert the position of the top two elements on the stack. 
 
 The filter function we will use in our case corresponds to [filter.bylabels](http://www.warp10.io/reference/frameworks/filter_bylabels/). This function expects a selector map on top of the stack that have to be specify. 
 As an example you can try to use the selector labels map specifies in the follozing spec in your filter function.
 
 ```
+// Store a labels map selector
 { 'record' '~[2-5]' } 'labelsSelector' STORE
 
 // FILTER Framework
@@ -69,6 +41,7 @@ As an example you can try to use the selector labels map specifies in the folloz
                                     // Filter function operator 
 ]
 FILTER
+
 ```
 
 # To be continued

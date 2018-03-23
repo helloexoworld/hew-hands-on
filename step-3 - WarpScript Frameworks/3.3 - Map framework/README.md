@@ -20,6 +20,7 @@ Map takes as input a list of parameters. The first element of this list can be o
     0                                   // occurence
 ]
 MAP
+
 ```
 
 **Pro tips: A mmapper with the pre, post and occurence parameters at zero is called a single value mapper, meaning that the mapper function will be applied to all points of a series!**
@@ -40,6 +41,7 @@ Let's try it! Try the mapper.mean with a moving window!
                                         // occurence
 ]
 MAP
+
 ```
 
 # To be continued

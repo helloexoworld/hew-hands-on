@@ -9,11 +9,11 @@ Now that we found the right star, let's get some data using [FETCH](http://www.w
 ```
 // FETCH
 [ 
-										// Application authentication
-					 					// selector for classname
-    					            	// Selector for labels
-								 		// Start date
-								 		// End date
+                                        // Application authentication
+                                        // selector for classname
+                                        // Selector for labels
+                                        // Start date
+                                        // End date
 ] 
 FETCH
 ```

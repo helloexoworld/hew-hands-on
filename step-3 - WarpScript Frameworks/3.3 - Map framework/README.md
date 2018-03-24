@@ -15,9 +15,9 @@ Map takes as input a list of parameters. The first element of this list can be o
 [
     SWAP                                // Series list or Singleton
     mapper.                             // Mapper function operator
-    0                                   // pre               
-    0                                   // post
-    0                                   // occurence
+    0                                   // Pre               
+    0                                   // Post
+    0                                   // Occurence
 ]
 MAP
 
@@ -36,9 +36,9 @@ Let's try it! Try the mapper.mean with a moving window!
 [
                                         // Series list or Singleton
                                         // Mapper function operator
-                                        // pre               
-                                        // post
-                                        // occurence
+                                        // Pre               
+                                        // Post
+                                        // Occurence
 ]
 MAP
 

@@ -62,4 +62,4 @@ APPLY
 
 # To be continued
 
-Once you are familiar with this spcific operation of the APPLY framework, please continue with the next step, as you initiation as an exo-planet hunter is about to end. As a matter of fact, you now have the knowledge of all the needed tools to start exploring the kepler-11 start to detect it's exo-planet. Let's find together how to process in the next step.
+Once you are familiar with this specific operation of the APPLY framework, please continue with the next step, as you initiation as an exo-planet hunter is about to end. As a matter of fact, you now have the knowledge of all the needed tools to start exploring the kepler-11 start to detect it's exo-planet. Let's find together how to process in the next step.

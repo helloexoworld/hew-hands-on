@@ -53,22 +53,51 @@ FILTER
 [
     SWAP                                // Series list or Singleton
     bucketizer.min                      // Bucketize function operator
-    0                                   // Lastbucket 				
+    0                                   // Lastbucket         
     2 h                                 // Bucketspan
     0                                   // Bucketcount
 ]
 BUCKETIZE
 
+// Add an UNBUCKETIZE once the series are sampled (to be able to use mapper.toboolean to print annotations)
+UNBUCKETIZE
+
+'sampledSeries' STORE
+
 //
-// MAP block:
+// APPLY block:
 //
 
-// MAP Framework
 [
-    SWAP                                // Series list or Singleton
-    mapper.mean                         // Mapper function operator
-    5                                   // Pre               
-    5                                   // Post
-    0                                   // Occurence
+    //
+    // MAP block: Compute moving mean 
+    //
+
+    [
+        $sampledSeries               // Series list or Singleton
+        mapper.mean                     // Mapper function operator
+        5                               // Pre
+        5                               // Post
+        0                               // Occurences
+    ]
+    MAP                                 // Series list or singleton minuend
+    $sampledSeries                   // Series list or singleton subtrahend
+
+    [ 'record' ]                        // Labels to compute equivalence class
+    op.sub                              // Apply function operator
 ]
-MAP
+APPLY
+
+// 
+// Threshold
+//
+
+[ SWAP [] -15.0 mapper.lt 0 0 0 ] MAP NONEMPTY 
+
+// 
+// Print initial series and annotations
+//
+
+[ SWAP mapper.toboolean 0 0 0 ] MAP
+$sampledSeries
+APPEND

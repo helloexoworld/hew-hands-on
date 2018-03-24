@@ -53,22 +53,34 @@ FILTER
 [
     SWAP                                // Series list or Singleton
     bucketizer.min                      // Bucketize function operator
-    0                                   // Lastbucket 				
+    0                                   // Lastbucket         
     2 h                                 // Bucketspan
     0                                   // Bucketcount
 ]
 BUCKETIZE
 
+'bucketizedSeries' STORE
+
 //
-// MAP block:
+// APPLY block:
 //
 
-// MAP Framework
 [
-    SWAP                                // Series list or Singleton
-    mapper.mean                         // Mapper function operator
-    5                                   // Pre               
-    5                                   // Post
-    0                                   // Occurence
+    //
+    // MAP block: Compute moving mean 
+    //
+
+    [
+        $bucketizedSeries               // Series list or Singleton
+        mapper.mean                     // Mapper function operator
+        5                               // Pre
+        5                               // Post
+        0                               // Occurences
+    ]
+    MAP                                 // Series list or singleton minuend
+    $bucketizedSeries                   // Series list or singleton subtrahend
+
+    [ 'record' ]                        // Labels to compute equivalence class
+    op.sub                              // Apply function operator
 ]
-MAP
+APPLY

@@ -1,4 +1,4 @@
-# Step-4: Threshold and display!
+# Step-4.3: Threshold and display!
 
 You did a great jobs to compute the difference between the trend and the light curve hunter! But how do you see how you can quickly automate the drop detection?
 

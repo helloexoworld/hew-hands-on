@@ -1,4 +1,4 @@
-# Step-2.1: Exploring the available time-series 
+# Step-2.1: Exploring the available time-series! 
 
 Now that you survive all the WarpScript needed knowlded, we would like to welcome you in our special quest, as an exo-planet hunter!
 

@@ -1,4 +1,4 @@
-# Step-2.2: Load time series raw data
+# Step-2.2: Load time series raw data!
 
 Now that you are used to play with the stack and know the available series, let's manipulate some data!
 

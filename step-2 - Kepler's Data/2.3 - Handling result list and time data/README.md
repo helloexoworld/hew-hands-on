@@ -1,4 +1,4 @@
-# Step-2: Manipulate a Geo Time Serie®
+# Step-2.3: Manipulate a Geo Time Series®!
 
 Now that you are used to play with the stack, let's manipulate some data!
 

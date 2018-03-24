@@ -1,4 +1,4 @@
-# Step-4: let's compute the trend!
+# Step-4.3: Threshold and display!
 
 You did a great jobs to compute the difference between the trend and the light curve hunter! But how do you see how you can quickly automate the drop detection?
 
@@ -16,4 +16,4 @@ Then to see both the initial series and the annotation series, you can merge bot
 
 # To be continued
 
-Next step: free practice and discovery of a others WarpScript functions
+Great, you're now an experimented exo-planet hunter! I am sure you're ready now ready to test you're analysis on lot more of the Kepler's start. That's exactly what we will accomplish in our next step.

@@ -1,4 +1,4 @@
-# Optimize all stars analysis!
+# Step-5.2: Optimize all stars analysis!
 
 You learn how to use some of the WarpScript framework and how to write your first script to detect exo-planet! Let's now try to apply this analysis on all the lightcurve of each stars we have at our disposal.
 

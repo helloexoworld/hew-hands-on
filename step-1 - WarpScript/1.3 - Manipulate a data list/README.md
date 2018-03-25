@@ -1,4 +1,4 @@
-# Step-1: Manipulate a WarpScript List!
+# Step-1.3: Manipulate a WarpScript List!
 
 ## Structure and function
 

@@ -1,4 +1,4 @@
-# Back to WarpScript bascis: the loop!
+# Step-5.1: Back to WarpScript bascis: the loop!
 
 Now that you completed your intial training as an exo-planet hunter, let's see how the loops are implemented in WarpScript to be able to generalize your analysis to all the available Kepler's stars.
 

@@ -1,0 +1,8 @@
+http://0.0.0.0:80 {
+    tls off
+    browse
+    markdown / {
+        template index /templates/index.html
+        css /templates/index.css
+    }
+}

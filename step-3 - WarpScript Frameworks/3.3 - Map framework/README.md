@@ -46,4 +46,4 @@ MAP
 
 # To be continued
 
-Congrats, you reached the end of the framework step! Understanding the help providing by those framework is really important to help a young hunter to complete its quest to retrieve Kepler-11 exo-planet. In the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-4) we will focus, now that we have all the needed tools, on writing a working exploratory script to discover existing exo-planet for kepler-11!
+Congrats, you reached the end of the framework step! Understanding the help providing by those framework is really important to help a young hunter to complete its quest to retrieve Kepler-11 exo-planet. In the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-4%20-%20First%20Exo%20Detection/4.1%20-%20Yet%20another%20framework%20APPLY) we will focus, now that we have all the needed tools, on writing a working exploratory script to discover existing exo-planet for kepler-11!

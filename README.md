@@ -18,3 +18,13 @@ At the end of this workshop, you will:
 * learn about time-series
 
 * Know WarpScript, a language designed to manipulate time-series
+
+# Directives
+
+During this tutorial, you will have the role of a trainee exo-planet hunter in it's seven learning stages. At the end of each step, the guiding tour will lead you to the next one. All instructions are given inside each README files and all the solutions are in a .mc2 files directly at the source of each step. MC2 files are the format of the Warp10 language files (WarpScript).
+
+# Where to start?
+
+To start with a short resume of WarpScript start with our first step [here](https://github.com/helloexoworld/hands-on/tree/master/step-1%20-%20WarpScript/1.1%20-%20Getting%20started%20with%20WarpScript).
+
+To skip this WarpScript initiation and start working on the Nasa Kepler mission data start with our second step [here](https://github.com/helloexoworld/hands-on/tree/master/step-2%20-%20Kepler's%20Data/2.1%20-%20Exploring%20known%20time%20series).

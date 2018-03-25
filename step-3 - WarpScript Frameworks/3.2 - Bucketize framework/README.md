@@ -48,4 +48,4 @@ BUCKETIZE
 
 # To be continued
 
-It look's simple as first look, but truts us it isn't. When you will be working on complex time-series analytics, keep in mind this framework and try to be familiar with it! You will quickly see how it will improves your exo-planet discovery quest! In the next step, we are guiding you in the usage of an other usefull framework: MAP or how to apply the same function on all data-point of a set of time-series.
+It look's simple as first look, but truts us it isn't. When you will be working on complex time-series analytics, keep in mind this framework and try to be familiar with it! You will quickly see how it will improves your exo-planet discovery quest! In the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-3%20-%20WarpScript%20Frameworks/3.3%20-%20Map%20framework), we are guiding you in the usage of an other usefull framework: MAP or how to apply the same function on all data-point of a set of time-series.

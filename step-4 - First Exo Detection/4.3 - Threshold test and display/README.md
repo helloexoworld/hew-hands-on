@@ -16,4 +16,4 @@ Then to see both the initial series and the annotation series, you can merge bot
 
 # To be continued
 
-Great, you're now an experimented exo-planet hunter! I am sure you're ready now ready to test you're analysis on lot more of the Kepler's start. That's exactly what we will accomplish in our next step.
+Great, you're now an experimented exo-planet hunter! I am sure you're ready now ready to test you're analysis on lot more of the Kepler's start. That's exactly what we will accomplish in our [next step](https://github.com/helloexoworld/hands-on/tree/master/step-5%20-%20Process%20all%20stars/5.1%20-%20WarpScript%20loops).

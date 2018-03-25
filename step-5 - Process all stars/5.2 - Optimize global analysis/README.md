@@ -10,5 +10,4 @@ Then all the WarpScript framework functions can be applied on Time-series list. 
 
 # To be continued
 
-Once you manage to compute the analysis on all the start, you should get two elements on top of the stack: the sampled list and the annotations. In the next step, the output format will be a bit updated.
- 
+Once you manage to compute the analysis on all the start, you should get two elements on top of the stack: the sampled list and the annotations. In the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-5%20-%20Process%20all%20stars/5.3%20-%20Reformat%20the%20output), the output format will be a bit updated.

@@ -22,4 +22,4 @@ You can click on Execute then Plot. You will see a list of GTS, click on one to 
 
 # To be continued
 
-During this step you have extracted all the raw data stored in Warp10, you can already observe some discontinuty on the raw that have to be cleaned. In the next step we are going to focus on a more complete script that will allow us to obtain a proper result. 
+During this step you have extracted all the raw data stored in Warp10, you can already observe some discontinuty on the raw that have to be cleaned. In the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-2%20-%20Kepler's%20Data/2.3%20-%20Handling%20result%20list%20and%20time%20data) we are going to focus on a more complete script that will allow us to obtain a proper result. 

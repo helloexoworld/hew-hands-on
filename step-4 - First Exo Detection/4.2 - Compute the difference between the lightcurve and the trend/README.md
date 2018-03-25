@@ -70,4 +70,4 @@ Starting from here, use the APPLY framework to compute the difference between th
 
 # To be continued
 
-Well done young hunter, let's continue together on a last step to learn how to isolate a minus threshold and build a nice output! 
+Well done young hunter, let's continue together on the [last step](https://github.com/helloexoworld/hands-on/tree/master/step-4%20-%20First%20Exo%20Detection/4.3%20-%20Threshold%20test%20and%20display) of this stage to learn how to isolate a minus threshold and build a nice output! 

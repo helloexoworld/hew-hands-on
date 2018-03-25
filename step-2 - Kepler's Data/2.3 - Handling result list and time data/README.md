@@ -55,4 +55,4 @@ Go ahead and TIMESPLIT the GTS!
 
 # To be continued
 
-During this step you manipulated a sub-set of series extracted of the FIT data of the NASA. You discovered how to extract raw data from Warp 10 and how to use one of the Time manipulation function WarpScript offers! This is only the beginning of the hunt, there will be more to come in the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-3) with all the basic Times Series framework to start an analysis!
+During this step you manipulated a sub-set of series extracted of the FIT data of the NASA. You discovered how to extract raw data from Warp 10 and how to use one of the Time manipulation function WarpScript offers! This is only the beginning of the hunt, there will be more to come in the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-3%20-%20WarpScript%20Frameworks/3.1%20-%20Filter%20framework) with all the basic Times Series framework to start an analysis!

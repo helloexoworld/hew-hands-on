@@ -50,4 +50,4 @@ Let's try it, copy that empty WarpScript in Quantum and implement the simple spe
 
 # To be continued
 
-WarpScript allow the user to save specific data inside Variable, let's discover how to process in the next step.
+WarpScript allow the user to save specific data inside Variable, let's discover how to process in the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-1%20-%20WarpScript/1.2%20-%20Introducing%20the%20Variables).

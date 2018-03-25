@@ -34,4 +34,4 @@ You can write the same block of code to refactor the name of the sampled series.
 
 # To be continued
 
-Wow, you did an awesome job exo-planet hunter! You manage to discover some of the existing exo-planet and format nicely your output! Now it's time to relax a bit before continuing your quest.
+Wow, you did an awesome job exo-planet hunter! You manage to discover some of the existing exo-planet and format nicely your output! Now it's time to relax a bit before continuing your quest. It's time for you to have your own practice, to learn a little bit more about the existing WarpScript function, continue with the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-6%20-%20Going%20further)

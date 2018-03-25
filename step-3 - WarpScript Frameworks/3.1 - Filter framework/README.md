@@ -46,4 +46,4 @@ FILTER
 
 # To be continued
 
-As an exo-planet hunter, you may be asking yourself why you should reduced the amount of data you will be working with. Be patient, and remember that taking your time during the first steps will making you win time in the longer run! Stay strong young hunter, more will come in the next step as a framework very usefull for time-series downsampling will be briefly introduced.
+As an exo-planet hunter, you may be asking yourself why you should reduced the amount of data you will be working with. Be patient, and remember that taking your time during the first steps will making you win time in the longer run! Stay strong young hunter, more will come in the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-3%20-%20WarpScript%20Frameworks/3.2%20-%20Bucketize%20framework) as a framework very usefull for time-series downsampling will be briefly introduced.

@@ -5,29 +5,36 @@
 [ 
     $token                              // Application authentication
     'kepler.sap.flux'                   // selector for classname
-    { 'id' '006541920' }                // Selector for labels
+    {}                                  // Selector for labels
     '2009-05-02T00:56:10.000000Z'       // Start date
     '2013-05-11T12:02:06.000000Z'       // End date
 ] 
 FETCH
 
-// Get Singleton series
-0 GET
+// Apply Timeclip on each stars series
+<%
+    // Delete index
+    DROP
+    
+    //
+    // TIMESPLIT block:
+    //
 
-//
-// TIMESPLIT block:
-//
+    // Quiesce period
+    6 h
 
-// Quiesce period
-6 h
+    // Minimal numbers of points per series 
+    100
 
-// Minimal numbers of points per series 
-100
+    // Labels for each splitted series
+    'record'
 
-// Labels for each splitted series
-'record'
+    TIMESPLIT
+%>
+LMAP
 
-TIMESPLIT
+// Flatten list of list of TIMESPLIT
+FLATTEN
 
 //
 // FILTER block:
@@ -58,29 +65,63 @@ FILTER
     0                                   // Bucketcount
 ]
 BUCKETIZE
+UNBUCKETIZE
 
-'bucketizedSeries' STORE
-
-//
-// APPLY block:
-//
+'sampledSeries' STORE
 
 [
+    $sampledSeries                      // Series list or singleton minuend
+
     //
     // MAP block: Compute moving mean 
     //
 
     [
-        $bucketizedSeries               // Series list or Singleton
+        $sampledSeries                  // Series list or Singleton
         mapper.mean                     // Mapper function operator
         5                               // Pre
         5                               // Post
         0                               // Occurences
     ]
-    MAP                                 // Series list or singleton minuend
-    $bucketizedSeries                   // Series list or singleton subtrahend
+    MAP                                 // Series list or singleton subtrahend
 
-    [ 'record' ]                        // Labels to compute equivalence class
+    [ 'id' 'record' ]                   // Labels to compute equivalence class
     op.sub                              // Apply function operator
 ]
 APPLY
+
+// 
+// Threshold
+//
+
+[ SWAP [] -15.0 mapper.lt 0 0 0 ] MAP 
+
+// 
+// Print initial series and annotations
+//
+
+[ SWAP mapper.toboolean 0 0 0 ] MAP
+
+//
+// Reformat annotations series
+//
+
+<%
+    // Delete index
+    DROP
+
+    // Duplicate series on top of the stack
+    DUP
+
+    // Get series name
+    NAME
+
+    // Add annotations suffix
+    '-annotations' +
+
+    // RENAME the series on top of the stack
+    RENAME
+%>
+LMAP
+
+$sampledSeries

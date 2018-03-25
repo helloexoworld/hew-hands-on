@@ -29,4 +29,4 @@ Let's play with it, here's the squeleton:
 
 # To be continued
 
-Great job! You now have all the basic WarpScript knowlegde to get started with the analyse of the recorded Nasa Time-series! To start, continue with our second step [here](https://github.com/helloexoworld/hands-on/tree/master/step-2).
+Great job! You now have all the basic WarpScript knowlegde to get started with the analyse of the recorded Nasa Time-series! To start, continue with our second step [here](https://github.com/helloexoworld/hands-on/tree/master/step-2%20-%20Kepler's%20Data/2.1%20-%20Exploring%20known%20time%20series).

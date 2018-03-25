@@ -27,4 +27,4 @@ Let's try it, save the following string in a variable and then push it back seve
 
 # To be continued
 
-Great job! Let's continue with some WarpScript list manipulation in the next step.s
+Great job! Let's continue with some WarpScript list manipulation in the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-1%20-%20WarpScript/1.3%20-%20Manipulate%20a%20data%20list).

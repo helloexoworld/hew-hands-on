@@ -29,4 +29,4 @@ The one that we are looking for has a label called '', can you see it? Change th
 
 # To be continued
 
-During this step you manipulated a sub-set of series extracted of the FIT data of the NASA. Now to really explore this set of data, let's obeserve what the lightcurve for the kepler-11 time series looks like. In the next, you will learn how to extract raw data using Warp 10.
+During this step you manipulated a sub-set of series extracted of the FIT data of the NASA. Now to really explore this set of data, let's obeserve what the lightcurve for the kepler-11 time series looks like. In the [next step](https://github.com/helloexoworld/hands-on/tree/master/step-2%20-%20Kepler's%20Data/2.2%20-%20Getting%20Kepler-11%20raw%20data), you will learn how to extract raw data using Warp 10.

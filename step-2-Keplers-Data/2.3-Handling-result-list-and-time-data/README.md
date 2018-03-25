@@ -12,7 +12,7 @@ What is the type of the result? You can use TYPEOF to see it. because it is a si
 
 ## Handling time 
 
-As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let's clean that. There is a function called [TIMESPLIT](http://www.warp10.io/reference/functions/function_TIMESPLIT/) that will be able to help us! As stated by the documentation:
+As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let's clean that. There is a function called [TIMESPLIT](http://10.3.141.1:8082/reference/functions/function_TIMESPLIT/) that will be able to help us! As stated by the documentation:
 
 > The TIMESPLIT function takes a GTS or a list of GTS and splits each Geo Time SeriesTM into a list multiple GTS instances, cutting the original GTS when it encounters quiet periods when there are no measurements.
 

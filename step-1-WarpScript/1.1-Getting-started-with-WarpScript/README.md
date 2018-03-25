@@ -4,8 +4,10 @@
 
 WarpScript is a programming language specific to Geo Time Series® analysis. For security reason, WarpScript is an interpreted language, which means that a Warp 10 backend have to be reached to execute your script. Fortunately for you, we set-up a platform on a Raspberry Pi that should be nearby. You should be able to connect to this elements like this:
 
-* [Quantum](http://192.168.1.1:8090)
-* [Warp10](http://192.168.1.1:8080)
+* [Warp10](http://10.3.141.1:8080)
+* [Quantum](http://10.3.141.1:8081)
+* [Warp10 official documentation](http://10.3.141.1:8082)
+
 
 As WarpScript is a stack language, you will learn some basic information about the stack manipulation before starting some data-mining.
 
@@ -15,7 +17,7 @@ WarpScript is a stack related programming language. This means that to compute a
 
 ## Single operator
 
-Let's start with a simple WarpScript function: [NOW](http://www.warp10.io/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch.
+Let's start with a simple WarpScript function: [NOW](http://10.3.141.1:8082/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch.
 
 Open Quantum with the URL above and type "NOW" in it. Then click execute. Congratulation, you wrote your first WarpScript! You should see the current time (in microsecond) in the answer session.
 
@@ -32,7 +34,7 @@ true     // boolean value
 3.14159    // double value
 ```
 
-To compute an operation (for example an addition), put the two elements before the operator [+](http://www.warp10.io/reference/functions/function_ADD/) on the stack.
+To compute an operation (for example an addition), put the two elements before the operator [+](http://10.3.141.1:8082/reference/functions/function_ADD/) on the stack.
 You will get the result on top of the stack. 
 
 

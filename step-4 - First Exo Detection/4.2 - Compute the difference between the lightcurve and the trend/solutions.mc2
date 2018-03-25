@@ -59,9 +59,6 @@ FILTER
 ]
 BUCKETIZE
 
-// Add an UNBUCKETIZE once the series are sampled (to be able to use mapper.toboolean to print annotations)
-UNBUCKETIZE
-
 'sampledSeries' STORE
 
 //
@@ -88,17 +85,3 @@ UNBUCKETIZE
     op.sub                              // Apply function operator
 ]
 APPLY
-
-// 
-// Threshold
-//
-
-[ SWAP [] -15.0 mapper.lt 0 0 0 ] MAP 
-
-// 
-// Print initial series and annotations
-//
-
-[ SWAP mapper.toboolean 0 0 0 ] MAP
-$sampledSeries
-APPEND

@@ -1,6 +1,6 @@
 # Step-4.2: Let's compute the difference!
 
-Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exo-planet!
+Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet!
 The process is similar to the previous step. Start with the script resuming the data loading, the record split (according to time), the filtering and the downsampling.
 
 ```
@@ -59,7 +59,7 @@ FILTER
 [
     SWAP                                // Series list or Singleton
     bucketizer.min                      // Bucketize function operator
-    0                                   // Lastbucket         
+    0                                   // Lastbucket
     2 h                                 // Bucketspan
     0                                   // Bucketcount
 ]
@@ -70,4 +70,4 @@ Starting from here, use the APPLY framework to compute the difference between th
 
 # To be continued
 
-Well done young hunter, let's continue together on the [last step](/step-4-First-Exo-Detection/4.3-Threshold-test-and-display/README.md) of this stage to learn how to isolate a minus threshold and build a nice output! 
+Well done young hunter, let's continue together on the [last step](/step-4-First-Exo-Detection/4.3-Threshold-test-and-display/README.md) of this stage to learn how to isolate a minus threshold and build a nice output!

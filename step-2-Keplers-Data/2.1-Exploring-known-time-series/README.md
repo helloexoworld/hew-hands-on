@@ -1,6 +1,6 @@
 # Step-2.1: Exploring the available time-series! 
 
-Now that you survive all the WarpScript needed knowlded, we would like to welcome you in our special quest, as an exo-planet hunter!
+Now that you survive all the WarpScript needed knowlded, we would like to welcome you in our special quest, as an exoplanet hunter!
 
 ## FIND
 
@@ -17,16 +17,13 @@ The label selectors are packed in a MAP whose keys are the label names and the v
 Here a preloaded WarpScript that you can use, find all the GTS available!
 
 ```
-// Storing the token into a variable
-'abcd' 'token' STORE
-
 // Start the find with the token as first parameter
 [ $token  ] FIND
 
 ```
 
-The one that we are looking for has a label called '', can you see it? Change the FIND to have only one result: Kepler-11!
+The one that we are looking for has a label called 'KIC-6541920', can you see it? Change the FIND to have only one result: Kepler-11!
 
 # To be continued
 
-During this step you manipulated a sub-set of series extracted of the FIT data of the NASA. Now to really explore this set of data, let's obeserve what the lightcurve for the kepler-11 time series looks like. In the [next step](/step-2-Keplers-Data/2.2-Getting-Kepler-11-raw-data/README.md), you will learn how to extract raw data using Warp 10.
+During this step you manipulated a sub-set of series extracted of the FITS data of the NASA. Now to really explore this set of data, let's obeserve what the lightcurve for the kepler-11 time series looks like. In the [next step](/step-2-Keplers-Data/2.2-Getting-Kepler-11-raw-data/README.md), you will learn how to extract raw data using Warp 10.

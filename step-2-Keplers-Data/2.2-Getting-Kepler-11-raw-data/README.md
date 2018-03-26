@@ -8,13 +8,13 @@ Now that we found the right star, let's get some data using [FETCH](http://10.3.
 
 ```
 // FETCH
-[ 
+[
                                         // Application authentication
                                         // selector for classname
                                         // Selector for labels
                                         // Start date
                                         // End date
-] 
+]
 FETCH
 ```
 
@@ -22,4 +22,4 @@ You can click on Execute then Plot. You will see a list of GTS, click on one to 
 
 # To be continued
 
-During this step you have extracted all the raw data stored in Warp10, you can already observe some discontinuty on the raw that have to be cleaned. In the [next step](/step-2-Keplers-Data/2.3-Handling-result-list-and-time-data/README.md) we are going to focus on a more complete script that will allow us to obtain a proper result. 
+During this step you have extracted all the raw data stored in Warp10, you can already observe some discontinuty on the raw that have to be cleaned. In the [next step](/step-2-Keplers-Data/2.3-Handling-result-list-and-time-data/README.md) we are going to focus on a more complete script that will allow us to obtain a proper result.

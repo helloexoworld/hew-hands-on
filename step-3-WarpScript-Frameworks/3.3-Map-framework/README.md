@@ -15,7 +15,7 @@ Map takes as input a list of parameters. The first element of this list can be o
 [
     SWAP                                // Series list or Singleton
     mapper.                             // Mapper function operator
-    0                                   // Pre               
+    0                                   // Pre
     0                                   // Post
     0                                   // Occurence
 ]
@@ -36,7 +36,7 @@ Let's try it! Try the mapper.mean with a moving window!
 [
                                         // Series list or Singleton
                                         // Mapper function operator
-                                        // Pre               
+                                        // Pre
                                         // Post
                                         // Occurence
 ]
@@ -46,4 +46,4 @@ MAP
 
 # To be continued
 
-Congrats, you reached the end of the framework step! Understanding the help providing by those framework is really important to help a young hunter to complete its quest to retrieve Kepler-11 exo-planet. In the [next step](/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/README.md) we will focus, now that we have all the needed tools, on writing a working exploratory script to discover existing exo-planet for kepler-11!
+Congrats, you reached the end of the framework step! Understanding the help providing by those framework is really important to help a young hunter to complete its quest to retrieve Kepler-11 exoplanet. In the [next step](/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/README.md) we will focus, now that we have all the needed tools, on writing a working exploratory script to discover existing exoplanet for kepler-11!

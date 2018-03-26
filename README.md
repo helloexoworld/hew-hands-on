@@ -5,7 +5,7 @@ An hands-on used at differents tech conferences, such as BreizhCamp, Devoxx Fran
 
 For many years humanity has been exploring the skies, dreaming of interstellar voyages and new planetary colonies. And you, do you want to go 3h with us to discover the universe?
 
-It turns out that NASA has a great public dataset, especially one that is used to search for exoplanets, that is, planets outside our solar system.
+It turns out that NASA has a great public dataset, especially one that is used to search for exoplanets, that is, planets outside our solar system. What if you could search for exoplanets by your own?
 
 # What are the objectives of this tutorial?
 
@@ -21,7 +21,7 @@ At the end of this workshop, you will:
 
 # Directives
 
-During this tutorial, you will have the role of a trainee exo-planet hunter in it's seven learning stages. At the end of each step, the guiding tour will lead you to the next one. All instructions are given inside each README files and all the solutions are in a .mc2 files directly at the source of each step. MC2 files are the format of the Warp10 language files (WarpScript).
+During this tutorial, you will have the role of a trainee exoplanet hunter in it's seven learning stages. At the end of each step, the guiding tour will lead you to the next one. All instructions are given inside each README files and all the solutions are in a .mc2 files directly at the source of each step. MC2 files are the format of the Warp10 language files (WarpScript).
 
 # Where to start?
 

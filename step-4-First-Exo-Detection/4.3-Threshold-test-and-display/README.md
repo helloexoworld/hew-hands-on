@@ -8,7 +8,7 @@ Let's compute at first a threshold test! In WarpScript you can re-use the MAP fr
 
 ## Display things nicely
 
-Great now you can successfully detect some exo-planet! You have well earn your badge as an exo-planet hunter! Just one more thing, how to be sure that the periods you have extracted corresponds to exo-planet ? Let's print more nicely the result! To do so, we can convert our result into annotations in WarpaScript. This can be done using boolean instead of values! And there is also a mapper to do it: mapper.toboolean.
+Great now you can successfully detect some exoplanet! You have well earn your badge as an exoplanet hunter! Just one more thing, how to be sure that the periods you have extracted corresponds to exoplanet ? Let's print more nicely the result! To do so, we can convert our result into annotations in WarpaScript. This can be done using boolean instead of values! And there is also a mapper to do it: mapper.toboolean.
 
 ** Pro tip: mapper.toboolean is a single value mapper and would not work correctly on bucketized series. To correct it and get the better result we recommand to use the UNBUCKETIZE function right after the BUCKETIZE operation**
 
@@ -16,4 +16,4 @@ Then to see both the initial series and the annotation series, you can merge bot
 
 # To be continued
 
-Great, you're now an experimented exo-planet hunter! I am sure you're ready now ready to test you're analysis on lot more of the Kepler's start. That's exactly what we will accomplish in our [next step](/step-5-Process-all-stars/5.1-WarpScript-loops/README.md).
+Great, you're now an experimented exoplanet hunter! I am sure you're ready now ready to test you're analysis on lot more of the Kepler's start. That's exactly what we will accomplish in our [next step](/step-5-Process-all-stars/5.1-WarpScript-loops/README.md).

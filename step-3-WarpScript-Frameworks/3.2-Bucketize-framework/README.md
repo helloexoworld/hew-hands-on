@@ -4,12 +4,12 @@ The function used allow some small GTS manipulation but WarpScript offers other 
 
 ## The framework
 
-In this tutorial we will also discover the [BUCKETIZE framework](http://10.3.141.1:8082/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.  
-We will use this bucket to downsample our data, let's give it a try! 
+In this tutorial we will also discover the [BUCKETIZE framework](http://10.3.141.1:8082/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.
+We will use this bucket to downsample our data, let's give it a try!
 
 ## Input parameters
 
-The BUCKETIZE framework takes a list of elements as parameter. This list contains one or several GTS list, a [bucketizer function](http://10.3.141.1:8082/reference/reference/#framework-bucketizers), a lastbucket that specify when start the last bucket (0 mean this will be computed automatically), a bucketcount which is the duration of the bucket (if 0 WarpScript will compute it), and finally a bucketcount which is the number of buckets to compute (if 0 WarpScript will compute it). 
+The BUCKETIZE framework takes a list of elements as parameter. This list contains one or several GTS list, a [bucketizer function](http://10.3.141.1:8082/reference/reference/#framework-bucketizers), a lastbucket that specify when start the last bucket (0 mean this will be computed automatically), a bucketcount which is the duration of the bucket (if 0 WarpScript will compute it), and finally a bucketcount which is the number of buckets to compute (if 0 WarpScript will compute it).
 
 **Pro tips: In order to get a correct number of buckets either Bucketspan or Bucketcount have to be specified!**
 
@@ -20,7 +20,7 @@ The BUCKETIZE framework takes a list of elements as parameter. This list contain
 [
     SWAP                                // Series list or Singleton
     bucketizer.                         // Bucketize function operator
-    0                                   // Lastbucket               
+    0                                   // Lastbucket
     1 d                                 // Bucketspan
     0                                   // Bucketcount
 ]
@@ -38,7 +38,7 @@ Let's do it! Try the bucketizer.min with a bucketize window of 2 h.
 [
                                         // Series list or Singleton
                                         // Bucketize function operator
-                                        // Lastbucket 				
+                                        // Lastbucket
                                         // Bucketspan
                                         // Bucketcount
 ]
@@ -48,4 +48,4 @@ BUCKETIZE
 
 # To be continued
 
-It look's simple as first look, but truts us it isn't. When you will be working on complex time-series analytics, keep in mind this framework and try to be familiar with it! You will quickly see how it will improves your exo-planet discovery quest! In the [next step](/step-3-WarpScript-Frameworks/3.3-Map-framework/README.md), we are guiding you in the usage of an other usefull framework: MAP or how to apply the same function on all data-point of a set of time-series.
+It look's simple as first look, but truts us it isn't. When you will be working on complex time-series analytics, keep in mind this framework and try to be familiar with it! You will quickly see how it will improves your exoplanet discovery quest! In the [next step](/step-3-WarpScript-Frameworks/3.3-Map-framework/README.md), we are guiding you in the usage of an other usefull framework: MAP or how to apply the same function on all data-point of a set of time-series.

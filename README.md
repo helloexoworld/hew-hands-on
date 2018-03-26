@@ -25,6 +25,10 @@ During this tutorial, you will have the role of a trainee exoplanet hunter in it
 
 # Where to start?
 
-To start with a short resume of WarpScript start with our first step [here](/step-1-WarpScript/1.1-Getting-started-with-WarpScript/README.md).
+There is several possibilities depending of your exopanet hunter skills:
 
-To skip this WarpScript initiation and start working on the Nasa Kepler mission data start with our second step [here](/step-2-Keplers-Data/2.1-Exploring-known-time-series/README.md).
+* To start with a short resume of WarpScript start with our first step [here](/step-1-WarpScript/1.1-Getting-started-with-WarpScript/README.md).
+
+* To skip this WarpScript initiation and start working on the Nasa Kepler mission data start with our second step [here](/step-2-Keplers-Data/2.1-Exploring-known-time-series/README.md).
+
+* To hack directly our code it's here: [here](/step-7-Strong-enough-to-break-our-code/README.md).

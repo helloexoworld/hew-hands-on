@@ -6,7 +6,7 @@ Those functions are listed here to give you an hint of the richness of WarpScrip
 
 ## CORRELATE
 
-The CORRELATE function can be used to compute the crosscorrelation between a base Time and a list thereoff. An identical example as in the documtation is put below. The only parameter to add corresponds to a WarpScript list representing the offset to compute the correlation. All Time series must be correctly downsampled (aligned ticks and filled) before as the offset corresponds to a multiple value of the distance between two points. The value 0 as offset will compute the correlation between all ticks of each series.
+The [CORRELATE](http://10.3.141.1:8082/reference/functions/function_CORRELATE/) function can be used to compute the crosscorrelation between a base Time and a list thereoff. An identical example as in the documtation is put below. The only parameter to add corresponds to a WarpScript list representing the offset to compute the correlation. All Time series must be correctly downsampled (aligned ticks and filled) before as the offset corresponds to a multiple value of the distance between two points. The value 0 as offset will compute the correlation between all ticks of each series.
 
 ```
 // Load a generated cosine GTS
@@ -32,11 +32,18 @@ CORRELATE
 
 ## STL
 
-The second function of this section is the well known STL, standing for: Seasonal and Trend decomposition using Loess.
-
-
-## Outlier detection
+The second function of this section is the well known [STL](http://10.3.141.1:8082/reference/functions/function_STL/), standing for: Seasonal and Trend decomposition using Loess. This function expects A LIST of two GTS (or a LIST of LIST of two GTS) onto the stack. These GTS are the seasonal part and the trend part of the input GTS. Seasonal and trend are added as suffix. On the [STL](http://10.3.141.1:8082/reference/functions/function_STL/) documentation page, you will find a concrete example about its usage in WarpScript. [This page](https://www.otexts.org/fpp/6/5) introduces how the STL decomposition works for Time series.
 
 ## DISCORDS
+
+The third section is about the [DISCORDS](http://10.3.141.1:8082/reference/functions/function_DISCORDS/) functions that is based on [pattern recognition](https://en.wikipedia.org/wiki/Pattern_recognition) to detect discontinuities in a time series of a list thereof. This functions expects some parameters to define how to recognize a pattern. The [DISCORDS](http://10.3.141.1:8082/reference/functions/function_DISCORDS/) documentation explains more in details all the different parameters and present a working example. 
+
+A pattern is defined with first it's window size, then the size of the pattern and finish with it's quantization scale (values ladder dividing the window width). To compute the discord you need to add maximum number of discords to identify, a boolean flag indicating whether or not the DISCORDS function should report overlapping discords and a distance ratio (it is safe to leave it to 0.0). A working discords example would be:
+
+```
+32 8 16 5 false 0.0 DISCORDS
+```
+
+## Outlier detection
 
 ## Some statisticals functions

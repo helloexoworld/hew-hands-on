@@ -85,7 +85,7 @@ UNBUCKETIZE
     ]
     MAP                                 // Series list or singleton subtrahend
 
-    [ 'KEPLERID''record' ]                   // Labels to compute equivalence class
+    [ 'KEPLERID' 'record' ]             // Labels to compute equivalence class
     op.sub                              // Apply function operator
 ]
 APPLY
@@ -101,4 +101,6 @@ APPLY
 //
 
 [ SWAP mapper.toboolean 0 0 0 ] MAP
+
+// Push the original series to compare with
 $sampledSeries

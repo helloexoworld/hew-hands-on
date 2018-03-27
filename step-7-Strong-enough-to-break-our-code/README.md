@@ -18,7 +18,7 @@ Once you completed this tutorial, to remember some details of the WarpScript, fe
 1765000000 'bucketspan' STORE
 
 
-NEWGTS { 'KEPLERID''' } RELABEL 
+NEWGTS { 'KEPLERID' '' } RELABEL 
 DEPTH ->LIST
 
 
@@ -26,7 +26,7 @@ DEPTH ->LIST
 // looping through the star
 <%
     LABELS 'KEPLERID'GET 'KEPLERID'STORE
-    [ $token 'sap.flux' { 'KEPLERID'$id } NOW NOW ] FETCH 0 GET
+    [ $token 'sap.flux' { 'KEPLERID' $id } NOW NOW ] FETCH 0 GET
     DUP ATTRIBUTES RELABEL 
     'star' STORE
     

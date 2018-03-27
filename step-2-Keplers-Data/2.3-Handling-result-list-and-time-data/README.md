@@ -4,7 +4,7 @@ Now that you are used to play with the stack, let's manipulate some data!
 
 ## Handling a list
 
-What is the type of the result? You can use TYPEOF to see it. because it is a single list holding only one element, you can push back the first element by calling 0 GET after the FETCH instruction.
+What is the type of the result? You can use [TYPEOF](http://192.168.1.3:8082/reference/functions/function_TYPEOF/) to see it. because it is a single list holding only one element, you can push back the first element by calling 0 [GET](http://192.168.1.3:8082/reference/functions/function_GET/) after the FETCH instruction.
 
 ## Handling time
 

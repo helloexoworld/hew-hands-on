@@ -66,7 +66,7 @@ FILTER
 BUCKETIZE
 ```
 
-Starting from here, use the APPLY framework to compute the difference between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection!
+Starting from here, use the [APPLY](http://192.168.1.3:8082/reference/frameworks/framework-apply/) framework to compute the [difference]((http://192.168.1.3:8082/reference/frameworks/op_sub/)) between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection!
 
 # To be continued
 

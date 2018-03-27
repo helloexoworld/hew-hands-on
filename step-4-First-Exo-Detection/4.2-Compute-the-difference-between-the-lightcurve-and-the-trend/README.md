@@ -10,8 +10,8 @@ The process is similar to the previous step. Start with the script resuming the 
 // FETCH
 [ 
     $token                              // Application authentication
-    'kepler.sap.flux'                   // selector for classname
-    { 'id' '006541920' }                // Selector for labels
+    'sap.flux'                   // selector for classname
+    { 'KEPLERID' '6541920' }                // Selector for labels
     '2009-05-02T00:56:10.000000Z'       // Start date
     '2013-05-11T12:02:06.000000Z'       // End date
 ] 

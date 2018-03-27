@@ -1,10 +1,10 @@
 # Step-3.3: Framework time: MAP!
 
-The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER](http://10.3.141.1:8082/reference/frameworks/framework-filter/), [BUCKETIZE](http://10.3.141.1:8082/reference/frameworks/framework-bucketize/), [MAP](http://10.3.141.1:8082/reference/frameworks/framework-map/), [REDUCE](http://10.3.141.1:8082/reference/frameworks/framework-reduce/) and [APPLY](http://10.3.141.1:8082/reference/frameworks/framework-apply/). Let's end with the MAP framework.
+The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER](http://192.168.1.3:8082/reference/frameworks/framework-filter/), [BUCKETIZE](http://192.168.1.3:8082/reference/frameworks/framework-bucketize/), [MAP](http://192.168.1.3:8082/reference/frameworks/framework-map/), [REDUCE](http://192.168.1.3:8082/reference/frameworks/framework-reduce/) and [APPLY](http://192.168.1.3:8082/reference/frameworks/framework-apply/). Let's end with the MAP framework.
 
 ## The framework
 
-Now it is time to update the values of a set of GTS using the [MAP framework](http://10.3.141.1:8082/reference/frameworks/framework-map/). The MAP framework allows you to apply a function on values of a Geo Time SeriesTM that fall into a sliding window.
+Now it is time to update the values of a set of GTS using the [MAP framework](http://192.168.1.3:8082/reference/frameworks/framework-map/). The MAP framework allows you to apply a function on values of a Geo Time SeriesTM that fall into a sliding window.
 
 ## Input parameters
 

@@ -5,4 +5,4 @@
 [ $token '~.*' {} ] FIND
 
 // Select only Kepler-11 series
-[ $token '~.*' { 'id' '006541920' } ] FIND
+[ $token '~.*' { 'KEPLERID' '6541920' } ] FIND

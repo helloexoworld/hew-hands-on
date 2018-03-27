@@ -4,7 +4,7 @@
 // FETCH
 [ 
     $token                              // Application authentication
-    'kepler.sap.flux'                   // selector for classname
+    'sap.flux'                   // selector for classname
     {}                                  // Selector for labels
     '2009-05-02T00:56:10.000000Z'       // Start date
     '2013-05-11T12:02:06.000000Z'       // End date
@@ -85,7 +85,7 @@ UNBUCKETIZE
     ]
     MAP                                 // Series list or singleton subtrahend
 
-    [ 'id' 'record' ]                   // Labels to compute equivalence class
+    [ 'KEPLERID''record' ]                   // Labels to compute equivalence class
     op.sub                              // Apply function operator
 ]
 APPLY

@@ -1,4 +1,5 @@
-# hands-on
+# Rediscover the known universe with NASA dataset
+
 An hands-on used at differents tech conferences, such as BreizhCamp, Devoxx France and so on.
 
 # Why?
@@ -17,7 +18,7 @@ At the end of this workshop, you will:
 
 * learn about time-series
 
-* Know WarpScript, a language designed to manipulate time-series
+* learn WarpScript, a language designed to manipulate time-series
 
 # Directives
 

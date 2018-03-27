@@ -4,7 +4,7 @@ Now that you survive all the WarpScript needed knowlded, we would like to welcom
 
 ## FIND
 
-We preloaded our platform with some stars (around 30). Let's observe the series structures and find the one that we want! We are going to use a function called [FIND](http://10.3.141.1:8082/reference/functions/function_FIND/).
+We preloaded our platform with some stars (around 30). Let's observe the series structures and find the one that we want! We are going to use a function called [FIND](http://192.168.1.3:8082/reference/functions/function_FIND/).
 
 The FIND function finds Geo Time SeriesTM matching some criteria.
 
@@ -22,7 +22,7 @@ Here a preloaded WarpScript that you can use, find all the GTS available!
 
 ```
 
-The one that we are looking for has a label called 'KIC-6541920', can you see it? Change the FIND to have only one result: Kepler-11!
+The one that we are looking for has a label KEPLERID=6541920, can you see it? Change the FIND to have only one result: sap.flux for Kepler-11!
 
 # To be continued
 

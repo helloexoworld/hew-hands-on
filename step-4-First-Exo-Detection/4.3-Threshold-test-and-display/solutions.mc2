@@ -100,5 +100,6 @@ APPLY
 //
 
 [ SWAP mapper.toboolean 0 0 0 ] MAP
+
+// Push the original series to compare with
 $sampledSeries
-APPEND

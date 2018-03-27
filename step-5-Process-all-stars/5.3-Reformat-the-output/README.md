@@ -58,4 +58,4 @@ FOREACH
 
 # To be continued
 
-Wow, you did an awesome job exoplanet hunter! You manage to discover some of the existing exoplanet and format nicely your output! Now it's time to relax a bit before continuing your quest. It's time for you to have your own practice, to learn a little bit more about the existing WarpScript function, continue with the [next step](/step-6-Going-further/README.md). Otherwise, if you prefer to start hacking our code right now, jump directly at our [last step](/step-7-Strong-enough-to-break-our-code/README.md)! 
+Wow, you did an awesome job exoplanet hunter! You manage to discover some of the existing exoplanet and format nicely your output! Now it's time to relax a bit before continuing your quest. It's time to let you have your own practice, to learn a little bit more about the existing WarpScript function, continue with the [next step](/step-6-Going-further/README.md) or continue to develop your script using all the skills your already learned.

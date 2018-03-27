@@ -4,6 +4,7 @@
 
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+'6541920' 'id' STORE
 
 1765000000 'bucketspan' STORE
 
@@ -11,11 +12,9 @@
 NEWGTS { 'KEPLERID' '' } RELABEL 
 DEPTH ->LIST
 
-
-
 // looping through the star
 <%
-    LABELS 'KEPLERID'GET 'KEPLERID'STORE
+    LABELS 'KEPLERID' GET 'KEPLERID' STORE
     [ $token 'sap.flux' { 'KEPLERID' $id } NOW NOW ] FETCH 0 GET
     DUP ATTRIBUTES RELABEL 
     'star' STORE
@@ -27,6 +26,7 @@ DEPTH ->LIST
     // split the star into multiple observations if there's 2 h without datapoints
     2 h 10 'observationNumber' TIMESPLIT
     FLATTEN
+    NONEMPTY
     
     //[ 31 DUP  ] SUBLIST
     
@@ -58,53 +58,70 @@ DEPTH ->LIST
         // removing the trend to the initial serie
         [ $smoothed -1.0 mapper.mul 0 0 0 ] MAP 'inversed_smoothed' STORE
         [ $myGTS:cosine  1 ->LIST $inversed_smoothed + FLATTEN []  reducer.sum ]  REDUCE 'sap.flux:cleaned' RENAME 
-        [ SWAP -1000.0 mapper.gt 0 0 0 ] MAP 0 GET
-        'clean' STORE
+        [ SWAP -1000.0 mapper.gt 0 0 0 ] MAP
         
-        $clean true MUSIGMA
-        'sigma' STORE
-        'mean' STORE
+        'resClean' STORE
         
-        // Keep only point below a specific threshold: -1* (|mean| + sigma) 
-        [ $clean  $mean ABS $sigma + -1 *   mapper.le 0 0 0 ] MAP 0 GET
-        
-        // Separate result series per quiesce periods of 4 h
-        1 h
-        3
-        'split' 
-        TIMESPLIT
-        FLATTEN   
-        
-        // validate transit with DTW on smoothed version
-        MARK SWAP <%
-            'transit' STORE
-            $transit VALUES SIZE <% 3 < %> <% CONTINUE %> IFT
-            $transit UNBUCKETIZE FIRSTTICK
-            $exoplanet.model.smooth  FIRSTTICK  -  $exoplanet.model.smooth SWAP TIMESHIFT NORMALIZE
-            $transit NORMALIZE SWAP 0.0  DTW  'score' STORE
-            <% $score 2.0 >  %> <% CONTINUE %> IFT 
-            $transit { 'dtw_score' $score TOSTRING } RELABEL
-        %> FOREACH COUNTTOMARK ->LIST SWAP DROP FLATTEN
-        
-        // Then create a list of tick to start and end
-        <%
-            DROP 
-            UNBUCKETIZE
-            'series' STORE
-            [ $series FIRSTTICK 3 h - $series LASTTICK 3 h + ]
+        <% 
+            $resClean NONEMPTY SIZE 0 >
         %>
-        LMAP
+        <%
         
-        'clips' STORE
-        
-        // Clip initial series with it
-        $myGTS 
-        $clips
-        CLIP 
-        'sap.flux.transit' RENAME
-        
-        $myGTS + NONEMPTY
-        DUP SIZE <% 1 == %> <% DROP [] %> IFT 
+            $resClean
+             0 GET
+            'clean' STORE
+            
+            
+            $clean true MUSIGMA
+            'sigma' STORE
+            'mean' STORE
+            
+            // Keep only point below a specific threshold: -1* (|mean| + sigma) 
+            [ $clean  $mean ABS $sigma + -1 *   mapper.le 0 0 0 ] MAP 0 GET
+            
+            // Separate result series per quiesce periods of 4 h
+            1 h
+            3
+            'split' 
+            TIMESPLIT
+            FLATTEN   
+            
+            // validate transit with DTW on smoothed version
+            MARK SWAP <%
+                'transit' STORE
+                $transit VALUES SIZE <% 3 < %> <% CONTINUE %> IFT
+                $transit UNBUCKETIZE FIRSTTICK
+                $exoplanet.model.smooth  FIRSTTICK  -  $exoplanet.model.smooth SWAP TIMESHIFT NORMALIZE
+                $transit NORMALIZE SWAP 0.0  DTW  'score' STORE
+                <% $score 2.0 >  %> <% CONTINUE %> IFT 
+                $transit { 'dtw_score' $score TOSTRING } RELABEL
+            %> FOREACH COUNTTOMARK ->LIST SWAP DROP FLATTEN
+            
+            // Then create a list of tick to start and end
+            <%
+                DROP 
+                UNBUCKETIZE
+                'series' STORE
+                [ $series FIRSTTICK 3 h - $series LASTTICK 3 h + ]
+            %>
+            LMAP
+            
+            'clips' STORE
+            
+            // Clip initial series with it
+            $myGTS 
+            $clips
+            CLIP 
+            'sap.flux.transit' RENAME
+            
+            $myGTS + NONEMPTY
+            DUP SIZE <% 1 == %> <% DROP [] %> IFT 
+        %>
+        <%
+            []
+        %>
+        IFTE
     %>
-    LMAP 
+    LMAP
+    NONEMPTY
 %> FOREACH

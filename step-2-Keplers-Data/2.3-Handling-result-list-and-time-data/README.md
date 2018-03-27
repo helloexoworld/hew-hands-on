@@ -2,10 +2,6 @@
 
 Now that you are used to play with the stack, let's manipulate some data!
 
-## FETCH resume
-
-TODO
-
 ## Handling a list
 
 What is the type of the result? You can use TYPEOF to see it. because it is a single list holding only one element, you can push back the first element by calling 0 GET after the FETCH instruction.

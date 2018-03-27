@@ -1,5 +1,5 @@
 // Storing the token into a variable
-'abcd' 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
 // Start the find with the token as first parameter
 [ $token '~.*' {} ] FIND

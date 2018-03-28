@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>Getting Started - Index - Warp10 Documentation</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+  <style>
+    body {
+      background-color: #eeeeee;
+    }
+  </style>
+
+
+  <link rel="stylesheet" href="/assets/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+
+  <script src="/assets/webcomponents-lite.js"></script>
+  <script src="/assets/jquery.js"></script>
+  <script src="/assets/bootstrap.js"></script>
+
+  <link rel="import" href="/assets/warp10-components.html">
+
+  <!--
+  <script src="http://localhost:8000/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="http://localhost:8000/bower_components/jquery/dist/jquery.js"></script>
+  <script src="http://localhost:8000/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <link   rel="import" href="http://localhost:8000/bower_components/polymer/polymer.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-navbar/warp10-navbar.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-quantum/warp10-conf.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-quantum/warp10-quantum-widget.html">
+  -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/docs/css/warp10.css">
+  <link rel="stylesheet" href="/docs/css/warp10-navbar.css">
+  <!-- Pygments Github CSS -->
+  <link rel="stylesheet" href="/docs/css/syntax.css">
+
+  <style>
+    :host {
+      display: block;
+    }
+    .top-10 { margin-top:10px; }
+    h4 {
+      font-weight: bold;
+    }
+    .list-group-item {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+
+    <div class="navbar-header">
+      <!--
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    -->
+      <a class="navbar-brand" href="/docs">
+        <div class="navbar-id">
+          <div class="navbar-id-icon">
+            <span id="icon-CityzenData" class="icon-CityzenData"></span>
+          </div>
+          <div class="navbar-id-name">
+            Warp 10
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="collapse navbar-nav navbar-collapse navbar-right">
+      <div class="form-inline">
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+          <input id="search_box" class="form-control" style="vertical-align: middle" >
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="navbar-separator" > </div>
+
+<warp10-conf conf="doc"></warp10-conf>
+
+<div id="mainbody">
+
+  <div class="container top-10" id="main-container">
+    <div class="row">
+      <button type="button" class="navbar-toggle toggle collapsed" data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+<div id="sidebar" class="col-sm-3 collapse">
+
+  <div class="panel-group" id="side-menu">
+
+    <div id="panel-home" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-home">
+        <span class="glyphicon glyphicon-home"></span>Home</a>
+    </h4>
+  </div>
+  <div id="collapse-home" class="panel-collapse collapse ">
+    <div class="list-group">
+
+      <a class="list-group-item" href="/docs/introduction/platform">Overview</a>
+
+      <a class="list-group-item" href="/docs/introduction/concepts">Concepts</a>
+
+      <a class="list-group-item" href="/docs/introduction/history">History</a>
+
+      <a class="list-group-item" href="/docs/introduction/team">Team</a>
+
+      <a class="list-group-item" href="/docs/introduction/versions">Versions</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-howto" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-howto">
+        <span class="glyphicon glyphicon-education"></span>How-to
+      </a>
+    </h4>
+  </div>
+  <div id="collapse-howto" class="panel-collapse collapse  in ">
+    <div class="list-group">
+
+      <a class="list-group-item" href="/docs/getting-started">Getting started</a>
+
+      <a class="list-group-item" href="/docs/howto/data-modeling">Data modeling</a>
+
+      <a class="list-group-item" href="/docs/howto/migrate-from">Migrate from</a>
+      <div class="list-group-item">Tutorials</div>
+      <div class="list-group">
+        <a class="list-group-item" href="/docs/howto/intro-bucketize">BUCKETIZE</a>
+        <a class="list-group-item" href="/docs/howto/intro-reduce">REDUCE</a>
+      </div>
+
+      <a class="list-group-item" href="/docs/howto/pushing-data">Pushing data</a>
+      <div class="list-group">
+        <a class="list-group-item" href="/docs/howto/websocket-push">Using WebSockets</a>
+        <a class="list-group-item" href="/docs/howto/collecting-tools">Using metrics collecting tools</a>
+      </div>
+
+      <a class="list-group-item" href="/docs/howto/accessing-data">Accessing data</a>
+
+      <a class="list-group-item" href="/docs/howto/fetching-data">Fetching data</a>
+
+      <a class="list-group-item" href="/docs/howto/create-a-udf">Create and deploy one User Defined Function</a>
+      
+      <a class="list-group-item" href="/docs/howto/create-a-warpscript-extension">Create a WarpScript extension</a>
+
+      <a class="list-group-item" href="/docs/howto/connect-zeppelin">Connect Warp&nbsp;10 to Apache Zeppelin</a>
+
+
+      <a class="list-group-item" href="/howto/monitoring-warp-10-using-warp-10">Monitoring Warp&nbsp;10</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-tutorial" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-apis">
+        <span class="glyphicon glyphicon-tasks"></span>APIs
+      </a>
+    </h4>
+  </div>
+  <div id="collapse-apis" class="panel-collapse collapse ">
+    <div class="list-group">
+      <a class="list-group-item" href="/docs/apis/">Overview</a>
+
+      <a class="list-group-item" href="/docs/apis/warpscript">WarpScript</a>
+
+      <a class="list-group-item" href="/docs/apis/fetch">Fetch</a>
+
+      <a class="list-group-item" href="/docs/apis/ingress">Ingress</a>
+
+      <a class="list-group-item" href="/docs/apis/delete">Delete</a>
+
+      <a class="list-group-item" href="/docs/apis/gts-input-format">GTS input format</a>
+
+      <a class="list-group-item" href="/docs/apis/gts-output-format">GTS output format</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-reference" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-reference">
+        <span class="glyphicon glyphicon-cog"></span>WarpScript</a>
+    </h4>
+  </div>
+  <div id="collapse-reference" class="panel-collapse collapse ">
+    <div class="list-group">
+      <a class="list-group-item" href="/docs/reference/">Overview</a>
+
+      <div class="list-group-item">
+        <a href="/docs/reference/reference">Reference</a>
+      </div>
+      <div class="list-group" id="collapse-reference-list">
+        <a class="list-group-item" href="/docs/reference/reference#frameworks">Frameworks</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-constant">Constant</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-math">Mathematical</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-standalone">Standalone</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-lists-maps">Lists &amp; maps</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-logic">Logic</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-stack">Stack</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-platform">Platform</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-gts">Geo Time Series<sup>®</sup></a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-bucketized-gts">Bucketized GTS</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-geo">Geo-related</a>
+      </div>
+      <a class="list-group-item" href="/docs/reference/miscellaneous">Miscellaneous functions</a>
+      <a class="list-group-item" href="/docs/reference/processing">Working with Processing</a>
+    </div>
+  </div>
+</div>
+
+
+    <div id="panel-tools" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-tools">
+        <span class="glyphicon glyphicon-wrench"></span>Tools</a>
+    </h4>
+  </div>
+  <div id="collapse-tools" class="panel-collapse collapse ">
+    <div class="list-group">
+      <div class="list-group-item">
+        <a href="/tools/github_repositories">Github repositories</a>
+      </div>
+      <div class="list-group" id="collapse-git-list">
+        <a class="list-group-item" href="/tools/github_repositories#Platform">Platform</a>
+        <a class="list-group-item" href="/tools/github_repositories#Batch">Batch</a>
+        <a class="list-group-item" href="/tools/github_repositories#Stream">Stream</a>
+        <a class="list-group-item" href="/tools/github_repositories#Inputs">Input plugins</a>
+        <a class="list-group-item" href="/tools/github_repositories#Outputs">Output plugins</a>
+        <a class="list-group-item" href="/tools/github_repositories#Interpreters">Interpreters</a>
+        <a class="list-group-item" href="/tools/github_repositories#IoT">IoT</a>
+        <a class="list-group-item" href="/tools/github_repositories#UDFs">WarpScript UDFs</a>
+        <a class="list-group-item" href="/tools/github_repositories#Extensions">WarpScript extensions</a>
+        <a class="list-group-item" href="/tools/github_repositories#Websites">Websites</a>
+        <a class="list-group-item" href="/tools/github_repositories#External">External contributions</a>
+      </div>
+      <a class="list-group-item" href="/docs/tools/worf">Worf</a>
+      <a class="list-group-item" href="/docs/tools/quantum">Quantum</a>
+      <a class="list-group-item" href="/docs/tools/trl">Token Revocation List</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-support" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a href="/docs/introduction/support/">
+        <span class="glyphicon glyphicon-ok-circle"></span>Support
+      </a>
+    </h4>
+  </div>
+</div>
+
+
+
+  </div>
+
+</div>
+
+      <div class="col-sm-9">
+        <h1>Getting Started - Index</h1>
+        <p>This page describes how to download and deploy a standalone version of the Warp 10 platform, generate your first tokens and start interacting with the platform by pushing data and performing analytics.</p>
+
+<p>Alternatively a method involving docker is also described.</p>
+
+<p>The standalone version of the Warp 10 platform uses LevelDB as its storage backend, this version is suitable for managing a few tens of millions of time series and few hundreds of billions of datapoints. If you have larger needs, a <a href="distributed">distributed</a> version of the platform is also available which uses Apache HBase as a scalable storage layer.</p>
+
+<p><a name="setup"></a></p>
+
+<h1 id="warp-10-standalone-platform-deployment">Warp 10 standalone platform deployment</h1>
+
+<h2 id="setup-the-platform">Setup the platform</h2>
+
+<div class="right margin-left">
+  <p> <a href="https://dl.bintray.com/cityzendata/generic/io/warp10/warp10/1.2.15/warp10-1.2.15.tar.gz" target="_blank">
+    <img class="no-zoom" src="/docs/img/getting-started/bintray.png" alt="Using Warp 10 Init script" />
+    <br />
+    <img class="no-zoom" src="https://api.bintray.com/packages/cityzendata/generic/warp10/images/download.svg?version=1.2.15" />
+  </a></p>
+</div>
+
+<p>The easiest way to setup the Warp 10 platform is to use the Warp 10 Init script that comes with the Warp 10 build. Builds of Warp 10 are available on <a href="https://dl.bintray.com/cityzendata/generic/io/warp10/warp10">Bintray</a>. It is the recommended method of installation.</p>
+
+<h3 id="running-warp-10">Running Warp 10</h3>
+
+<p>Untar the Warp 10 archive.</p>
+
+<pre><code>  tar xf warp10-X.Y.Z.tar.gz
+  cd warp10-X.Y.Z/bin
+</code></pre>
+
+<p>You have to define the <strong>JAVA_HOME</strong> environment variable. You can set it in the Warp 10 init script <code>warp10-standalone.sh</code>.</p>
+
+<p>Execute the Warp 10 init script <code>warp10-standalone.init</code>. This script must be run as <strong>root</strong>. The <code>bootstrap</code> command will create the Leveldb database and all the stuff surrounding it.
+Then the <code>start</code> command will start the Standalone mode with the right user <code>warp10</code>.
+An initial set of tokens will be provided and some useful commands to start playing with your Warp 10 instance.</p>
+
+<p>Instead of using <code>warp10-standalone.init</code> you can use <code>warp10-standalone.sh</code>.
+To bootstrap your installation, you have to run <code>warp10-standalone.sh</code> as root but instead of <code>warp10-standalone.init</code> you can use the <code>warp10</code> user afterwards.</p>
+
+<pre><code>  # Start bootstrap as root
+  sudo ./warp10-standalone.sh bootstrap
+</code></pre>
+
+<pre><code>  Bootstrap..
+  Fix ownership..
+  WARP10_HOME: /opt/warp10-X.Y.Z/bin/..
+  Fix permissions..
+  Warp 10 config has been generated here: /opt/warp10-X.Y.Z/bin/../etc/conf-standalone.conf
+</code></pre>
+
+<pre><code>  # Start Warp 10 (as warp10 user)
+  sudo -i
+  su warp10
+  warp10@XXX:/opt/warp10-X.Y.Z/bin#
+  ./warp10-standalone.sh start
+</code></pre>
+
+<p>or</p>
+
+<pre><code>  # Start Warp 10 (as root user)
+  sudo ./warp10-standalone.init start
+</code></pre>
+
+<pre><code>  Init leveldb
+    ___       __                           ____________   
+    __ |     / /_____ _______________      __&lt;  /_  __ \  
+    __ | /| / /_  __ `/_  ___/__  __ \     __  /_  / / /  
+    __ |/ |/ / / /_/ /_  /   __  /_/ /     _  / / /_/ /   
+    ____/|__/  \__,_/ /_/    _  .___/      /_/  \____/    
+                            /_/                          
+  ##
+  ## Warp 10 listens on 127.0.0.1:8080
+  ##
+  ## Quantum listens on 127.0.0.1:8090
+  ##
+  ##
+  ## An initial set of tokens was generated for you so you can immediately use Warp 10:
+  ##
+  ## Write Token: thMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXuH
+  ## Read Token: 47O6XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX5r
+  ##
+  ## Push some test data using:
+  ##
+  ##   curl -H 'X-Warp10-Token: thMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXuH' http://127.0.0.1:8080/api/v0/update --data-binary '// test{} 42'
+  ##
+  ## And read it back using:
+  ##
+  ##   curl 'http://127.0.0.1:8080/api/v0/fetch?token=47O6XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX5r&amp;selector=~.*\{\}&amp;now=now&amp;timespan=-1'
+  ##
+  ## You can submit WarpScript for execution via:
+  ##
+  ##   curl http://127.0.0.1:8080/api/v0/exec --data-binary @path/to/WarpScriptFile
+  ##
+  ## The alternative to command-line interaction is Quantum, a web application to interact with the platform in an user-friendly way:
+  ##
+  ##   http://127.0.0.1:8090
+  ##
+</code></pre>
+
+<p>Warp 10 standalone config <code>conf-standalone.conf</code> has been generated in the <code>etc</code> directory</p>
+
+<p>Logs are available in the <code>logs</code> directory</p>
+
+<p>Data are stored via leveldb in the <code>data</code> directory</p>
+
+<h1 id="setup-the-platform-with-docker">Setup the platform with Docker</h1>
+
+<div class="right margin-left">
+  <p><img src="/docs/img/getting-started/docker.png" alt="Using Docker" /></p>
+</div>
+
+<p>The other way to setup the Warp 10 platform is to use <a href="http://docker.io">Docker</a>. Builds of Warp 10’s Docker image are available on <a href="https://hub.docker.com/r/warp10io/warp10/">Dockerhub</a>.</p>
+
+<h2 id="running-warp-10-with-docker">Running Warp 10 with Docker</h2>
+
+<p>Start your image binding the external ports 8080 and 8081 in all interfaces to your container.</p>
+
+<p>Docker containers are easy to delete. If you delete your container instance, you’ll lose the Warp 10 store and configuration. So by default you should add a volume mapping to the containers <code>/data</code> folder.</p>
+
+<pre><code>  docker run --volume=/var/warp10:/data -p 8080:8080 -p 8081:8081 -d -i warp10io/warp10:latest
+</code></pre>
+
+<p>In this example you bind the container internal data folder, <code>/data</code> to your local folder <code>/var/warp10</code>.</p>
+
+<p>You <em>must</em> use the same <code>--volume</code> option in all your other docker commands on warp 10 image.</p>
+
+<h1 id="using-warp-10">Using Warp 10</h1>
+
+<h2 id="generating-new-tokens">Generating new Tokens</h2>
+
+<p>The Warp 10 platform is built with a robust security model that allows you to have a tight control of who has the right to write and/or read data. The model is structured around the <a href="/docs/introduction/concepts">concepts</a> of <code>data producer</code>, <code>data owner</code> and <code>application</code>, and <code>WRITE</code> and <code>READ</code> tokens.</p>
+
+<p>By default, at the first start, Warp 10 init script will generate both a <code>READ</code> and a <code>WRITE</code> token for the test application <code>io.warp10.bootstrap</code> for a test user that is both the producer and the owner of the data.</p>
+
+<p>Then, you can generate your own write and read tokens. You get it by executing the <code>worf</code> command via Warp 10 init script.</p>
+
+<pre><code>root@XXX:/opt/warp10-X.Y.Z/bin# ./warp10-standalone.init worf appName ttl(ms)
+</code></pre>
+
+<pre><code>  root@XXX:/opt/warp10-X.Y.Z/bin# ./warp10-standalone.init worf myApp 31536000000
+  default options loaded from file:/opt/warp10-X.Y.Z/bin/../etc/.conf-standalone.conf.worf
+  {"read":{"token":"lO5XXXXXXXXXXXXXXXXXXXXDXk","tokenIdent":"606aa9b8f6f47136","ttl":31536000000,"application":"myApp","owner":"3b8ab607-4aac-4b13-9251-94f152924766","producer":"3b8ab607-4aac-4b13-9251-94f152924766"},"write":{"token":"8D_XXXXXXXXXXXXXXXe7B","tokenIdent":"a219f98201b29e01","ttl":31536000000,"application":"myApp","owner":"3b8ab607-4aac-4b13-9251-94f152924766","producer":"3b8ab607-4aac-4b13-9251-94f152924766"}}
+</code></pre>
+
+<p>In order to interact more precisely with the user/token/application system, you need an interactive access to Warp 10’s <code>Worf</code> console. More information <a href="http://www.warp10.io/tools/worf">here</a>.</p>
+
+<h2 id="data-snapshot">Data snapshot</h2>
+
+<p>Snapshot of leveldb data can be performed via the init script</p>
+
+<pre><code>  ./warp10-standalone.init snapshot 'snapshot_name'
+</code></pre>
+
+<p><a name="pushing-data"></a></p>
+
+<h2 id="pushing-data-into-warp-10">Pushing data into Warp 10</h2>
+
+<p>Data is sent into the platform via HTTP <a href="http://en.wikipedia.org/wiki/POST_(HTTP)">POST</a> requests to the Warp 10 API.</p>
+
+<h2 id="api-endpoint">API Endpoint</h2>
+
+<p>The HTTP endpoint used to send data is <code>http(s)://host:port/api/vX/update</code>, where <code>vX</code>is the version of the API you want to use (currently <code>v0</code>). In order to be accepted by the platform, requests to this endpointy need to be authenticated, by using a <code>X-Warp10-Token</code> HTTP header with your <strong>write</strong> token.</p>
+
+<h2 id="data-format">Data format</h2>
+
+<p>Data is sent in the body of the POST request, one data point per line. Each line follows the <a href="/docs/apis/gts-input-format">GTS input format</a>:</p>
+
+<pre><code>   TS/LAT:LON/ELEV NAME{LABELS} VALUE
+</code></pre>
+
+<p>Where :</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><code>TS</code></td>
+          <td>
+            *Optional*  Timestamp of the reading, in <b>microseconds</b> since the Unix Epoch.
+            If omitted, the timestamp associated to the data point will be the one of the platform when the point is pushed.
+          </td>
+        </tr>
+        <tr>
+          <td><code>LAT:LON</code></td>
+          <td>*Optional* geographic coordinates of the reading, using [WGS84](http://en.wikipedia.org/wiki/WGS84)</td>
+        </tr>
+        <tr>
+          <td><code>ELEV</code></td>
+          <td>*Optional* elevation of the reading, in millimeters</td>
+        </tr>
+        <tr>
+          <td><code>NAME</code></td>
+          <td>Class name of the reading as a [URL encoded](http://en.wikipedia.org/wiki/Percent-encoding) UTF-8 character string. The encoding of character `{` (Unicode *LEFT CURLY BRACKET*, *0x007B*) is MANDATORY.</td>
+        </tr>
+         <tr>
+          <td><code>LABELS</code></td>
+          <td>Comma separated list of labels, using the syntax `key=value` where both `key` and `value` are URL encoded UTF-8 character strings. If a key or value contains `,` (Unicode COMMA, 0x002C),`}` (Unicode RIGHT CURLY BRACKET, 0x007D) or `=` (Unicode EQUALS SIGN, 0x003D), those characters MUST be encoded.</td>
+        </tr>
+        <tr>
+          <td><code>VALUE</code></td>
+          <td>The value of the reading. It can be of one of four types: `LONG`, `DOUBLE`, `BOOLEAN`, `STRING`</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="example-request">Example request</h2>
+
+<pre><code>    POST /api/v0/update HTTP/1.1
+    Host: host
+    X-Warp10-Token: wsedrfg.53ef32.detgertyyhefwe5t677456rrfhgbfyhgherdtyreeryer
+    Content-Type: text/plain
+
+    1380475081000000// foo{label0=val0,label1=val1} 123
+    /48.0:-4.5/ bar{label0=val0} 3.14
+    1380475081123456/45.0:-0.01/10000000 foobar{label1=val1} T
+</code></pre>
+
+<p>To test the running container, push a single GTS containing one data in the platform using your WRITE token.</p>
+
+<pre><code>  curl -v -H 'X-Warp10-Token: WRITE_TOKEN' --data-binary "1// test{} 42" 'http://127.0.0.1:8080/api/v0/update'
+</code></pre>
+
+<p>If everything is OK, you should receive a HTTP 200</p>
+
+<blockquote>
+  <p>When using Docker on Mac OS or Windows, there is no binding between Warp 10 API address and the host (docker is runned throw a Virtual Machine). To reach Warp 10 you need to replace 127.0.0.1 by the real Ip address of the container. To get it, use a simple <code>docker-machine ip default&gt;</code>, the container address is also shown in the Settings/Ports page of your container. If you used the shared volume between the container and the host, you can access to the virtual machine using <code>docker-machine ssh default&gt;</code> and inspect the repertory <code>/var/warp10</code>. Don’t hesitate to check on <a href="https://docs.docker.com/machine/">docker-machine documentation</a>.</p>
+</blockquote>
+
+<p>Get this data using your READ tokens.</p>
+
+<pre><code>  curl -v  --data-binary "'READ_TOKEN' 'test' {} NOW -1 FETCH" 'http://127.0.0.1:8080/api/v0/exec'
+</code></pre>
+
+<p>If everything is OK, you should receive a HTTP 200 OK with your datapoint in JSON format.</p>
+
+<h2 id="pushing-your-data-into-the-platform">Pushing your data into the platform</h2>
+
+<p>If you already have some time series that you want to push, you can put them into GTS input format.</p>
+
+<p>If not, we have prepared a small <a href="/docs/assets/data/drones">test dataset</a> containing some example data to push in an application.  This data set contains 10 Geo Time Series<sup>TM</sup> simulating captors integrated in 5 drones. Each drone has two captors, one keeping track of flying times, and the other connected to the GPS, recording current position and registering a boolean value true only if the drone moves.</p>
+
+<p>Here you have several data points from the file:</p>
+
+<pre><code>  1449212583312000/48.395776999999995:-4.509472/ example.drone.gps.gts5{host=ubuntu, number=5, type=gps.state} true
+  1449212593312000// example.drone.captor.gts1{host=ubuntu, number=1, type=captor.time} 8
+  1449212593312000/48.395776999999995:-4.479472/ example.drone.gps.gts1{host=ubuntu, number=1, type=gps.state} true
+  1449212593312000// example.drone.captor.gts2{host=ubuntu, number=2, type=captor.time} 5
+  1449212593312000/48.355777:-4.489472/ example.drone.gps.gts2{host=ubuntu, number=2, type=gps.state} true
+  1449212593312000// example.drone.captor.gts3{host=ubuntu, number=3, type=captor.time} 6
+  1449212593312000/48.355777:-4.479472/ example.drone.gps.gts3{host=ubuntu, number=3, type=gps.state} true
+  1449212593312000// example.drone.captor.gts4{host=ubuntu, number=4, type=captor.time} 5
+</code></pre>
+
+<p>If you’re in a *nix system, you can push the data using <a href="https://en.wikipedia.org/wiki/CURL">cURL</a>.
+The Warp 10 platform listens to the port 8080 of your container. In the  <a href="#setup">setup</a> we have mapped this port to the port 8080 of the host machine, so you can make your request to <code>127.0.0.1:8080</code>.</p>
+
+<blockquote>
+  <p>In Mac OS or Windows, there is no binding between Warp 10 API address and the host, you need to replace 127.0.0.1 by the real Ip address of the container as explained in the precedent section.</p>
+</blockquote>
+
+<pre><code>    curl -v -H 'Transfer-Encoding:chunked' -H 'X-Warp10-Token: TOKEN_WRITE' --data-binary @PATH_TO_THE_DATA_FILE 'http://127.0.0.1:8080/api/v0/update'
+</code></pre>
+
+<p>Replacing <code>TOKEN_WRITE</code> by the WRITE token generated in the <a href="#setup">setup</a> and <code>PATH_TO_THE_DATA_FILE</code> by the path to the <a href="/docs/assets/data/drones">test dataset</a>.</p>
+
+<p>If you receive a HTTP 200 code in the response, the data is in the platform</p>
+
+<p>If cURL isn’t available in your system, you can use any tool able to generate HTTP POSTS, like <a href="http://www.getpostman.com/">Postman</a>, with the content of the file in the body of the request, and the WRITE token in a <code>X-Warp10-Token</code> header.</p>
+
+<p>Or you can simply use our graphical Warp 10 IDE: <a href="/docs/tools/quantum">Quantum</a>.</p>
+
+<h2 id="using-quantum">Using Quantum</h2>
+
+<p><a href="/docs/tools/quantum">Warp 10’s Quantum</a> is a web application aiming to allow users to interact with the platform in an user-friendly way, offering an alternative to command-line interaction.</p>
+
+<blockquote>
+  <p>A standalone version of Quantum is packaged in the Docker image you have just installed, listening on the port 8081. In a Linux system (with binding between Warp 10 API address and the host) you can access Quantum at <code>127.0.0.1:8081</code>. In Mac OS or Windows, there is no binding between Warp 10 API address and the host, you need to replace 127.0.0.1 by the real Ip address of the container as explained in the precedent section.</p>
+</blockquote>
+
+<p>Quantum has three main functions:</p>
+
+<ul>
+  <li>
+    <p>WarpScript: allows to interactively write your WarpScript, send it to a Warp 10 platform, get the response and done some plotting of the resulting stack</p>
+
+    <p><img src="/docs/img/getting-started/quantum-warpscript.png" alt="Quantum - WarpScript" /></p>
+  </li>
+  <li>
+    <p>Update: used to send data to the platform, as an alternative to the command-line</p>
+
+    <p><img src="/docs/img/getting-started/quantum-ingress.png" alt="Quantum - Update" /></p>
+  </li>
+  <li>
+    <p>Delete: used to erase data from the platform, as an alternative to the command-line</p>
+
+    <p><img src="/docs/img/getting-started/quantum-delete.png" alt="Quantum - Delete" /></p>
+  </li>
+</ul>
+
+<p>Quantum is done entirely as <a href="https://www.polymer-project.org/">Polymer</a> elements, and that gives the application a lot of flexibility, it can be used as a full app but you can also take only the widget you need, as we have done with the headless embeddable version of Quantum’s WarpScript widget that allows you to interactively try the examples on this doc.</p>
+
+<p><a name="accessing-data"></a></p>
+
+<h2 id="accessing-data">Accessing Data</h2>
+
+<p>Now you have some data in your Warp 10 instance. In this section we expose some methods to fetch data from  Warp 10. The first method is a simple HTTP GET request on the <a href="/docs/apis/fetch"><code>fetch</code> API endpoint</a>. The second one will introduce <a href="/docs/reference/">WarpScript</a> and you will see how to create your first script.</p>
+
+<h3 id="requesting-fetch-api-endpoint">Requesting <code>fetch</code> API endpoint</h3>
+
+<p>The Fetch API allows to recover raw GTS data in a extremely quick and efficient way.</p>
+
+<p>The HTTP endpoint used by the Fetch API is <code>http(s)://API_ENDPOINT/api/vX/fetch</code>, where <code>API_ENDPOINT</code> is a
+<a href="/docs/apis">valid  endpoint</a> for the Warp 10 instance you’re using and <code>vX</code>is the version of the API you want to use (currently <code>v0</code>).
+The Fetch API <strong>must</strong> be accessed using the <em>GET</em> method.</p>
+
+<p>To be authenticated you need to add a <code>X-Warp10-Token</code> header with your <strong>read</strong> token or, as a fallback authentication mode, the token can be passed in a request parameter <code>token</code>.</p>
+
+<p>The minimal set of parameters you need to give in the request is</p>
+
+<ul>
+  <li>
+    <p><code>selector</code>: * <code>selector</code>: a string that allow us to select one or several GTS. Its composed of the concatenation of a classname selector and a labels selector.</p>
+
+    <p>Example: <code>~io.warp10.*{freq~2.*,steps=100}</code> It selects all the GTS whose classname begins with <code>io.warp10</code> and whose label <code>freq</code> begins with 2 and the label <code>steps</code> is 100.</p>
+  </li>
+  <li>
+    <p>Fetching interval parameters: either</p>
+
+    <ul>
+      <li><code>start</code> and <code>stop</code>: the start and end timestamps defining the interval of the GTS to fetch. They are both in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601</a> format, <em>i.e.</em> <strong>YYYY-MM-DDTHH:MM:SS.SSSSSSZ</strong>. Only those readings whose timestamps lie between those two timestamps (most recent inclusive, oldest exclusive) will be retained.</li>
+    </ul>
+
+    <p>Or</p>
+
+    <ul>
+      <li>
+        <p><code>now</code> and <code>timespan</code>: instead of the basic interval search, with the start and end timestamps in ISO8601 format, you can use two alternative formats for the interval parameters:</p>
+
+        <ol>
+          <li>
+            <p>If you want to fetch readings whose timestamps lie in a specific timespan before a timestamp (for example all the readings in the last minute) you can use the end timestamp (in microseconds since the Unix epoch) as <code>now</code> parameter and the timespan (in microseconds) as <code>timespan</code>.</p>
+          </li>
+          <li>
+            <p>If you want to recover the last <code>n</code> readings before a given instant, you can use the instant timestamp (in microseconds since the Unix epoch) as <code>now</code> parameter and <code>-n</code> as <code>timespan</code>.</p>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Here you have a sample request that recover data from all your drone GTS from the precedent sections. The selector parameter defines the pattern that the GTS have to match to be fetched, those whose classname begins with <code>example.drone.captor</code>. <code>{}</code> correspond to the labels.  This command load data points starting from the <code>now</code> parameter (in this example, 1449222473312000 micro-seconds after Epoch). As <code>timespan</code> equals -10, Warp 10 will only fetch the last ten data points before <code>now</code>. A positive timespan corresponds to a duration, a negative one to a number of data points to get.</p>
+
+<pre><code>  curl -H 'X-Warp10-Token: TOKEN_READ' --data-binary "now=1449222473312000&amp;timespan=-10&amp;selector=~example.drone.captor.*{}" 'http://127.0.0.1:8080/api/v0/fetch?'
+</code></pre>
+
+<p>Note that the data returned by the Fetch API can be fed into the <code>update</code> endpoint verbatim.</p>
+
+<h3 id="using-warpscript">Using WarpScript</h3>
+
+<p>The second way to fetch data is to use the WarpScript data manipulation environment.</p>
+
+<p>WarpScript is an extensible <a href="http://en.wikipedia.org/wiki/Stack-oriented_programming_language">stack oriented programming language</a> which offers more than 600 functions and several high level frameworks to ease and speed your data analysis. Simply create scripts containing your data analysis code and submit them to the platform, they will execute close to where the data resides and you will get the result of that analysis as a JSON object that you can integrate into your application.</p>
+
+<p>Store the following script in a file <code>file.mc2</code>.</p>
+
+<pre><code>  'READ_TOKEN'     // Replace READ_TOKEN with your read token. This line put your token on the stack
+  'token' STORE    // Store it in a variable
+  [ $token '~example.drone.*' { 'source' 'example' } NOW -10 ] FETCH  // Fetch the data, the last 10 points of the selected series
+</code></pre>
+
+<p>This command looks for all your GTS having a name matching <code>example.drone</code> and having the label <code>source</code> equals to <code>example</code>.
+Then only the last ten points of those GTS before time equals to NOW will be extracted.</p>
+
+<p>Launch the following <code>curl</code> command to submit your WarpScript and get your data.</p>
+
+<pre><code>  curl -H 'Transfer-Encoding:chunked' --data-binary @file.mc2 'http://127.0.0.1:8080/api/v0/exec'
+</code></pre>
+
+<p>This script can also be launched in Quantum. Besides, Quantum gives the possibility to plot GTS extracted on a graph.</p>
+
+<p><a name="analyzing"></a></p>
+
+<h2 id="analyzing-data">Analyzing Data</h2>
+
+<p>The WarpScript manipulation environment goes way further than simply recovering your data, it allows you to do complex analysis of data stored in the Warp 10 storage platform.</p>
+
+<p>In the previous section, a first WarpScript program was realized. Now it’s time to improve it to extract information about the data.</p>
+
+<h3 id="compute-the-mean-of-all-data-points">Compute the mean of all data points</h3>
+
+<p>Get all the sensor GTS.</p>
+
+<pre><code>  'Your read token'  // Put your token on the stack
+  'token' STORE // Store it in a variable
+  [ $token '~example.drone.*' { 'type' 'captor.time' } NOW -1000 ] FETCH  // Fetch the data
+</code></pre>
+
+<p>Now a <code>BUCKETIZE</code> function will be used.</p>
+
+<pre><code>  [ SWAP bucketizer.mean 0 0 1 ] BUCKETIZE
+</code></pre>
+
+<p>What happened here is that all <code>captor.time</code> GTS are on top of the stack in one list. We swap it with <a href="/docs/reference/functions/function_OPEN_BRACKET">”[”</a> so we can included it in the parameter list of the function <a href="/docs/reference/frameworks/framework-bucketize"><code>BUCKETIZE</code></a>. This function will apply a <em>bucketizer</em> for each GTS to synchronized the ticks, here the <a href="/docs/reference/frameworks/bucketizer_mean">bucketizer.mean</a> that calculates the mean of the values of all the datapoints in the interval. The only other parameter given is a <em>bucketcount</em> which correspond to the number of bucket expected. The goal here is to compute the mean of all the data points, that’s why 1 is given as parameter. To find more information, please refers to the <a href="/docs/howto/intro-bucketize/"> Introducing <code>BUCKETIZE</code></a> page.</p>
+
+<ul>
+  <li>What is on the stack now ? There is five GTS containing one tick which have a value equals to the mean of all the data points of the GTS. Moreover, those GTS have their ticks synchronized.</li>
+</ul>
+
+<h3 id="compute-multiple-mean-for-a-gts-with-a-duration-of-2-minutes">Compute multiple mean for a GTS with a duration of 2 minutes</h3>
+
+<p>Get all the GTS of all the sensors.</p>
+
+<pre><code>  'Your read token'           // Put your token on the stack
+  'token' STORE               // Store it in a variable
+  [
+    $token
+    '~example.drone.*'
+    { 'type' 'captor.time' }
+    NOW -1000
+  ] FETCH  // Fetch the data
+</code></pre>
+
+<p>Get the last timestamp of the GTS. As all GTS are synchronized, they all have the same last timestamp. So here we can get the first GTS fetched and get its last tick.</p>
+
+<pre><code>  'gts' STORE                 // Store the GTS list in a variable
+  $gts 0 GET                  // Get the first element, the first matching GTS
+  LASTTICK                    // Get the last tick of that GTS
+  'lasttick' STORE            // Store it
+</code></pre>
+
+<p>Now a <code>BUCKETIZE</code> function will be used.</p>
+
+<pre><code>  [
+    $gts
+    bucketizer.mean
+    $lasttick
+    120 STU *
+    0
+  ] BUCKETIZE
+</code></pre>
+
+<p>What happened here : this WarpScript will generate buckets starting from the last tick and having a duration of 2 minutes. <a href="/docs/reference/functions/function_STU"><code>STU</code></a> correspond to the number of time units in seconds (bucket have a duration of 120 * 1 second). As many bucket as necessary will be generated for each GTS. Those buckets will have values equals to the mean of all data points inside two minutes. Moreover the timestamp of each bucket of each GTS are now synchronized.</p>
+
+<h3 id="get-how-many-drones-are-flying-at-each-timestamp">Get how many drones are flying at each timestamp</h3>
+
+<p>Get all the GPS metrics.</p>
+
+<pre><code>  'Your read token'  // Put your token on the stack
+  'token' STORE // Store it in a variable
+  [ $token '~example.drone.*' { 'type' 'gps.state'  } NOW -1000 ] FETCH // Fetch the data
+</code></pre>
+
+<p>Get the last timestamp.</p>
+
+<pre><code>  'gts' STORE                 // Store the GTS list in a variable
+  $gts 0 GET                  // Get the first element, the first matching GTS
+  LASTTICK                    // Get the last tick of that GTS
+  'lasttick' STORE            // Store it
+</code></pre>
+
+<p><code>BUCKETIZE</code> is used to have a bucket size of 1 seconds. To compute an OR, <a href="/docs/reference/frameworks/bucketizer_max"><code>bucketizer.max</code></a> will be used (for the operator AND, use min).</p>
+
+<pre><code>  [ $gts bucketizer.max $lasttick STU 0 ] BUCKETIZE
+  'bucketized_gts' STORE
+</code></pre>
+
+<p>Now that the ticks are synchronized, execute an operation on this list of GTS to get the number of flying drones at each times. The values in the GTS are boolean ones, but they can be converted in integer (true is 1, and false 0) in order to apply numerical function on it. The operator of the framework <a href="/docs/reference/frameworks/"><code>APPLY</code></a> will the be used here. Parameter “[]” equals to a list of labels that have to respect each GTS.  To find more information, please refers to the documentation page <a href="/docs/reference/frameworks/framework-apply"><code>APPLY</code></a>.</p>
+
+<pre><code>  [ $bucketized_gts [] op.add ] APPLY
+</code></pre>
+
+<p>Now you can simply compute the mean of this new GTS, or for example the mean by minute during the fly.</p>
+
+<h3 id="find-all-objects-near-starting-point-at-each-timestamp">Find all objects near starting point at each timestamp</h3>
+
+<p>Get all the GPS metrics.</p>
+
+<pre><code>  'Your read token'  // Put your token on the stack
+  'token' STORE // Store it in a variable
+  [ $token '~example.drone.*' { 'type' 'gps.state'  } NOW -1000 ] FETCH // Fetch the data
+</code></pre>
+
+<p>Get the last timestamp.</p>
+
+<pre><code>  'gts' STORE                 // Store the GTS list in a variable
+  $gts 0 GET                  // Get the first element, the first matching GTS
+  LASTTICK                    // Get the last tick of that GTS
+  'lasttick' STORE            // Store it
+</code></pre>
+
+<p><code>BUCKETIZE</code> is used to get a bucket size of 1 seconds. To compute an OR, <em>bucketizer</em> max will be used (for the operator and, use min).</p>
+
+<pre><code>  [ $gts bucketizer.max $lasttick STU 0 ] BUCKETIZE
+  'bucketized_gts' STORE
+</code></pre>
+
+<p>Find all points in the area around the starting point (Correspond to a square which have a size equals to 5 steps (one step equals to a movement of 0.01 in latitude or longitude)). To find more information, please refers to the documentation page <a href="/docs/reference/frameworks/framework-map"><code>MAP</code></a>.</p>
+
+<pre><code>  [
+    $bucketized_gts
+    'POLYGON((-4.539472 48.415777,-4.539472 48.315777,-4.439472 48.315777,-4.439472 48.415777, -4.539472 48.415777))'
+    0.1 true GEO.WKT
+
+    mapper.geo.within
+    0 0 0         // Sliding window of 1 (0 pre and 0 post), no options
+  ]
+  MAP
+</code></pre>
+
+<p>The three 0 correspond to the option of the Geo within. For example, a window integrating x previous and y following points in the area are required to considered current point as valid.</p>
+
+<p>To conclude, calculate speed of drones for each timestamp when they are in the starting area.</p>
+
+<pre><code>  [
+    SWAP
+    mapper.hspeed
+    // pre-window
+    3
+    // post-window
+    0
+    // occurrences
+    0
+  ]
+  MAP
+</code></pre>
+
+<p>Here it’s same than in previous case. A sliding window is necessary to compute the speed at each timestamp of the drone. So that’s why 3 points are taken before and none after the current tick.</p>
+
+<p>To have realistic result this calculation have to be included before the previous step which kept only the data points in a small area near the starting point. (If you put it before change <code>SWAP</code> by <code>$bucketized_gts</code> and add <code>'bucketized_gts' STORE</code>)</p>
+
+<p>Finally, you already know how to compute the average speed and in the same way you can compute a lot of other statistics. You will find more information about the supported function in the rest of the documentation. Here you can find a page resuming all the <a href="/docs/reference/reference">existing warpscript functions</a>.</p>
+
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Footer -->
+<footer>
+
+  <hr>
+
+  <div id="contact" class="container text-center">
+    <!-- Footer -->
+    <a class="webicons" href="https://twitter.com/CityzenData" target="_blank">
+      <footer>
+        <div id="contact" class="container text-center">
+      <div class="webicon twitter"></div>
+      <div class="webicon_text twitter">@CityzenData</div>
+    </a>
+    <a class="webicons" href="mailto:contact@cityzendata.com" target="_blank">
+      <div class="webicon mail"></div>
+      <div class="webicon_text mail">contact@cityzendata.com</div>
+    </a>
+  </div>
+
+  <div class="container text-center top-margin">
+    Copyright &copy; 2016 Cityzen Data
+  </div>
+  <div class="container text-center">
+    <a href="/docs/introduction/legal">Legal</a>
+  </div>
+
+</footer>
+
+<script>
+    var template = document.querySelector('template[is="dom-bind"]');
+</script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: 'e3f0d4e7cfac4e1065a92f60b3ec28d1',
+indexName: 'warp10',
+inputSelector: '#search_box'
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43780642-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('pf9x6nb43t24');
+</script>
+<!-- End of Async Drift Code -->
+</body>
+</html>

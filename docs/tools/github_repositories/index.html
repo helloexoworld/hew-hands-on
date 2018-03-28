@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>Github repositories: Warp10 tools - Warp10 Documentation</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+  <style>
+    body {
+      background-color: #eeeeee;
+    }
+  </style>
+
+
+  <link rel="stylesheet" href="/assets/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+
+  <script src="/assets/webcomponents-lite.js"></script>
+  <script src="/assets/jquery.js"></script>
+  <script src="/assets/bootstrap.js"></script>
+
+  <link rel="import" href="/assets/warp10-components.html">
+
+  <!--
+  <script src="http://localhost:8000/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="http://localhost:8000/bower_components/jquery/dist/jquery.js"></script>
+  <script src="http://localhost:8000/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <link   rel="import" href="http://localhost:8000/bower_components/polymer/polymer.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-navbar/warp10-navbar.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-quantum/warp10-conf.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-quantum/warp10-quantum-widget.html">
+  -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/docs/css/warp10.css">
+  <link rel="stylesheet" href="/docs/css/warp10-navbar.css">
+  <!-- Pygments Github CSS -->
+  <link rel="stylesheet" href="/docs/css/syntax.css">
+
+  <style>
+    :host {
+      display: block;
+    }
+    .top-10 { margin-top:10px; }
+    h4 {
+      font-weight: bold;
+    }
+    .list-group-item {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+
+    <div class="navbar-header">
+      <!--
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    -->
+      <a class="navbar-brand" href="/docs">
+        <div class="navbar-id">
+          <div class="navbar-id-icon">
+            <span id="icon-CityzenData" class="icon-CityzenData"></span>
+          </div>
+          <div class="navbar-id-name">
+            Warp 10
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="collapse navbar-nav navbar-collapse navbar-right">
+      <div class="form-inline">
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+          <input id="search_box" class="form-control" style="vertical-align: middle" >
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="navbar-separator" > </div>
+
+<warp10-conf conf="doc"></warp10-conf>
+
+<div id="mainbody">
+
+  <div class="container top-10" id="main-container">
+    <div class="row">
+      <button type="button" class="navbar-toggle toggle collapsed" data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+<div id="sidebar" class="col-sm-3 collapse">
+
+  <div class="panel-group" id="side-menu">
+
+    <div id="panel-home" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-home">
+        <span class="glyphicon glyphicon-home"></span>Home</a>
+    </h4>
+  </div>
+  <div id="collapse-home" class="panel-collapse collapse ">
+    <div class="list-group">
+
+      <a class="list-group-item" href="/docs/introduction/platform">Overview</a>
+
+      <a class="list-group-item" href="/docs/introduction/concepts">Concepts</a>
+
+      <a class="list-group-item" href="/docs/introduction/history">History</a>
+
+      <a class="list-group-item" href="/docs/introduction/team">Team</a>
+
+      <a class="list-group-item" href="/docs/introduction/versions">Versions</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-howto" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-howto">
+        <span class="glyphicon glyphicon-education"></span>How-to
+      </a>
+    </h4>
+  </div>
+  <div id="collapse-howto" class="panel-collapse collapse ">
+    <div class="list-group">
+
+      <a class="list-group-item" href="/docs/getting-started">Getting started</a>
+
+      <a class="list-group-item" href="/docs/howto/data-modeling">Data modeling</a>
+
+      <a class="list-group-item" href="/docs/howto/migrate-from">Migrate from</a>
+      <div class="list-group-item">Tutorials</div>
+      <div class="list-group">
+        <a class="list-group-item" href="/docs/howto/intro-bucketize">BUCKETIZE</a>
+        <a class="list-group-item" href="/docs/howto/intro-reduce">REDUCE</a>
+      </div>
+
+      <a class="list-group-item" href="/docs/howto/pushing-data">Pushing data</a>
+      <div class="list-group">
+        <a class="list-group-item" href="/docs/howto/websocket-push">Using WebSockets</a>
+        <a class="list-group-item" href="/docs/howto/collecting-tools">Using metrics collecting tools</a>
+      </div>
+
+      <a class="list-group-item" href="/docs/howto/accessing-data">Accessing data</a>
+
+      <a class="list-group-item" href="/docs/howto/fetching-data">Fetching data</a>
+
+      <a class="list-group-item" href="/docs/howto/create-a-udf">Create and deploy one User Defined Function</a>
+      
+      <a class="list-group-item" href="/docs/howto/create-a-warpscript-extension">Create a WarpScript extension</a>
+
+      <a class="list-group-item" href="/docs/howto/connect-zeppelin">Connect Warp&nbsp;10 to Apache Zeppelin</a>
+
+
+      <a class="list-group-item" href="/howto/monitoring-warp-10-using-warp-10">Monitoring Warp&nbsp;10</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-tutorial" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-apis">
+        <span class="glyphicon glyphicon-tasks"></span>APIs
+      </a>
+    </h4>
+  </div>
+  <div id="collapse-apis" class="panel-collapse collapse ">
+    <div class="list-group">
+      <a class="list-group-item" href="/docs/apis/">Overview</a>
+
+      <a class="list-group-item" href="/docs/apis/warpscript">WarpScript</a>
+
+      <a class="list-group-item" href="/docs/apis/fetch">Fetch</a>
+
+      <a class="list-group-item" href="/docs/apis/ingress">Ingress</a>
+
+      <a class="list-group-item" href="/docs/apis/delete">Delete</a>
+
+      <a class="list-group-item" href="/docs/apis/gts-input-format">GTS input format</a>
+
+      <a class="list-group-item" href="/docs/apis/gts-output-format">GTS output format</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-reference" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-reference">
+        <span class="glyphicon glyphicon-cog"></span>WarpScript</a>
+    </h4>
+  </div>
+  <div id="collapse-reference" class="panel-collapse collapse ">
+    <div class="list-group">
+      <a class="list-group-item" href="/docs/reference/">Overview</a>
+
+      <div class="list-group-item">
+        <a href="/docs/reference/reference">Reference</a>
+      </div>
+      <div class="list-group" id="collapse-reference-list">
+        <a class="list-group-item" href="/docs/reference/reference#frameworks">Frameworks</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-constant">Constant</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-math">Mathematical</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-standalone">Standalone</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-lists-maps">Lists &amp; maps</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-logic">Logic</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-stack">Stack</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-platform">Platform</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-gts">Geo Time Series<sup>®</sup></a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-bucketized-gts">Bucketized GTS</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-geo">Geo-related</a>
+      </div>
+      <a class="list-group-item" href="/docs/reference/miscellaneous">Miscellaneous functions</a>
+      <a class="list-group-item" href="/docs/reference/processing">Working with Processing</a>
+    </div>
+  </div>
+</div>
+
+
+    <div id="panel-tools" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-tools">
+        <span class="glyphicon glyphicon-wrench"></span>Tools</a>
+    </h4>
+  </div>
+  <div id="collapse-tools" class="panel-collapse collapse  in ">
+    <div class="list-group">
+      <div class="list-group-item">
+        <a href="/tools/github_repositories">Github repositories</a>
+      </div>
+      <div class="list-group" id="collapse-git-list">
+        <a class="list-group-item" href="/tools/github_repositories#Platform">Platform</a>
+        <a class="list-group-item" href="/tools/github_repositories#Batch">Batch</a>
+        <a class="list-group-item" href="/tools/github_repositories#Stream">Stream</a>
+        <a class="list-group-item" href="/tools/github_repositories#Inputs">Input plugins</a>
+        <a class="list-group-item" href="/tools/github_repositories#Outputs">Output plugins</a>
+        <a class="list-group-item" href="/tools/github_repositories#Interpreters">Interpreters</a>
+        <a class="list-group-item" href="/tools/github_repositories#IoT">IoT</a>
+        <a class="list-group-item" href="/tools/github_repositories#UDFs">WarpScript UDFs</a>
+        <a class="list-group-item" href="/tools/github_repositories#Extensions">WarpScript extensions</a>
+        <a class="list-group-item" href="/tools/github_repositories#Websites">Websites</a>
+        <a class="list-group-item" href="/tools/github_repositories#External">External contributions</a>
+      </div>
+      <a class="list-group-item" href="/docs/tools/worf">Worf</a>
+      <a class="list-group-item" href="/docs/tools/quantum">Quantum</a>
+      <a class="list-group-item" href="/docs/tools/trl">Token Revocation List</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-support" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a href="/docs/introduction/support/">
+        <span class="glyphicon glyphicon-ok-circle"></span>Support
+      </a>
+    </h4>
+  </div>
+</div>
+
+
+
+  </div>
+
+</div>
+
+      <div class="col-sm-9">
+        <h1>Github repositories: Warp10 tools</h1>
+        <p>This page lists all the Warp10 tools, and their repositories on Github.</p>
+
+<div class="row large-p">
+  <div class="col-sm-4">
+
+    <p><a name="Platform"></a></p>
+
+    <h3 id="platform">Platform</h3>
+
+    <p><a href="https://github.com/cityzendata/warp10-platform" title="Warp 10 is an Open Source Geo Time Series® Platform designed to handle data coming from sensors, monitoring systems and the Internet of Things. This repository contains the following components: Continuum, WarpScript, Plasma or Quasar.">Warp10 and WarpScript</a></p>
+
+    <p><a href="https://github.com/cityzendata/warp10-docker" title="Dockerfile to create a Docker container image for Warp 10.">Docker image</a></p>
+
+    <p><a href="https://github.com/cityzendata/warp10-quantum" title="Warp 10's Quantum is a web application developed to easily deal with the Warp10 platform. Entirely developed with polymer elements.">Quantum</a></p>
+
+    <p><a name="Batch"></a></p>
+
+    <h3 id="batch">Batch</h3>
+
+    <p><a href="https://github.com/cityzendata/warp10-pig" title="Warp10-pig empowers Pig to manipulate GTS (Geo Time Series) with Warpscript. With Warp10-pig you can use your traditional Pig scripts and enrich them with the use of Warpscript. Warp10-pig provides a list of Pig UDFs (User Defined Functions) to fit your data for the use of Warpscript and then, get the result from the Warpscript execution.">Pig</a></p>
+
+    <p><a href="https://github.com/cityzendata/warp10-flink" title="In progress">Flink</a></p>
+
+    <p><a href="https://github.com/cityzendata/warp10-spark" title="In progress">Spark</a></p>
+
+    <p><a name="Stream"></a></p>
+
+    <h3 id="stream">Stream</h3>
+
+    <p><a href="https://github.com/cityzendata/warp10-storm" title="The warp10-storm repository contains code which enables the creation of Storm topologies entirely in WarpScript. Apache Storm is a free and open source distributed realtime computation system. Storm makes it easy to reliably process unbounded streams of data, doing for realtime processing what Hadoop did for batch processing.">Storm</a></p>
+
+    <p><a name="Inputs"></a></p>
+
+    <h3 id="input-plugins">Input plugins</h3>
+
+    <p><a href="https://github.com/cityzendata/sensision" title="A framework to expose metrics and to push them into Warp 10">Sensition</a></p>
+
+    <p><a href="https://github.com/cityzendata/telegraf-output-warp10" title="Telegraf is an agent written in Go for collecting metrics from the system it's running on, or from other services, and writing them into an outputs. This plugin allows Telegraph to push metrics on Warp10.">Telegraf</a></p>
+
+    <p><a href="https://github.com/cityzendata/logstash-output-warp10" title="Logstash is a tool for managing events and logs. You can use it to collect logs, parse them, and store them for later use (like, for searching). This plugin allows Logstash to push logs on Warp10.">Logstash</a></p>
+
+    <p><a href="https://github.com/cityzendata/statsd-warp10-backend" title="StatsD is a network daemon that runs on the Node.js platform and listens for statistics, like counters and timers, sent over UDP or TCP and sends aggregates to one or more pluggable backend services. This plugin allows StatsD to push metrics on Warp10.">StatsD</a></p>
+
+    <p><a href="https://github.com/cityzendata/collectd-plugin-warp10" title="Collectd is a daemon which collects system performance statistics periodically and provides mechanisms to store the values in a variety of ways. This plugin allows Collectd to push metrics on Warp10.">Collectd</a></p>
+
+    <p><a href="https://github.com/cityzendata/fluentd-plugin-warp10" title="Fluentd is an open source data collector for unified logging layer. This plugin allows Fluentd to push data on Warp10.">Fluentd</a></p>
+
+    <p><a name="Outputs"></a></p>
+
+    <h3 id="output-plugins">Output plugins</h3>
+
+    <p><a href="https://github.com/cityzendata/warp10-quantumviz" title="The Quantumviz widget is a Polymer webcomponent to visualize data from the Warp 10 platform.">QuantumViz</a></p>
+
+    <p><a href="https://github.com/cityzendata/grafana-warp10" title="Grafana is an open source, feature rich metrics dashboard and graph editor for time series data. This plugin allows the use of Warp 10 as datasource for Grafana.">Grafana plugin</a></p>
+
+    <p><a href="https://github.com/cityzendata/warp10-timelion" title="Kibana - Timelion is an open source tool that brings together totally independent data sources into a single interface, driven by a simple, one-line expression language combining data retrieval, time series combination and transformation, plus visualization. This plugin allows the use of Warp 10 as datasource for Timelion.">Kibana - Timelion plugin</a></p>
+
+  </div>
+  <div class="col-sm-4">
+
+    <p><a name="UDFs"></a></p>
+
+    <h3 id="warpscript-udfs">WarpScript UDFs</h3>
+
+    <p><a href="https://github.com/cityzendata/warp10-riakts" title="The Warpscript UDF function allow the possibility to build custom user function. This UDF allows the user the possibility to load GTS in WarpScript from a Riak-ts backend.">Riak-ts</a></p>
+
+    <p><a href="https://github.com/cityzendata/warp10-influxdb" title="The Warpscript UDF function allow the possibility to build custom user function. This UDF allows the user the possibility to load GTS in WarpScript from an InfluxDB database.">InfluxDB</a></p>
+
+    <p><a name="Extensions"></a></p>
+
+    <h3 id="warpscript-extensions">WarpScript extensions</h3>
+
+    <p><a href="https://github.com/cityzendata/warp10-ext-elastic" title="This Warpscript extension allows the user to effectively load and search data on an Elasticsearch into WarpScript.">Elasticsearch</a></p>
+
+    <p><a name="Interpreters"></a></p>
+
+    <h3 id="interpreters">Interpreters</h3>
+
+    <p><a href="https://github.com/cityzendata/sublime-warpscript" title="This packages enables syntax coloration for WarpScript files (.mc2 extension) and snippets for WarpScript's frameworks (MAP, REDUCE, FILTER, BUCKETIZE, APPLY) and conditional instructions (IFT, IFTE)">Sublime text</a></p>
+
+    <p><a href="https://github.com/cityzendata/warp10-zeppelin" title="Zeppelin is a web-based notebook that enables interactive data analytics. This interpreter allows Zeppelin to execute some WarpScript by establishing a connection to a Warp10 backend. This interpreter allows also to share data with all the other components of the Zeppelin notebook.">Zeppelin - WarpScript</a></p>
+
+    <p><a href="https://github.com/cityzendata/warp10-zeppelin-quantumviz" title="Zeppelin is a web-based notebook that enables interactive data analytics. This interpreter allows Zeppelin to visualize data by establishing a connection to a QuantumViz server.">Zeppelin - QuantumViz</a></p>
+
+    <p><a href="https://github.com/aurrelhebert/warp10-jupyter-WarpScriptMagic" title="The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. This magic command allows Jupyter to execute some WarpScript code by establishing a connection to a Warp10 backend. Sharing data is NOT allowed with this magic command.">Jupyter - WarpScriptMagic</a></p>
+
+    <p><a name="IoT"></a></p>
+
+    <h3 id="iot">IoT</h3>
+
+    <p><a href="https://github.com/cityzendata/warp10-nodered" title="Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways.">Node-red</a></p>
+
+    <p><a name="Websites"></a></p>
+
+    <h3 id="websites">Websites</h3>
+
+    <p><a href="https://github.com/cityzendata/www.warp10.io" title="The static, markdown based, Jekyll powered Warp10's site">Warp10.io</a></p>
+
+    <p><a href="https://github.com/cityzendata/cityzendata.github.io" title="The static, markdown based, Jekyll powered Cityzen Data's blog">Cityzen blog</a></p>
+
+    <p><a name="External"></a></p>
+
+    <h3 id="external-contributions">External contributions</h3>
+
+    <p><a href="https://github.com/CleverCloud/warp10-scala-client" title="This is a scala client for Warp 10, this client is ATM only able to send data to Warp 10">Scala - client</a></p>
+
+    <p><a href="https://github.com/CleverCloud/warp10.rs" title="This is a Rust client for Warp 10, this client is ATM only able to write data to Warp 10">Rust - client</a></p>
+
+  </div>
+
+</div>
+
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Footer -->
+<footer>
+
+  <hr>
+
+  <div id="contact" class="container text-center">
+    <!-- Footer -->
+    <a class="webicons" href="https://twitter.com/CityzenData" target="_blank">
+      <footer>
+        <div id="contact" class="container text-center">
+      <div class="webicon twitter"></div>
+      <div class="webicon_text twitter">@CityzenData</div>
+    </a>
+    <a class="webicons" href="mailto:contact@cityzendata.com" target="_blank">
+      <div class="webicon mail"></div>
+      <div class="webicon_text mail">contact@cityzendata.com</div>
+    </a>
+  </div>
+
+  <div class="container text-center top-margin">
+    Copyright &copy; 2016 Cityzen Data
+  </div>
+  <div class="container text-center">
+    <a href="/docs/introduction/legal">Legal</a>
+  </div>
+
+</footer>
+
+<script>
+    var template = document.querySelector('template[is="dom-bind"]');
+</script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: 'e3f0d4e7cfac4e1065a92f60b3ec28d1',
+indexName: 'warp10',
+inputSelector: '#search_box'
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43780642-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('pf9x6nb43t24');
+</script>
+<!-- End of Async Drift Code -->
+</body>
+</html>

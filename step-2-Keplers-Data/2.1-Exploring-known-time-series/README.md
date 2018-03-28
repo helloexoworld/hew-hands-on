@@ -4,7 +4,7 @@ Now that you survive all the WarpScript needed knowlded, we would like to welcom
 
 ## FIND
 
-We preloaded our platform with some stars (around 30). Let's observe the series structures and find the one that we want! We are going to use a function called [FIND](http://192.168.1.3:8082/reference/functions/function_FIND/).
+We preloaded our platform with some stars (around 30). Let's observe the series structures and find the one that we want! We are going to use a function called [FIND](/docs/reference/functions/function_FIND/).
 
 The FIND function finds Geo Time SeriesTM matching some criteria.
 

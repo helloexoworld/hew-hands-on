@@ -5,8 +5,8 @@
 WarpScript is a programming language specific to Geo Time Series® analysis. For security reason, WarpScript is an interpreted language, which means that a Warp 10 backend have to be reached to execute your script. Fortunately for you, we set-up a platform on a Raspberry Pi that should be nearby. You should be able to connect to this elements like this:
 
 * [Warp10 API](http://192.168.1.3:8080)
-* [Quantum](http://192.168.1.3:8081/#/warpscript/J0hlbGxvLCBXb3JsZCc%3D/eyJ1cmwiOiJodHRwOi8vMTkyLjE2OC4xLjM6ODA4MC9hcGkvdjAiLCJmZXRjaEVuZHBvaW50IjoiL2ZldGNoIiwiaGVhZGVyTmFtZSI6IlgtV2FycDEwIn0%3D)
-* [Warp10 official documentation](http://192.168.1.3:8082)
+* [Quantum](/quantum/#/warpscript/J0hlbGxvLCBXb3JsZCc%3D/eyJ1cmwiOiJodHRwOi8vMTkyLjE2OC4xLjM6ODA4MC9hcGkvdjAiLCJmZXRjaEVuZHBvaW50IjoiL2ZldGNoIiwiaGVhZGVyTmFtZSI6IlgtV2FycDEwIn0%3D)
+* [Warp10 official documentation](/docs)
 
 > Please note that you'll have better performance using chromium. Firefox support is on his way.
 
@@ -18,9 +18,9 @@ WarpScript is a stack related programming language. This means that to compute a
 
 ## Single operator
 
-Let's start with a simple WarpScript function: [NOW](http://192.168.1.3:8082/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch.
+Let's start with a simple WarpScript function: [NOW](/docs/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch.
 
-Open [Quantum](http://192.168.1.3:8081/#/warpscript/J0hlbGxvLCBXb3JsZCc%3D/eyJ1cmwiOiJodHRwOi8vMTkyLjE2OC4xLjM6ODA4MC9hcGkvdjAiLCJmZXRjaEVuZHBvaW50IjoiL2ZldGNoIiwiaGVhZGVyTmFtZSI6IlgtV2FycDEwIn0%3D) and type "NOW" in it. Then click execute. Congratulation, you wrote your first WarpScript! You should see the current time (in microsecond) in the answer session.
+Open [Quantum](/quantum/#/warpscript/J0hlbGxvLCBXb3JsZCc%3D/eyJ1cmwiOiJodHRwOi8vMTkyLjE2OC4xLjM6ODA4MC9hcGkvdjAiLCJmZXRjaEVuZHBvaW50IjoiL2ZldGNoIiwiaGVhZGVyTmFtZSI6IlgtV2FycDEwIn0%3D) and type "NOW" in it. Then click execute. Congratulation, you wrote your first WarpScript! You should see the current time (in microsecond) in the answer session.
 
 ## Basic operation in WarpScript
 
@@ -35,7 +35,7 @@ true     // boolean value
 3.14159    // double value
 ```
 
-To compute an operation (for example an addition), put the two elements before the operator [+](http://192.168.1.3:8082/reference/functions/function_ADD/) on the stack.
+To compute an operation (for example an addition), put the two elements before the operator [+](/docs/reference/functions/function_ADD/) on the stack.
 You will get the result on top of the stack.
 
 

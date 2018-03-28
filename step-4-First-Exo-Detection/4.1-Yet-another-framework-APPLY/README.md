@@ -2,9 +2,9 @@
 
 ## The framework 
 
-Yet an other WarpScript framework: [APPLY](http://192.168.1.3:8082/reference/frameworks/framework-apply/)! It's a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series! 
+Yet an other WarpScript framework: [APPLY](/docs/reference/frameworks/framework-apply/)! It's a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series! 
 
-The signature of the [Apply with a sub operator](http://192.168.1.3:8082/reference/frameworks/op_sub/) is described below:
+The signature of the [Apply with a sub operator](/docs/reference/frameworks/op_sub/) is described below:
 
 ```
 [

@@ -1,0 +1,3658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>Full list of WarpScript functions - Warp10 Documentation</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+  <style>
+    body {
+      background-color: #eeeeee;
+    }
+  </style>
+
+
+  <link rel="stylesheet" href="/assets/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+
+  <script src="/assets/webcomponents-lite.js"></script>
+  <script src="/assets/jquery.js"></script>
+  <script src="/assets/bootstrap.js"></script>
+
+  <link rel="import" href="/assets/warp10-components.html">
+
+  <!--
+  <script src="http://localhost:8000/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="http://localhost:8000/bower_components/jquery/dist/jquery.js"></script>
+  <script src="http://localhost:8000/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <link   rel="import" href="http://localhost:8000/bower_components/polymer/polymer.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-navbar/warp10-navbar.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-quantum/warp10-conf.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-quantum/warp10-quantum-widget.html">
+  -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/docs/css/warp10.css">
+  <link rel="stylesheet" href="/docs/css/warp10-navbar.css">
+  <!-- Pygments Github CSS -->
+  <link rel="stylesheet" href="/docs/css/syntax.css">
+
+  <style>
+    :host {
+      display: block;
+    }
+    .top-10 { margin-top:10px; }
+    h4 {
+      font-weight: bold;
+    }
+    .list-group-item {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+
+    <div class="navbar-header">
+      <!--
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    -->
+      <a class="navbar-brand" href="/docs">
+        <div class="navbar-id">
+          <div class="navbar-id-icon">
+            <span id="icon-CityzenData" class="icon-CityzenData"></span>
+          </div>
+          <div class="navbar-id-name">
+            Warp 10
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="collapse navbar-nav navbar-collapse navbar-right">
+      <div class="form-inline">
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+          <input id="search_box" class="form-control" style="vertical-align: middle" >
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="navbar-separator" > </div>
+
+<warp10-conf conf="doc"></warp10-conf>
+
+<div id="mainbody">
+
+  <div class="container top-10" id="main-container">
+    <div class="row">
+      <button type="button" class="navbar-toggle toggle collapsed" data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+<div id="sidebar" class="col-sm-3 collapse">
+
+  <div class="panel-group" id="side-menu">
+
+    <div id="panel-home" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-home">
+        <span class="glyphicon glyphicon-home"></span>Home</a>
+    </h4>
+  </div>
+  <div id="collapse-home" class="panel-collapse collapse ">
+    <div class="list-group">
+
+      <a class="list-group-item" href="/docs/introduction/platform">Overview</a>
+
+      <a class="list-group-item" href="/docs/introduction/concepts">Concepts</a>
+
+      <a class="list-group-item" href="/docs/introduction/history">History</a>
+
+      <a class="list-group-item" href="/docs/introduction/team">Team</a>
+
+      <a class="list-group-item" href="/docs/introduction/versions">Versions</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-howto" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-howto">
+        <span class="glyphicon glyphicon-education"></span>How-to
+      </a>
+    </h4>
+  </div>
+  <div id="collapse-howto" class="panel-collapse collapse ">
+    <div class="list-group">
+
+      <a class="list-group-item" href="/docs/getting-started">Getting started</a>
+
+      <a class="list-group-item" href="/docs/howto/data-modeling">Data modeling</a>
+
+      <a class="list-group-item" href="/docs/howto/migrate-from">Migrate from</a>
+      <div class="list-group-item">Tutorials</div>
+      <div class="list-group">
+        <a class="list-group-item" href="/docs/howto/intro-bucketize">BUCKETIZE</a>
+        <a class="list-group-item" href="/docs/howto/intro-reduce">REDUCE</a>
+      </div>
+
+      <a class="list-group-item" href="/docs/howto/pushing-data">Pushing data</a>
+      <div class="list-group">
+        <a class="list-group-item" href="/docs/howto/websocket-push">Using WebSockets</a>
+        <a class="list-group-item" href="/docs/howto/collecting-tools">Using metrics collecting tools</a>
+      </div>
+
+      <a class="list-group-item" href="/docs/howto/accessing-data">Accessing data</a>
+
+      <a class="list-group-item" href="/docs/howto/fetching-data">Fetching data</a>
+
+      <a class="list-group-item" href="/docs/howto/create-a-udf">Create and deploy one User Defined Function</a>
+      
+      <a class="list-group-item" href="/docs/howto/create-a-warpscript-extension">Create a WarpScript extension</a>
+
+      <a class="list-group-item" href="/docs/howto/connect-zeppelin">Connect Warp&nbsp;10 to Apache Zeppelin</a>
+
+
+      <a class="list-group-item" href="/howto/monitoring-warp-10-using-warp-10">Monitoring Warp&nbsp;10</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-tutorial" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-apis">
+        <span class="glyphicon glyphicon-tasks"></span>APIs
+      </a>
+    </h4>
+  </div>
+  <div id="collapse-apis" class="panel-collapse collapse ">
+    <div class="list-group">
+      <a class="list-group-item" href="/docs/apis/">Overview</a>
+
+      <a class="list-group-item" href="/docs/apis/warpscript">WarpScript</a>
+
+      <a class="list-group-item" href="/docs/apis/fetch">Fetch</a>
+
+      <a class="list-group-item" href="/docs/apis/ingress">Ingress</a>
+
+      <a class="list-group-item" href="/docs/apis/delete">Delete</a>
+
+      <a class="list-group-item" href="/docs/apis/gts-input-format">GTS input format</a>
+
+      <a class="list-group-item" href="/docs/apis/gts-output-format">GTS output format</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-reference" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-reference">
+        <span class="glyphicon glyphicon-cog"></span>WarpScript</a>
+    </h4>
+  </div>
+  <div id="collapse-reference" class="panel-collapse collapse  in ">
+    <div class="list-group">
+      <a class="list-group-item" href="/docs/reference/">Overview</a>
+
+      <div class="list-group-item">
+        <a href="/docs/reference/reference">Reference</a>
+      </div>
+      <div class="list-group" id="collapse-reference-list">
+        <a class="list-group-item" href="/docs/reference/reference#frameworks">Frameworks</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-constant">Constant</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-math">Mathematical</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-standalone">Standalone</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-lists-maps">Lists &amp; maps</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-logic">Logic</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-stack">Stack</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-platform">Platform</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-gts">Geo Time Series<sup>®</sup></a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-bucketized-gts">Bucketized GTS</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-geo">Geo-related</a>
+      </div>
+      <a class="list-group-item" href="/docs/reference/miscellaneous">Miscellaneous functions</a>
+      <a class="list-group-item" href="/docs/reference/processing">Working with Processing</a>
+    </div>
+  </div>
+</div>
+
+
+    <div id="panel-tools" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-tools">
+        <span class="glyphicon glyphicon-wrench"></span>Tools</a>
+    </h4>
+  </div>
+  <div id="collapse-tools" class="panel-collapse collapse ">
+    <div class="list-group">
+      <div class="list-group-item">
+        <a href="/tools/github_repositories">Github repositories</a>
+      </div>
+      <div class="list-group" id="collapse-git-list">
+        <a class="list-group-item" href="/tools/github_repositories#Platform">Platform</a>
+        <a class="list-group-item" href="/tools/github_repositories#Batch">Batch</a>
+        <a class="list-group-item" href="/tools/github_repositories#Stream">Stream</a>
+        <a class="list-group-item" href="/tools/github_repositories#Inputs">Input plugins</a>
+        <a class="list-group-item" href="/tools/github_repositories#Outputs">Output plugins</a>
+        <a class="list-group-item" href="/tools/github_repositories#Interpreters">Interpreters</a>
+        <a class="list-group-item" href="/tools/github_repositories#IoT">IoT</a>
+        <a class="list-group-item" href="/tools/github_repositories#UDFs">WarpScript UDFs</a>
+        <a class="list-group-item" href="/tools/github_repositories#Extensions">WarpScript extensions</a>
+        <a class="list-group-item" href="/tools/github_repositories#Websites">Websites</a>
+        <a class="list-group-item" href="/tools/github_repositories#External">External contributions</a>
+      </div>
+      <a class="list-group-item" href="/docs/tools/worf">Worf</a>
+      <a class="list-group-item" href="/docs/tools/quantum">Quantum</a>
+      <a class="list-group-item" href="/docs/tools/trl">Token Revocation List</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-support" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a href="/docs/introduction/support/">
+        <span class="glyphicon glyphicon-ok-circle"></span>Support
+      </a>
+    </h4>
+  </div>
+</div>
+
+
+
+  </div>
+
+</div>
+
+      <div class="col-sm-9">
+        <h1>Full list of WarpScript functions</h1>
+        <h2>!</h2>
+
+<p>Negates the boolean on top of the stack.</p>
+
+<p><code>bool ! bool</code></p>
+
+<h2 id="-1">!=</h2>
+
+<p>Checks if two elements on the stack are different.</p>
+
+<p><code>num num != bool</code></p>
+
+<h2 id="-2">%</h2>
+
+<p>Computes the remainder.</p>
+
+<p><code>x modulus % remainder</code></p>
+
+<h2 id="-3">&amp;</h2>
+
+<p>Performs a logical AND between longs.</p>
+
+<p><code>long1 long2 &amp; long</code></p>
+
+<h2 id="-4">&amp;&amp;</h2>
+
+<p>Performs a boolean AND between elements.</p>
+
+<p><code>bool1 bool2 &amp;&amp; bool</code></p>
+
+<h2 id="-5">*</h2>
+
+<p>Multiplies two numbers on the stack.</p>
+
+<p><code>num num * num</code></p>
+
+<h2 id="-6">**</h2>
+
+<p>Performs exponentiation.</p>
+
+<p><code>num num ** num</code></p>
+
+<h2 id="-7">+</h2>
+
+<p>Performs an addition between two elements on the stack. Semantics depends on types.</p>
+
+<p><code>num num + num</code></p>
+
+<h2 id="-">-</h2>
+
+<p>Performs a subtraction of two elements on the stack.</p>
+
+<p><code>num num - num</code></p>
+
+<h2 id="-bin">-&gt;BIN</h2>
+
+<p>Converts a string to its binary representation.</p>
+
+<p><code>'string' -&gt;BIN 'binary string'</code></p>
+
+<h2 id="-b64">-&gt;B64</h2>
+
+<p>Encodes a string in base64.</p>
+
+<p><code>'string' -&gt;B64 'encoded'</code></p>
+
+<h2 id="-b64url">-&gt;B64URL</h2>
+
+<p>Encodes a string in base64url.</p>
+
+<p><code>'string' -&gt;B64URL 'encoded'</code></p>
+
+<h2 id="-bytes">-&gt;BYTES</h2>
+
+<p>Converts string into a byte array given a charset.</p>
+
+<p><code>'string' 'charset' -&gt;BYTES 'byte array'</code></p>
+
+<h2 id="-hex">-&gt;HEX</h2>
+
+<p>Encode a string in hexadecimal.</p>
+
+<p><code>'string' -&gt;HEX 'hexstring'</code></p>
+
+<h2 id="-json">-&gt;JSON</h2>
+
+<p>Converts the object on top of the stack to its JSON representation as a string.</p>
+
+<p><code>obj -&gt;JSON 'json'</code></p>
+
+<h2 id="-list">-&gt;LIST</h2>
+
+<p>Builds a list from elements on the stack.</p>
+
+<p><code>obj1 ... objn n -&gt;LIST [ obj1 ... objn ]</code></p>
+
+<h2 id="-map">-&gt;MAP</h2>
+
+<p>Builds a map.</p>
+
+<p><code>key1 value1 ... keyn valuen 2*n -&gt;MAP { key1 value1 ... keyn valuen }</code></p>
+
+<h2 id="-opb64">-&gt;OPB64</h2>
+
+<p>Encodes a string in order preserving base64.</p>
+
+<p><code>'decoded' -&gt;OPBB64 'encoded'</code></p>
+
+<h2 id="-q">-&gt;Q</h2>
+
+<p>Converts coordinates to a quaternion.</p>
+
+<p><code>w x y z -&gt;Q q</code></p>
+
+<h2 id="-set">-&gt;SET</h2>
+
+<p>Transforms a list into a set.</p>
+
+<p><code>[ list ] -&gt;SET ( set )</code></p>
+
+<h2 id="-8">/</h2>
+
+<p>Divides one number by another.</p>
+
+<p><code>num num / num</code></p>
+
+<h2 id="-9">&lt;</h2>
+
+<p>Cheks if two elements on the stack are in strict increasing order.</p>
+
+<p><code>num num &lt; bool</code></p>
+
+<h2 id="-10">&lt;=</h2>
+
+<p>Checks if two elements on the stack are in increasing order.</p>
+
+<p><code>num num &lt;= bool</code></p>
+
+<h2 id="-11">==</h2>
+
+<p>Checks if two elements on the stack are equal.</p>
+
+<p><code>num num == bool</code></p>
+
+<h2 id="-12">&gt;</h2>
+
+<p>Checks if two elements on the stack are in strict decreasing order.</p>
+
+<p><code>num num &gt; bool</code></p>
+
+<h2 id="-13">&gt;=</h2>
+
+<p>Checks if two elements on the stack are in decreasing oreder.</p>
+
+<p><code>num num &gt;= bool</code></p>
+
+<h2 id="abs">ABS</h2>
+
+<p>Computes the absolute value of the top of the stack.</p>
+
+<p><code>x ABS Math.abs(x)</code></p>
+
+<h2 id="acos">ACOS</h2>
+
+<p>Computes the arccos of the value on top of the stack.</p>
+
+<p><code>x ACOS Math.acos(x)</code></p>
+
+<h2 id="addvalue">ADDVALUE</h2>
+
+<p>Adds a value to a GTS.</p>
+
+<p><code>gts [ tick latitude longitude elevation value ] ADDVALUE gts</code></p>
+
+<h2 id="aesunwrap">AESUNWRAP</h2>
+
+<p>Unwrap a wrapped byte array with the AES algorithm using a given key.</p>
+
+<p><code>'wrapped' 'key' AESUNWRAP 'unwrapped'</code></p>
+
+<h2 id="aeswrap">AESWRAP</h2>
+
+<p>Wrap a byte array with the AES algorithm using a given key.</p>
+
+<p><code> 'unwrapped' 'key' AESWRAP 'wrapped'</code></p>
+
+<h2 id="and">AND</h2>
+
+<p>This is sinonymous for &amp;&amp;.</p>
+
+<p><code>AND</code></p>
+
+<h2 id="append">APPEND</h2>
+
+<p>Append a list to another list of a map to another map.</p>
+
+<p><code>[ elt1 ... eltn ] [ obj1 ... objn ] APPEND [ elt1 ... eltn obj1 ... objn ]</code></p>
+
+<h2 id="apply">APPLY</h2>
+
+<p>Apply a function to GTS.</p>
+
+<p><code>[ [ gts ] ... [ gts ] [ labels ] function ] APPLY [ gts ]</code></p>
+
+<h2 id="asin">ASIN</h2>
+
+<p>Computes the arcsin of the value on top of the stack .</p>
+
+<p><code>x ASIN Math.asin(x)</code></p>
+
+<h2 id="assert">ASSERT</h2>
+
+<p>Checks the boolean on top of the stack, fails if it is false.</p>
+
+<p><code>bool ASSERT -</code></p>
+
+<h2 id="atan">ATAN</h2>
+
+<p>Computes the arctan of the value on top of the stack.</p>
+
+<p><code>x ATAN Math.atan(x)</code></p>
+
+<h2 id="atbucket">ATBUCKET</h2>
+
+<p>Retrieves the reading of a GTS at a given bucket.</p>
+
+<p><code>gts bucket ATBUCKET [ tick latitude longitude elevation value ]</code></p>
+
+<h2 id="atindex">ATINDEX</h2>
+
+<p>Retrieves the reading of a GTS at a given index.</p>
+
+<p><code>gts index ATINDEX [ tick latitude longitude elevation value ]</code></p>
+
+<h2 id="attick">ATTICK</h2>
+
+<p>Retrieves the reading of a GTS at a given tick.</p>
+
+<p><code>gts tick ATTICK [ tick latitude longitude elevation value ]</code></p>
+
+<h2 id="attributes">ATTRIBUTES</h2>
+
+<p>Retrieves the attribtues of a GTS.</p>
+
+<p><code>gts ATTRIBUTES { attributes }</code></p>
+
+<h2 id="authenticate">AUTHENTICATE</h2>
+
+<p>Authenticates the current stack.</p>
+
+<p><code>'token' AUTHENTICATE -</code></p>
+
+<h2 id="b64-">B64-&gt;</h2>
+
+<p>Converts a base64 encoded content into a string.</p>
+
+<p><code>'encoded' B64-&gt; 'decoded'</code></p>
+
+<h2 id="b64url-">B64URL-&gt;</h2>
+
+<p>Concerts content encoded in base64url into a string.</p>
+
+<p><code>'encoded' B64URL-&gt; 'decoded'</code></p>
+
+<h2 id="bitcount">BITCOUNT</h2>
+
+<p>Computes the length of a bitset and the number of bits set.</p>
+
+<p><code>bitset BITCOUNT cardinality length</code></p>
+
+<h2 id="bitget">BITGET</h2>
+
+<p>Gets a bit in a bits set.</p>
+
+<p><code>bitset bitnumber BITGET bit</code></p>
+
+<h2 id="bitstobytes">BITSTOBYTES</h2>
+
+<p>Converts a bitset into a byte array.</p>
+
+<p><code>bitset BITSTOBYTES bytearray</code></p>
+
+<h2 id="bytestobits">BYTESTOBITS</h2>
+
+<p>Converts a byte array into a bitset.</p>
+
+<p><code>bytearray BYTESTOBITS bitset</code></p>
+
+<h2 id="break">BREAK</h2>
+
+<p>Break out of the current loop.</p>
+
+<p><code>- BREAK -</code></p>
+
+<h2 id="bucketcount">BUCKETCOUNT</h2>
+
+<p>Pushes the number of buckets of a bucketized GTS onto the stack.</p>
+
+<p><code>bucketized_gts BUCKETCOUNT bucketcount</code></p>
+
+<h2 id="bucketize">BUCKETIZE</h2>
+
+<p>Bucketizes a GTS.</p>
+
+<p><code>[ [ gts ] bucketizer lastbucket bucketspan bucketcount ] BUCKETIZE [ bucketized_gts ]</code></p>
+
+<h2 id="bucketspan">BUCKETSPAN</h2>
+
+<p>Pushes the bucketspan of a bucketized GTS onto the stack.</p>
+
+<p><code>bucketized_gts BUCKETSPAN bucketspan</code></p>
+
+<h2 id="bytes-">BYTES-&gt;</h2>
+
+<p>Converts a byte array into a string given a charset.</p>
+
+<p><code>'byte array' 'charset' BYTES-&gt; 'string'</code></p>
+
+<h2 id="cbrt">CBRT</h2>
+
+<p>Computes the cube root of the value on top of the stack.</p>
+
+<p><code>x CBRT Math.cbrt(x)</code></p>
+
+<h2 id="ceil">CEIL</h2>
+
+<p>Pushed the smallest (closest to negative infinity) double value that is greater than or equal to the top of the stack and is equal to a mathematical integer..</p>
+
+<p><code>x CEIL Math.ceil(x)</code></p>
+
+<h2 id="chunk">CHUNK</h2>
+
+<p>Chunks a GTS into partial GTS.</p>
+
+<p><code>gts lastchunkend chunkwidth chunkcount chunklabel keepempty CHUNK [ gts_chunks ]</code></p>
+
+<h2 id="clear">CLEAR</h2>
+
+<p>Clears the stack.</p>
+
+<p><code>obj1 ... objn  CLEAR -</code></p>
+
+<p>CLEARSYMBOLS</p>
+
+<p>Clears symbols.</p>
+
+<p><code>CLEARSYMBOLS</code></p>
+
+<h2 id="cleartomark">CLEARTOMARK</h2>
+
+<p>Clears the stack up to and including the first <em>mark</em> encountered.</p>
+
+<p><code>x mark y z CLEARTOMARK x</code></p>
+
+<h2 id="clip">CLIP</h2>
+
+<p>Clip a Geo Time Series according to a series of limits.</p>
+
+<p><code>gts [ [ lower1 upper1 ] ... ] CLIP [ gts1 ...gtsn]</code></p>
+
+<h2 id="clone">CLONE</h2>
+
+<p>Clone the GTS on top of the stack.</p>
+
+<p><code>gts CLONE gts_clone</code></p>
+
+<h2 id="cloneempty">CLONEEMPTY</h2>
+
+<p>Clone the GTS on top of the stack without its values.</p>
+
+<p><code>gts CLONEEMPTY gts_empty_clone</code></p>
+
+<h2 id="clonereverse">CLONEREVERSE</h2>
+
+<p>Reverse the elements of a list by first cloning the list.</p>
+
+<p><code>[ elt1 ... eltn ] CLONEREVERSE [ eltn ... elt1 ]</code></p>
+
+<h2 id="commonticks">COMMONTICKS</h2>
+
+<p>Replaces a list of GTS on the stack with one of modified GTS with only the ticks where all input GTS have values.</p>
+
+<p><code>[ gts ] COMMONTICKS [ gts ]</code></p>
+
+<h2 id="compact">COMPACT</h2>
+
+<p>Replace multiple contigual identical value/location/elevation by a single one.</p>
+
+<p><code>gts COMPACT compacted_gts</code></p>
+
+<h2 id="contains">CONTAINS</h2>
+
+<p>Checks if a list contains an element.</p>
+
+<p><code>{ list } elt CONTAINS { list } bool</code></p>
+
+<h2 id="containskey">CONTAINSKEY</h2>
+
+<p>Checks if a map contains a key.</p>
+
+<p><code>{ map } 'key' CONTAINSKEY { map } bool</code></p>
+
+<h2 id="containsvalue">CONTAINSVALUE</h2>
+
+<p>Checks if a map contains a value.</p>
+
+<p><code>{ map } value CONTAINSVALUE { map } bool</code></p>
+
+<h2 id="continue">CONTINUE</h2>
+
+<p>Continue a loop by skipping to its next iteration.</p>
+
+<p><code>- CONTINUE -</code></p>
+
+<h2 id="copygeo">COPYGEO</h2>
+
+<p>Forces the location elements of a GTS onto others.</p>
+
+<p><code>[ gts ] gts COPYGEO [ gts ]</code></p>
+
+<h2 id="copysign">COPYSIGN</h2>
+
+<p>Copies the sign of a number on anotherone.</p>
+
+<p><code>x y COPYSIGN x_with_sign_of_y</code></p>
+
+<h2 id="correlate">CORRELATE</h2>
+
+<p>Compute correlation between GTS.</p>
+
+<p><code>gts [ gts ] [ offsets ] CORRELATE [ correlation_gts ]</code></p>
+
+<h2 id="cos">COS</h2>
+
+<p>Computes the cosine of the top of the stack.</p>
+
+<p><code>x COS Math.cos(x)</code></p>
+
+<h2 id="cosh">COSH</h2>
+
+<p>Computes the hyperbolic cosine of the top of the stack.</p>
+
+<p><code>x COSH Math.cosh(x)</code></p>
+
+<h2 id="counter">COUNTER</h2>
+
+<p>Push a counter (AtomicLong) onto the stack.</p>
+
+<p><code>COUNTER counter</code></p>
+
+<h2 id="counterdelta">COUNTERDELTA</h2>
+
+<p>Increment a counter.</p>
+
+<p><code>counter delta COUNTER counter</code></p>
+
+<h2 id="countervalue">COUNTERVALUE</h2>
+
+<p>Retrieve the value of a counter.</p>
+
+<p><code>counter COUNTERVALUE long</code></p>
+
+<h2 id="counttomark">COUNTTOMARK</h2>
+
+<p>Counts he the number of elements up to, but excluding, the first <em>mark</em> encountered.</p>
+
+<p><code>mark obj1 ... objn COUNTTOMARK mark obj1 ... objn n</code></p>
+
+<h2 id="crop">CROP</h2>
+
+<p>Crop bucketized GTS so they span the largest interval with actual values.</p>
+
+<p><code>[ gts ] CROP [ gts ]</code></p>
+
+<h2 id="cstore">CSTORE</h2>
+
+<p>Conditionaly store an object in a symbol, i.e. only if the symbol does not yet exist.</p>
+
+<p><code>obj 'symbol' CSTORE -</code></p>
+
+<h2 id="cudf">CUDF</h2>
+
+<p>Invoke a possibly cached version of a UDF.</p>
+
+<p><code>'class' CUDF ...</code></p>
+
+<h2 id="debugoff">DEBUGOFF</h2>
+
+<p>Turn off stack output on failure.</p>
+
+<p><code>- DEBUGOFF -</code></p>
+
+<h2 id="debugon">DEBUGON</h2>
+
+<p>Turn on stack output on failure.</p>
+
+<p><code>- DEBUGON -</code></p>
+
+<h2 id="dedup">DEDUP</h2>
+
+<p>Removes duplicate readings from a GTS.</p>
+
+<p><code>gts DEDUP dedupped_gts</code></p>
+
+<h2 id="def">DEF</h2>
+
+<p>Redefine an WarpScript function with a macro .</p>
+
+<p><code>macro 'function' DEF -</code></p>
+
+<h2 id="defined">DEFINED</h2>
+
+<p>Checks if a symbol is defined.</p>
+
+<p><code>'symbol' DEFINED bool</code></p>
+
+<h2 id="definedmacro">DEFINEDMACRO</h2>
+
+<p>Checks if a macro is defined.</p>
+
+<p><code>'macro' DEFINEDMACRO bool</code></p>
+
+<h2 id="depth">DEPTH</h2>
+
+<p>Pushes the current depth of the stack onto the stack.</p>
+
+<p><code>obj1 ... objn  DEPTH obj1 ... objn n</code></p>
+
+<h2 id="difference">DIFFERENCE</h2>
+
+<p>Computes the difference of two sets.</p>
+
+<p><code>set1 set2 DIFFERENCE set</code></p>
+
+<h2 id="discords">DISCORDS</h2>
+
+<p>Detects discords in a GTS.</p>
+
+<p><code>[ gts ] windowlen wordlen alphabetsize count mayoverride DISCORDS [ gts ]</code></p>
+
+<h2 id="doc">DOC</h2>
+
+<p>Stores the string on top of the stack as the documentation of the macro being defined.</p>
+
+<p><code>'description' DOC -</code></p>
+
+<h2 id="docmode">DOCMODE</h2>
+
+<p>Put the stack into doc mode. Macro invocations will push their doc onto the stack.</p>
+
+<p><code>-  DOCMODE  -</code></p>
+
+<h2 id="doubleexponentialsmoothing">DOUBLEEXPONENTIALSMOOTHING</h2>
+
+<p>Apply double exponential smoothing on a gts.</p>
+
+<p><code>[ gts ] alpha beta DOUBLEEXPONENTIALSMOOTHING [ gts ]</code></p>
+
+<h2 id="drop">DROP</h2>
+
+<p>Removes the top of the stack.</p>
+
+<p><code>obj1 obj2 DROP obj1</code></p>
+
+<h2 id="dropn">DROPN</h2>
+
+<p>Removes n elements from the stac.</p>
+
+<p><code>obj0 obj1 ... objn n DROPN obj0</code></p>
+
+<h2 id="dtw">DTW</h2>
+
+<p>Perform dynamic time warping distance computation between GTS.</p>
+
+<p><code>gts1 gts2 threshold DTW distance</code></p>
+
+<h2 id="dup">DUP</h2>
+
+<p>Duplicate the element on top of the stack.</p>
+
+<p><code>obj DUP obj obj</code></p>
+
+<h2 id="dupn">DUPN</h2>
+
+<p>Duplicate n elements of the stack.</p>
+
+<p><code>obj0 obj1 ... objn n DUPN obj0 obj1 ... objn obj1 ... objn</code></p>
+
+<h2 id="duration">DURATION</h2>
+
+<p>Parses an ISO8601 duration into a number of time units.</p>
+
+<p><code>'duration' DURATION time_units</code></p>
+
+<h2 id="dwtsplit">DWTSPLIT</h2>
+
+<p>Split a GTS representing a wavelet transform into separate gts for each scale.</p>
+
+<p><code>gts DWTSPLIT [ scale_gts ]</code></p>
+
+<h2 id="e">E</h2>
+
+<p>Pushes the Euler number onto the stack.</p>
+
+<p><code>- E 2.71828...</code></p>
+
+<h2 id="elapsed">ELAPSED</h2>
+
+<p>Pushes onto the stack the collected timing infos.</p>
+
+<p><code>- ELAPSED [ timings ]</code></p>
+
+<h2 id="elevations">ELEVATIONS</h2>
+
+<p>Extracts elevations from a GTS.</p>
+
+<p><code>gts ELEVATIONS [ elevations ]</code></p>
+
+<h2 id="esdtest">ESDTEST</h2>
+
+<p>Detect anomalous ticks in GTS instances by doing an extreme studentized deviate test, given an upperbound to the number of anomalies (use modified Zscore if useMedian == true, default statistical significance is 0.05).</p>
+
+<p><code>[ gts ] upperbound useMedian (significance) ESDTEST [ [ anomalous_ticks ] ]</code></p>
+
+<h2 id="eval">EVAL</h2>
+
+<p>Evaluates a string as an WarpScript script.</p>
+
+<p><code>'string' EVAL ...</code></p>
+
+<h2 id="evalsecure">EVALSECURE</h2>
+
+<p>Evaluates a secure script.</p>
+
+<p><code>'secure_script' EVALSECURE ...</code></p>
+
+<h2 id="every">EVERY</h2>
+
+<p>Executes the macro at the given interval (Mobius endpoint).</p>
+
+<p><code>macro interval EVERY ...</code></p>
+
+<h2 id="exp">EXP</h2>
+
+<p>Computes the exponential of the top of the stack.</p>
+
+<p><code>x EXP Math.exp(x)</code></p>
+
+<h2 id="expm1">EXPM1</h2>
+
+<p>Computes exp^x - 1.</p>
+
+<p><code>x EXPM1 Math.expm1(x)</code></p>
+
+<h2 id="fail">FAIL</h2>
+
+<p>Aborts the execution of the script.</p>
+
+<p><code>- FAIL</code></p>
+
+<h2 id="fdwt">FDWT</h2>
+
+<p>Forward Discrete Wavelet Transform.</p>
+
+<p><code>[ gts ] 'wavelet' FDWT [ gts ]</code></p>
+
+<h2 id="fetch">FETCH</h2>
+
+<p>Fetches data from the store.</p>
+
+<p><code>[ 'token' 'class_selector' { labels_selectors } now timespan ]  FETCH [ gts ]</code></p>
+
+<h2 id="fft">FFT</h2>
+
+<p>Computes a Fast Fourier Transform.</p>
+
+<p><code>gts FFT [ re_gts im_gts freq ]</code></p>
+
+<h2 id="fftap">FFTAP</h2>
+
+<p>Computes a Fast Fourier Transform, outputing amplitude and phase.</p>
+
+<p><code>gts FFTAP [ amp_gts phase_gts freq ]</code></p>
+
+<h2 id="fillnext">FILLNEXT</h2>
+
+<p>Fills gaps in a bucketized GTS with the next known reading.</p>
+
+<p><code>bucketized_gts FILLNEXT filled_bucketized_gts</code></p>
+
+<h2 id="fillprevious">FILLPREVIOUS</h2>
+
+<p>Fills gaps in a bucketized GTS with the previously known reading.</p>
+
+<p><code>bucketized_gts FILLPREVIOUS filled_bucketized_gts</code></p>
+
+<h2 id="fillticks">FILLTICKS</h2>
+
+<p>Fills the given ticks with lat/lon/elevation/value if they don’t already have values.</p>
+
+<p><code>[ unbucketized_gts ] [ lat lon elevation value [ ticks ] ] FILLTICKS [ gts ]</code></p>
+
+<h2 id="fillvalue">FILLVALUE</h2>
+
+<p>Fills gaps in a bucketized GTS with a constant reading.</p>
+
+<p><code>bucketized_gts [ latitude longitude elevation value ] FILLVALUE filled_bucketized_gts</code></p>
+
+<h2 id="filter">FILTER</h2>
+
+<p>Filter GTS.</p>
+
+<p><code>[ [ gts ] [ labels ] filter ] FILTER [ gts ]</code></p>
+
+<h2 id="find">FIND</h2>
+
+<p>Find matching GTS.</p>
+
+<p><code>[ 'token' 'class_selector' { labels_selectors } ] FIND [ gts ]</code></p>
+
+<h2 id="findsets">FINDSETS</h2>
+
+<p>Extracts classes and label values of matching GTS.</p>
+
+<p><code>[ 'token' 'class_selector' { labels_selectors } ] FINDSETS [ classes ] { 'label1' [ label1_values ] ... 'labeln' [ labeln_values ] } { 'attr1' [ attr1_values ] ... 'attrn' [ attrn_values ] }</code></p>
+
+<h2 id="findstats">FINDSTATS</h2>
+
+<p>Computes statistics on matching GTS.</p>
+
+<p><code>[ 'token' 'class_selector' { labels_selectors } ]  FINDSTATS { statistics }</code></p>
+
+<h2 id="firsttick">FIRSTTICK</h2>
+
+<p>Pushes the first tick of the GTS onto the stack.</p>
+
+<p><code>gts FIRSTTICK firsttick</code></p>
+
+<h2 id="flatten">FLATTEN</h2>
+
+<p>Flatten a list of lists.</p>
+
+<p><code>[ obj1 [ obj2_1 ... obj2_n ] obj3 ] FLATTEN [ obj1 obj2_1 ... obj2_n obj3 ]</code></p>
+
+<h2 id="floor">FLOOR</h2>
+
+<p>Returns the largest (closest to positive infinity) double value that is less than or equal to the top of the stack and is equal to a mathematical integer..</p>
+
+<p><code>x FLOOR Math.floor(x)</code></p>
+
+<h2 id="for">FOR</h2>
+
+<p>Executes a macro in a loop.</p>
+
+<p><code>from to macro FOR ...</code></p>
+
+<h2 id="foreach">FOREACH</h2>
+
+<p>Applies a macro on each element of a list or map.</p>
+
+<p><code>[ elts ] macro FOREACH ...</code></p>
+
+<h2 id="forget">FORGET</h2>
+
+<p>Removes a symbol from the symbol table.</p>
+
+<p><code>'symbol' FORGET -</code></p>
+
+<h2 id="forstep">FORSTEP</h2>
+
+<p>Executes a macro in a loop with a step computed by a macro between iterations.</p>
+
+<p><code>from to stepmacro macro FORSTEP ...</code></p>
+
+<h2 id="frombits">FROMBITS</h2>
+
+<p>Converts the long on top of the stack to a double by considering its value as the raw bits of the long.</p>
+
+<p><code>long FROMBITS double</code></p>
+
+<h2 id="fromhex">FROMHEX</h2>
+
+<p>Converts an hex encoded long into a long.</p>
+
+<p><code>'hex' FROMHEX long</code></p>
+
+<h2 id="fuse">FUSE</h2>
+
+<p>Merge chunks of GTS together.</p>
+
+<p><code>[ gts_chunks ] FUSE gts</code></p>
+
+<h2 id="geointersects">GEO.INTERSECTS</h2>
+
+<p>Checks if a GTS has at least one point within a shape.</p>
+
+<p><code>[ gts ] shape GEO.INTERSECTS [ bool ]</code></p>
+
+<h2 id="geowithin">GEO.WITHIN</h2>
+
+<p>Checks if a GTS is contained within a shape.</p>
+
+<p><code>[ gts ] shape GEO.WITHIN [ bool ]</code></p>
+
+<h2 id="geo_intersection">GEO_INTERSECTION</h2>
+
+<p>Perform the intersection of two shapes.</p>
+
+<p><code>shape1 shape2 GEO_INTERSECTION shape</code></p>
+
+<h2 id="geo_subtraction">GEO_SUBTRACTION</h2>
+
+<p>Perform the subtraction of two shapes.</p>
+
+<p><code>shape1 shape2 GEO_SUBTRACTION shape</code></p>
+
+<h2 id="geo_union">GEO_UNION</h2>
+
+<p>Perform the union of two shapes.</p>
+
+<p><code>shape1 shape2 GEO_UNION shape</code></p>
+
+<h2 id="geo_wkt">GEO_WKT</h2>
+
+<p>Pushes on the stack a shape corresponding to the given WKT.</p>
+
+<p><code>'wkt' GEO_WKT shape</code></p>
+
+<h2 id="get">GET</h2>
+
+<p>Extract a value from a map or list given a key or index.</p>
+
+<p><code>{ map } key GET value</code></p>
+
+<h2 id="groovy">GROOVY</h2>
+
+<p>Executes a script expressed in Groovy.</p>
+
+<p><code>'groovy_script' [ input_symbols ] [ output_symbols ] GROOVY ...</code></p>
+
+<h2 id="grubbstest">GRUBBSTEST</h2>
+
+<p>Detect a single anomalous tick in GTS instances by doing a Grubbs test (use modified Zscore if useMedian == true, default statistical significance is 0.05).</p>
+
+<p><code>[ gts ] useMedian (significance) GRUBBSTEST [ [ anomalous_tick ] ]</code></p>
+
+<h2 id="gzip">GZIP</h2>
+
+<p>Compresses a byte array or String with Gzip algorithm.</p>
+
+<p><code>'uncompressed' GZIP 'compressed'</code></p>
+
+<h2 id="hash">HASH</h2>
+
+<p>Compute a 64 bit fingerprint of the string representation of the top of the stack.</p>
+
+<p><code>obj HASH long</code></p>
+
+<h2 id="haversine">HAVERSINE</h2>
+
+<p>Compute distance between locations (in degrees) using the Haversine formula.</p>
+
+<p><code>lat1 lon1 lat2 lon2 HAVERSINE dist</code></p>
+
+<h2 id="header">HEADER</h2>
+
+<p>Set a header which will be returned with the HTTP response.</p>
+
+<p><code>'header_name' 'header_value' HEADER </code></p>
+
+<h2 id="hex-">HEX-&gt;</h2>
+
+<p>Decode a string encoded in hexadecimal.</p>
+
+<p><code>'encoded' HEX-&gt; 'decoded'</code></p>
+
+<h2 id="humanduration">HUMANDURATION</h2>
+
+<p>Convert a number of time units into a human readable duration.</p>
+
+<p><code>time_units HUMANDURATION 'duration'</code></p>
+
+<h2 id="hybridtest">HYBRIDTEST</h2>
+
+<p>Detect anomalous ticks in bucketized GTS instances by doing a Seasonal Hybrid ESD test, given the period length (in number of buckets), the piece length (in number of periods), and an upperbound to the number of anomalies (default statistical significance is 0.05).</p>
+
+<p><code>[ gts ] period_length piece_length upperbound (significance) ({ STL_optional_parameters }) HYBRIDTEST [ [ anomalous_ticks ] ]</code></p>
+
+<h2 id="hybridtest2">HYBRIDTEST2</h2>
+
+<p>This is a variant of HYBRIDTEST (different seasonal extraction).</p>
+
+<p><code>[ gts ] period_length piece_length upperbound (significance) HYBRIDTEST2 [ [ anomalous_ticks ] ]</code></p>
+
+<h2 id="hypot">HYPOT</h2>
+
+<p>Returns sqrt(x²+y²) without intermediate overflow or underflow.</p>
+
+<p><code>x y HYPOT Math.hypot(x,y)</code></p>
+
+<h2 id="ident">IDENT</h2>
+
+<p>Pushes onto the stack the ‘ident’ string of this platform instance.</p>
+
+<p><code>- IDENT 'ident'</code></p>
+
+<h2 id="idwt">IDWT</h2>
+
+<p>Invese Discrete Wavelet Transform.</p>
+
+<p><code>[ gts ] 'wavelet' IDWT [ gts ]</code></p>
+
+<h2 id="ieeeremainder">IEEEREMAINDER</h2>
+
+<p>Computes the remainder operation on two arguments as prescribed by the IEEE 754 standard.</p>
+
+<p><code>x y IEEEREMAINDER Math.IEEEremainder(x,y)</code></p>
+
+<h2 id="ifft">IFFT</h2>
+
+<p>Inverse Fast Fourier Transform.</p>
+
+<p><code>re_gts im_gts IFFT gts</code></p>
+
+<h2 id="ift">IFT</h2>
+
+<p>Executes an if .. then conditional.</p>
+
+<p><code>if_macro then_macro IFT ...</code></p>
+
+<h2 id="ifte">IFTE</h2>
+
+<p>Executes an if … then … else conditional.</p>
+
+<p><code>if_macro then_macro else_macro IFTE</code></p>
+
+<h2 id="integrate">INTEGRATE</h2>
+
+<p>Integrate the numerical GTS.</p>
+
+<p><code>gts initial_value INTEGRATE gts</code></p>
+
+<h2 id="interpolate">INTERPOLATE</h2>
+
+<p>Fills gaps in a bucketized GTS by interpolating between known values.</p>
+
+<p><code>bucketized_gts INTERPOLATE gts</code></p>
+
+<h2 id="intersection">INTERSECTION</h2>
+
+<p>Computes the intersection of two sets.</p>
+
+<p><code>set1 set2 INTERSECTION set</code></p>
+
+<h2 id="isnull">ISNULL</h2>
+
+<p>Checks whether the top of the stack is null.</p>
+
+<p><code>elt ISNULL bool</code></p>
+
+<h2 id="isnan">ISNaN</h2>
+
+<p>Checks whether a double is NaN.</p>
+
+<p><code>x ISNaN bool</code></p>
+
+<h2 id="iso8601">ISO8601</h2>
+
+<p>Converts a timestamp or timestamp + timezon into an ISO8601 representation.</p>
+
+<p><code>timestamp ISO8601 'datetime'</code></p>
+
+<h2 id="isoduration">ISODURATION</h2>
+
+<p>Transform a number of time_units into an ISO8601 duration string.</p>
+
+<p><code>time_units ISODURATION 'duration'</code></p>
+
+<h2 id="isonormalize">ISONORMALIZE</h2>
+
+<p>Normalize numeric GTS instances (replace X by (X-mean)/(max -min) or by 1 if max == min).</p>
+
+<p><code>[ gts ] ISONORMALIZE [ gts ]</code></p>
+
+<h2 id="join">JOIN</h2>
+
+<p>Join N strings with the given separator.</p>
+
+<p><code>'str1' ... 'strn' 'sep' n JOIN 'str'</code></p>
+
+<h2 id="js">JS</h2>
+
+<p>Executes a script expressed in JavaScript.</p>
+
+<p><code>'js_script' [ input_symbols ] [ output_symbols ] JS ...</code></p>
+
+<h2 id="json-">JSON-&gt;</h2>
+
+<p>Parses a string as JSON and pushes the result onto the stack.</p>
+
+<p><code>'jsoon' JSON-&gt; json</code></p>
+
+<h2 id="jsonloose">JSONLOOSE</h2>
+
+<p>Forces loose mode for JSON output (will output NaN).</p>
+
+<p><code>- JSONLOOSE -</code></p>
+
+<h2 id="jsonstrict">JSONSTRICT</h2>
+
+<p>Forces strict mode for JSON output (no NaN).</p>
+
+<p><code>- JSONSTRICT -</code></p>
+
+<h2 id="keylist">KEYLIST</h2>
+
+<p>Extract keys from a map.</p>
+
+<p><code>{ map } KEYLIST [ keys ]</code></p>
+
+<h2 id="labels">LABELS</h2>
+
+<p>Extract labels from a GTS.</p>
+
+<p><code>gts LABELS { labels }</code></p>
+
+<h2 id="lastbucket">LASTBUCKET</h2>
+
+<p>Extract the lastbucket from a bucketized GTS.</p>
+
+<p><code>bucketized_gts LASTBUCKET lastbucket</code></p>
+
+<h2 id="lastsort">LASTSORT</h2>
+
+<p>Sort a list of GTS according to their most recent values.</p>
+
+<p><code>[ gts ] LASTSORT [ gts ]</code></p>
+
+<h2 id="lasttick">LASTTICK</h2>
+
+<p>Extracts the last tick of a GTS.</p>
+
+<p><code>gts LASTTICK lasttick</code></p>
+
+<h2 id="lbounds">LBOUNDS</h2>
+
+<p>Pushes onto the stack a list of M-1 bounds defining M intervals between a and b plus the intervals before a and after b.</p>
+
+<p><code>a b M LBOUNDS [ bounds ]</code></p>
+
+<h2 id="lflatmap">LFLATMAP</h2>
+
+<p>Apply a macro on each element of a list, producing a list with each original element replaced by the flattened result of the macro execution.</p>
+
+<p><code>[ list ] macro LFLATMAP [ list ]</code></p>
+
+<h2 id="limit">LIMIT</h2>
+
+<p>Modifies the maximum number of datapoints fetchable on this stack.</p>
+
+<p><code>x LIMIT -</code></p>
+
+<h2 id="list-">LIST-&gt;</h2>
+
+<p>Pushes onto the stack the elements of a list.</p>
+
+<p><code>[ obj1 ... objn ] LIST-&gt; obj1 ... objn n</code></p>
+
+<h2 id="lmap">LMAP</h2>
+
+<p>Apply a macro on each element of a list, producing a list with the top element after each macro invocation.</p>
+
+<p><code>[ list ] macro LMAP [ list ]</code></p>
+
+<h2 id="load">LOAD</h2>
+
+<p>Pushes the value of a symbol onto the stack.</p>
+
+<p><code>'symbol' LOAD value</code></p>
+
+<h2 id="locationoffset">LOCATIONOFFSET</h2>
+
+<p>Only retain readings farther than dist from the previous one.</p>
+
+<p><code>[ gts ] dist LOCATIONOFFSET [ gts ]</code></p>
+
+<h2 id="locations">LOCATIONS</h2>
+
+<p>Extract latitudes/longitudes from a GTS.</p>
+
+<p><code>gts LOCATIONS [ latitudes ] [ longitudes ]</code></p>
+
+<h2 id="locstrings">LOCSTRINGS</h2>
+
+<p>Extract location from a GTS and push it as a list of compact strings.</p>
+
+<p><code>gts LOCSTRINGS [ locations ]</code></p>
+
+<h2 id="log">LOG</h2>
+
+<p>Computes the natural logarithm of the top of the stack.</p>
+
+<p><code>x LOG Math.log(x)</code></p>
+
+<h2 id="log10">LOG10</h2>
+
+<p>Computes the base 10 logarithm of the top of the stack.</p>
+
+<p><code>x LOG10 Math.log10(x)</code></p>
+
+<h2 id="log1p">LOG1P</h2>
+
+<p>Computes the natural logarithm of the top of the stack plus one.</p>
+
+<p><code>x LOG1P Math.log1p(x)</code></p>
+
+<h2 id="lowess">LOWESS</h2>
+
+<p>Apply local regression to GTS instances, given the number of neighbours to use for each regression.</p>
+
+<p><code>[ gts ] bandwidth LOWESS [ gts ]</code></p>
+
+<h2 id="lsort">LSORT</h2>
+
+<p>Sorts in place the list on top of the stack.</p>
+
+<p><code>[ list ] LSORT [ list ]</code></p>
+
+<h2 id="lua">LUA</h2>
+
+<p>Executes a script expressed in Lua.</p>
+
+<p><code>'lua_script' [ input_symbols ] [ output_symbols ] LUA ...</code></p>
+
+<h2 id="macrobucketizer">MACROBUCKETIZER</h2>
+
+<p>Creates a bucketizer from a macro.</p>
+
+<p><code>macro MACROBUCKETIZER bucketizer</code></p>
+
+<h2 id="macrofilter">MACROFILTER</h2>
+
+<p>Creates a filter from a macro.</p>
+
+<p><code>macro MACROFILTER filter</code></p>
+
+<h2 id="macromapper">MACROMAPPER</h2>
+
+<p>Creates a mapper from a macro.</p>
+
+<p><code>macro MACROMAPPER mapper</code></p>
+
+<h2 id="macroreducer">MACROREDUCER</h2>
+
+<p>Creates a reducer from a macro.</p>
+
+<p><code>macro MACROREDUCER reducer</code></p>
+
+<h2 id="makegts">MAKEGTS</h2>
+
+<p>Builds a GTS from arrays.</p>
+
+<p><code>[ ticks ] [ latitudes ] [ longitudes ] [ elevations ] [ values ] MAKEGTS gts</code></p>
+
+<h2 id="map">MAP</h2>
+
+<p>Applies a mapper onto a list of GTS.</p>
+
+<p><code>[ [ gts ] mapper pre post occurrences ] MAP [ mapped_gts ]</code></p>
+
+<h2 id="map-">MAP-&gt;</h2>
+
+<p>Explodes a map.</p>
+
+<p><code>{ key1 value1 ... keyn valuen } MAP-&gt; key1 value1 ... keyn valuen 2*n</code></p>
+
+<h2 id="mapid">MAPID</h2>
+
+<p>Generates a fingerprint of a map.</p>
+
+<p><code>{ map } MAPID map_id</code></p>
+
+<h2 id="mark">MARK</h2>
+
+<p>Pushes a <em>mark</em> onto the stack.</p>
+
+<p><code>- MARK mark</code></p>
+
+<h2 id="match">MATCH</h2>
+
+<p>Performs a regular expression matching on a string.</p>
+
+<p><code>'string' 'regexp' MATCH [ groups ]</code></p>
+
+<h2 id="max">MAX</h2>
+
+<p>Returns the max of two numbers.</p>
+
+<p><code>x y MAX Math.max(x,y)</code></p>
+
+<h2 id="maxbuckets">MAXBUCKETS</h2>
+
+<p>Modifies the maximum number of buckets a bucketized GTS can contain.</p>
+
+<p><code>n MAXBUCKETS -</code></p>
+
+<h2 id="maxdepth">MAXDEPTH</h2>
+
+<p>Modifies the maximum depth of the stack.</p>
+
+<p><code>n MAXDEPTH -</code></p>
+
+<h2 id="maxgts">MAXGTS</h2>
+
+<p>Modifies the maximum number of GTS that the stack can retrieve.</p>
+
+<p><code>n MAXGTS -</code></p>
+
+<h2 id="maxlong">MAXLONG</h2>
+
+<p>Pushes onto the stack the maximum value of a LONG.</p>
+
+<p><code>- MAXLONG 2^63-1</code></p>
+
+<h2 id="maxops">MAXOPS</h2>
+
+<p>Modifies the maximum number of operations for the stack.</p>
+
+<p><code>n MAXOPS -</code></p>
+
+<h2 id="maxsymbols">MAXSYMBOLS</h2>
+
+<p>Modifies the maximum number of symbols for the stack.</p>
+
+<p><code>n MAXSYMBOLS -</code></p>
+
+<h2 id="md5">MD5</h2>
+
+<p>Message Digest of a byte array with the cryptographic hash function MD5.</p>
+
+<p><code>'byte array' MD5 'md5 hash'</code></p>
+
+<h2 id="merge">MERGE</h2>
+
+<p>Merge multiple GTS.</p>
+
+<p><code>[ gts ]MERGE merged_gts</code></p>
+
+<h2 id="meta">META</h2>
+
+<p>Modify the attributes of a GTS.</p>
+
+<p><code>[ gts ] 'write_token' META -</code></p>
+
+<h2 id="metasort">METASORT</h2>
+
+<p>Sort a list of GTS according to their metadata (class,labels).</p>
+
+<p><code>[ gts ] [ labels ]  METASORT [ gts ]</code></p>
+
+<h2 id="min">MIN</h2>
+
+<p>Returns the min of two numbers.</p>
+
+<p><code>x y MIN Math.min(x,y)</code></p>
+
+<h2 id="minlong">MINLONG</h2>
+
+<p>Push on the stack the minimum value of a long.</p>
+
+<p><code>- MINLONG -2^63</code></p>
+
+<h2 id="monotonic">MONOTONIC</h2>
+
+<p>Make a GTS monotonic.</p>
+
+<p><code>gts MONOTONIC monotonic_gts</code></p>
+
+<h2 id="msgfail">MSGFAIL</h2>
+
+<p>Abort the current script with a message.</p>
+
+<p><code>'msg' MSGFAIL -</code></p>
+
+<h2 id="msort">MSORT</h2>
+
+<p>Sorts a map according to its keys.</p>
+
+<p><code>{ map } MSORT { sorted_map }</code></p>
+
+<h2 id="mstu">MSTU</h2>
+
+<p>Pushes onto the stack the number of time units in a millisecond.</p>
+
+<p><code>- MSTU times_units_per_ms</code></p>
+
+<h2 id="musigma">MUSIGMA</h2>
+
+<p>Computes mu and sigma for a numerical GTS with or without Bessel’s correction.</p>
+
+<p><code>gts bool MUSIGMA mu sigma</code></p>
+
+<h2 id="name">NAME</h2>
+
+<p>Retrieves the name of a GTS.</p>
+
+<p><code>gts NAME 'name'</code></p>
+
+<h2 id="nbounds">NBOUNDS</h2>
+
+<p>Pushes a list of n-1 bounds defining n intervals with equal area under the bell cureve N(mu,sigma).</p>
+
+<p><code>mu sigma n NBOUNDS [ bounds ]</code></p>
+
+<h2 id="ndebugon">NDEBUGON</h2>
+
+<p>Enables the output of n levels of the stack upon script failure.</p>
+
+<p><code>n NDEBUGON -</code></p>
+
+<h2 id="newgts">NEWGTS</h2>
+
+<p>Creates an empty GTS.</p>
+
+<p><code>- NEWGTS gts</code></p>
+
+<h2 id="nextafter">NEXTAFTER</h2>
+
+<p>Returns the floating-point number adjacent to the first argument in the direction of the second argument.</p>
+
+<p><code>start direction NEXTAFTER Math.nextafter(start,direction)</code></p>
+
+<h2 id="nextup">NEXTUP</h2>
+
+<p>Returns the floating-point value adjacent to d in the direction of positive infinity.</p>
+
+<p><code>d NEXTUP Math.nextup(d)</code></p>
+
+<h2 id="nonempty">NONEMPTY</h2>
+
+<p>Only retains GTS with at least a value in a list of gts.</p>
+
+<p><code>[ gts ] NONEMPTY [ non_empty_gts ]</code></p>
+
+<h2 id="noop">NOOP</h2>
+
+<p>Does nothing.</p>
+
+<p><code>- NOOP -</code></p>
+
+<h2 id="normalize">NORMALIZE</h2>
+
+<p>Normalize numeric GTS instances (replace X by (X-min)/(max -min) or by 1 if max == min).</p>
+
+<p><code>[ gts ] NORMALIZE [ gts ]</code></p>
+
+<h2 id="not">NOT</h2>
+
+<p>Negates the boolean on the stack.</p>
+
+<p><code>bool NOT bool</code></p>
+
+<h2 id="notafter">NOTAFTER</h2>
+
+<p>Checks that the current time is not after the provided timestamp. Fails otherwise.</p>
+
+<p><code>timestamp NOTAFTER -</code></p>
+
+<h2 id="notbefore">NOTBEFORE</h2>
+
+<p>Checks that the current time is not before the provided timestamp. Fails otherwise.</p>
+
+<p><code>timestamp NOTBEFORE -</code></p>
+
+<h2 id="notimings">NOTIMINGS</h2>
+
+<p>Disables the collection of per line timing info.</p>
+
+<p><code>- NOTIMINGS -</code></p>
+
+<h2 id="now">NOW</h2>
+
+<p>Pushes onto the stack the current time in time units since the Unix epoch.</p>
+
+<p><code>- NOW current_tim</code></p>
+
+<h2 id="npdf">NPDF</h2>
+
+<p>Pushes a Probability Density Function for N(mu,sigma) onto the stack. The function can be evaluated using EVAL <code>mu sigma NPDF pdf</code></p>
+
+<h2 id="nreturn">NRETURN</h2>
+
+<p>Exit up to n levels of macros.</p>
+
+<p><code>n NRETURN -</code></p>
+
+<h2 id="nsumsumsq">NSUMSUMSQ</h2>
+
+<p>Computes the number of values of a GTS, the sum of those values and the sum of their squares.</p>
+
+<p><code>gts NSUMSUMSQ n sum sumsq</code></p>
+
+<h2 id="null">NULL</h2>
+
+<p>Pushes null onto the stack.</p>
+
+<p><code>- NULL null</code></p>
+
+<h2 id="nan">NaN</h2>
+
+<p>Pushes NaN onto the stack.</p>
+
+<p><code>- NaN NaN</code></p>
+
+<h2 id="onlybuckets">ONLYBUCKETS</h2>
+
+<p>Removes ticks which do not fall on bucket boundaries.</p>
+
+<p><code>[ gts ] ONLYBUCKETS [ gts ]</code></p>
+
+<h2 id="opb64-">OPB64-&gt;</h2>
+
+<p>Decodes the order preserving base64 content.</p>
+
+<p><code>'encoded' OPBB64-&gt; 'decoded'</code></p>
+
+<p>## OPB64TOHEX ##</p>
+
+<p>Decodes an order preserving base64 encoded string and immediately re-encode it in hex.</p>
+
+<p><code>'encoded' OPBB64TOHEX 'hex'</code></p>
+
+<h2 id="ops">OPS</h2>
+
+<p>Pushes onto the stack the current number of operations performed.</p>
+
+<p><code>- OPS ops</code></p>
+
+<h2 id="or">OR</h2>
+
+<p>Do a boolean OR between booleans on the stack.</p>
+
+<p><code>bool bool OR bool</code></p>
+
+<h2 id="papply">PAPPLY</h2>
+
+<p>Behaves like APPLY except returned GTS are grouped by equivalence classes.</p>
+
+<p><code>[ [ gts ] ... [ gts ] [ labels ] function ] PAPPLY { { labels } [ gts ] ... { labels } [ gts ] }</code></p>
+
+<h2 id="parseselector">PARSESELECTOR</h2>
+
+<p>Parses a GTS selector and pushes onto the stack a class selector and a map of labels selectors.</p>
+
+<p><code>'selector' PARSESELECTOR 'class_selector' { labels_selectors }</code></p>
+
+<h2 id="partition">PARTITION</h2>
+
+<p>Splits GTS in equivalence classes based on label values.</p>
+
+<p><code>[ gts ] [ labels ] PARTITION { { labels } [ gts ] ... { labels } [ gts ] }</code></p>
+
+<h2 id="patterndetection">PATTERNDETECTION</h2>
+
+<p>Detects patterns in GTS.</p>
+
+<p><code>[ gts ] [ patterns ] windowlen wordlen alphabetsize PATTERNDETECTION [ gts ]</code></p>
+
+<h2 id="patterns">PATTERNS</h2>
+
+<p>Extracts bSAX symbols from GTS.</p>
+
+<p><code>[ gts ] windowlen wordlen alphabetsize PATTERNS [ gts ]</code></p>
+
+<h2 id="pfilter">PFILTER</h2>
+
+<p>Behaves like FILTER except returned GTS are grouped by equivalence classes.</p>
+
+<p><code>[ [ gts ] [ labels ] filter ] PFILTER { { labels } [ gts ] ... { labels } [ gts ] }</code></p>
+
+<h2 id="pi">PI</h2>
+
+<p>Pushes PI onto the stack.</p>
+
+<p><code>- PI 3.1415...</code></p>
+
+<h2 id="pick">PICK</h2>
+
+<p>Pick objet at level n and push it onto the stack.</p>
+
+<p><code>n PICK obj</code></p>
+
+<h2 id="probability">PROBABILITY</h2>
+
+<p>Pushes onto the stack a PDF function built from a value histogram.</p>
+
+<p><code>{ histogram } PROBABILITY pdf</code></p>
+
+<h2 id="put">PUT</h2>
+
+<p>Add an element to a map.</p>
+
+<p><code>{} value 'key' PUT { key value }</code></p>
+
+<h2 id="python">PYTHON</h2>
+
+<p>Executes a script expressed in Python.</p>
+
+<p><code>'python_script' [ input_symbols ] [ output_symbols ] PYTHON ...</code></p>
+
+<h2 id="q-">Q-&gt;</h2>
+
+<p>Converts a quaternion to its components.</p>
+
+<p><code>q Q-&gt; w x y z</code></p>
+
+<h2 id="qconjugate">QCONJUGATE</h2>
+
+<p>Compute the conjugate of a quaternion.</p>
+
+<p><code>q QCONJUGATE q</code></p>
+
+<h2 id="qdivide">QDIVIDE</h2>
+
+<p>Divide a quaternion q by a quaternion r.</p>
+
+<p><code>q r QDIVIDE q</code></p>
+
+<h2 id="qmultiply">QMULTIPLY</h2>
+
+<p>Multiply two quaternions.</p>
+
+<p><code>q r QMULTIPLY q</code></p>
+
+<h2 id="qrotate">QROTATE</h2>
+
+<p>Rotate a vector by a quaternion.</p>
+
+<p><code>x y z q QROTATE x y z</code></p>
+
+<h2 id="qrotation">QROTATION</h2>
+
+<p>Extract the axis and angle of rotation of a quaternion.</p>
+
+<p><code>q QROTATION x y z a</code></p>
+
+<h2 id="quantize">QUANTIZE</h2>
+
+<p>Generate a quantified version of a GTS.</p>
+
+<p><code>[ gts ] [ bounds ] [ values ] QUANTIZE [ gts ]</code></p>
+
+<h2 id="r">R</h2>
+
+<p>Execute a script in R syntax.</p>
+
+<p><code>'R_script' R -</code></p>
+
+<h2 id="r-">R-&gt;</h2>
+
+<p>Convert R types back to WarpScript types.</p>
+
+<p><code>obj R-&gt; obj</code></p>
+
+<h2 id="rand">RAND</h2>
+
+<p>Pushes a random number onto the stack.</p>
+
+<p><code>- RAND rand</code></p>
+
+<h2 id="range">RANGE</h2>
+
+<p>Pushes onto the stack a list of integers in the given range.</p>
+
+<p><code>[ start end step ] RANGE [ int ]</code></p>
+
+<h2 id="rangecompact">RANGECOMPACT</h2>
+
+<p>Compact a GTS so ranges of identical readings are replaced by their bounds.</p>
+
+<p><code>gts RANGECOMPACT modified_gts</code></p>
+
+<h2 id="reduce">REDUCE</h2>
+
+<p>Apply a reducer on a GTS.</p>
+
+<p><code>[ [ gts ] [ labels ] reducer ] REDUCE [ gts ]</code></p>
+
+<h2 id="relabel">RELABEL</h2>
+
+<p>Modify labels of a GTS.</p>
+
+<p><code>gts { labels } RELABEL gts</code></p>
+
+<h2 id="remove">REMOVE</h2>
+
+<p>Remove an entry from a map or list given a key/index.</p>
+
+<p><code>[ list ] index REMOVE -</code></p>
+
+<h2 id="rename">RENAME</h2>
+
+<p>Rename a GTS.</p>
+
+<p><code>gts 'name' RENAME gts</code></p>
+
+<h2 id="replace">REPLACE</h2>
+
+<p>Replaces the first substring of the input string that matches a regular expression with a replacement.</p>
+
+<p><code>'input' 'regexp' 'replacement' REPLACE 'replaced input'</code></p>
+
+<h2 id="replaceall">REPLACEALL</h2>
+
+<p>Replaces all substrings of the input string that matches a regular expression with a replacement.</p>
+
+<p><code>'input' 'regexp' 'replacement' REPLACEALL 'replaced input'</code></p>
+
+<h2 id="reset">RESET</h2>
+
+<p>Reset the stack to a specific depth.</p>
+
+<p><code>... depth RESET ...</code></p>
+
+<h2 id="resets">RESETS</h2>
+
+<p>Compensate the resets in a gts.</p>
+
+<p><code>gts assume_decreasing RESETS compensated_gts</code></p>
+
+<h2 id="return">RETURN</h2>
+
+<p>Immediately exit the currently running macro.</p>
+
+<p><code>- RETURN -</code></p>
+
+<h2 id="rev">REV</h2>
+
+<p>Pushes the platform revision string onto the stack.</p>
+
+<p><code>- REV 'Warp Revision'</code></p>
+
+<h2 id="reverse">REVERSE</h2>
+
+<p>Reverse the elements of a list in place.</p>
+
+<p><code>[ elt1 ... eltn ] REVERSE [ eltn ... elt1 ]</code></p>
+
+<h2 id="rint">RINT</h2>
+
+<p>Returns the double value that is closest in value to the argument and is equal to a mathematical integer.</p>
+
+<p><code>x RINT Math.rint(x)</code></p>
+
+<h2 id="rlowess">RLOWESS</h2>
+
+<p>Apply LOWESS smoothing that is robust to anomalies.</p>
+
+<p><code>[ gts ] bandwidth robustness accuracy degree_of_fit RLOWESS [ gts ]</code></p>
+
+<h2 id="roll">ROLL</h2>
+
+<p>Cycle up n elements of the stack.</p>
+
+<p><code>obj1 ... objn n ROLL obj2 ... objn obj1</code></p>
+
+<h2 id="rolld">ROLLD</h2>
+
+<p>Cycle down n elements of the stacj.</p>
+
+<p><code>obj1 ... objn n ROLLD objn obj1 ... objn-1</code></p>
+
+<h2 id="rot">ROT</h2>
+
+<p>Cycle the top 3 elements of the stack.</p>
+
+<p><code>a b c ROT b c a</code></p>
+
+<h2 id="rotationq">ROTATIONQ</h2>
+
+<p>Creates a quaternion from a rotation axis and angle.</p>
+
+<p><code>x y z a ROTATIONQ q</code></p>
+
+<h2 id="round">ROUND</h2>
+
+<p>Returns the closest long to the argument, with ties rounding up.</p>
+
+<p><code>x ROUND Math.round(x)</code></p>
+
+<h2 id="rsadecrypt">RSADECRYPT</h2>
+
+<p>Decrypt data using RSA keys</p>
+
+<p><code>encrypted_bytearray rsa_key RSADECRYPT decrypted_bytearray</code></p>
+
+<h2 id="rsaencrypt">RSAENCRYPT</h2>
+
+<p>Encrypt data using RSA keys</p>
+
+<p><code>bytearray rsa_key RSAENCRYPT encrypted_bytearray</code></p>
+
+<h2 id="rsagen">RSAGEN</h2>
+
+<p>Generates a RSA key pair.</p>
+
+<p><code>exponent key_length RSAGEN [ keys]</code></p>
+
+<h2 id="rsaprivate">RSAPRIVATE</h2>
+
+<p>Produce a RSA private key from a parameter map.</p>
+
+<p><code>{ key parameters} RSAPRIVATE private_key</code></p>
+
+<h2 id="rsapublic">RSAPUBLIC</h2>
+
+<p>Produce a RSA public key from a parameter map.</p>
+
+<p><code>{ key parameters} RSAPUBLIC public_key</code></p>
+
+<h2 id="rsasign">RSASIGN</h2>
+
+<p>Sign data with a private key using RSA cryptosystem.</p>
+
+<p><code> data algorithm private_key RSASIGN rsa_signature</code></p>
+
+<h2 id="rsaverify">RSAVERIFY</h2>
+
+<p>Verify an RSA signature</p>
+
+<p><code>data rsa_signature algorithm public_key RSAVERIFY boolean</code></p>
+
+<h2 id="rsort">RSORT</h2>
+
+<p>Sort a GTS by descending ticks.</p>
+
+<p><code>gts RSORT gts</code></p>
+
+<h2 id="ruby">RUBY</h2>
+
+<p>Executes a script expressed in Ruby.</p>
+
+<p><code>'ruby_script' [ input_symbols ] [ output_symbols ] RUBY ...</code></p>
+
+<h2 id="run">RUN</h2>
+
+<p>Run a macro.</p>
+
+<p><code>'macro_name' RUN</code></p>
+
+<h2 id="rvaluesort">RVALUESORT</h2>
+
+<p>Sort GTS in reverse order of values.</p>
+
+<p><code>[ gts ] RVALUESORT [ gts ]</code></p>
+
+<h2 id="section">SECTION</h2>
+
+<p>Modify the current section name.</p>
+
+<p><code>'key' SECTION -</code></p>
+
+<h2 id="securekey">SECUREKEY</h2>
+
+<p>Set the secure key for creating secure scripts.</p>
+
+<p><code>'key' SECUREKEY -</code></p>
+
+<h2 id="set">SET</h2>
+
+<p>Pushes a value into a list.</p>
+
+<p><code>[ list ] value key SET [ list ]</code></p>
+
+<h2 id="set-">SET-&gt;</h2>
+
+<p>Transforms a set back into a list.</p>
+
+<p><code>( set ) SET-&gt; [ list ]</code></p>
+
+<h2 id="setattributes">SETATTRIBUTES</h2>
+
+<p>Set attributes of a GTS.</p>
+
+<p><code>[ gts ] { attributes }  SETATTRIBUTES [ gts ]</code></p>
+
+<h2 id="sha1">SHA1</h2>
+
+<p>Message Digest of a byte array with the cryptographic hash function SHA-1.</p>
+
+<p><code>'byte array' SHA1 'sha1 hash'</code></p>
+
+<h2 id="sha1hmac">SHA1HMAC</h2>
+
+<p>HMAC of a byte array with the cryptographic hash function SHA-1.</p>
+
+<p><code>'message' 'secret key' SHA1HMAC 'hashmac'</code></p>
+
+<h2 id="sha256">SHA256</h2>
+
+<p>Message Digest of a byte array with the cryptographic hash function SHA-256.</p>
+
+<p><code>'byte array' SHA256 'sha256 hash'</code></p>
+
+<h2 id="sha256hmac">SHA256HMAC</h2>
+
+<p>HMAC of a byte array with the cryptographic hash function SHA-256.</p>
+
+<p><code>'message' 'secret key' SHA256HMAC 'hashmac'</code></p>
+
+<h2 id="shrink">SHRINK</h2>
+
+<p>Shrink a GTS to its first or last n values.</p>
+
+<p><code>gts n SHRINK gts</code></p>
+
+<h2 id="signum">SIGNUM</h2>
+
+<p>Returns the signum function of the argument; zero if the argument is zero, 1.0 if the argument is greater than zero, -1.0 if the argument is less than zero.</p>
+
+<p><code>x SIGNUM Math.signum(x)</code></p>
+
+<h2 id="sin">SIN</h2>
+
+<p>Compute the sine of the top of the stack.</p>
+
+<p><code>x SIN Math.sin(x)</code></p>
+
+<h2 id="singleexponentialsmoothing">SINGLEEXPONENTIALSMOOTHING</h2>
+
+<p>Apply single exponential smoothing to GTS.</p>
+
+<p><code>[ gts ] alpha SINGLEEXPONENTIALSMOOTHING [ gts ]</code></p>
+
+<h2 id="sinh">SINH</h2>
+
+<p>Compute the hyperbolic sine of the top of the stack.</p>
+
+<p><code>x SINH Math.sinh(x)</code></p>
+
+<h2 id="size">SIZE</h2>
+
+<p>Pushes on the stack the size of an object (map, list).</p>
+
+<p><code>obj SIZE long</code></p>
+
+<h2 id="sort">SORT</h2>
+
+<p>Sort a GTS by increasing ticks.</p>
+
+<p><code>gts SORT gts</code></p>
+
+<h2 id="split">SPLIT</h2>
+
+<p>Splits a string into segments with the given segment separator.</p>
+
+<p><code>'string' 'sep' SPLIT [ 'segments' ]</code></p>
+
+<h2 id="sqrt">SQRT</h2>
+
+<p>Compute the square root of a number.</p>
+
+<p><code>x SQRT Math.sqrt(x)</code></p>
+
+<h2 id="stackattribute">STACKATTRIBUTE</h2>
+
+<p>Pushes onto the stack the value of the named attribute.</p>
+
+<p><code>'name' STACKATTRIBUTE value</code></p>
+
+<h2 id="stacktolist">STACKTOLIST</h2>
+
+<p>Convert the whole stack into a list and push this list on the top of the stack.</p>
+
+<p><code>STACKTOLIST [ ]</code></p>
+
+<h2 id="standardize">STANDARDIZE</h2>
+
+<p>Standardize numeric GTS instances (replace X by (X-mu)/sd).</p>
+
+<p><code>[ gts ] STANDARDIZE [ gts ]</code></p>
+
+<h2 id="stl">STL</h2>
+
+<p>Compute Seasonal-Trend decomposition to bucketized GTS instances, given a period length (in number of buckets).</p>
+
+<p><code>[ gts ] period_length ({ optional_parameters }) STL [ [ seasonal_gts trend_gts ] ]</code></p>
+
+<h2 id="stlesdtest">STLESDTEST</h2>
+
+<p>Detect anomalous ticks in bucketized GTS instances by doing an ESD test on the residual of the STL decomposition, given the period length (in number of buckets) and an upperbound to the number of anomalies (default statistical significance is 0.05).</p>
+
+<p><code>[ gts ] period_length upperbound (significance) ({ STL_optional_parameters }) STLESDTEST [ [ anomalous_ticks ] ]</code></p>
+
+<h2 id="stop">STOP</h2>
+
+<p>Immediately stop executing the current script.</p>
+
+<p><code>- STOP</code></p>
+
+<h2 id="store">STORE</h2>
+
+<p>Store an object in a symbol.</p>
+
+<p><code>obj 'symbol' STORE -</code></p>
+
+<h2 id="strictmapper">STRICTMAPPER</h2>
+
+<p>Converts a mapper into a strict version which expects a number of values in each window which lies in [ min, max ].</p>
+
+<p><code>mapper min max STRICTMAPPER mapper</code></p>
+
+<h2 id="strictpartition">STRICTPARTITION</h2>
+
+<p>Splits GTS in equivalence classes based on label values. Labels of each partitions are only those specified.<code>[ gts ] [ labels ] STRICTPARTITION { { labels } [ gts ] ... { labels } [ gts ] }</code></p>
+
+<h2 id="stu">STU</h2>
+
+<p>Pushes the number of time units in a second onto the stack.</p>
+
+<p><code>- STU long</code></p>
+
+<h2 id="sublist">SUBLIST</h2>
+
+<p>Extracts a sublist from a list.</p>
+
+<p><code>[ list ] [ indices ] SUBLIST [ sublist ]</code></p>
+
+<h2 id="submap">SUBMAP</h2>
+
+<p>Extracts a submap from a map.</p>
+
+<p><code>{ map } [ keys ] SUBMAP { submap }</code></p>
+
+<h2 id="substring">SUBSTRING</h2>
+
+<p>Extract a substring from a string.</p>
+
+<p><code>string len start SUBSTRING substring</code></p>
+
+<h2 id="swap">SWAP</h2>
+
+<p>Exchanges the elements on the two first levels of the stack.</p>
+
+<p><code>a b SWAP b a</code></p>
+
+<h2 id="switch">SWITCH</h2>
+
+<p>Perform a switch/case conditional.</p>
+
+<p><code>macro_case1 ... macro_casen macro_defaultcase n SWITCH ...</code></p>
+
+<h2 id="tan">TAN</h2>
+
+<p>Compute the tangent of the top of the stack.</p>
+
+<p><code>x TAN Math.tan(x)</code></p>
+
+<h2 id="tanh">TANH</h2>
+
+<p>Compute the hyperbolic tangent of the top of the stack.</p>
+
+<p><code>x TANH Math.tanh(x)</code></p>
+
+<h2 id="template">TEMPLATE</h2>
+
+<p>Expands a (mustache) template using values provided in a map.</p>
+
+<p><code>template map TEMPLATE string</code></p>
+
+<h2 id="thresholdtest">THRESHOLDTEST</h2>
+
+<p>Returns ticks of GTS instances that are above a specified threshold.</p>
+
+<p><code>[ gts ] threshold THRESHOLDTEST [ [ anomalous_ticks ] ]</code></p>
+
+<h2 id="tickindex">TICKINDEX</h2>
+
+<p>Replaces the ticks of a GTS by their index.</p>
+
+<p><code>[ gts ] TICKINDEX [ gts ]</code></p>
+
+<h2 id="ticklist">TICKLIST</h2>
+
+<p>Extracts the list of ticks with values and pushes them on the stack.</p>
+
+<p><code>[ gts ] TICKLIST [ [ ticks ] ]</code></p>
+
+<h2 id="timeclip">TIMECLIP</h2>
+
+<p>Only retain ticks in the given interval.</p>
+
+<p><code>[ gts ] now duration TIMECLIP [ gts ]</code></p>
+
+<h2 id="timemodulo">TIMEMODULO</h2>
+
+<p>Split a gts into n GTS whose ticks are the original ticks modulo mod, a ‘label’ holds tick / mod.</p>
+
+<p><code>[ gts ] mod 'label'  TIMEMODULO</code></p>
+
+<h2 id="timescale">TIMESCALE</h2>
+
+<p>Modify ticks by multiplying them by scale.</p>
+
+<p><code>[ gts ] scale TIMESCALE [ gts ]</code></p>
+
+<h2 id="timeshift">TIMESHIFT</h2>
+
+<p>Shifts all ticks by the specified offset.</p>
+
+<p><code>[ gts ] offset TIMESHIFT [ gts ]</code></p>
+
+<h2 id="timesplit">TIMESPLIT</h2>
+
+<p>Split a GTS in sub GTS separated by quiet periods.</p>
+
+<p><code>gts quietperiod minvalues 'label' TIMESPLIT [ gts ]</code></p>
+
+<h2 id="timings">TIMINGS</h2>
+
+<p>Enables the collection of per line timing info.</p>
+
+<p><code>- TIMINGS -</code></p>
+
+<h2 id="tobits">TOBITS</h2>
+
+<p>Converts a double to a long value of the raw bits of its representation.</p>
+
+<p><code>double TOBITS long</code></p>
+
+<h2 id="todegrees">TODEGREES</h2>
+
+<p>Converts radiants to degrees.</p>
+
+<p><code>x TODEGREES Math.toDegrees(x)</code></p>
+
+<h2 id="todouble">TODOUBLE</h2>
+
+<p>Converts the numerical element on top of the stack into a double.</p>
+
+<p><code>x TODOUBLE double(x)</code></p>
+
+<h2 id="tohex">TOHEX</h2>
+
+<p>Converts a long to its hexadecimal representation.</p>
+
+<p><code>long TOHEX 'hex'</code></p>
+
+<h2 id="tokeninfo">TOKENINFO</h2>
+
+<p>Extracts information on the token on top of the stack.</p>
+
+<p><code>'token' TOKENINFO { infos }</code></p>
+
+<h2 id="toboolean">TOBOOLEAN</h2>
+
+<p>Converts number or string to boolean.</p>
+
+<p><code>x TOBOOLEAN boolean(x)</code></p>
+
+<h2 id="tolong">TOLONG</h2>
+
+<p>Converts the numerical element on top of the stack to a long.</p>
+
+<p><code>x TOLONG long(x)</code></p>
+
+<h2 id="tolower">TOLOWER</h2>
+
+<p>Converts a string to lower case.</p>
+
+<p><code>'STRING' TOLOWER 'string'</code></p>
+
+<h2 id="toradians">TORADIANS</h2>
+
+<p>Converts degrees into radians.</p>
+
+<p><code>deg TORADIANS Math.toRadians(deg)</code></p>
+
+<h2 id="toselector">TOSELECTOR</h2>
+
+<p>Converts a GTS to a selector which would retrieve it.</p>
+
+<p><code>gts TOSELECTOR 'selector'</code></p>
+
+<h2 id="tostring">TOSTRING</h2>
+
+<p>Converts the element on top of the stack into a string.</p>
+
+<p><code>elt TOSTRING 'elt'</code></p>
+
+<h2 id="totimestamp">TOTIMESTAMP</h2>
+
+<p>Converts an ISO8601 date/time string into a number of time units.</p>
+
+<p><code>'YYYY-MM-DDTHH:MM:SS.SSSSZ' TOTIMESTAMP time_units</code></p>
+
+<h2 id="toupper">TOUPPER</h2>
+
+<p>Converts a string in puppercase.</p>
+
+<p><code>'string' TOUPPER 'STRING'</code></p>
+
+<h2 id="trim">TRIM</h2>
+
+<p>Trim whitespaces at both ends of a string.</p>
+
+<p><code>string TRIM string</code></p>
+
+<h2 id="-tselements">-&gt;TSELEMENTS</h2>
+
+<p>Pushes on the stack the various elements of a timestamp for a given timezone.</p>
+
+<p><code>timestamp 'tz' TSELEMENTS [ year monthofyear dayofmonth hourofday minuteofhour secondofminute subseconds dayofyear dayofweek weekofweekyear ]</code></p>
+
+<h2 id="tselements">TSELEMENTS</h2>
+
+<p>Pushes on the stack the various elements of a timestamp for a given timezone.</p>
+
+<p><code>timestamp 'tz' TSELEMENTS [ year monthofyear dayofmonth hourofday minuteofhour secondofminute subseconds dayofyear dayofweek weekofweekyear ]</code></p>
+
+<h2 id="tselements-">TSELEMENTS-&gt;</h2>
+
+<p>Pushes on the stack the timestamp of various elements for a given timezone.</p>
+
+<p><code>[ year monthofyear dayofmonth hourofday minuteofhour secondofminute subseconds dayofyear dayofweek weekofweekyear ] 'tz' TSELEMENTS-&gt; timestamp </code></p>
+
+<h2 id="typeof">TYPEOF</h2>
+
+<p>Pushed onto the stack the type of the element on top of the stack.</p>
+
+<p><code>elt TYPEOF 'type_of_elt'</code></p>
+
+<h2 id="udf">UDF</h2>
+
+<p>Invoke a UDF.</p>
+
+<p><code>'class' UDF</code></p>
+
+<h2 id="ulp">ULP</h2>
+
+<p>Returns the size of an Units in the Last Place of the top of the stack.</p>
+
+<p><code>x ULP Math.ulp(x)</code></p>
+
+<h2 id="unbucketize">UNBUCKETIZE</h2>
+
+<p>Make a GTS unbucketized.</p>
+
+<p><code>bucketized_gts UNBUCKETIZE gts</code></p>
+
+<h2 id="ungzip">UNGZIP</h2>
+
+<p>Decompresses a byte array with Gzip algorithm.</p>
+
+<p><code>'compressed' UNGZIP 'uncompressed'</code></p>
+
+<h2 id="union">UNION</h2>
+
+<p>Performs the union of two sets.</p>
+
+<p><code>set1 set2 UNION set</code></p>
+
+<h2 id="unique">UNIQUE</h2>
+
+<p>Removes duplicate elements from a list.</p>
+
+<p><code>[ obj1 obj UNIQUE</code></p>
+
+<h2 id="unsecure">UNSECURE</h2>
+
+<p>Retrieve the original script from a secure script.</p>
+
+<p><code>'secure_script' 'key' UNSECURE 'original_script'</code></p>
+
+<h2 id="until">UNTIL</h2>
+
+<p>Executes a macro until a condition becomes true.</p>
+
+<p><code>macro cond_macro UNTIL ...</code></p>
+
+<h2 id="unwrap">UNWRAP</h2>
+
+<p>Unwrap a string or list thereof created with WRAP into a GTS or a list thereof.</p>
+
+<p><code>string UNWRAP gts</code></p>
+
+<h2 id="update">UPDATE</h2>
+
+<p>Stores GTS into the platform.</p>
+
+<p><code>[ gts ] 'token' UPDATE -</code></p>
+
+<h2 id="urldecode">URLDECODE</h2>
+
+<p>Decode a URLEncoded string.</p>
+
+<p><code>'encoded' URLDECODE 'string'</code></p>
+
+<h2 id="urlencode">URLENCODE</h2>
+
+<p>URLEncode a string.</p>
+
+<p><code>'string' URLENCODE 'encoded'</code></p>
+
+<h2 id="uuid">UUID</h2>
+
+<p>Pushes a UUID onto the stack.</p>
+
+<p><code>- UUID 'uuid'</code></p>
+
+<h2 id="valuededup">VALUEDEDUP</h2>
+
+<p>Removes duplicates in values.</p>
+
+<p><code>[ gts ] bool_keepfirst VALUEDEDUP [ gts ]</code></p>
+
+<h2 id="valuehistogram">VALUEHISTOGRAM</h2>
+
+<p>Builds a value histogram for a GTS.</p>
+
+<p><code>gts VALUEHISTOGRAM { value count ... value count }</code></p>
+
+<h2 id="valuelist">VALUELIST</h2>
+
+<p>Extract valus from a map.</p>
+
+<p><code>{ map } VALUELIST [ values ]</code></p>
+
+<h2 id="values">VALUES</h2>
+
+<p>Extracts the values of a GTS.</p>
+
+<p><code>gts VALUES [ values ]</code></p>
+
+<h2 id="valuesort">VALUESORT</h2>
+
+<p>Sorts a GTS according to its values.</p>
+
+<p><code>gts VALUESORT sorted_gts</code></p>
+
+<h2 id="valuesplit">VALUESPLIT</h2>
+
+<p>Split a GTS into multiple boolean GTS, one per value.</p>
+
+<p><code>[ gts ] label VALUESPLIT [ [ gts ] ... ]</code></p>
+
+<h2 id="webcall">WEBCALL</h2>
+
+<p>Makes an outbound HTTP call.</p>
+
+<p><code>'token' 'method' 'url' { headers } 'body' WEBCALL 'request_uuid'</code></p>
+
+<h2 id="while">WHILE</h2>
+
+<p>Perform a while loop.</p>
+
+<p><code>while_macro run_macro WHILE ...</code></p>
+
+<h2 id="wrap">WRAP</h2>
+
+<p>Wrap a GTS or a list thereof in a compacted encoded form.</p>
+
+<p><code>gts WRAP string</code></p>
+
+<h2 id="zip">ZIP</h2>
+
+<p>Returns a list of lists where the i-th lists contain the i-th elements of each input lists.</p>
+
+<p><code>[ [a b c] [d e f] [g] [h i j] ] ZIP [ [a d g h] [b e g i] [c f g j] ]</code></p>
+
+<h2 id="zscore">ZSCORE</h2>
+
+<p>Normalize numeric GTS instances by their means or by their medians (replace X by (X-mean)/std or by (X-median)/mad if useMedian == true).</p>
+
+<p><code>[ gts ] useMedian ZSCORE [ gts ]</code></p>
+
+<h2 id="zscoretest">ZSCORETEST</h2>
+
+<p>Detect anomalous ticks in GTS instances by doing a Zscore test (use modified Zscore if useMedian == true, default treshold is 3.5).</p>
+
+<p><code>[ gts ] useMedian (threshold) ZSCORETEST [ [ anomalous_ticks ] ]</code></p>
+
+<h2 id="-14">[</h2>
+
+<p>Starts a list.</p>
+
+<p><code>- [ mark</code></p>
+
+<h2 id="-15">[]</h2>
+
+<p>Pushes an empty list onto the stack.</p>
+
+<p><code>- [] []</code></p>
+
+<h2 id="-16">]</h2>
+
+<p>Builds a list from elements on the stack.</p>
+
+<p><code>mark elt1 ... eltn ] [ elt1 ... eltn ]</code></p>
+
+<h2 id="-17">^</h2>
+
+<p>Bitwise XOR.</p>
+
+<p><code>l1 l2 ^ long</code></p>
+
+<h2 id="bucketizercount">bucketizer.count</h2>
+
+<p>Push onto the stack a bucketizer which computes the number of values found in the interval to bucketize.</p>
+
+<p><code>- bucketizer.count bucketizer</code></p>
+
+<h2 id="bucketizercountexclude-nulls">bucketizer.count.exclude-nulls</h2>
+
+<p>Pushes onto the stack a bucketizer which outputs the number of non null values in a set.</p>
+
+<p><code>- bucketizer.count.exclude-nulls bucketizer</code></p>
+
+<h2 id="bucketizercountinclude-nulls">bucketizer.count.include-nulls</h2>
+
+<p>Pushes onto the stack a bucketizer which outputs the number of values (even null ones) in a set.</p>
+
+<p><code>- bucketizer.count.include-nulls bucketizer</code></p>
+
+<h2 id="bucketizercountnonnull">bucketizer.count.nonnull</h2>
+
+<p>Push onto the stack a bucketizer which computes the number of non-null values found in the interval to bucketize.</p>
+
+<p><code>- bucketizer.count.nonnull bucketizer</code></p>
+
+<h2 id="bucketizerfirst">bucketizer.first</h2>
+
+<p>Push onto the stack a bucketizer which returns the first value in the interval to bucketize.</p>
+
+<p><code>- bucketizer.first bucketizer</code></p>
+
+<h2 id="bucketizerjoin">bucketizer.join</h2>
+
+<p>Pushes onto the stack a bucketizer which will concatenate the string representation of the values in the bucket with the given separator.</p>
+
+<p><code>'sep' bucketizer.join bucketizer</code></p>
+
+<h2 id="bucketizerjoinforbid-nulls">bucketizer.join.forbid-nulls</h2>
+
+<p>Pushes onto the stack a bucketizer which outputs the concatenation of the string representations of the values in the bucket with the given separator or null if one of the values is null.</p>
+
+<p><code>sep bucketizer.join.forbid-nulls bucketizer</code></p>
+
+<h2 id="bucketizerlast">bucketizer.last</h2>
+
+<p>Push onto the stack a bucketizer which returns the last value in the interval to bucketize.</p>
+
+<p><code>- bucketizer.last bucketizer</code></p>
+
+<h2 id="bucketizermax">bucketizer.max</h2>
+
+<p>Push onto the stack a bucketizer which returns the maximum value in the interval to bucketize.</p>
+
+<p><code>- bucketizer.max bucketizer</code></p>
+
+<h2 id="bucketizermaxforbid-nulls">bucketizer.max.forbid-nulls</h2>
+
+<p>Pushes onto the stack a bucketizer which outputs the max of a set of values or null if one of the values is null.</p>
+
+<p><code>- bucketizer.max.forbid-nulls bucketizer</code></p>
+
+<h2 id="bucketizermean">bucketizer.mean</h2>
+
+<p>Push onto the stack a bucketizer which returns the mean value in the interval to bucketize.</p>
+
+<p><code>- bucketizer.mean bucketizer</code></p>
+
+<h2 id="bucketizermeanexclude-nulls">bucketizer.mean.exclude-nulls</h2>
+
+<p>Pushes onto the stack a bucketizer which outputs the mean of a set of values, excluding nulls from the computation.</p>
+
+<p><code>- bucketizer.mean.exclude-nulls bucketizer</code></p>
+
+<h2 id="bucketizermedian">bucketizer.median</h2>
+
+<p>Push onto the stack a bucketizer which returns the median value in the interval to bucketize.</p>
+
+<p><code>- bucketizer.median bucketizer</code></p>
+
+<h2 id="bucketizermin">bucketizer.min</h2>
+
+<p>Push onto the stack a bucketizer which returns the minimum value in the interval to bucketize.</p>
+
+<p><code>- bucketizer.min bucketizer</code></p>
+
+<h2 id="bucketizerminforbid-nulls">bucketizer.min.forbid-nulls</h2>
+
+<p>Pushes onto the stack a bucketizer which outputs the min of a set of values or null if one of the values is null.</p>
+
+<p><code>- bucketizer.min.forbid-nulls bucketizer</code></p>
+
+<h2 id="bucketizerpercentile">bucketizer.percentile</h2>
+
+<p>Push onto the stack a bucketizer which returns the xth percentile of values in the interval to bucketize.</p>
+
+<p><code>x bucketizer.percentile bucketizer</code></p>
+
+<h2 id="bucketizersum">bucketizer.sum</h2>
+
+<p>Push onto the stack a bucketizer which returns the sum of values in the interval to bucketize.</p>
+
+<p><code>- bucketizer.sum bucketizer</code></p>
+
+<h2 id="bucketizersumforbid-nulls">bucketizer.sum.forbid-nulls</h2>
+
+<p>Pushes onto the stack a bucketizer which outputs the sum of a set of values, excluding nulls from the computation.</p>
+
+<p><code>- bucketizer.sum.forbid-nulls bucketizer</code></p>
+
+<h2 id="e-1">e</h2>
+
+<p>Pushes the Euler number onto the stack.</p>
+
+<p><code>- e 2.71828...</code></p>
+
+<h2 id="filterbyclass">filter.byclass</h2>
+
+<p>Pushes onto the stack a filter which selects GTS whose class name matches the filter parameter.</p>
+
+<p><code>'class_selector' filter.byclass filter</code></p>
+
+<h2 id="filterbylabels">filter.bylabels</h2>
+
+<p>Pushes onto the stack a filter which selects GTS whose labels match the filter parameter.</p>
+
+<p><code>{ labels_selectors } filter.bylabels filter</code></p>
+
+<h2 id="filterlasteq">filter.last.eq</h2>
+
+<p>Pushes onto the stack a filter which selects GTS whose last value is equal to the filter parameter.</p>
+
+<p><code>x filter.last.eq filter</code></p>
+
+<h2 id="filterlastge">filter.last.ge</h2>
+
+<p>Pushes onto the stack a filter which selects GTS whose last value is greater or equal to the filter parameter.</p>
+
+<p><code>x filter.last.ge filter</code></p>
+
+<h2 id="filterlastgt">filter.last.gt</h2>
+
+<p>Pushes onto the stack a filter which selects GTS whose last value is greater than filter parameter.</p>
+
+<p><code>x filter.last.gt filter</code></p>
+
+<h2 id="filterlastle">filter.last.le</h2>
+
+<p>Pushes onto the stack a filter which selects GTS whose last value is lower or equal to the filter parameter.</p>
+
+<p><code>x filter.last.le filter</code></p>
+
+<h2 id="filterlastlt">filter.last.lt</h2>
+
+<p>Pushes onto the stack a filter which selects GTS whose last value is lower than filter parameter.</p>
+
+<p><code>x filter.last.lt filter</code></p>
+
+<h2 id="filterlastne">filter.last.ne</h2>
+
+<p>Pushes onto the stack a filter which selects GTS whose last value is not equal to the filter parameter.</p>
+
+<p><code>x filter.last.ne filter</code></p>
+
+<h2 id="mapperabs">mapper.abs</h2>
+
+<p>Push onto the stack a mapper to compute the absolute value of readings.</p>
+
+<p><code>- mapper.abs mapper</code></p>
+
+<h2 id="mapperadd">mapper.add</h2>
+
+<p>Push onto the stack a mapper to add a constant to the single value in a sliding window.</p>
+
+<p><code>x mapper.add</code></p>
+
+<h2 id="mapperceil">mapper.ceil</h2>
+
+<p>Push onto the stack a mapper to round the single value in a sliding window to the closests greater LONG.</p>
+
+<p><code>- mapper.ceil mapper</code></p>
+
+<h2 id="mappercount">mapper.count</h2>
+
+<p>Push onto the stack a mapper to count the number of elements in the window.</p>
+
+<p><code>- mapper.count mapper</code></p>
+
+<h2 id="mappercountexclude-nulls">mapper.count.exclude-nulls</h2>
+
+<p>Pushes onto the stack a mapper which outputs the number of non null values in a set.</p>
+
+<p><code>- mapper.count.exclude-nulls mapper</code></p>
+
+<h2 id="mappercountinclude-nulls">mapper.count.include-nulls</h2>
+
+<p>Pushes onto the stack a mapper which outputs the number of values (even null ones) in a set.</p>
+
+<p><code>- mapper.count.include-nulls mapper</code></p>
+
+<h2 id="mappercountnonnull">mapper.count.nonnull</h2>
+
+<p>Push onto the stack a mapper to count the number of non-null elements in the window..</p>
+
+<p><code>- mapper.count.nonnull mapper</code></p>
+
+<h2 id="mapperday">mapper.day</h2>
+
+<p>Push onto the stack a mapper to compute the day of the tick.</p>
+
+<p><code>'TimeZone' mapper.day mapper</code></p>
+
+<h2 id="mapperdelta">mapper.delta</h2>
+
+<p>Push onto the stack a mapper to compute the delta between the extrema of the sliding window.</p>
+
+<p><code>- mapper.delta mapper</code></p>
+
+<h2 id="mapperdotproduct">mapper.dotproduct</h2>
+
+<p>Push onto the stack a mapper to compute the dot product with an input vector parameter.</p>
+
+<p><code>[ double ] mapper.dotproduct mapper</code></p>
+
+<h2 id="mapperdotproductpositive">mapper.dotproduct.positive</h2>
+
+<p>Push onto the stack a mapper to compute the positive value of the dot product.</p>
+
+<p><code>[ double ] mapper.dotproduct.positive mapper</code></p>
+
+<h2 id="mapperdotproductsigmoid">mapper.dotproduct.sigmoid</h2>
+
+<p>Push onto the stack a mapper to compute the Sigmoid of the dot product.</p>
+
+<p><code>[ double ] mapper.dotproduct.sigmoid mapper</code></p>
+
+<h2 id="mapperdotproducttanh">mapper.dotproduct.tanh</h2>
+
+<p>Push onto the stack a mapper to compute the tanh of the dot product.</p>
+
+<p><code>[ double ] mapper.dotproduct.tanh mapper</code></p>
+
+<h2 id="mappereq">mapper.eq</h2>
+
+<p>Push onto the stack a mapper to return the first value in a sliding window which is equal to a given value.</p>
+
+<p><code>x mapper.eq mapper</code></p>
+
+<h2 id="mapperexp">mapper.exp</h2>
+
+<p>Push onto the stack a mapper to raise a constant to the power of the single value in the sliding window.</p>
+
+<p><code>x mapper.exp mapper</code></p>
+
+<h2 id="mapperfirst">mapper.first</h2>
+
+<p>Push onto the stack a mapper to return the first reading of the sliding window.</p>
+
+<p><code>- mapper.first mapper</code></p>
+
+<h2 id="mapperfloor">mapper.floor</h2>
+
+<p>Push onto the stack a mapper to compute the floor of the single value in the sliding window.</p>
+
+<p><code>- mapper.floor mapper</code></p>
+
+<h2 id="mapperge">mapper.ge</h2>
+
+<p>Push onto the stack a mapper to return the first value greater or equal to a threshold.</p>
+
+<p><code>x mapper.ge mapper</code></p>
+
+<h2 id="mappergeoapproximate">mapper.geo.approximate</h2>
+
+<p>Push onto the stack a mapper to approximate a location at the given resolution.</p>
+
+<p><code>int_x mapper.geo.approximate mapper</code></p>
+
+<h2 id="mappergeoclear">mapper.geo.clear</h2>
+
+<p>Push onto the stack a mapper to remove the location info from readings.</p>
+
+<p><code>- mapper.geo.clear mapper</code></p>
+
+<h2 id="mappergeooutside">mapper.geo.outside</h2>
+
+<p>Push onto the stack a mapper to return value if the value has a location outside Geo Shape.</p>
+
+<p><code>shape mapper.geo.outside mapper</code></p>
+
+<h2 id="mappergeowithin">mapper.geo.within</h2>
+
+<p>Push onto the stack a mapper to return value if the value has a location within Geo Shape.</p>
+
+<p><code>shape mapper.geo.within mapper</code></p>
+
+<h2 id="mappergt">mapper.gt</h2>
+
+<p>Push onto the stack a mapper to return the first value greater than threshold.</p>
+
+<p><code>x mapper.gt mapper</code></p>
+
+<h2 id="mapperhdist">mapper.hdist</h2>
+
+<p>Push onto the stack a mapper to compute the horizontal distance between the extrema of the sliding window.</p>
+
+<p><code>- mapper.hdist mapper</code></p>
+
+<h2 id="mapperhighest">mapper.highest</h2>
+
+<p>Push onto the stack a mapper which return the reading with the highest elevation in the sliding window.</p>
+
+<p><code>- mapper.highest mapper</code></p>
+
+<h2 id="mapperhour">mapper.hour</h2>
+
+<p>Push onto the stack a mapper to compute the hour of the tick.</p>
+
+<p><code>'TimeZone' mapper.hour mapper</code></p>
+
+<h2 id="mapperhspeed">mapper.hspeed</h2>
+
+<p>Push onto the stack a mapper to compute the horizontal speed between the extrema of the sliding window.</p>
+
+<p><code>- mapper.hspeed mapper</code></p>
+
+<h2 id="mapperjoin">mapper.join</h2>
+
+<p>Push onto the stack a mapper to return the concatenation of the string representation of values separated by a separator.</p>
+
+<p><code>sep mapper.join mapper</code></p>
+
+<h2 id="mapperjoinforbid-nulls">mapper.join.forbid-nulls</h2>
+
+<p>Pushes onto the stack a mapper which outputs the concatenation of the string representations of the values in a set with the given separator or null if one of the values is null.</p>
+
+<p><code>sep mapper.join.forbid-nulls mapper</code></p>
+
+<h2 id="mapperkernelcosine">mapper.kernel.cosine</h2>
+
+<p>Pushes onto the stack a mapper which applies a cosine kernel function on the sliding window.</p>
+
+<p><code>- mapper.kernel.cosine mapper</code></p>
+
+<h2 id="mapperkernelepanechnikov">mapper.kernel.epanechnikov</h2>
+
+<p>Pushes onto the stack a mapper which applies an epanechnikov kernel function on the sliding window.</p>
+
+<p><code>- mapper.kernel.epanechnikov mapper</code></p>
+
+<h2 id="mapperkernelgaussian">mapper.kernel.gaussian</h2>
+
+<p>Pushes onto the stack a mapper which applies a gaussian kernel function on the sliding window.</p>
+
+<p><code>- mapper.kernel.gaussian mapper</code></p>
+
+<h2 id="mapperkernellogistic">mapper.kernel.logistic</h2>
+
+<p>Pushes onto the stack a mapper which applies a logistic kernel function on the sliding window.</p>
+
+<p><code>- mapper.kernel.logistic mapper</code></p>
+
+<h2 id="mapperkernelquartic">mapper.kernel.quartic</h2>
+
+<p>Pushes onto the stack a mapper which applies a quartic kernel function on the sliding window.</p>
+
+<p><code>- mapper.kernel.quartic mapper</code></p>
+
+<h2 id="mapperkernelsilverman">mapper.kernel.silverman</h2>
+
+<p>Pushes onto the stack a mapper which applies a silverman kernel function on the sliding window.</p>
+
+<p><code>- mapper.kernel.silverman mapper</code></p>
+
+<h2 id="mapperkerneltriangular">mapper.kernel.triangular</h2>
+
+<p>Pushes onto the stack a mapper which applies a triangular kernel function on the sliding window.</p>
+
+<p><code>- mapper.kernel.triangular mapper</code></p>
+
+<h2 id="mapperkerneltricube">mapper.kernel.tricube</h2>
+
+<p>Pushes onto the stack a mapper which applies a tricube kernel function on the sliding window.</p>
+
+<p><code>- mapper.kernel.tricube mapper</code></p>
+
+<h2 id="mapperkerneltriweight">mapper.kernel.triweight</h2>
+
+<p>Pushes onto the stack a mapper which applies a triweight kernel function on the sliding window.</p>
+
+<p><code>- mapper.kernel.triweight mapper</code></p>
+
+<h2 id="mapperkerneluniform">mapper.kernel.uniform</h2>
+
+<p>Pushes onto the stack a mapper which applies a uniform kernel function on the sliding window.</p>
+
+<p><code>- mapper.kernel.uniform mapper</code></p>
+
+<h2 id="mapperlast">mapper.last</h2>
+
+<p>Push onto the stack a mapper to return the last reading of the sliding window.</p>
+
+<p><code>- mapper.last mapper</code></p>
+
+<h2 id="mapperle">mapper.le</h2>
+
+<p>Push onto the stack a mapper to return the first value lower or equal to a threshold.</p>
+
+<p><code>x mapper.le mapper</code></p>
+
+<h2 id="mapperlog">mapper.log</h2>
+
+<p>Push onto the stack a mapper to compute the Log of the single value in the base used as parameter.</p>
+
+<p><code>x mapper.log mapper</code></p>
+
+<h2 id="mapperlowest">mapper.lowest</h2>
+
+<p>Push onto the stack a mapper to return the reading with the lowest elevation in the sliding window.</p>
+
+<p><code>- mapper.lowest mapper</code></p>
+
+<h2 id="mapperlt">mapper.lt</h2>
+
+<p>Push onto the stack a mapper to First value lower than threshold.</p>
+
+<p><code>x mapper.lt mapper</code></p>
+
+<h2 id="mappermax">mapper.max</h2>
+
+<p>Push onto the stack a mapper to return the maximum value of the sliding window.</p>
+
+<p><code>- mapper.max mapper</code></p>
+
+<h2 id="mappermaxforbid-nulls">mapper.max.forbid-nulls</h2>
+
+<p>Pushes onto the stack a mapper which outputs the max of a set of values or null if one of the values is null.</p>
+
+<p><code>- mapper.max.forbid-nulls mapper</code></p>
+
+<h2 id="mappermaxx">mapper.max.x</h2>
+
+<p>Push onto the stack a mapper to return the max between a constant passed as parameter and each value.</p>
+
+<p><code>x mapper.max.x mapper</code></p>
+
+<h2 id="mappermean">mapper.mean</h2>
+
+<p>Push onto the stack a mapper to compute the mean of values in the sliding window.</p>
+
+<p><code>- mapper.mean mapper</code></p>
+
+<h2 id="mappermeanexclude-nulls">mapper.mean.exclude-nulls</h2>
+
+<p>Pushes onto the stack a mapper which outputs the mean of a set of values, excluding nulls from the computation.</p>
+
+<p><code>- mapper.mean.exclude-nulls mapper</code></p>
+
+<h2 id="mappermedian">mapper.median</h2>
+
+<p>Push onto the stack a mapper to compute the median of the values in the sliding window.</p>
+
+<p><code>- mapper.median mapper</code></p>
+
+<h2 id="mappermin">mapper.min</h2>
+
+<p>Push onto the stack a mapper to return the minimum value of the sliding window.</p>
+
+<p><code>- mapper.min mapper</code></p>
+
+<h2 id="mapperminforbid-nulls">mapper.min.forbid-nulls</h2>
+
+<p>Pushes onto the stack a mapper which outputs the min of a set of values or null if one of the values is null.</p>
+
+<p><code>- mapper.min.forbid-nulls mapper</code></p>
+
+<h2 id="mapperminx">mapper.min.x</h2>
+
+<p>Push onto the stack a mapper to  return the min between a constant passed as parameter and each value.</p>
+
+<p><code>x mapper.min.x mapper</code></p>
+
+<h2 id="mapperminute">mapper.minute</h2>
+
+<p>Push onto the stack a mapper to compute minute of the tick.</p>
+
+<p><code>'TimeZone' mapper.minute mapper</code></p>
+
+<h2 id="mappermonth">mapper.month</h2>
+
+<p>Push onto the stack a mapper to compute month of the tick.</p>
+
+<p><code>'TimeZone' mapper.month mapper</code></p>
+
+<h2 id="mappermul">mapper.mul</h2>
+
+<p>Push onto the stack a mapper to multiply the value by a parameter.</p>
+
+<p><code>x mapper.mul mapper</code></p>
+
+<h2 id="mapperne">mapper.ne</h2>
+
+<p>Push onto the stack a mapper to  return the first value not equal to threshold.</p>
+
+<p><code>x mapper.ne mapper</code></p>
+
+<h2 id="mappernpdf">mapper.npdf</h2>
+
+<p>Push onto the stack a mapper to compute the probability of a value within a gaussian distribution with mu/sigma.</p>
+
+<p><code>mu sigma mapper.npdf mapper</code></p>
+
+<h2 id="mapperpercentile">mapper.percentile</h2>
+
+<p>Push onto the stack a mapper to compute the Nth percentile of the values on the interval.</p>
+
+<p><code>percentile mapper.percentile mapper</code></p>
+
+<h2 id="mapperpow">mapper.pow</h2>
+
+<p>Push onto the stack a mapper to raise the value to a certain power.</p>
+
+<p><code>power mapper.pow mapper</code></p>
+
+<h2 id="mapperproduct">mapper.product</h2>
+
+<p>Push onto the stack a mapper which computes the product of values in the sliding window.</p>
+
+<p><code>- mapper.product mapper</code></p>
+
+<h2 id="mapperrate">mapper.rate</h2>
+
+<p>Push onto the stack a mapper which computes the rate of change per second on the sliding window.</p>
+
+<p><code>- mapper.rate mapper</code></p>
+
+<h2 id="mapperreplace">mapper.replace</h2>
+
+<p>Push onto the stack a mapper to replace windows that contains at least one value with a constant.</p>
+
+<p><code>x mapper.replace mapper</code></p>
+
+<h2 id="mapperround">mapper.round</h2>
+
+<p>Push onto the stack a mapper which rounds the single value in the sliding window.</p>
+
+<p><code>- mapper.round mapper</code></p>
+
+<h2 id="mappersd">mapper.sd</h2>
+
+<p>Push onto the stack a mapper which computes the standard deviation (with or without Bessel’s correction) of non null values in the sliding window.</p>
+
+<p><code>bool mapper.sd mapper</code></p>
+
+<h2 id="mappersdforbid-nulls">mapper.sd.forbid-nulls</h2>
+
+<p>Push onto the stack a mapper which computes the standard deviation (with or without Bessel’s correction) of values in the sliding window. Null values lead to a null result.</p>
+
+<p><code>bool mapper.sd.forbid-nulls mapper</code></p>
+
+<h2 id="mappersecond">mapper.second</h2>
+
+<p>Push onto the stack a mapper to compute seconds of the tick.</p>
+
+<p><code>'TimeZone' mapper.second mapper</code></p>
+
+<h2 id="mappersigmoid">mapper.sigmoid</h2>
+
+<p>Push onto the stack a mapper to return the sigmoid of the single value in the sliding window.</p>
+
+<p><code>- mapper.sigmoid mapper</code></p>
+
+<h2 id="mappersum">mapper.sum</h2>
+
+<p>Push onto the stack a mapper which computes the sum of values in the sliding window.</p>
+
+<p><code>- mapper.sum mapper</code></p>
+
+<h2 id="mappersumforbid-nulls">mapper.sum.forbid-nulls</h2>
+
+<p>Pushes onto the stack a mapper which outputs the sum of a set of values, excluding nulls from the computation.</p>
+
+<p><code>- mapper.sum.forbid-nulls mapper</code></p>
+
+<h2 id="mappersqrt">mapper.sqrt</h2>
+
+<p>Push onto the stack a mapper tocompute the square root a the single value in the sliding window.</p>
+
+<p><code>x mapper.mul mapper</code></p>
+
+<h2 id="mappertanh">mapper.tanh</h2>
+
+<p>Push onto the stack a mapper which computes the tanh of the single value in the sliding window.</p>
+
+<p><code>- mapper.tanh mapper</code></p>
+
+<h2 id="mappertick">mapper.tick</h2>
+
+<p>Push onto the stack a mapper to return the tick.</p>
+
+<p><code>- mapper.tick mapper</code></p>
+
+<h2 id="mappertoboolean">mapper.toboolean</h2>
+
+<p>Push onto the stack a mapper to return the boolean representation of the single value in the sliding window.</p>
+
+<p><code>- mapper.toboolean mapper</code></p>
+
+<h2 id="mappertodouble">mapper.todouble</h2>
+
+<p>Push onto the stack a mapper to converts the single value in a sliding window to double.</p>
+
+<p><code>- mapper.todouble mapper</code></p>
+
+<h2 id="mappertolong">mapper.tolong</h2>
+
+<p>Push onto the stack a mapper to convert the single value in a sliding window to long.</p>
+
+<p><code>- mapper.tolong mapper</code></p>
+
+<h2 id="mappertostring">mapper.tostring</h2>
+
+<p>Push onto the stack a mapper to return the string representation of the single value in the sliding window.</p>
+
+<p><code>- mapper.tostring mapper</code></p>
+
+<h2 id="mappertruecourse">mapper.truecourse</h2>
+
+<p>Push onto the stack a mapper to compute the true course between points on a great circle.</p>
+
+<p><code>- mapper.truecourse mapper</code></p>
+
+<h2 id="mappervar">mapper.var</h2>
+
+<p>Push onto the stack a mapper to compute the variance (with or without Bessel’s correction) of all the non null values in each sliding window.</p>
+
+<p><code>bool mapper.var mapper </code></p>
+
+<h2 id="mappervarforbid-nulls">mapper.var.forbid-nulls</h2>
+
+<p>Push onto the stack a mapper to compute the variance (with or without Bessel’s correction) of all the values in each sliding window. Null values lead to a null result.</p>
+
+<p><code>bool mapper.var.forbid-nulls mapper </code></p>
+
+<h2 id="mappervdist">mapper.vdist</h2>
+
+<p>Push onto the stack a mapper to compute the total distance traveled in the vertical plane in the sliding window..</p>
+
+<p><code>- mapper.vdist mapper</code></p>
+
+<h2 id="mappervspeed">mapper.vspeed</h2>
+
+<p>Push onto the stack a mapper to compute the vertical speed between the first and last readings of the sliding window.</p>
+
+<p><code>- mapper.vspeed mapper</code></p>
+
+<h2 id="mapperweekday">mapper.weekday</h2>
+
+<p>Push onto the stack a mapper to compute the day of the week of the tick.</p>
+
+<p><code>'TimeZone' mapper.weekday mapper</code></p>
+
+<h2 id="mapperyear">mapper.year</h2>
+
+<p>Push onto the stack a mapper to compute the year of the tick.</p>
+
+<p><code>'TimeZone' mapper.year mapper</code></p>
+
+<h2 id="maxtickslidingwindow">max.tick.sliding.window</h2>
+
+<p>Max tick value in a sliding window.</p>
+
+<p><code>- max.tick.sliding.window long</code></p>
+
+<h2 id="maxtimeslidingwindow">max.time.sliding.window</h2>
+
+<p>Max time of a sliding window.</p>
+
+<p><code>- max.time.sliding.window long</code></p>
+
+<h2 id="opadd">op.add</h2>
+
+<p>Pushes onto the stack an operator to add values of multiple GTS.</p>
+
+<p><code>- op.add operator</code></p>
+
+<h2 id="opand">op.and</h2>
+
+<p>Pushes onto the stack an operator to perform a logical and between values of multiple GTS.</p>
+
+<p><code>- op.and operator</code></p>
+
+<h2 id="opdiv">op.div</h2>
+
+<p>Pushes onto the stack an operator to divide values of one GTS by those of another.</p>
+
+<p><code>- op.div operator</code></p>
+
+<h2 id="opeq">op.eq</h2>
+
+<p>Pushes onto the stack an operator to check if values of multiple GTS are equal.</p>
+
+<p><code>- op.eq operator</code></p>
+
+<h2 id="opge">op.ge</h2>
+
+<p>Pushes onto the stack an operator to check if values of multiple GTS are in decreasing order.</p>
+
+<p><code>- op.ge operator</code></p>
+
+<h2 id="opgt">op.gt</h2>
+
+<p>Pushes onto the stack an operator to check if values of multiple GTS are in strict decreasing order.</p>
+
+<p><code>- op.gt operator</code></p>
+
+<h2 id="ople">op.le</h2>
+
+<p>Pushes onto the stack an operator to check if values of multiple GTS are in increasing order.</p>
+
+<p><code>- op.le operator</code></p>
+
+<h2 id="oplt">op.lt</h2>
+
+<p>Pushes onto the stack an operator to check if values of multiple GTS are in strict increasing order.</p>
+
+<p><code>- op.lt operator</code></p>
+
+<h2 id="opmask">op.mask</h2>
+
+<p>Pushes onto the stack an operator to use one GTS as a mask for selecting values of another.</p>
+
+<p><code>- op.mask operator</code></p>
+
+<h2 id="opmul">op.mul</h2>
+
+<p>Pushes onto the stack an operator to multiply values of multiple GT.</p>
+
+<p><code>- op.mul operator</code></p>
+
+<h2 id="opne">op.ne</h2>
+
+<p>Pushes onto the stack an operator to check if values of multiple GTS are different.</p>
+
+<p><code>- op.ne operator</code></p>
+
+<h2 id="opor">op.or</h2>
+
+<p>Pushes onto the stack an operator to perform a logical or between values of multiple GTS.</p>
+
+<p><code>- op.or operator</code></p>
+
+<h2 id="opsub">op.sub</h2>
+
+<p>Pushes onto the stack an operator to subtract values of multiple GTS.</p>
+
+<p><code>- op.sub operator</code></p>
+
+<h2 id="pi-1">pi</h2>
+
+<p>Pushes PI onto the stack.</p>
+
+<p><code>- pi 3.1415...</code></p>
+
+<h2 id="reducerargmax">reducer.argmax</h2>
+
+<p>Push onto the stack a reducer which will output the concatenation of label values for which the value at tick is the maximum.</p>
+
+<p><code>'label' n_maxima_to_report reducer.argmax reducer</code></p>
+
+<h2 id="reducerargmin">reducer.argmin</h2>
+
+<p>Push onto the stack a reducer which will output the concatenation of label values for which the value at tick is the mininum.</p>
+
+<p><code>'label' n_minima_to_report reducer.argmin reducer</code></p>
+
+<h2 id="reducercount">reducer.count</h2>
+
+<p>Push onto the stack a reducer to return the number of values for each tick.</p>
+
+<p><code>reducer.count</code></p>
+
+<h2 id="reducercountexclude-nulls">reducer.count.exclude-nulls</h2>
+
+<p>Pushes onto the stack a reducer which outputs the number of non null values in a set.</p>
+
+<p><code>- reducer.count.exclude-nulls reducer</code></p>
+
+<h2 id="reducercountinclude-nulls">reducer.count.include-nulls</h2>
+
+<p>Pushes onto the stack a reducer which outputs the number of values (even null ones) in a set.</p>
+
+<p><code>- reducer.count.include-nulls reducer</code></p>
+
+<h2 id="reducercountnonnull">reducer.count.nonnull</h2>
+
+<p>Push onto the stack a reducer to return the number of non-null values for each tick.</p>
+
+<p><code>reducer.count.nonnull</code></p>
+
+<h2 id="reducerjoin">reducer.join</h2>
+
+<p>Push onto the stack a reducer to return the concatenation of values separated by the join string for each ticket, ignoring null values.</p>
+
+<p><code>reducer.join</code></p>
+
+<h2 id="reducerjoinforbid-nulls">reducer.join.forbid-nulls</h2>
+
+<p>Pushes onto the stack a reducer which outputs the concatenation of the string representations of the values in a set with the given separator or null if one of the values is null.</p>
+
+<p><code>sep reducer.join.forbid-nulls reducer</code></p>
+
+<h2 id="reducerjoinnonnull">reducer.join.nonnull</h2>
+
+<p>Push onto the stack a reducer to return the concatenation of values separated by the join string for each ticket.</p>
+
+<p><code>reducer.join.nonnull</code></p>
+
+<h2 id="reducermax">reducer.max</h2>
+
+<p>Push onto the stack a reducer to return the maximum value for each tick, ignoring null values.</p>
+
+<p><code>reducer.max</code></p>
+
+<h2 id="reducermaxforbid-nulls">reducer.max.forbid-nulls</h2>
+
+<p>Pushes onto the stack a reducer which outputs the max of a set of values or null if one of the values is null.</p>
+
+<p><code>- reducer.max.forbid-nulls reducer</code></p>
+
+<h2 id="reducermaxnonnull">reducer.max.nonnull</h2>
+
+<p>Push onto the stack a reducer to return the maximum value for each tick.</p>
+
+<p><code>reducer.max.nonnull</code></p>
+
+<h2 id="reducermean">reducer.mean</h2>
+
+<p>Push onto the stack a reducer to compute the mean of values for each tick.</p>
+
+<p><code>reducer.mean</code></p>
+
+<h2 id="reducermeanexclude-nulls">reducer.mean.exclude-nulls</h2>
+
+<p>Pushes onto the stack a reducer which outputs the mean of a set of values, excluding nulls from the computation.</p>
+
+<p>``` - reducer.mean.exclude-nulls reducer ``</p>
+
+<h2 id="reducermedian">reducer.median</h2>
+
+<p>Push onto the stack a reducer to compute the median of the values for each tick.</p>
+
+<p><code>reducer.median</code></p>
+
+<h2 id="reducermin">reducer.min</h2>
+
+<p>Push onto the stack a reducer to return the minimum value for each tick, ignoring null values.</p>
+
+<p><code>reducer.min</code></p>
+
+<h2 id="reducerminforbid-nulls">reducer.min.forbid-nulls</h2>
+
+<p>Pushes onto the stack a reducer which outputs the min of a set of values or null if one of the values is null.</p>
+
+<p><code>- reducer.min.forbid-nulls reducer</code></p>
+
+<h2 id="reducerminnonnull">reducer.min.nonnull</h2>
+
+<p>Push onto the stack a reducer to return the minimum value for each tick.</p>
+
+<p><code>reducer.min.nonnull</code></p>
+
+<h2 id="reducerpercentile">reducer.percentile</h2>
+
+<p>Push onto the stack a reducer to return the Nth percentile of the values for each tick.</p>
+
+<p><code>percentile reducer.percentile reducer</code></p>
+
+<h2 id="reducerproduct">reducer.product</h2>
+
+<p>Push onto the stack a reducer which multiplies together all (non null) values for each tick.</p>
+
+<p><code>reducer.product</code></p>
+
+<h2 id="reducersd">reducer.sd</h2>
+
+<p>Push onto the stack a reducer to compute the standard deviation (with or without Bessel’s correction) of the values for each tick, ignoring null values.</p>
+
+<p><code>bool reducer.sd reducer</code></p>
+
+<h2 id="reducersdforbid-nulls">reducer.sd.forbid-nulls</h2>
+
+<p>Push onto the stack a reducer to compute the standard deviation (with or without Bessel’s correction) of the values for each tick, null values lead to a null result.</p>
+
+<p><code>bool reducer.sd.forbid-nulls reducer</code></p>
+
+<h2 id="reducershannonentropy0">reducer.shannonentropy.0</h2>
+
+<p>Push onto the stack a reducer to compute a Shannon Entropy, considering GTS values to be number of occurrences of an event (returns 0 if reduce a single value).</p>
+
+<p><code>- reducer.shannonentropy.0 reducer</code></p>
+
+<h2 id="reducershannonentropy1">reducer.shannonentropy.1</h2>
+
+<p>Push onto the stack a reducer to compute a Shannon Entropy, considering GTS values to be number of occurrences of an event (returns 1 if reduce a single value).</p>
+
+<p><code>- reducer.shannonentropy.1 reducer</code></p>
+
+<h2 id="reducersum">reducer.sum</h2>
+
+<p>Push onto the stack a reducer to compute the sum of the values for each tick, ignoring null values.</p>
+
+<p><code>reducer.sum</code></p>
+
+<h2 id="reducersumforbid-nulls">reducer.sum.forbid-nulls</h2>
+
+<p>Pushes onto the stack a reducer which outputs the sum of a set of values, the presence of a null value will lead to a null result.</p>
+
+<p><code>- reducer.sum.forbid-nulls reducer</code></p>
+
+<h2 id="reducersumnonnull">reducer.sum.nonnull</h2>
+
+<p>Push onto the stack a reducer to compute the sum of the values for each tick.</p>
+
+<p><code>reducer.sum.nonnull</code></p>
+
+<h2 id="reducervar">reducer.var</h2>
+
+<p>Push onto the stack a reducer to compute the variance (with or without Bessel’s correction) of the non null values for each tick.</p>
+
+<p><code>bool reducer.var reducer</code></p>
+
+<h2 id="reducervarforbid-nulls">reducer.var.forbid-nulls</h2>
+
+<p>Push onto the stack a reducer to compute the variance (with or without Bessel’s correction) of the values for each tick. Missing (null) values lead to a null result.</p>
+
+<p><code>bool reducer.var.forbid-nulls reducer</code></p>
+
+<h2 id="-18">{</h2>
+
+<p>Starts a map.</p>
+
+<p><code>- { mark</code></p>
+
+<h2 id="-19">{}</h2>
+
+<p>Pushes an empty map onto the stack.</p>
+
+<p><code>- {} {}</code></p>
+
+<h2 id="-20">|</h2>
+
+<p>Bitwise OR.</p>
+
+<p><code>l1 l2 | long</code></p>
+
+<h2 id="-21">||</h2>
+
+<p>Conditional OR.</p>
+
+<p><code>b1 b2 || boolean</code></p>
+
+<h2 id="-22">}</h2>
+
+<p>Builds a map from elements on the stack.</p>
+
+<p><code>mark key1 value1 ... keyn valuen } { key1 value1 ... keyn valuen }</code></p>
+
+<h2 id="-23">~=</h2>
+
+<p>Checks two operands for equality, accepting a difference under a configurable lambda value.</p>
+
+<p><code>p1 p2 lambda ~= boolean</code></p>
+
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Footer -->
+<footer>
+
+  <hr>
+
+  <div id="contact" class="container text-center">
+    <!-- Footer -->
+    <a class="webicons" href="https://twitter.com/CityzenData" target="_blank">
+      <footer>
+        <div id="contact" class="container text-center">
+      <div class="webicon twitter"></div>
+      <div class="webicon_text twitter">@CityzenData</div>
+    </a>
+    <a class="webicons" href="mailto:contact@cityzendata.com" target="_blank">
+      <div class="webicon mail"></div>
+      <div class="webicon_text mail">contact@cityzendata.com</div>
+    </a>
+  </div>
+
+  <div class="container text-center top-margin">
+    Copyright &copy; 2016 Cityzen Data
+  </div>
+  <div class="container text-center">
+    <a href="/docs/introduction/legal">Legal</a>
+  </div>
+
+</footer>
+
+<script>
+    var template = document.querySelector('template[is="dom-bind"]');
+</script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: 'e3f0d4e7cfac4e1065a92f60b3ec28d1',
+indexName: 'warp10',
+inputSelector: '#search_box'
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43780642-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('pf9x6nb43t24');
+</script>
+<!-- End of Async Drift Code -->
+</body>
+</html>

@@ -63,11 +63,11 @@ FILTER
 ]
 BUCKETIZE
 
+'bucketizedSeries' STORE
+
 //
 // MAP block:
 //
-
-'bucketizedSeries' STORE
 
 // MAP Framework
 [

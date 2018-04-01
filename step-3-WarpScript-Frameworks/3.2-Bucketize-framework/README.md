@@ -28,7 +28,7 @@ BUCKETIZE
 
 ```
 
-## HEW step
+## Hello Exo World step
 
 Only a single amount of series were kept in our previous step, it's already possible to observe some drops in the data. Now we would like to write a script automasing the detection of those drops. But first, to gain some data readibilty, a downsampling step is included. In our case we are intersted in a downsampling conserving the minimal point of each generated bucket for each series.
 Let's do it! Try the bucketizer.min with a bucketize window of 2 h.

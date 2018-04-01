@@ -6,6 +6,20 @@ Now that you survive all the WarpScript needed knowlded, we would like to welcom
 
 We preloaded our platform with some stars (around 30). Let's observe the series structures and find the one that we want! We are going to use a function called [FIND](http://www.warp10.io/reference/functions/function_FIND/).
 
+But before retrieving any data, we need to access data store in a specific application. To do it with Warp 10, you need to be allowed using a specific cryptographic token. To simplify this process, we stored this token in the platform. You can access it using the following code. HEW stands for HelloExoWorld. 
+
+```
+// Load handson-hew token
+@HELLOEXOWORLD/GETREADTOKEN
+```
+
+Then store it in a variable, for example token. And starting from now, keep this stored token in all the script as you will need it to load data.
+
+```
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+```
+
 The FIND function finds Geo Time SeriesTM matching some criteria.
 
 The top of the stack must contain a LIST with 3 parameters: a Warp10 token, a classname selector and a MAP of label selectors.

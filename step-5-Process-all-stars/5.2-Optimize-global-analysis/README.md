@@ -4,7 +4,7 @@ You learn how to use some of the WarpScript framework and how to write your firs
 
 ## Practice
 
-In the first script you write only one function: [TIMESPLIT](/docs/reference/functions/function_TIMESPLIT/) request single GTS. Encapsuled this instruction inside a LOOP. When using LMAP, you can replace a time-series by a list thereof. Then to flat the list the [FLATTEN](/docs/reference/functions/function_FLATTEN/) warpscript function can be used.
+In the first script you write only one function: [TIMESPLIT](http://www.warp10.io/reference/functions/function_TIMESPLIT/) request single GTS. Encapsuled this instruction inside a LOOP. When using LMAP, you can replace a time-series by a list thereof. Then to flat the list the [FLATTEN](http://www.warp10.io/reference/functions/function_FLATTEN/) warpscript function can be used.
 
 Then all the WarpScript framework functions can be applied on Time-series list. Just be careful on the equivalence class!
 

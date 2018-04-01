@@ -28,7 +28,7 @@ The following block can be add at the end of the script to reformat all names of
 LMAP
 ```
 
-Did you understood all the instructions? Otherwise have a look at the [warp10.io documentation page](/docs/reference/reference/)!
+Did you understood all the instructions? Otherwise have a look at the [warp10.io documentation page](http://www.warp10.io/reference/)!
 
 You can write the same block of code to refactor the name of the sampled series.
 

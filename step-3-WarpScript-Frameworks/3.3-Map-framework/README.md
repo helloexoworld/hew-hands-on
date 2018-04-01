@@ -1,14 +1,14 @@
 # Step-3.3: Framework time: MAP!
 
-The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER](/docs/reference/frameworks/framework-filter/), [BUCKETIZE](/docs/reference/frameworks/framework-bucketize/), [MAP](/docs/reference/frameworks/framework-map/), [REDUCE](/docs/reference/frameworks/framework-reduce/) and [APPLY](/docs/reference/frameworks/framework-apply/). Let's end with the MAP framework.
+The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER](http://www.warp10.io/reference/frameworks/framework-filter/), [BUCKETIZE](http://www.warp10.io/reference/frameworks/framework-bucketize/), [MAP](http://www.warp10.io/reference/frameworks/framework-map/), [REDUCE](http://www.warp10.io/reference/frameworks/framework-reduce/) and [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/). Let's end with the MAP framework.
 
 ## The framework
 
-Now it is time to update the values of a set of GTS using the [MAP framework](/docs/reference/frameworks/framework-map/). The MAP framework allows you to apply a function on values of a Geo Time SeriesTM that fall into a sliding window.
+Now it is time to update the values of a set of GTS using the [MAP framework](http://www.warp10.io/reference/frameworks/framework-map/). The MAP framework allows you to apply a function on values of a Geo Time SeriesTM that fall into a sliding window.
 
 ## Input parameters
 
-Map takes as input a list of parameters. The first element of this list can be one or several lists of GTS. Then there is a [mapper function](/docs/reference/reference/#framework-mappers). The third and the fourth elements are related to the sliding window, with first an element corresponding to "pre", the width of the sliding window before the value, and in second an element corresponding to "post", the width of the sliding window after the value. The last element corresponds to "occurences" which is the limit of computation of a number. For all elements except the set of GTS and the mapper function a default value 0 can be used, when those elements aren't required.
+Map takes as input a list of parameters. The first element of this list can be one or several lists of GTS. Then there is a [mapper function](http://www.warp10.io/reference/#framework-mappers). The third and the fourth elements are related to the sliding window, with first an element corresponding to "pre", the width of the sliding window before the value, and in second an element corresponding to "post", the width of the sliding window after the value. The last element corresponds to "occurences" which is the limit of computation of a number. For all elements except the set of GTS and the mapper function a default value 0 can be used, when those elements aren't required.
 
 ```
 // MAP Framework

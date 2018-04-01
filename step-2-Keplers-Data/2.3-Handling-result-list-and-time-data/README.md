@@ -4,11 +4,11 @@ Now that you are used to play with the stack, let's manipulate some data!
 
 ## Handling a list
 
-What is the type of the result? You can use [TYPEOF](/docs/reference/functions/function_TYPEOF/) to see it. because it is a single list holding only one element, you can push back the first element by calling 0 [GET](/docs/reference/functions/function_GET/) after the FETCH instruction.
+What is the type of the result? You can use [TYPEOF](http://www.warp10.io/reference/functions/function_TYPEOF/) to see it. because it is a single list holding only one element, you can push back the first element by calling 0 [GET](http://www.warp10.io/reference/functions/function_GET/) after the FETCH instruction.
 
 ## Handling time
 
-As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let's clean that. There is a function called [TIMESPLIT](/docs/reference/functions/function_TIMESPLIT/) that will be able to help us! As stated by the documentation:
+As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let's clean that. There is a function called [TIMESPLIT](http://www.warp10.io/reference/functions/function_TIMESPLIT/) that will be able to help us! As stated by the documentation:
 
 > The TIMESPLIT function takes a GTS or a list of GTS and splits each Geo Time SeriesTM into a list multiple GTS instances, cutting the original GTS when it encounters quiet periods when there are no measurements.
 

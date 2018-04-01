@@ -66,7 +66,7 @@ FILTER
 BUCKETIZE
 ```
 
-Starting from here, use the [APPLY](/docs/reference/frameworks/framework-apply/) framework to compute the [difference]((/docs/reference/frameworks/op_sub/)) between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection!
+Starting from here, use the [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/) framework to compute the [difference]((http://www.warp10.io/reference/frameworks/op_sub/)) between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection!
 
 # To be continued
 

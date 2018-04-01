@@ -6,7 +6,7 @@ Now that you completed your intial training as an exoplanet hunter, let's see ho
 
 Let's admit that you want to compute an **addition** on WarpScript of all the elements inside a list.
 
-The [FOREACH](/docs/reference/functions/function_FOREACH/) function can be used to implement it. Complete the skeleton below were the value 0 is the first element pushed in the stack. In WarpScript the FOREACH functions expect a MACRO on top of the stack and a list of element. To start a macro use the keyword "<%" and to end it use the keyword "%>". 
+The [FOREACH](http://www.warp10.io/reference/functions/function_FOREACH/) function can be used to implement it. Complete the skeleton below were the value 0 is the first element pushed in the stack. In WarpScript the FOREACH functions expect a MACRO on top of the stack and a list of element. To start a macro use the keyword "<%" and to end it use the keyword "%>". 
 
 What will do the FOREACH function? 
 
@@ -36,7 +36,7 @@ The list will be droped of the stack, so at the start of the FOREACH process onl
 
 ## LMAP
 
-The [LMAP](/docs/reference/functions/function_LMAP/) function will on the other side compute an operation on each elements of a List.
+The [LMAP](http://www.warp10.io/reference/functions/function_LMAP/) function will on the other side compute an operation on each elements of a List.
 
 Let's say that for example, we would like to add 1 to each element of the previous list.
 

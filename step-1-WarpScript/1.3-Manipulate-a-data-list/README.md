@@ -2,8 +2,8 @@
 
 ## Structure and function
 
-In WarpScript hundreds of functions are available, you can access the documentation [here](/docs/reference/reference/).
-In WarpScript, it's possible to build structure as [List or Map](/docs/reference/reference/#functions-lists-maps).
+In WarpScript hundreds of functions are available, you can access the documentation [here](http://www.warp10.io/reference/).
+In WarpScript, it's possible to build structure as [List or Map](http://www.warp10.io/reference/#functions-lists-maps).
 The structure to build a List in WarpScript is as followed. First put a marker to open a list, then the elements to add. 
 
 ```
@@ -25,7 +25,7 @@ Let's play with it, here's the squeleton:
 // Reverse it
 ```
 
- build a new list containing two elements: 1 and 3. Then add the elements 2 using the operator [+](/docs/reference/functions/function_ADD/) on this list. Now to sort this list, apply the function [LSORT](/docs/reference/functions/function_LSORT/) on it. This will sort the list, which is on top of stack, in a ascending order and let as a result this list on top of the stack. To sort the list in a descending order, apply the [REVERSE](/docs/reference/functions/function_REVERSE/) function on this list.
+ build a new list containing two elements: 1 and 3. Then add the elements 2 using the operator [+](http://www.warp10.io/reference/functions/function_ADD/) on this list. Now to sort this list, apply the function [LSORT](http://www.warp10.io/reference/functions/function_LSORT/) on it. This will sort the list, which is on top of stack, in a ascending order and let as a result this list on top of the stack. To sort the list in a descending order, apply the [REVERSE](http://www.warp10.io/reference/functions/function_REVERSE/) function on this list.
 
 # To be continued
 

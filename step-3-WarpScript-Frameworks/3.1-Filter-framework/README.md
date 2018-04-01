@@ -22,7 +22,7 @@ FILTER
 
 ```
 
-## HEW step
+## Hello Exo World step
 
 In our data-flow, the goal is now to select only 2 to 3 records of those series to see if it's possible to visualize some drops in those series and if we can start to build a working method to detect exoplanet. You will have to use a Variable as seen in the first step to place the Time-series list in first position of the element list.
 

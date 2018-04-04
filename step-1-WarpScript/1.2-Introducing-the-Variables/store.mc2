@@ -1,0 +1,7 @@
+// counter exemple
+10 20 40 80 + + +
+'totalcounter' STORE
+"The totalcounter: " 
+$totalcounter
+TOSTRING
++

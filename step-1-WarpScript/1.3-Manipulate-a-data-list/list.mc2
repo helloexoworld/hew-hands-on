@@ -1,0 +1,6 @@
+// Warp10 List operations => http://www.warp10.io/reference/reference/#functions-lists-maps
+
+[ 'Monday' 'Tuesday' 'Wednesday' 'Thursday' 'Friday' ]
+[ 'Saturday' 'Sunday' ]
+APPEND
+LSORT

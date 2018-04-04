@@ -31,20 +31,20 @@ You will push on top of the stack a Time series. A Time series follow this model
   - The attributes "a", same as Labels but they are global parameters of a series and can evolve without creating a new series.
   - And finally the values "v" which includes a timestamp (time of the current point), a location and a value (can be Double, Long, Boolean or string)
 
-To update any of those parameters, you can use one of the following functions that updates the initial Time series to define a temerature sensor located in someone home.
+To update any of those parameters, you can use one of the following functions that updates the initial Time series to define an example earth Time series: the number of time it rotate!
 
 ```
 // Create an empty Time series
 NEWGTS
 
 // Rename this Time series
-'temperature.sensor' RENAME
+'planet.rotation.count' RENAME
 
 // Relabel this Time series
-{ 'device' 'Rosemount.214C.RTD-1' } RELABEL
+{ 'name' 'earth' } RELABEL
 
 // Gives an Attribute to this Time series
-{ 'room' 'kitchen' } SETATTRIBUTES
+{ 'main-nickname' 'blue-planet' } SETATTRIBUTES  // This attribute could evolve in the future without re-creating a series once they are stored in Warp 10.
 
 //
 // Add today's value to this Time series
@@ -56,13 +56,15 @@ NOW
 // Push location
 NaN NaN NaN 
 
-// Push 14 degrees as value 
-14
+// Push 121 as value 
+121
 
 // Add today's value in current Time series
 ADDVALUE
 
-// Add yesterday value to this Time series
+//
+// Now we will also add yesterday value to the earth rotation Time series
+//
 
 // Compute Yesterday time (Today minus one day)
 NOW 1 d - 
@@ -70,8 +72,8 @@ NOW 1 d -
 // Push location
 NaN NaN NaN 
 
-// Push the value 12 
-12
+// Push the value 120
+120
 
 // Add the value to current Time series
 ADDVALUE

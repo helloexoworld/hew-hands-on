@@ -31,7 +31,7 @@ You will push on top of the stack a Time series. A Time series follow this model
   - The attributes "a", same as Labels but they are global parameters of a series and can evolve without creating a new series.
   - And finally the values "v" which includes a timestamp (time of the current point), a location and a value (can be Double, Long, Boolean or string)
 
-To update any of those parameters, you can use one of the following functions that updates the initial Time series to define an example earth Time series: the number of time it rotate!
+To update any of those parameters, you can use one of the following functions that updates the initial Time series to define an example one: the number of time a spefic planet rotates!
 
 ```
 // Create an empty Time series

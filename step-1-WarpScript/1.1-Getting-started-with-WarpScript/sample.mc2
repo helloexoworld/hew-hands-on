@@ -1,0 +1,10 @@
+// This is a commentary
+'This a string value: bellow result'        // string value (push in LIFO stack)
+true                                        // boolean value (push in LIFO stack)
+50                                          // long value (push in LIFO stack)
+40                                          // long value (push in LIFO stack)
+3.14159                                     // double value (push in LIFO stack)
+6.85841                                     // Another double value (push in LIFO stack)
++                                           // Compute last stack Value (3.14159 + 6.85841) = 10
++                                           // Compute last stack Value 10 + 42
+==                                          // Check same result 50 == 50 = true

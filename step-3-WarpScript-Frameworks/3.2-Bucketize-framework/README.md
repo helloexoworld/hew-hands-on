@@ -6,6 +6,8 @@ The function used allow some small GTS manipulation but WarpScript offers other 
 
 In this tutorial we will also discover the [BUCKETIZE framework](http://www.warp10.io/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.
 
+***At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.***
+
 We will use this bucket to downsample our data, let's give it a try! In other words, downsampling some Time series consists to reduce locally the number of points and to synchronize different series. There is several ways to process, one of the common one is to create small regular bucket into each series and to compute a value that resume this bucket. The following graphs shows the downsampling process:
 
 ![Alt Text](/assets/img/frameworks/downsampling.png) 
@@ -37,8 +39,6 @@ BUCKETIZE
 ```
 
 To get a working bucketizer, replace the function keyword by an exisiting function as first, last, mean, min, max, median, join...
-
-***At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.***
 
 ## Bucketize in pictures
 

@@ -14,7 +14,7 @@ Map takes as input a list of parameters. The first element of this list can be o
 // MAP Framework
 [
     SWAP                                // Series list or Singleton
-    mapper.                             // Mapper function operator
+    mapper.function                     // Mapper function operator
     0                                   // Pre
     0                                   // Post
     0                                   // Occurence
@@ -24,6 +24,8 @@ MAP
 ```
 
 **Pro tips: A mmapper with the pre, post and occurence parameters at zero is called a single value mapper, meaning that the mapper function will be applied to all points of a series!**
+
+To get a working mapper, replace the function keyword by an exisiting function as mean, min, max...
 
 ## Hello Exo World step
 
@@ -43,6 +45,12 @@ Let's try it! Try the mapper.mean with a moving window!
 MAP
 
 ```
+
+## Resume
+
+The main goal of this step is to compute a moving average of some Time series. To do so, you used the MAP framework, it expects on top of the stack a list of parameters containing: the Time series as list or as singleton to bucketize, a mapper function, and three long parameter: pre, post and occurences.
+
+The result of this step corresponds to a computed Time series list. In our case the 4 selected Time series are now on top of stack containing averaged value of all the values inside a moving window (for each point).
 
 # To be continued
 

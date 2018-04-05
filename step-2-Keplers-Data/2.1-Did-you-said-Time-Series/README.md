@@ -1,7 +1,7 @@
 # Step-2.1: Did you said Time series! 
 
-You are now alone in your quest, an exoplanet hunter! But me, your personal assistant will teach you some basics knowledge to help you achieve this awesome quest!
-But first just to help you, and to guide you, I will start with the beginning.
+You are now alone in your quest, exoplanet hunter! As your personal assistant, we will teach you some basics knowledge to help you achieve this awesome quest!
+First just to help you, and to lead you, let start with the beginning and introduce the NASA data modelised as Time series.
 
 ## Star's data
 

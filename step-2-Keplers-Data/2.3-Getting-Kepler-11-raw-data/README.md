@@ -57,6 +57,9 @@ Go ahead and TIMESPLIT the GTS!
     '2013-05-11T12:02:06.000000Z'       // End date
 ] FETCH
 
+// Singleton series
+0 GET
+
 //
 // TIMESPLIT block:
 //
@@ -73,7 +76,9 @@ Go ahead and TIMESPLIT the GTS!
 
 ```
 
-Once you managed to species all the needed parameters, you should now get a list of splitted series! Great, each one of them corresponds to a single Kepler record. We can now start to work on each of them and how to reduce the number of series to be able to explore a specific amount of data.
+Once you managed to set all the needed parameters, you should get as a result a list of splitted series! In fact Timesplit will work as follow: it takes a GTS on top of stack and process it to detect quiet periods. Then it create one series per each period created several Time series (if they have at least the minimal required number of points to be considered). And finally, they are all added inside a result list.
+
+Great, each series resulting of TIMESPLIT corresponds to a single Kepler record. We can now start to work on each of them and how to reduce the number of series to be able to explore a specific amount of data.
 
 # To be continued
 

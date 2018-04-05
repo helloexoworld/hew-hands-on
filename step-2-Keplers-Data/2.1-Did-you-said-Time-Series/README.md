@@ -9,6 +9,8 @@ During this tutorial, you will study the NASA Kepler data-set. You will in charg
 
 ![Alt Text](/assets/img/transiting-exoplanet-with-brightness-graph-anim.gif)
 
+*Credits: NASA’s Goddard Space Flight Center*
+
 ## Convert to Time series
 
 As the lightcurve of a star evolve according to time, it can be considered as a Time-series.

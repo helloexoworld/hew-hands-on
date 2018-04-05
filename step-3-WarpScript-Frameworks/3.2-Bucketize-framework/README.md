@@ -5,7 +5,14 @@ The function used allow some small GTS manipulation but WarpScript offers other 
 ## The framework
 
 In this tutorial we will also discover the [BUCKETIZE framework](http://www.warp10.io/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.
-We will use this bucket to downsample our data, let's give it a try!
+
+We will use this bucket to downsample our data, let's give it a try! In other words, downsampling some Time series consists to reduce locally the number of points and to synchronize different series. There is several ways to process, one of the common one is to create small regular bucket into each series and to compute a value that resume this bucket. The following graphs shows the downsampling process:
+
+![Alt Text](/assets/img/frameworks/downsampling.png) 
+
+What happen in each bucket? All the points inside the selected bucket are loaded and given to a function. This function will then be executed and one value will be selected (first, last, min, max) or computed (mean, median, count, join). Only one point is kept per bucket!
+
+![Alt Text](/assets/img/frameworks/bucketize.png)
 
 ## Input parameters
 
@@ -13,7 +20,8 @@ The BUCKETIZE framework takes a list of elements as parameter. This list contain
 
 **Pro tips: In order to get a correct number of buckets either Bucketspan or Bucketcount have to be specified!**
 
-**Pro tips 2: Bucketcount indicate the number of bucket to keep starting from the last bucket computed when Bucketspan is also set!**
+**Pro tips 2: Bucketcount indicate the number of bucket to keep starting from the last bucket computed when a Bucketspan is also set!**
+
 
 ```
 // BUCKETIZE Framework
@@ -28,7 +36,31 @@ BUCKETIZE
 
 ```
 
-To get a working bucketizer, replace the function keyword by an exisiting function as mean, min, max...
+To get a working bucketizer, replace the function keyword by an exisiting function as first, last, mean, min, max, median, join...
+
+***At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.***
+
+## Bucketize in pictures
+
+Let's resume step by step each bucketize element. First bucketize requires a set of Time series (Singleton or list):
+
+![Alt Text](/assets/img/frameworks/Time-series-input.png)
+
+The second step consists to choose the function to apply on each bucket (first, last, mean, min, max, median, join...):
+
+![Alt Text](/assets/img/frameworks/bucketizer.png)
+
+A bucketizer can be tuned according to three parameters: lastbucket which specifies the last tick (for all the series) to start computing each bucket. This parameter is very usefull to synchronize different Time series.
+
+![Alt Text](/assets/img/frameworks/lastbucket.png)
+
+The second parameter to tun a bucketizer consists of the bucketspan. Bucketspan is the width of each bucket:
+
+![Alt Text](/assets/img/frameworks/bucketspan.png)
+
+And finally the last parameter to tun a bucketizer is the bucketcount to specify the maximal number of bucket to compute!
+
+![Alt Text](/assets/img/frameworks/bucketcount.png)
 
 ## Hello Exo World step
 

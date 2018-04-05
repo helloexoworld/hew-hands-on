@@ -78,7 +78,7 @@ Go ahead and TIMESPLIT the GTS!
 
 Once you managed to set all the needed parameters, you should get as a result a list of splitted series! In fact Timesplit will work as follow: it takes a GTS on top of stack and process it to detect quiet periods. Then it create one series per each period, generating several Time series (if they have at least the minimal required number of points to be considered). A label is also to each series, with an incremental values (1 for the first, 2 for the second,...). And finally, all the new formed series are added inside a result list and pushed on top of stack.
 
-Great, each series resulting of TIMESPLIT corresponds to a single Kepler record. We can now start to work on each of them and how to reduce the number of series to be able to explore a specific amount of data.
+Great, each series resulting of TIMESPLIT corresponds to a single [Kepler record](https://www.nasa.gov/mission_pages/kepler/overview/index.html). We can now start to work on each of them and how to reduce the number of series to be able to explore a specific amount of data.
 
 # To be continued
 

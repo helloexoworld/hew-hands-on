@@ -30,4 +30,4 @@ There is several possibilities depending of your exopanet hunter skills:
 
 * To start with a short resume of WarpScript start with our first step [here](/step-1-WarpScript/1.1-Getting-started-with-WarpScript/README.md).
 
-* To skip this WarpScript initiation and start working on the Nasa Kepler mission data start with our second step [here](/step-2-Keplers-Data/2.1-Exploring-known-time-series/README.md).
+* To skip this WarpScript initiation and start working on the Nasa Kepler mission data start with our second step [here](/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/README.md).

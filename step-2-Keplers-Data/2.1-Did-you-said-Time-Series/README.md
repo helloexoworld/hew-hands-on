@@ -5,7 +5,9 @@ But first just to help you, and to guide you, I will start with the beginning.
 
 ## Star's data
 
-During this tutorial, you will study the NASA Kepler data-set. You will in charge to discover some exo-planet. But what are an exo-planet ? They are only some planet that turn around other stars that doesn't belong to our solar system. One of the method is to studied the stars lightcurve and to detect drops on them. This means that a planet moved on top of star, and if this sequence is repeated several times, this means that there is an exoplanet graviting near this specific star.
+During this tutorial, you will study the NASA Kepler data-set. You will in charge to discover some exo-planet. But what are an exo-planet ? They are only some planet that turn around other stars that doesn't belong to our solar system. One of the method is to studied the stars lightcurve and to detect drops on them. This means that a planet moved on top of star, and if this sequence is repeated several times, this means that there is an exoplanet graviting near this specific star. This is illustrated by the animated image below.
+
+![Alt Text](/assets/img/transiting-exoplanet-with-brightness-graph-anim.gif)
 
 ## Convert to Time series
 

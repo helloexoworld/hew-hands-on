@@ -20,33 +20,34 @@ APPLY
 ## Practice
 
 The following example show you a quick demonstration on how to use it with the sub operator. In this example 4 series are first created and put in two diffrent set. 
-Then it's up to you, hunter, to compute the difference of the first set series with the ones contained in the second one, according to the sensor label. Please complete the APPLY skeleton below to correctly doing it.
+Then it's up to you, hunter, to compute the difference of the earth or mars series of the first set with the one related contained in the second one! The base code is available in the APPLY skeleton below.
 
+**Pro-tips: Use the equivalence class on the label "name" to compute a name based difference**
 
 ```
 [
-    NEWGTS "series-1" RENAME 
-    { 'sensor' '42' } RELABEL
-    10 NaN NaN NaN 46.5 ADDVALUE
-    20 NaN NaN NaN  23  ADDVALUE
-    NEWGTS "series-2" RENAME 
-    { 'sensor' '53' } RELABEL
-    10 NaN NaN NaN 46.5 ADDVALUE
-    20 NaN NaN NaN  23  ADDVALUE
-    30 NaN NaN NaN  42  ADDVALUE
+    NEWGTS "planet.rotation.count" RENAME 
+    { 'name' 'earth' } RELABEL
+    10 NaN NaN NaN 120 ADDVALUE
+    20 NaN NaN NaN 123  ADDVALUE
+    NEWGTS "planet.rotation.count" RENAME 
+    { 'name' 'mars' } RELABEL
+    10 NaN NaN NaN 124 ADDVALUE
+    20 NaN NaN NaN 125 ADDVALUE
+    30 NaN NaN NaN 126  ADDVALUE
 ]
 'firstResult' STORE
 
 [
-  NEWGTS "series-3" RENAME 
-  { 'sensor' '42' } RELABEL
-  10 NaN NaN NaN  4.5 ADDVALUE
-  20 NaN NaN NaN  -19 ADDVALUE
-  NEWGTS "series-4" RENAME 
-  { 'sensor' '53' } RELABEL
-  10 NaN NaN NaN  4.5 ADDVALUE
-  15 NaN NaN NaN  0.4 ADDVALUE
-  20 NaN NaN NaN  -19 ADDVALUE
+  NEWGTS "planet.rotation.count.to.correct" RENAME 
+  { 'name' 'earth' } RELABEL
+  10 NaN NaN NaN  1 ADDVALUE
+  20 NaN NaN NaN  2 ADDVALUE
+  NEWGTS "planet.rotation.count.to.correct" RENAME 
+  { 'name' 'mars' } RELABEL
+  10 NaN NaN NaN  1 ADDVALUE
+  15 NaN NaN NaN  1 ADDVALUE
+  20 NaN NaN NaN  1 ADDVALUE
 ]
 'secondResult' STORE
 
@@ -59,6 +60,12 @@ Then it's up to you, hunter, to compute the difference of the first set series w
 APPLY
 
 ```
+
+## Resume
+
+To compute a difference between two series, the framework APPLY need to be used. It's also better to synchronize the ticks of each series using BUCKETIZE before computing this operation. The APPLY framework for the sub operation expects two set of list and an equivalence class. Where you careful when you set this parameter to be sure to compute a substraction on only the earth or mars series ?
+
+As a result you get a list of two series: one containing all the value of the earth (resp. mars) rotation Time series substracted of the value to correct of the second earth (resp. mars) Time series.
 
 # To be continued
 

@@ -12,7 +12,7 @@ Let's resume what we have on the stack: first the kepler-11 GTS are loaded using
 
 The filter function takes a list containing 3 elements as input parameter: the GTS as list or singleton to filter, then a list of labels to compute an equivalence class, and finally a filter function.
 
-**Do not focus on the equivalence class: during this step let an empty list. We will see later how it could be used.**
+**Do not focus on the equivalence class: during this step, and keep an empty list. We will see later how it could be used.**
 
 ```
 // Filter framwork

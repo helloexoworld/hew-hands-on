@@ -1,33 +1,33 @@
 [
-    NEWGTS "series-1" RENAME 
-    { 'sensor' '42' } RELABEL
-    10 NaN NaN NaN 46.5 ADDVALUE
-    20 NaN NaN NaN  23  ADDVALUE
-    NEWGTS "series-2" RENAME 
-    { 'sensor' '53' } RELABEL
-    10 NaN NaN NaN 46.5 ADDVALUE
-    20 NaN NaN NaN  23  ADDVALUE
-    30 NaN NaN NaN  42  ADDVALUE
+    NEWGTS "planet.rotation.count" RENAME 
+    { 'name' 'earth' } RELABEL
+    10 NaN NaN NaN 120 ADDVALUE
+    20 NaN NaN NaN 123  ADDVALUE
+    NEWGTS "planet.rotation.count" RENAME 
+    { 'name' 'mars' } RELABEL
+    10 NaN NaN NaN 124 ADDVALUE
+    20 NaN NaN NaN 125 ADDVALUE
+    30 NaN NaN NaN 126  ADDVALUE
 ]
 'firstResult' STORE
 
 [
-  NEWGTS "series-3" RENAME 
-  { 'sensor' '42' } RELABEL
-  10 NaN NaN NaN  4.5 ADDVALUE
-  20 NaN NaN NaN  -19 ADDVALUE
-  NEWGTS "series-4" RENAME 
-  { 'sensor' '53' } RELABEL
-  10 NaN NaN NaN  4.5 ADDVALUE
-  15 NaN NaN NaN  0.4 ADDVALUE
-  20 NaN NaN NaN  -19 ADDVALUE
+  NEWGTS "planet.rotation.count.to.correct" RENAME 
+  { 'name' 'earth' } RELABEL
+  10 NaN NaN NaN  1 ADDVALUE
+  20 NaN NaN NaN  2 ADDVALUE
+  NEWGTS "planet.rotation.count.to.correct" RENAME 
+  { 'name' 'mars' } RELABEL
+  10 NaN NaN NaN  1 ADDVALUE
+  15 NaN NaN NaN  1 ADDVALUE
+  20 NaN NaN NaN  1 ADDVALUE
 ]
 'secondResult' STORE
 
 [
     $firstResult                        // Series list or Singleton minuend
     $secondResult                       // Series list or Singleton subtrahend
-    [ 'sensor' ]                        // Labels to compute equivalence class
+    [ 'name' ]                        // Labels to compute equivalence class
     op.sub                              // Apply function operator
 ]
 APPLY

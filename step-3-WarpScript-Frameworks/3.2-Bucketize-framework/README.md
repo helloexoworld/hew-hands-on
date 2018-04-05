@@ -19,7 +19,7 @@ The BUCKETIZE framework takes a list of elements as parameter. This list contain
 // BUCKETIZE Framework
 [
     SWAP                                // Series list or Singleton
-    bucketizer.                         // Bucketize function operator
+    bucketizer.function                 // Bucketize function operator
     0                                   // Lastbucket
     1 d                                 // Bucketspan
     0                                   // Bucketcount
@@ -27,6 +27,8 @@ The BUCKETIZE framework takes a list of elements as parameter. This list contain
 BUCKETIZE
 
 ```
+
+To get a working bucketizer, replace the function keyword by an exisiting function as mean, min, max...
 
 ## Hello Exo World step
 
@@ -45,6 +47,12 @@ Let's do it! Try the bucketizer.min with a bucketize window of 2 h.
 BUCKETIZE
 
 ```
+
+## Resume
+
+The main goal of this step is to downsample some raw data. To do so, you have to use the BUCKETIZE framework, it expects on top of the stack a list of parameters containing: the Time series as list or as singleton to bucketize, a bucketizer function, and three long parameter: lastbucket, bucketspan and bucketcount.
+
+The result of this step corresponds to a downsampled list. In our case the 4 selected Time series are now on top of stack containing regular bucket and one value per bucket.
 
 # To be continued
 

@@ -10,17 +10,22 @@ Let's resume what we have on the stack: first the kepler-11 GTS are loaded using
 
 ## Input parameters
 
-The filter function takes a list containing 3 elements as input parameter
+The filter function takes a list containing 3 elements as input parameter: the GTS as list or singleton to filter, then a list of labels to compute an equivalence class, and finally a filter function.
+
+**Do not focus on the equivalence class: during this step, and keep an empty list. We will see later how it could be used.**
+
 ```
 // Filter framwork
 [
     $gts                                // Series list or Singleton
     []                                  // Labels to compute equivalence class
-    filter.                             // A selector function 
+    filter.function                     // A selector function 
 ]
 FILTER
 
 ```
+
+To have a working filter, replace the function keyword by an existing filter function: filter.bylabels or filter.byclass for instance. Those specific filter function requires a parameter on top of the stack. A more concret example is detailed below, based on the NASA lightcurve data.
 
 ## Hello Exo World step
 
@@ -43,6 +48,12 @@ As an example you can try to use the selector labels map specifies in the folloz
 FILTER
 
 ```
+
+## Resume
+
+To resume, to filter a data set, we have to use the FILTER framework. It expects on the stack a list of parameter: the Time series as list or as singleton to filter, then a list of labels to compute an equivalence class, and finally a filter function. The filter function as we see the filter.bylabels can also need some parameter on top of stack.
+
+The result of this step corresponds to a reduced list. In our case only 4 records (2 to 5) were selected using a regular expression. A list containing 4 Time series is now let on top of the WarpScript stack.
 
 # To be continued
 

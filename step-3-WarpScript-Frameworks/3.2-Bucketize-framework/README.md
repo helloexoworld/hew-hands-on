@@ -2,6 +2,8 @@
 
 The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER](http://www.warp10.io/reference/frameworks/framework-filter/), [BUCKETIZE](http://www.warp10.io/reference/frameworks/framework-bucketize/), [MAP](http://www.warp10.io/reference/frameworks/framework-map/), [REDUCE](http://www.warp10.io/reference/frameworks/framework-reduce/) and [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/). Let's continue with the BUCKETIZE framework.
 
+***At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.***
+
 ## The framework
 
 In this tutorial we will also discover the [BUCKETIZE framework](http://www.warp10.io/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.
@@ -37,8 +39,6 @@ BUCKETIZE
 ```
 
 To get a working bucketizer, replace the function keyword by an exisiting function as first, last, mean, min, max, median, join...
-
-***At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.***
 
 ## Bucketize in pictures
 

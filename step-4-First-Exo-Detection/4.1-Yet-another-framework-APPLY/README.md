@@ -1,10 +1,12 @@
 # Step-4.1: Yet another framework: APPLY!
 
-## The framework 
-
 Yet an other WarpScript framework: [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/)! It's a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series! 
 
-The signature of the [Apply with a sub operator](http://www.warp10.io/reference/frameworks/op_sub/) is described below:
+***At the bottom of this page, you will find a practice example showing how to substract two set of Time series.***
+
+## The framework 
+
+The signature of the [Apply with a sub operator](http://www.warp10.io/reference/frameworks/op_sub/) is described below. It takes 4 parameters: a set of Time series that compose the minuend, an other set that compose the subtrahend of the sub operation. A list of labels and the op.sub operation are the last two required parameter.
 
 ```
 [
@@ -16,6 +18,30 @@ The signature of the [Apply with a sub operator](http://www.warp10.io/reference/
 APPLY
 
 ```
+
+This will compute the sub operation between the first and the second set (based on the equivalences classes).
+
+## Appy in pictures
+
+To get a better understanding of the APPLY framework, let's decompose the APPLY operation on several steps.
+
+First several set of Time series are needed as input. In our case, for the sub operation, a minuend is first needed:
+
+![Alt Text](/assets/img/frameworks/Time-series-input.png)
+
+Still in our case, a second set of Time series is needed, the subtrahend:
+
+![Alt Text](/assets/img/frameworks/Time-series-input.png)
+
+After this operation an equivalence class have to be computed to split the series (in the example below) based on the record labels. This mean that we compute the APPLY operation only between the series of both set that belongs to the **same equivalence class**.
+
+![Alt Text](/assets/img/frameworks/equivalence-class.png)
+
+And finally, we select the apply operation to compute on each equivalence class:
+
+![Alt Text](/assets/img/frameworks/apply-operator.png)
+
+In our case it would be the sub operation! Let's practice it before applying this operation on the NASA lightcurve data.
 
 ## Practice
 

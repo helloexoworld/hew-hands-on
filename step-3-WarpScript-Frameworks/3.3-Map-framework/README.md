@@ -2,9 +2,15 @@
 
 The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER](http://www.warp10.io/reference/frameworks/framework-filter/), [BUCKETIZE](http://www.warp10.io/reference/frameworks/framework-bucketize/), [MAP](http://www.warp10.io/reference/frameworks/framework-map/), [REDUCE](http://www.warp10.io/reference/frameworks/framework-reduce/) and [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/). Let's end with the MAP framework.
 
+***At the bottom of this page, you will find the instructions on how to process to apply a mapper on the NASA lightcurve data.***
+
 ## The framework
 
 Now it is time to update the values of a set of GTS using the [MAP framework](http://www.warp10.io/reference/frameworks/framework-map/). The MAP framework allows you to apply a function on values of a Geo Time SeriesTM that fall into a sliding window.
+
+![Alt Text](/assets/img/frameworks/mapper.png)
+
+In other words, the MAP framework allows the user to compute the same operation on all the points of a series. For specific kind of operations (means, min, max...), some points directly before and after the current point can be added to the computation. This resume the concept of sliding window around each points.
 
 ## Input parameters
 
@@ -25,11 +31,35 @@ MAP
 
 **Pro tips: A mmapper with the pre, post and occurence parameters at zero is called a single value mapper, meaning that the mapper function will be applied to all points of a series!**
 
-To get a working mapper, replace the function keyword by an exisiting function as mean, min, max...
+To get a working mapper, replace the function keyword by an exisiting function as replace, mean, min, max, sd, abs, mul, add, round...
+
+## Mapper in pictures
+
+Let's resume step by step each mapper element. First [MAP framework](http://www.warp10.io/reference/frameworks/framework-map/) requires a set of Time series (Singleton or list):
+
+![Alt Text](/assets/img/frameworks/Time-series-input.png)
+
+The second step consists to choose the function to apply on each points (resp window): replace, mean, min, max, sd, abs, mul, add, round and [lot of others](http://www.warp10.io/reference/reference/#mappers):
+
+![Alt Text](/assets/img/frameworks/mapper-op.png)
+
+A mapper can be tuned according to three parameters: pre which corresponds to the number of points to integrate to the sliding window **before** the current point:
+
+![Alt Text](/assets/img/frameworks/mapper-pre.png)
+
+The second parameter to tun a mapper consists of post: which corresponds to the number of points to integrate to the sliding window **after** the current point:
+
+![Alt Text](/assets/img/frameworks/mapper-post.png)
+
+And finally the last parameter used to tun a mapper is occurences which specify the maximal number of computation of each points!
+
+![Alt Text](/assets/img/frameworks/mapper-occurences.png)
+
+Now we would like to apply this specific framework to compute the same operation on all the Time series points of the NASA lightcurve data. Let's see how to process!
 
 ## Hello Exo World step
 
-In previous step we saw how to downsample the data, but what if to get a correct sense we would to compute an approximate trend? Usics basic static, we could try to use a moving average as example. In WarpScript, the map framework can be used to approximate such a computation. For a example we can define a window containing 5 elements before and as many after the current point and compute the mean value.
+In previous step we saw how to downsample the data, but what if to get the main aspect of the lightcurve we would like now to compute its approximate trend? In statistics, we could compute a moving average as example. In WarpScript, the map framework can be used to approximate such a computation. For a example we can define a window containing 5 elements before and as many after the current point and compute its mean value.
 
 Let's try it! Try the mapper.mean with a moving window!
 

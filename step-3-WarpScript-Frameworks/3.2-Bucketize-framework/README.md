@@ -2,6 +2,8 @@
 
 The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER](http://www.warp10.io/reference/frameworks/framework-filter/), [BUCKETIZE](http://www.warp10.io/reference/frameworks/framework-bucketize/), [MAP](http://www.warp10.io/reference/frameworks/framework-map/), [REDUCE](http://www.warp10.io/reference/frameworks/framework-reduce/) and [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/). Let's continue with the BUCKETIZE framework.
 
+***At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.***
+
 ## The framework
 
 In this tutorial we will also discover the [BUCKETIZE framework](http://www.warp10.io/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.
@@ -42,11 +44,11 @@ To get a working bucketizer, replace the function keyword by an exisiting functi
 
 ## Bucketize in pictures
 
-Let's resume step by step each bucketize element. First bucketize requires a set of Time series (Singleton or list):
+Let's resume step by step each bucketize element. First BUCKETIZE requires a set of Time series (Singleton or list):
 
 ![Alt Text](/assets/img/frameworks/Time-series-input.png)
 
-The second step consists to choose the function to apply on each bucket (first, last, mean, min, max, median, join...):
+The second step consists to choose the function to apply on each bucket: first, last, mean, min, max, median, join, and [others](http://www.warp10.io/reference/reference/#bucketizers):
 
 ![Alt Text](/assets/img/frameworks/bucketizer.png)
 
@@ -58,9 +60,11 @@ The second parameter to tun a bucketizer consists of the bucketspan. Bucketspan 
 
 ![Alt Text](/assets/img/frameworks/bucketspan.png)
 
-And finally the last parameter to tun a bucketizer is the bucketcount to specify the maximal number of bucket to compute!
+And finally the last parameter used to tun a bucketizer is the bucketcount to specify the maximal number of bucket to compute!
 
 ![Alt Text](/assets/img/frameworks/bucketcount.png)
+
+Now we would like to apply this specific framework to compute a downsampling operation on the NASA lightcurve data. Let's see how to process!
 
 ## Hello Exo World step
 

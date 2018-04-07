@@ -14,9 +14,11 @@ We will use this bucket to downsample our data, let's give it a try! In other wo
 
 ![Alt Text](/assets/img/frameworks/downsampling.png) 
 
-What happen in each bucket? All the points inside the selected bucket are loaded and given to a function. This function will then be executed and one value will be selected (first, last, min, max) or computed (mean, median, count, join). Only one point is kept per bucket!
+What happen in each bucket? All the points inside the selected bucket are loaded and given to a function. This function will then be executed and one value will be selected (first, last, min, max) or computed (mean, median, count, join). The graphs below and upper show a working example of the bucketize framework. In the graph below we takes only the first bucket: there is two ticks inside with value 20 and 10. Using, for example, the function mean, this will generate only one tick at the end of the bucket with value: mean(20 and 10) which equals 15: 
 
-![Alt Text](/assets/img/frameworks/bucketize.png)
+![Alt Text](/assets/img/frameworks/bucketize-sample.png)
+
+This how the bucketize concept works, let see how it can be implemented with WarpScript!
 
 ## Input parameters
 

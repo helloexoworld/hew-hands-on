@@ -17,7 +17,7 @@ title: HelloExo.World - Hands-on with exoplanets
 email: contact@helloexo.world
 description: >- # this means to ignore newlines until "baseurl:"
   A hands-on used at different tech conferences, such as BreizhCamp, Devoxx France and so on
-baseurl: "/helloexoworld-hands-on" # the subpath of your site, e.g. /blog
+baseurl: "/hew-hands-on" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: helloexoworld
 github_username:  helloexoworld

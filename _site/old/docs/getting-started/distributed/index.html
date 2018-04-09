@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>Getting Started with the Distributed Version of Warp 10 - Warp10 Documentation</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+  <style>
+    body {
+      background-color: #eeeeee;
+    }
+  </style>
+
+
+  <link rel="stylesheet" href="/assets/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+
+  <script src="/assets/webcomponents-lite.js"></script>
+  <script src="/assets/jquery.js"></script>
+  <script src="/assets/bootstrap.js"></script>
+
+  <link rel="import" href="/assets/warp10-components.html">
+
+  <!--
+  <script src="http://localhost:8000/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="http://localhost:8000/bower_components/jquery/dist/jquery.js"></script>
+  <script src="http://localhost:8000/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <link   rel="import" href="http://localhost:8000/bower_components/polymer/polymer.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-navbar/warp10-navbar.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-quantum/warp10-conf.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-quantum/warp10-quantum-widget.html">
+  -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/docs/css/warp10.css">
+  <link rel="stylesheet" href="/docs/css/warp10-navbar.css">
+  <!-- Pygments Github CSS -->
+  <link rel="stylesheet" href="/docs/css/syntax.css">
+
+  <style>
+    :host {
+      display: block;
+    }
+    .top-10 { margin-top:10px; }
+    h4 {
+      font-weight: bold;
+    }
+    .list-group-item {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+
+    <div class="navbar-header">
+      <!--
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    -->
+      <a class="navbar-brand" href="/docs">
+        <div class="navbar-id">
+          <div class="navbar-id-icon">
+            <span id="icon-CityzenData" class="icon-CityzenData"></span>
+          </div>
+          <div class="navbar-id-name">
+            Warp 10
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="collapse navbar-nav navbar-collapse navbar-right">
+      <div class="form-inline">
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+          <input id="search_box" class="form-control" style="vertical-align: middle" >
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="navbar-separator" > </div>
+
+<warp10-conf conf="doc"></warp10-conf>
+
+<div id="mainbody">
+
+  <div class="container top-10" id="main-container">
+    <div class="row">
+      <button type="button" class="navbar-toggle toggle collapsed" data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+<div id="sidebar" class="col-sm-3 collapse">
+
+  <div class="panel-group" id="side-menu">
+
+    <div id="panel-home" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-home">
+        <span class="glyphicon glyphicon-home"></span>Home</a>
+    </h4>
+  </div>
+  <div id="collapse-home" class="panel-collapse collapse ">
+    <div class="list-group">
+
+      <a class="list-group-item" href="/docs/introduction/platform">Overview</a>
+
+      <a class="list-group-item" href="/docs/introduction/concepts">Concepts</a>
+
+      <a class="list-group-item" href="/docs/introduction/history">History</a>
+
+      <a class="list-group-item" href="/docs/introduction/team">Team</a>
+
+      <a class="list-group-item" href="/docs/introduction/versions">Versions</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-howto" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-howto">
+        <span class="glyphicon glyphicon-education"></span>How-to
+      </a>
+    </h4>
+  </div>
+  <div id="collapse-howto" class="panel-collapse collapse  in ">
+    <div class="list-group">
+
+      <a class="list-group-item" href="/docs/getting-started">Getting started</a>
+
+      <a class="list-group-item" href="/docs/howto/data-modeling">Data modeling</a>
+
+      <a class="list-group-item" href="/docs/howto/migrate-from">Migrate from</a>
+      <div class="list-group-item">Tutorials</div>
+      <div class="list-group">
+        <a class="list-group-item" href="/docs/howto/intro-bucketize">BUCKETIZE</a>
+        <a class="list-group-item" href="/docs/howto/intro-reduce">REDUCE</a>
+      </div>
+
+      <a class="list-group-item" href="/docs/howto/pushing-data">Pushing data</a>
+      <div class="list-group">
+        <a class="list-group-item" href="/docs/howto/websocket-push">Using WebSockets</a>
+        <a class="list-group-item" href="/docs/howto/collecting-tools">Using metrics collecting tools</a>
+      </div>
+
+      <a class="list-group-item" href="/docs/howto/accessing-data">Accessing data</a>
+
+      <a class="list-group-item" href="/docs/howto/fetching-data">Fetching data</a>
+
+      <a class="list-group-item" href="/docs/howto/create-a-udf">Create and deploy one User Defined Function</a>
+      
+      <a class="list-group-item" href="/docs/howto/create-a-warpscript-extension">Create a WarpScript extension</a>
+
+      <a class="list-group-item" href="/docs/howto/connect-zeppelin">Connect Warp&nbsp;10 to Apache Zeppelin</a>
+
+
+      <a class="list-group-item" href="/howto/monitoring-warp-10-using-warp-10">Monitoring Warp&nbsp;10</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-tutorial" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-apis">
+        <span class="glyphicon glyphicon-tasks"></span>APIs
+      </a>
+    </h4>
+  </div>
+  <div id="collapse-apis" class="panel-collapse collapse ">
+    <div class="list-group">
+      <a class="list-group-item" href="/docs/apis/">Overview</a>
+
+      <a class="list-group-item" href="/docs/apis/warpscript">WarpScript</a>
+
+      <a class="list-group-item" href="/docs/apis/fetch">Fetch</a>
+
+      <a class="list-group-item" href="/docs/apis/ingress">Ingress</a>
+
+      <a class="list-group-item" href="/docs/apis/delete">Delete</a>
+
+      <a class="list-group-item" href="/docs/apis/gts-input-format">GTS input format</a>
+
+      <a class="list-group-item" href="/docs/apis/gts-output-format">GTS output format</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-reference" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-reference">
+        <span class="glyphicon glyphicon-cog"></span>WarpScript</a>
+    </h4>
+  </div>
+  <div id="collapse-reference" class="panel-collapse collapse ">
+    <div class="list-group">
+      <a class="list-group-item" href="/docs/reference/">Overview</a>
+
+      <div class="list-group-item">
+        <a href="/docs/reference/reference">Reference</a>
+      </div>
+      <div class="list-group" id="collapse-reference-list">
+        <a class="list-group-item" href="/docs/reference/reference#frameworks">Frameworks</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-constant">Constant</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-math">Mathematical</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-standalone">Standalone</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-lists-maps">Lists &amp; maps</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-logic">Logic</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-stack">Stack</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-platform">Platform</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-gts">Geo Time Series<sup>®</sup></a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-bucketized-gts">Bucketized GTS</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-geo">Geo-related</a>
+      </div>
+      <a class="list-group-item" href="/docs/reference/miscellaneous">Miscellaneous functions</a>
+      <a class="list-group-item" href="/docs/reference/processing">Working with Processing</a>
+    </div>
+  </div>
+</div>
+
+
+    <div id="panel-tools" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-tools">
+        <span class="glyphicon glyphicon-wrench"></span>Tools</a>
+    </h4>
+  </div>
+  <div id="collapse-tools" class="panel-collapse collapse ">
+    <div class="list-group">
+      <div class="list-group-item">
+        <a href="/tools/github_repositories">Github repositories</a>
+      </div>
+      <div class="list-group" id="collapse-git-list">
+        <a class="list-group-item" href="/tools/github_repositories#Platform">Platform</a>
+        <a class="list-group-item" href="/tools/github_repositories#Batch">Batch</a>
+        <a class="list-group-item" href="/tools/github_repositories#Stream">Stream</a>
+        <a class="list-group-item" href="/tools/github_repositories#Inputs">Input plugins</a>
+        <a class="list-group-item" href="/tools/github_repositories#Outputs">Output plugins</a>
+        <a class="list-group-item" href="/tools/github_repositories#Interpreters">Interpreters</a>
+        <a class="list-group-item" href="/tools/github_repositories#IoT">IoT</a>
+        <a class="list-group-item" href="/tools/github_repositories#UDFs">WarpScript UDFs</a>
+        <a class="list-group-item" href="/tools/github_repositories#Extensions">WarpScript extensions</a>
+        <a class="list-group-item" href="/tools/github_repositories#Websites">Websites</a>
+        <a class="list-group-item" href="/tools/github_repositories#External">External contributions</a>
+      </div>
+      <a class="list-group-item" href="/docs/tools/worf">Worf</a>
+      <a class="list-group-item" href="/docs/tools/quantum">Quantum</a>
+      <a class="list-group-item" href="/docs/tools/trl">Token Revocation List</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-support" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a href="/docs/introduction/support/">
+        <span class="glyphicon glyphicon-ok-circle"></span>Support
+      </a>
+    </h4>
+  </div>
+</div>
+
+
+
+  </div>
+
+</div>
+
+      <div class="col-sm-9">
+        <h1>Getting Started with the Distributed Version of Warp 10</h1>
+        <p>This page details how to deploy the distributed version of the Warp 10 platform.</p>
+
+<h1 id="planning-your-deployment">Planning your deployment</h1>
+
+<p>The distributed version of Warp 10 relies on the following components which you should deploy in the specified versions:</p>
+
+<ul>
+  <li><a href="http://zookeeper.apache.org/">ZooKeeper</a> 3.4.x</li>
+  <li><a href="http://kafka.apache.org/">Kafka</a> 0.8.2.2</li>
+  <li><a href="http://hadoop.apache.org/">Hadoop</a> 2.6.0</li>
+  <li><a href="http://hbase.apache.org/">HBase</a> 1.1.x</li>
+</ul>
+
+<h1 id="introducing-the-warp-10-components">Introducing the Warp 10 components</h1>
+
+<p>The distributed version of the Warp 10 platform is a set of components (or <em>daemons</em>) working together to provide the service. All components can be deployed multiple times to address scalability and high availability.</p>
+
+<p>Any combination of components can be launched in a single JVM. Some components can be omitted if you do not wish to provide the associated functionnality. The core components you should run are <code>ingress</code>, <code>directory</code>, <code>store</code> and <code>egress</code>, all others can be considered optional.</p>
+
+<p>Below is a brief description of each of the components.</p>
+
+<h2 id="ingress">ingress</h2>
+
+<p>The <code>ingress</code> component is responsible for ingesting and deleting data and for modifying the Geo Time Series metadata. It pushes the data and metadata in dedicated Kafka topics. It also consumes the Kafka <em>metadata</em> topic in order to keep track of known GTS.</p>
+
+<h2 id="directory">directory</h2>
+
+<p>The <code>directory</code> component is responsible for tracking all known Geo Time Series, it maintains their list in memory and responds to requests initiated by <code>egress</code>, <code>plasma frontend</code> and <code>geodir</code>.</p>
+
+<p>The metadata are consumed off of the <em>metadata</em> Kafka topic and stored in HBase. Upon startup <code>directory</code> also reads all metadata stored in HBase.</p>
+
+<p>Multiple instances of <code>directory</code> can be launched and each instance can be sharded (running as a set of multiple <code>directory</code> daemons each responsible for a subset of metadata).</p>
+
+<h2 id="store">store</h2>
+
+<p>The <code>store</code> daemon is in charge of persisting datapoints in HBase. It consumes the Kafka <em>data</em> topic and writes the data in HBase.</p>
+
+<p>Multiple <code>store</code> can be launched, each consuming some partitions of the Kafka topic.</p>
+
+<h2 id="egress">egress</h2>
+
+<p>The <code>egress</code> component is where the data analytics happen, it is the WarpScript execution engine. It talks to <code>directory</code> and fetches the datapoints from HBase. The <code>egress</code> component also knows how to talk to <code>ingress</code> to support the <code>UPDATE</code>, <code>META</code> and <code>DELETE</code> functions. It also pushes messages onto the Kafka <em>webcall</em> topic via the <code>WEBCALL</code> function.</p>
+
+<h2 id="plasma-backend-plasmabe">plasma backend (plasmaBE)</h2>
+
+<p>Plasma is the publish/subscribe subsystem of the Warp 10 platform. The <code>plasmaBE</code> component consumes the Kafka <em>data</em> topic and pushes the needed data to the topics associated with the various <code>plasmaFE</code> instances.</p>
+
+<h2 id="plasma-frontend-plasmafe">plasma frontend (plasmaFE)</h2>
+
+<p>The <code>plasmaFE</code> component is in charge of the WebSocket endpoint where clients can subscribe to Geo Time Series. It talks to <code>directory</code>, stores subscriptions in ZooKeeper and consumes datapoints off of a dedicated Kafka topic.</p>
+
+<h2 id="webcall">webcall</h2>
+
+<p>The <code>webcall</code> component consumes <code>WEBCALL</code> requests from the <em>webcall</em> Kafka topic and issues outgoing HTTP requests.</p>
+
+<h2 id="runner">runner</h2>
+
+<p>The <code>runner</code> component is in charge of scheduling and/or running WarpScript code at various periods. Each instance can be configured in <code>standalone</code> mode where it schedules and runs scripts from the same JVM or in one or both of <code>scheduler</code> or <code>worker</code> modes where the <code>scheduler</code> role schedules scripts by pushing them onto a dedicated Kafka topic and the <code>worker</code> role consumes the scripts to run from this same topic and triggers their execution.</p>
+
+<h2 id="geodir">geodir</h2>
+
+<p>The <code>geodir</code> component allows you to defined Geo Directory which index Geo Time Series according to time and space with various resolutions. This component is the most complex of all, it talks to <code>directory</code> but also to ZooKeeper and Kafka. This component will be phased out in future releases of Warp 10.</p>
+
+<h2 id="fetcher">fetcher</h2>
+
+<p>The <code>fetcher</code> component can be used by batch jobs (in Pig, Flink, Spark or MapReduce) to load data using the <code>Warp10InputFormat</code>. It is meant to be launched on each RegionServer to benefit from data locality.</p>
+
+<h1 id="infrastructure-components">Infrastructure components</h1>
+
+<h2 id="zookeeper">ZooKeeper</h2>
+
+<p>ZooKeeper is needed by Kafka, Hadoop (when enabling HA) and HBase. The Warp 10 platform also uses ZooKeeper to coordinate and discover services and to persist some data across runs.</p>
+
+<p>The following Warp 10 configuration parameters are related to ZooKeeper, please refer to the <a href="https://github.com/cityzendata/warp10-platform/blob/master/etc/conf-distributed.template">template configuration</a> file for the detail of each one:</p>
+
+<pre><code>directory.hbase.metadata.zkconnect
+directory.hbase.metadata.znode
+directory.kafka.metadata.zkconnect
+directory.zk.quorum
+directory.zk.znode
+
+egress.hbase.data.zkconnect
+egress.hbase.data.znode
+egress.zk.quorum
+
+geodir.kafka.data.zkconnect
+geodir.kafka.subs.zkconnect
+geodir.zk.directory.quorum
+geodir.zk.directory.znode
+geodir.zk.plasma.maxznodesize
+geodir.zk.plasma.quorum
+geodir.zk.plasma.znode
+geodir.zk.service.quorum
+geodir.zk.service.znode
+geodir.zk.subs.aes
+geodir.zk.subs.maxznodesize
+geodir.zk.subs.quorum
+geodir.zk.subs.znode
+
+ingress.kafka.archive.zkconnect
+ingress.kafka.data.zkconnect
+ingress.kafka.metadata.zkconnect
+ingress.zk.quorum
+
+plasma.backend.kafka.in.zkconnect
+plasma.backend.kafka.out.zkconnect
+plasma.backend.subscriptions.zkconnect
+plasma.backend.subscriptions.znode
+plasma.frontend.kafka.zkconnect
+plasma.frontend.zkconnect
+plasma.frontend.znode
+
+runner.kafka.zkconnect
+runner.zk.quorum
+runner.zk.znode
+
+store.hbase.data.zkconnect
+store.hbase.data.znode
+store.kafka.data.zkconnect
+store.zk.quorum
+
+webcall.kafka.zkconnect
+</code></pre>
+
+<h2 id="kafka">Kafka</h2>
+
+<p>Kafka is central to Warp 10, it acts as the data hub of the platform and a great shock absorber which makes all components loosely coupled and enables them to scale and be updated without interrupting the overall service.</p>
+
+<p>The follwing Kafka topics are needed by Warp 10:</p>
+
+<ul>
+  <li><em>metadata</em></li>
+  <li><em>data</em></li>
+  <li><em>throttling</em></li>
+  <li><em>webcall</em></li>
+  <li><em>plasmabe</em></li>
+  <li><em>plasmafe</em> (one per instance)</li>
+  <li><em>warpscript</em></li>
+</ul>
+
+<p>The following configuration parameters are related to Kafka, please review their description in the <a href="https://github.com/cityzendata/warp10-platform/blob/master/etc/conf-distributed.template">configuration template</a>:</p>
+
+<pre><code>directory.kafka.metadata.aes
+directory.kafka.metadata.commitperiod
+directory.kafka.metadata.consumer.clientid=
+directory.kafka.metadata.groupid
+directory.kafka.metadata.mac
+directory.kafka.metadata.topic
+directory.kafka.metadata.zkconnect
+directory.kafka.nthreads
+
+geodir.kafka.data.aes
+geodir.kafka.data.brokerlist
+geodir.kafka.data.commitperiod
+geodir.kafka.data.consumer.clientid=
+geodir.kafka.data.groupid
+geodir.kafka.data.mac
+geodir.kafka.data.maxsize
+geodir.kafka.data.nthreads
+geodir.kafka.data.producer.clientid=
+geodir.kafka.data.topic
+geodir.kafka.data.zkconnect
+geodir.kafka.subs.aes
+geodir.kafka.subs.brokerlist
+geodir.kafka.subs.commitperiod
+geodir.kafka.subs.consumer.clientid=
+geodir.kafka.subs.groupid
+geodir.kafka.subs.mac
+geodir.kafka.subs.nthreads
+geodir.kafka.subs.producer.clientid=
+geodir.kafka.subs.topic
+geodir.kafka.subs.zkconnect
+
+ingress.kafka.archive.aes
+ingress.kafka.archive.brokerlist
+ingress.kafka.archive.mac
+ingress.kafka.archive.producer.clientid=
+ingress.kafka.archive.topic
+ingress.kafka.archive.zkconnect
+ingress.kafka.data.aes
+ingress.kafka.data.brokerlist
+ingress.kafka.data.mac
+ingress.kafka.data.maxsize
+ingress.kafka.data.poolsize
+ingress.kafka.data.producer.clientid=
+ingress.kafka.data.topic
+ingress.kafka.data.zkconnect
+ingress.kafka.metadata.aes
+ingress.kafka.metadata.brokerlist
+ingress.kafka.metadata.commitperiod
+ingress.kafka.metadata.consumer.clientid=
+ingress.kafka.metadata.groupid
+ingress.kafka.metadata.mac
+ingress.kafka.metadata.maxsize
+ingress.kafka.metadata.nthreads
+ingress.kafka.metadata.poolsize
+ingress.kafka.metadata.producer.clientid=
+ingress.kafka.metadata.topic
+ingress.kafka.metadata.zkconnect
+
+plasma.backend.kafka.in.aes
+plasma.backend.kafka.in.commitperiod
+plasma.backend.kafka.in.consumer.clientid=
+plasma.backend.kafka.in.groupid
+plasma.backend.kafka.in.mac
+plasma.backend.kafka.in.nthreads
+plasma.backend.kafka.in.topic
+plasma.backend.kafka.in.zkconnect
+plasma.backend.kafka.out.aes
+plasma.backend.kafka.out.brokerlist
+plasma.backend.kafka.out.mac
+plasma.backend.kafka.out.maxsize
+plasma.backend.kafka.out.producer.clientid=
+plasma.backend.kafka.out.topic
+plasma.backend.kafka.out.zkconnect
+
+plasma.frontend.kafka.aes
+plasma.frontend.kafka.commitperiod
+plasma.frontend.kafka.consumer.clientid=
+plasma.frontend.kafka.groupid
+plasma.frontend.kafka.mac
+plasma.frontend.kafka.nthreads
+plasma.frontend.kafka.topic
+plasma.frontend.kafka.zkconnect
+
+runner.kafka.aes
+runner.kafka.brokerlist
+runner.kafka.commitperiod
+runner.kafka.consumer.clientid=
+runner.kafka.groupid
+runner.kafka.mac
+runner.kafka.nthreads
+runner.kafka.poolsize
+runner.kafka.producer.clientid=
+runner.kafka.topic
+runner.kafka.zkconnect
+
+store.kafka.data.aes
+store.kafka.data.brokerlist
+store.kafka.data.commitperiod
+store.kafka.data.consumer.clientid=
+store.kafka.data.groupid
+store.kafka.data.intercommits.maxtime
+store.kafka.data.mac
+store.kafka.data.producer.clientid=
+store.kafka.data.topic
+store.kafka.data.zkconnect
+
+webcall.kafka.aes
+webcall.kafka.brokerlist
+webcall.kafka.commitperiod
+webcall.kafka.consumer.clientid
+webcall.kafka.groupid
+webcall.kafka.mac
+webcall.kafka.producer.clientid
+webcall.kafka.topic
+webcall.kafka.zkconnect
+</code></pre>
+
+<h2 id="hadoop">Hadoop</h2>
+
+<p>Hadoop is not needed directly by Warp 10 but used as the underlying storage by HBase. Beyond this storage role, Hadoop, and YARN specifically, can be leveraged to process massive amounts of Geo Time Series stored either in Warp 10 itself (in HBase) or in any other form using WarpScript on Pig, Flink or Spark.</p>
+
+<p>Hadoop (HDFS) can also be used to perform backups of data stored in HBase.</p>
+
+<h2 id="hbase">HBase</h2>
+
+<p>HBase is used as the main datastore of Warp 10. The data is organized in a single table containing two column families, one for the metadata and another one for the datapoints. Row keys for both types of data start with different prefixes. The creation command is available on <a href="https://github.com/cityzendata/warp10-platform/blob/master/etc/continuum.hbase">GitHub</a>.</p>
+
+<p>For improved datapoints retrieval, a Warp 10 custom filter (<a href="https://github.com/cityzendata/warp10-platform/blob/master/warp10/src/main/java/org/apache/hadoop/hbase/filter/SlicedRowFilter.java"><code>org.apache.hadoop.hbase.filter.SlicedRowFilter</code></a>)should be deployed on HBase. The jar file containing this filter is built using a dedicated <a href="https://github.com/cityzendata/warp10-platform/blob/master/build.gradle">gradle task</a>.</p>
+
+<p>In order to support datapoints deletion, HBase must be configured with the <a href="https://hbase.apache.org/devapidocs/org/apache/hadoop/hbase/coprocessor/example/BulkDeleteEndpoint.html"><code>BulkDeleteEndpoint</code></a>.</p>
+
+<h1 id="putting-it-all-together">Putting it all together</h1>
+
+<p>Once you’ve set up ZooKeeper, Kafka, Hadoop and HBase and with your Warp 10 configuration files  on hand, launching Warp 10 is simply a matter of executing</p>
+
+<pre><code>java -cp warp10-x.y.z.jar io.warp10.WarpDist path/to/configuration.file
+</code></pre>
+
+<p>on each machine where you want to run Warp 10 daemons.</p>
+
+<p>Please follow those <a href="/docs/getting-started/distributed-setup">detailed instructions</a> on how to set up the various Warp 10 components.</p>
+
+<h2 id="haproxy">HaProxy</h2>
+
+<p>In order to provide high-availability and load-balancing for <code>ingress</code>, <code>egress</code>, <code>plasmaFE</code> and <code>geodir</code>, we recommend you run <a href="http://www.haproxy.org/"><code>haproxy</code></a> in front of those Warp 10 daemons.</p>
+
+<h1 id="getting-more-help">Getting more help</h1>
+
+<p>Should you need help in setting up the distributed version of Warp 10, please start a conversation in the Warp 10 <a href="https://groups.google.com/forum/#!forum/warp10-users">Google Group</a>.</p>
+
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Footer -->
+<footer>
+
+  <hr>
+
+  <div id="contact" class="container text-center">
+    <!-- Footer -->
+    <a class="webicons" href="https://twitter.com/CityzenData" target="_blank">
+      <footer>
+        <div id="contact" class="container text-center">
+      <div class="webicon twitter"></div>
+      <div class="webicon_text twitter">@CityzenData</div>
+    </a>
+    <a class="webicons" href="mailto:contact@cityzendata.com" target="_blank">
+      <div class="webicon mail"></div>
+      <div class="webicon_text mail">contact@cityzendata.com</div>
+    </a>
+  </div>
+
+  <div class="container text-center top-margin">
+    Copyright &copy; 2016 Cityzen Data
+  </div>
+  <div class="container text-center">
+    <a href="/docs/introduction/legal">Legal</a>
+  </div>
+
+</footer>
+
+<script>
+    var template = document.querySelector('template[is="dom-bind"]');
+</script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: 'e3f0d4e7cfac4e1065a92f60b3ec28d1',
+indexName: 'warp10',
+inputSelector: '#search_box'
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43780642-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('pf9x6nb43t24');
+</script>
+<!-- End of Async Drift Code -->
+</body>
+</html>

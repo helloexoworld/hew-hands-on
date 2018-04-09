@@ -1,0 +1,35 @@
+
+@media (min-width: 768px) {
+  #sidebar.collapse {
+    display: block!important;
+    height: auto!important;
+    padding-bottom: 0;
+    overflow: visible!important;
+  }
+  .toggle {
+    display: none;
+  }
+}
+
+.toggle {
+  background-color: #552222;
+  background-image: linear-gradient(to bottom, #552222 0%, #552222 100%);
+  z-index: 10;
+}  
+.toggle .icon-bar {
+  background-color: #fff;
+}
+
+.panel-title>a,
+.panel-title>a:hover {
+  text-decoration: none;
+  color: #552222;
+}
+
+a {
+  color: #552222;
+}
+a:focus, a:hover {
+  color: #552222;
+  text-decoration: underline;
+}

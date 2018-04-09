@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>HelloExo.World - Hands-on with exoplanets</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+  
+    <style>
+      body {
+        background-color: #eeeeee;
+      }
+    </style>
+
+    <link rel="stylesheet" 
+        href="/assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" 
+        href="/assets/font-awesome/font-awesome.min.css">
+
+    <script src="/assets/webcomponents/webcomponents-lite.js"></script>
+    <script src="/assets/jquery/jquery.js"></script>
+    <script src="/assets/bootstrap/bootstrap.js"></script>
+
+    <link rel="import" href="/assets/quantum/warp10-components.html">
+
+    <link rel="stylesheet" href="/css/helloexoworld.css">
+    <link rel="stylesheet" href="/css/helloexoworld-navbar.css">
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+  
+    <style>
+      :host {
+        display: block;
+      }
+      .top-10 { margin-top:10px; }
+      h4 {
+        font-weight: bold;
+      }
+      .list-group-item {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  
+<body>
+  
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+  
+      <div class="navbar-header">
+        <!--
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      -->
+        <a class="navbar-brand" href="">
+          <div class="navbar-id">
+            <div class="navbar-id-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="logo">
+  <path d="M24 1.27C11.45 1.27 1.27 11.45 1.27 24S11.45 46.73 24 46.73 46.73 36.55 46.73 24 36.55 1.27 24 1.27zm0 .673c12.186 0 22.057 9.871 22.057 22.057 0 12.186-9.87 22.057-22.057 22.057-12.186 0-22.058-9.871-22.058-22.057C1.942 11.814 11.814 1.943 24 1.943zM10.577 8.198v5.685h.994v-2.375h2.906v2.375h1.002V8.198h-1.002v2.316H11.57V8.198zm7.96 0c-.337 0-.626.04-.867.118a1.57 1.57 0 0 0-.59.32 1.233 1.233 0 0 0-.337.488c-.073.191-.11.399-.11.624 0 .634.268 1.06.801 1.28a1.303 1.303 0 0 0-.607.496c-.14.214-.21.483-.21.81 0 .218.034.423.101.614.073.19.185.356.337.497.157.135.354.241.59.32.24.078.53.118.867.118h2.88v-.994h-2.88c-.292 0-.508-.062-.648-.185-.14-.13-.211-.306-.211-.53 0-.461.29-.691.867-.691h2.822v-.902h-2.796c-.579 0-.868-.224-.868-.673 0-.22.068-.393.202-.523.135-.129.354-.193.657-.193h2.847v-.994zm4.088 0v3.722c0 .287.037.55.11.792.078.236.202.44.37.615.169.174.385.312.649.413.27.095.592.143.968.143h2.266v-.994H24.78c-.224 0-.413-.025-.564-.076a.976.976 0 0 1-.354-.202.788.788 0 0 1-.194-.312 1.465 1.465 0 0 1-.05-.387V8.198zm5.083 0v3.722c0 .287.036.55.11.792.078.236.202.44.37.615.168.174.385.312.649.413.269.095.592.143.968.143h2.266v-.994h-2.207c-.224 0-.413-.025-.564-.076a.976.976 0 0 1-.354-.202.788.788 0 0 1-.194-.312 1.465 1.465 0 0 1-.05-.387V8.198zm7.484 0c-.831 0-1.469.236-1.912.707-.438.472-.657 1.188-.657 2.148 0 .954.219 1.665.657 2.13.443.467 1.08.7 1.912.7h.774c.831 0 1.466-.233 1.904-.7.443-.465.665-1.176.665-2.13 0-.96-.222-1.676-.665-2.148-.438-.471-1.073-.707-1.904-.707zm0 .994h.774c.55 0 .95.146 1.196.438.247.292.371.763.371 1.414 0 .652-.126 1.123-.38 1.415-.246.287-.642.43-1.187.43h-.774c-.556 0-.958-.143-1.205-.43-.247-.286-.37-.755-.37-1.406 0-.657.123-1.131.37-1.423.253-.292.654-.438 1.205-.438zm-10.915 5.784a8.548 8.548 0 0 0-8.548 8.548 8.548 8.548 0 0 0 0 .02c3.331 1.438 7.147 1.213 10.77 1.054a1.882 1.882 0 0 1 1.678-1.036 1.882 1.882 0 0 1 1.882 1.882 1.882 1.882 0 0 1-1.882 1.882 1.882 1.882 0 0 1-1.317-.54c-1.826.13-3.698.005-5.513-.006-1.692-.1-3.551-.229-5.234-.752a8.548 8.548 0 0 0 1.214 2.449l.045-.022.936.224 1.138-.556.825.67.67-.3.413.17.855-.713.593.86.349-.29.69.409.473-.26.754.2.938-.572.837.597L28 28.51l.248 2.577a8.548 8.548 0 0 0 1.01-.625l.246-2.679 1.248 1.04.445-.375.041.019a8.548 8.548 0 0 0 1.587-4.943 8.548 8.548 0 0 0-8.549-8.548zm-8.474 5.894c-.095-.006-.3.068-.498.08-.414.12-.796.435-1.07.647-.222.174-.45.375-.64.604-.188.23-.356.493-.366.833-.02.633.416 1.095.87 1.392.453.298.976.493 1.367.653 2.898 1.18 5.725 1.03 8.553 1.124.826.028 2.034-.033 3-.097a1.335 1.335 0 0 0 1.158.674 1.335 1.335 0 0 0 1.335-1.336 1.335 1.335 0 0 0-1.335-1.335 1.335 1.335 0 0 0-1.321 1.153c-.943.06-2.08.116-2.808.091-2.876-.096-5.567.036-8.261-1.061-.405-.165-.883-.354-1.223-.576-.34-.223-.493-.417-.486-.656.001-.033.048-.166.174-.32.126-.153.207-.409.399-.559.384-.3.73-.584.73-.584.486-.578.544-.72.422-.727zm16.647 7.643l-.657.727-.516-.229-.522.44-.854-.712-.467 5.087-.118-.147-.512.344-.365-.559-.45.27-.101-1.369-.308-3.208-.818.271-.776-.554-.843.515-.766-.205-.544.3-.634-.376-.494.412-.594-.862-.673.561-.49-.202-.751.336-.816-.663-1.017.498-.934-.224-1.05.522-1.113-.796-1.188.522a.34.34 0 1 0 .273.623l.834-.367 1.13.808 1.195-.593.932.223.847-.414.803.653.866-.388.6.248.416-.348.594.863.697-.582.554.328.645-.355.784.21.708-.433.691.494.337-.112.225 2.352.183 2.464.835-.502.385.588.561-.378.781.98.505-5.486.298.249.631-.532.578.256.495-.548.53.557.575-.418a.34.34 0 1 0-.4-.55l-.093.068zM19.225 30.06l-.28.137a8.548 8.548 0 0 0 5.332 1.876 8.548 8.548 0 0 0 2.383-.345l-.098-1.015-.626-.447-.613.373-.795-.212-.716.394-.499-.295-.84.703-.595-.864-.234.196-.677-.28-.948.424zm20.21.816a1.452 1.452 0 0 0-.477.068c-.39.124-.694.416-.912.874l-.524 1.098c-.082.173-.031.296.152.37l2.824 1.148c.183.074.316.025.398-.147l.524-1.098c.218-.459.245-.862.082-1.212-.163-.352-.528-.644-1.098-.875-.358-.146-.681-.221-.968-.226zm-30.514.044a1.198 1.198 0 0 0-.397.093c-.376.155-.557.406-.545.75a.874.874 0 0 0-.455-.209 1.003 1.003 0 0 0-.534.083c-.13.054-.242.122-.337.206a.774.774 0 0 0-.205.306.964.964 0 0 0-.033.4c.018.151.071.319.16.503l.765 1.573.588-.243-.764-1.574c-.078-.16-.099-.292-.063-.4a.43.43 0 0 1 .258-.244c.272-.113.485-.011.639.305l.749 1.54.533-.22-.742-1.527c-.154-.316-.098-.53.168-.64a.48.48 0 0 1 .363-.017c.112.042.208.146.289.311l.755 1.555.588-.243-.755-1.555a1.673 1.673 0 0 0-.3-.445 1.012 1.012 0 0 0-.346-.243.858.858 0 0 0-.379-.065zm30.477.56c.204-.009.451.046.741.164.387.157.634.338.743.544.109.206.091.46-.052.761l-.359.752c-.019.04-.048.052-.088.036l-2.075-.843c-.04-.016-.05-.044-.031-.084l.358-.752c.146-.305.336-.488.573-.55a.811.811 0 0 1 .19-.029zm-28.174 2.604l-.358 2.11-2.533.006.521.557 1.929-.004-.309 1.737.514.55.38-2.24 2.403.009-.52-.557-1.804-.008.29-1.61zm24.226 1.5l-.408.46 1.869 1.412a1.8 1.8 0 0 0 .442.249c.15.053.304.073.46.061a1.21 1.21 0 0 0 .474-.144c.158-.088.315-.22.47-.394l.93-1.05-.5-.377-.905 1.023a1.14 1.14 0 0 1-.27.232.667.667 0 0 1-.247.088.551.551 0 0 1-.236-.029.966.966 0 0 1-.215-.123zm-1.48 1.62a1.18 1.18 0 0 0-.226.03 1.449 1.449 0 0 0-.491.214l-1.633 1.065.372.485 1.65-1.075c.146-.095.28-.127.402-.096a.51.51 0 0 1 .381.35c.021.057.03.114.024.17a.38.38 0 0 1-.064.171.553.553 0 0 1-.166.159l-1.173.764c-.167.109-.261.222-.283.339-.022.117.027.254.147.41l.84 1.1.527-.343-.769-1.005c-.035-.047-.028-.087.023-.12l.785-.511 1.509.627.584-.381-1.55-.656a.875.875 0 0 0 .164-.965 1.296 1.296 0 0 0-.166-.287 1.215 1.215 0 0 0-.3-.28.902.902 0 0 0-.376-.15.951.951 0 0 0-.211-.016zm-19.162.583a1.424 1.424 0 0 0-.31.042c-.402.103-.766.4-1.092.89-.325.486-.445.917-.362 1.292.087.376.36.695.818.956l.428.243c.46.26.889.341 1.289.241.403-.098.767-.39 1.091-.877.327-.49.448-.924.363-1.304-.082-.378-.352-.697-.81-.958l-.428-.243c-.345-.196-.673-.29-.987-.282zm.02.604c.191-.007.401.055.629.184l.428.244c.304.172.474.372.511.598.037.226-.055.506-.276.838-.221.332-.451.533-.69.602-.234.069-.501.017-.802-.154l-.428-.243c-.307-.174-.48-.373-.519-.597-.039-.223.052-.5.274-.833.223-.335.452-.538.688-.61a.755.755 0 0 1 .185-.029zm14.93 1.015a2.192 2.192 0 0 0-.712.105l-.477.145c-.512.155-.857.409-1.034.76-.175.35-.164.798.03 1.344.194.543.472.906.836 1.089.368.182.808.195 1.32.04l.477-.145c.512-.156.855-.407 1.03-.754.18-.348.172-.793-.021-1.336-.195-.546-.477-.911-.845-1.097a1.42 1.42 0 0 0-.603-.151zm-.05.6c.137.004.26.036.365.096.211.12.383.364.515.735.132.37.15.662.053.875-.094.21-.309.365-.644.467l-.478.145c-.342.104-.618.097-.829-.02-.21-.116-.38-.36-.513-.73-.133-.373-.153-.666-.06-.879.097-.213.314-.371.653-.474l.477-.145c.17-.051.323-.075.46-.07zm-9.413.15l1.005 2.877c.064.198.156.357.278.476.126.116.312.18.56.19.272.01.48-.048.62-.177a.74.74 0 0 0 .233-.536l.096-2.005a.195.195 0 0 1 .056-.139.185.185 0 0 1 .139-.05.19.19 0 0 1 .123.046.24.24 0 0 1 .077.109l.791 2.207c.064.198.156.357.278.476.126.116.312.18.56.19.273.01.48-.048.62-.177a.74.74 0 0 0 .234-.536l.13-2.715-.65-.026-.128 2.69a.194.194 0 0 1-.062.138.176.176 0 0 1-.133.045c-.098-.004-.163-.053-.195-.149l-.791-2.207a1.07 1.07 0 0 0-.284-.471c-.125-.12-.312-.184-.56-.194-.272-.011-.479.049-.62.181a.727.727 0 0 0-.227.526l-.096 2.01a.194.194 0 0 1-.061.139.195.195 0 0 1-.14.044.208.208 0 0 1-.123-.04.264.264 0 0 1-.071-.109l-.972-2.785zm-2.344 1.89l-.237.65.59.184.237-.65z" />
+</svg>
+            </div>
+            <div class="navbar-id-name">
+              Hands-on with Exoplanets
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="navbar-separator" > </div>
+  
+  <warp10-conf conf="doc"></warp10-conf>
+  
+  <div id="mainbody">
+  
+  <div class="container top-10" id="main-container">
+    <div class="row">
+          <button type="button" 
+            class="navbar-toggle toggle collapsed" 
+            data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <div id="sidebar" class="col-sm-3 collapse">
+      
+        <div class="panel-group" id="side-menu">
+      
+            <div id="panel-step-1" class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-1">
+                1 - WarpScript
+            </a>
+        </h4>
+    </div>
+    <div id="collapse-step-1" class="panel-collapse collapse  in ">
+        <div class="list-group">
+
+            <a class="list-group-item" href="/step-1-WarpScript/1.1-Getting-started-with-WarpScript/">
+                Getting started with WarpScript
+            </a>
+
+            <a class="list-group-item" href="/step-1-WarpScript/1.2-Introducing-the-Variables/">
+                Introducing the variables
+            </a>
+
+            <a class="list-group-item" href="/step-1-WarpScript/1.3-Manipulate-a-data-list/">
+                Manipulate a data list
+            </a>
+
+        </div>
+
+    </div>
+</div>
+            <div id="panel-step-2" class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-2">
+            2 - Kepler's Data
+        </a>
+        </h4>
+    </div>
+    <div id="collapse-step-2" class="panel-collapse collapse ">
+        <div class="list-group">
+    
+        <a class="list-group-item" 
+            href="/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/">
+            Did you say Time Series?
+        </a>
+
+        <a class="list-group-item" 
+            href="/step-2-Keplers-Data/2.2-Exploring-known-time-series/">
+            Exploring known time-series
+        </a>
+
+        <a class="list-group-item" 
+            href="/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/">
+            Getting Kepler-11 raw data
+        </a>
+    
+        </div>
+    
+    </div>
+</div>
+    
+            <div id="panel-step-3" class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-3">
+            3 - WarpScript frameworks
+        </a>
+        </h4>
+    </div>
+    <div id="collapse-step-3" class="panel-collapse collapse ">
+        <div class="list-group">
+    
+        <a class="list-group-item" 
+            href="/step-3-WarpScript-Frameworks/3.1-Filter-framework/">
+            Framework <i>FILTER</i>
+        </a>
+
+        <a class="list-group-item" 
+            href="/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/">
+            Framework <i>BUCKETIZE</i>
+        </a>
+
+        <a class="list-group-item" 
+            href="/step-3-WarpScript-Frameworks/3.1-Map-framework/">
+            Framework <i>MAP</i>
+        </a>
+    
+        </div>
+    
+    </div>
+</div>
+    
+            <div id="panel-step-4" class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-4">
+                4 - First exo-planet detection
+            </a>
+            </h4>
+        </div>
+        <div id="collapse-step-4" class="panel-collapse collapse ">
+            <div class="list-group">
+        
+                <a class="list-group-item" 
+                    href="/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/">
+                    Yet another framework: <i>APPLY</i>
+                </a>
+        
+                <a class="list-group-item" 
+                    href="/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/">
+                    Compute the difference between the lightcurve and the trend
+                </a>
+        
+                <a class="list-group-item" 
+                    href="/step-4-First-Exo-Detection/4.3-Threshold-test-and-display/">
+                    Threshold test and display
+                </a>
+                
+            </div>
+        
+        </div>
+    </div>
+        
+            <div id="panel-step-5" class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-5">
+                5 - Process all the stars
+            </a>
+            </h4>
+        </div>
+        <div id="collapse-step-5" class="panel-collapse collapse ">
+            <div class="list-group">
+        
+                <a class="list-group-item" 
+                    href="/step-5-Process-all-stars/5.1-WarpScript-loops/">
+                    WarpScript loops
+                </a>
+        
+                <a class="list-group-item" 
+                    href="/step-5-Process-all-stars/5.2-Optimize-global-analysis/">
+                    Optimize global analysis
+                </a>
+        
+                <a class="list-group-item" 
+                    href="/step-5-Process-all-stars/5.3-Reformat-the-output/">
+                    Reformat the output
+                </a>
+                
+            </div>
+        
+        </div>
+    </div>
+        
+            <div id="panel-step-6" class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-6">
+                6 - Going further
+            </a>
+            </h4>
+        </div>
+        <div id="collapse-step-6" class="panel-collapse collapse ">
+            <div class="list-group">
+        
+                <a class="list-group-item" 
+                    href="/step-6-Going-further/">
+                    Going further
+                </a>
+                        
+            </div>
+        
+        </div>
+    </div>
+        
+      
+      
+        </div>
+      
+     </div>
+      
+      <div class="col-sm-9">
+        <h1></h1>
+        <h1 id="step-11-getting-started-with-warpscript">Step-1.1: Getting started with WarpScript!</h1>
+
+<h2 id="what-is-warpscript">What is WarpScript?</h2>
+
+<p>WarpScript is a programming language specific to Geo Time Series® analysis. For security reason, WarpScript is an interpreted language, which means that a Warp 10 backend have to be reached to execute your script. Fortunately for you, we set-up a platform on a Raspberry Pi that should be nearby. You should be able to connect to this elements like this:</p>
+
+<ul>
+  <li><a href="https://quantum.metrics.ovh.net/">Quantum</a></li>
+  <li><a href="http://www.warp10.io/reference/">Warp10 official documentation</a></li>
+</ul>
+
+<blockquote>
+  <p>Please note that you’ll have better performance using chromium. Firefox support is on his way.</p>
+</blockquote>
+
+<p>As WarpScript is a stack language, you will learn some basic information about the stack manipulation before starting some data-mining.</p>
+
+<h2 id="warpscript-stack">WarpScript Stack</h2>
+
+<p>WarpScript is a stack related programming language. This means that to compute an operation you first have to put all the parameters on the stack, then put the operator. Then if a result is produced, it will be pushed on top of the stack.</p>
+
+<h2 id="single-operator">Single operator</h2>
+
+<p>Let’s start with a simple WarpScript function: <a href="http://www.warp10.io/reference/functions/function_NOW/">NOW</a>. This function will put on the stack the current time (in microseconds) since the Unix epoch.</p>
+
+<p>Open <a href="https://quantum.metrics.ovh.net/">Quantum</a>. You need to configure it to hit one of our Warp10 instance. Click on “Choose another backend”, then the pencil and add:</p>
+
+<ul>
+  <li>https://warp.pierrezemb.org/api/v0 if you are doing the online version</li>
+  <li>http://127.0.0.1:8080/api/v0 if you are using the docker version</li>
+  <li>http://warp-1:8080 if you are in a conference</li>
+</ul>
+
+<p>Then OK. Congrats, you can now type your first WarpScript! Type “NOW” in it. Then click execute. Congratulation, you wrote your first WarpScript! You should see the current time (in microsecond) in the answer session.</p>
+
+<h2 id="basic-operation-in-warpscript">Basic operation in WarpScript</h2>
+
+<p>Let’s compute an operation in WarpScript, but first, in WarpScript, you will find commentary and variable types.
+The following WarpScript example list all the available basic types.</p>
+
+<pre><code>// This is a commentary
+'a'      // string value
+true     // boolean value
+42        // long value
+3.14159    // double value
+</code></pre>
+
+<p>To compute an operation (for example an addition), put the two elements before the operator <a href="http://www.warp10.io/reference/functions/function_ADD/">+</a> on the stack.
+You will get the result on top of the stack.</p>
+
+<p>Let’s try it, copy that empty WarpScript in Quantum and implement the simple spec:</p>
+
+<pre><code>// Compute 40 + 2
+
+
+// Compute previous result + 0.42
+
+
+// Compute 'Hello' + ' world!'
+</code></pre>
+
+<h1 id="to-be-continued">To be continued</h1>
+
+<p>WarpScript allow the user to save specific data inside Variable, let’s discover how to process in the <a href="/step-1-WarpScript/1.2-Introducing-the-Variables/">next step</a>.</p>
+
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>op.le - Warp10 Documentation</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+  <style>
+    body {
+      background-color: #eeeeee;
+    }
+  </style>
+
+
+  <link rel="stylesheet" href="/assets/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+
+  <script src="/assets/webcomponents-lite.js"></script>
+  <script src="/assets/jquery.js"></script>
+  <script src="/assets/bootstrap.js"></script>
+
+  <link rel="import" href="/assets/warp10-components.html">
+
+  <!--
+  <script src="http://localhost:8000/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="http://localhost:8000/bower_components/jquery/dist/jquery.js"></script>
+  <script src="http://localhost:8000/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <link   rel="import" href="http://localhost:8000/bower_components/polymer/polymer.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-navbar/warp10-navbar.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-quantum/warp10-conf.html">
+  <link   rel="import" href="http://localhost:8000/bower_components/warp10-quantum/warp10-quantum-widget.html">
+  -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/docs/css/warp10.css">
+  <link rel="stylesheet" href="/docs/css/warp10-navbar.css">
+  <!-- Pygments Github CSS -->
+  <link rel="stylesheet" href="/docs/css/syntax.css">
+
+  <style>
+    :host {
+      display: block;
+    }
+    .top-10 { margin-top:10px; }
+    h4 {
+      font-weight: bold;
+    }
+    .list-group-item {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+
+    <div class="navbar-header">
+      <!--
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    -->
+      <a class="navbar-brand" href="/docs">
+        <div class="navbar-id">
+          <div class="navbar-id-icon">
+            <span id="icon-CityzenData" class="icon-CityzenData"></span>
+          </div>
+          <div class="navbar-id-name">
+            Warp 10
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="collapse navbar-nav navbar-collapse navbar-right">
+      <div class="form-inline">
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+          <input id="search_box" class="form-control" style="vertical-align: middle" >
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="navbar-separator" > </div>
+
+<warp10-conf conf="doc"></warp10-conf>
+
+<div id="mainbody">
+
+  <div class="container top-10" id="main-container">
+    <div class="row">
+      <button type="button" class="navbar-toggle toggle collapsed" data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+<div id="sidebar" class="col-sm-3 collapse">
+
+  <div class="panel-group" id="side-menu">
+
+    <div id="panel-home" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-home">
+        <span class="glyphicon glyphicon-home"></span>Home</a>
+    </h4>
+  </div>
+  <div id="collapse-home" class="panel-collapse collapse ">
+    <div class="list-group">
+
+      <a class="list-group-item" href="/docs/introduction/platform">Overview</a>
+
+      <a class="list-group-item" href="/docs/introduction/concepts">Concepts</a>
+
+      <a class="list-group-item" href="/docs/introduction/history">History</a>
+
+      <a class="list-group-item" href="/docs/introduction/team">Team</a>
+
+      <a class="list-group-item" href="/docs/introduction/versions">Versions</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-howto" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-howto">
+        <span class="glyphicon glyphicon-education"></span>How-to
+      </a>
+    </h4>
+  </div>
+  <div id="collapse-howto" class="panel-collapse collapse ">
+    <div class="list-group">
+
+      <a class="list-group-item" href="/docs/getting-started">Getting started</a>
+
+      <a class="list-group-item" href="/docs/howto/data-modeling">Data modeling</a>
+
+      <a class="list-group-item" href="/docs/howto/migrate-from">Migrate from</a>
+      <div class="list-group-item">Tutorials</div>
+      <div class="list-group">
+        <a class="list-group-item" href="/docs/howto/intro-bucketize">BUCKETIZE</a>
+        <a class="list-group-item" href="/docs/howto/intro-reduce">REDUCE</a>
+      </div>
+
+      <a class="list-group-item" href="/docs/howto/pushing-data">Pushing data</a>
+      <div class="list-group">
+        <a class="list-group-item" href="/docs/howto/websocket-push">Using WebSockets</a>
+        <a class="list-group-item" href="/docs/howto/collecting-tools">Using metrics collecting tools</a>
+      </div>
+
+      <a class="list-group-item" href="/docs/howto/accessing-data">Accessing data</a>
+
+      <a class="list-group-item" href="/docs/howto/fetching-data">Fetching data</a>
+
+      <a class="list-group-item" href="/docs/howto/create-a-udf">Create and deploy one User Defined Function</a>
+      
+      <a class="list-group-item" href="/docs/howto/create-a-warpscript-extension">Create a WarpScript extension</a>
+
+      <a class="list-group-item" href="/docs/howto/connect-zeppelin">Connect Warp&nbsp;10 to Apache Zeppelin</a>
+
+
+      <a class="list-group-item" href="/howto/monitoring-warp-10-using-warp-10">Monitoring Warp&nbsp;10</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-tutorial" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-apis">
+        <span class="glyphicon glyphicon-tasks"></span>APIs
+      </a>
+    </h4>
+  </div>
+  <div id="collapse-apis" class="panel-collapse collapse ">
+    <div class="list-group">
+      <a class="list-group-item" href="/docs/apis/">Overview</a>
+
+      <a class="list-group-item" href="/docs/apis/warpscript">WarpScript</a>
+
+      <a class="list-group-item" href="/docs/apis/fetch">Fetch</a>
+
+      <a class="list-group-item" href="/docs/apis/ingress">Ingress</a>
+
+      <a class="list-group-item" href="/docs/apis/delete">Delete</a>
+
+      <a class="list-group-item" href="/docs/apis/gts-input-format">GTS input format</a>
+
+      <a class="list-group-item" href="/docs/apis/gts-output-format">GTS output format</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-reference" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-reference">
+        <span class="glyphicon glyphicon-cog"></span>WarpScript</a>
+    </h4>
+  </div>
+  <div id="collapse-reference" class="panel-collapse collapse  in ">
+    <div class="list-group">
+      <a class="list-group-item" href="/docs/reference/">Overview</a>
+
+      <div class="list-group-item">
+        <a href="/docs/reference/reference">Reference</a>
+      </div>
+      <div class="list-group" id="collapse-reference-list">
+        <a class="list-group-item" href="/docs/reference/reference#frameworks">Frameworks</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-constant">Constant</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-math">Mathematical</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-standalone">Standalone</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-lists-maps">Lists &amp; maps</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-logic">Logic</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-stack">Stack</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-platform">Platform</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-gts">Geo Time Series<sup>®</sup></a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-bucketized-gts">Bucketized GTS</a>
+        <a class="list-group-item" href="/docs/reference/reference#functions-geo">Geo-related</a>
+      </div>
+      <a class="list-group-item" href="/docs/reference/miscellaneous">Miscellaneous functions</a>
+      <a class="list-group-item" href="/docs/reference/processing">Working with Processing</a>
+    </div>
+  </div>
+</div>
+
+
+    <div id="panel-tools" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-tools">
+        <span class="glyphicon glyphicon-wrench"></span>Tools</a>
+    </h4>
+  </div>
+  <div id="collapse-tools" class="panel-collapse collapse ">
+    <div class="list-group">
+      <div class="list-group-item">
+        <a href="/tools/github_repositories">Github repositories</a>
+      </div>
+      <div class="list-group" id="collapse-git-list">
+        <a class="list-group-item" href="/tools/github_repositories#Platform">Platform</a>
+        <a class="list-group-item" href="/tools/github_repositories#Batch">Batch</a>
+        <a class="list-group-item" href="/tools/github_repositories#Stream">Stream</a>
+        <a class="list-group-item" href="/tools/github_repositories#Inputs">Input plugins</a>
+        <a class="list-group-item" href="/tools/github_repositories#Outputs">Output plugins</a>
+        <a class="list-group-item" href="/tools/github_repositories#Interpreters">Interpreters</a>
+        <a class="list-group-item" href="/tools/github_repositories#IoT">IoT</a>
+        <a class="list-group-item" href="/tools/github_repositories#UDFs">WarpScript UDFs</a>
+        <a class="list-group-item" href="/tools/github_repositories#Extensions">WarpScript extensions</a>
+        <a class="list-group-item" href="/tools/github_repositories#Websites">Websites</a>
+        <a class="list-group-item" href="/tools/github_repositories#External">External contributions</a>
+      </div>
+      <a class="list-group-item" href="/docs/tools/worf">Worf</a>
+      <a class="list-group-item" href="/docs/tools/quantum">Quantum</a>
+      <a class="list-group-item" href="/docs/tools/trl">Token Revocation List</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <div id="panel-support" class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a href="/docs/introduction/support/">
+        <span class="glyphicon glyphicon-ok-circle"></span>Support
+      </a>
+    </h4>
+  </div>
+</div>
+
+
+
+  </div>
+
+</div>
+
+      <div class="col-sm-9">
+        <h1>op.le</h1>
+        <p>To apply an <code>op.le</code> operation, N parameters are on top of the stack: N-1 Geo Time Series<sup>TM</sup> lists and one labels List. According to those labels, it produces multiple equivalence classes from the GTS inside those N-1 lists (if they match the same labels as the equivalence class). Then <code>op.le</code> is applyied to the GTS in those classes, building only one result GTS for each class.</p>
+
+<p>The <code>op.le</code> operation will check at each tick if the value of the current GTS is <strong>lesser or equals</strong> to the value of the next GTS. In a recursive way, it will run throw all the values of all the GTS belonging to the same class. If one GTS doesn’t have a value for the current tick the result for this tick is false.</p>
+
+<p>The elevation and location are cleared.</p>
+
+<p>The name of the resulting GTS is the one of the last GTS of the equivalence class. The labels kept are the one of the equivalence class.</p>
+
+<h2 id="example">Example</h2>
+
+<p>Stack:</p>
+
+<pre><code>1:   mark
+TOP: [ [gts1, gts2, ...], [gts3, gts4, ...], ...]
+</code></pre>
+
+<p>WarpScript commands:</p>
+
+<pre><code>  [ 'label' ] 
+  op.le
+]
+APPLY
+</code></pre>
+
+<p>Stack:</p>
+
+<pre><code>TOP: [gtsLe1, gtsLe2, ...]
+</code></pre>
+
+<warp10-warpscript-widget>
+[
+  [
+    NEWGTS "GTS1" RENAME 
+    { 'label0' '42' } RELABEL
+    10 NaN NaN NaN 42 ADDVALUE
+    20 NaN NaN NaN 5 ADDVALUE
+    NEWGTS "GTS2" RENAME 
+    { 'label0' '53' } RELABEL
+    10 NaN NaN NaN 46.0 ADDVALUE
+    15 NaN NaN NaN 44.0 ADDVALUE
+    20 NaN NaN NaN 42.0 ADDVALUE
+  ]
+  [
+    NEWGTS "GTS1" RENAME 
+    { 'label0' '42' } RELABEL
+    10 NaN NaN NaN 46 ADDVALUE
+    20 NaN NaN NaN 5 ADDVALUE
+    30 NaN NaN NaN -5 ADDVALUE
+    NEWGTS "GTS2" RENAME 
+    { 'label0' '53' } RELABEL
+    10 NaN NaN NaN 46.5 ADDVALUE
+    20 NaN NaN NaN 42.0 ADDVALUE
+    NEWGTS "Solo" RENAME 
+    { 'label0' '4253' } RELABEL
+    10 NaN NaN NaN 46 ADDVALUE
+    15 NaN NaN NaN 44 ADDVALUE
+    20 NaN NaN NaN 42 ADDVALUE
+  ]
+  [ 'label0' ]
+  op.le
+]
+APPLY
+</warp10-warpscript-widget>
+
+<h2 id="unit-test">Unit test</h2>
+
+<warp10-warpscript-widget>
+[
+  [
+    NEWGTS "GTS1" RENAME 
+    { 'label0' '42' } RELABEL
+    10 NaN NaN NaN 46 ADDVALUE
+    20 NaN NaN NaN 5 ADDVALUE
+    NEWGTS "GTS2" RENAME 
+    { 'label0' '42' } RELABEL
+    10 NaN NaN NaN 46 ADDVALUE
+    20 NaN NaN NaN 42 ADDVALUE
+  ]
+  []
+  op.le
+]
+APPLY
+VALUES LIST-&gt;
+1 == ASSERT
+LIST-&gt; DROP
+true == ASSERT
+true == ASSERT
+'unit test successful'
+</warp10-warpscript-widget>
+
+
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Footer -->
+<footer>
+
+  <hr>
+
+  <div id="contact" class="container text-center">
+    <!-- Footer -->
+    <a class="webicons" href="https://twitter.com/CityzenData" target="_blank">
+      <footer>
+        <div id="contact" class="container text-center">
+      <div class="webicon twitter"></div>
+      <div class="webicon_text twitter">@CityzenData</div>
+    </a>
+    <a class="webicons" href="mailto:contact@cityzendata.com" target="_blank">
+      <div class="webicon mail"></div>
+      <div class="webicon_text mail">contact@cityzendata.com</div>
+    </a>
+  </div>
+
+  <div class="container text-center top-margin">
+    Copyright &copy; 2016 Cityzen Data
+  </div>
+  <div class="container text-center">
+    <a href="/docs/introduction/legal">Legal</a>
+  </div>
+
+</footer>
+
+<script>
+    var template = document.querySelector('template[is="dom-bind"]');
+</script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: 'e3f0d4e7cfac4e1065a92f60b3ec28d1',
+indexName: 'warp10',
+inputSelector: '#search_box'
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43780642-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('pf9x6nb43t24');
+</script>
+<!-- End of Async Drift Code -->
+</body>
+</html>

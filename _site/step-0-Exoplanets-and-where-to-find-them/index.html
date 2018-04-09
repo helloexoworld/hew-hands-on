@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>Step 4.2: Let's compute the difference - HelloExo.World - Hands-on with exoplanets</title>
+    <title>Step 0: Exoplanets and where to find them - HelloExo.World - Hands-on with exoplanets</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -100,7 +100,7 @@
             </a>
         </h4>
     </div>
-    <div id="collapse-step-0" class="panel-collapse collapse ">
+    <div id="collapse-step-0" class="panel-collapse collapse  in ">
         <div class="list-group">
 
             <a class="list-group-item" href="/helloexoworld-hands-on/step-0-Exoplanets-and-where-to-find-them/">
@@ -208,7 +208,7 @@
             </a>
             </h4>
         </div>
-        <div id="collapse-step-4" class="panel-collapse collapse  in ">
+        <div id="collapse-step-4" class="panel-collapse collapse ">
             <div class="list-group">
         
                 <a class="list-group-item" 
@@ -290,79 +290,16 @@
      </div>
       
       <div class="col-sm-9">
-        <h1>Step 4.2: Let's compute the difference</h1>
-        <p>Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet!
-The process is similar to the previous step. Start with the script resuming the data loading, the record split (according to time), the filtering and the downsampling.</p>
+        <h1>Step 0: Exoplanets and where to find them</h1>
+        <p>Exoplanet’s five <em>W</em>s</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Storing the token into a variable
-'abcd' 'token' STORE 
-
-// FETCH
-[ 
-    $token                              // Application authentication
-    'sap.flux'                   // selector for classname
-    { 'KEPLERID' '6541920' }                // Selector for labels
-    '2009-05-02T00:56:10.000000Z'       // Start date
-    '2013-05-11T12:02:06.000000Z'       // End date
-] 
-FETCH
-
-// Get Singleton series
-0 GET
-
-//
-// TIMESPLIT block:
-//
-
-// Quiesce period
-6 h
-
-// Minimal numbers of points per series 
-100
-
-// Labels for each splitted series
-'record'
-
-TIMESPLIT
-
-//
-// FILTER block:
-//
-
-// Store a labels map selector
-{ 'record' '~[2-5]' } 'labelsSelector' STORE
-
-// FILTER Framework
-[
-    SWAP                            // Series list or Singleton
-    []                              // Labels to compute equivalence class
-    $labelsSelector                 // Labels map for selector
-    filter.bylabels                 // Filter function operator 
-]
-FILTER
-
-//
-// BUCKETIZE block:
-//
-
-// BUCKETIZE Framework
-[
-    SWAP                                // Series list or Singleton
-    bucketizer.min                      // Bucketize function operator
-    0                                   // Lastbucket
-    2 h                                 // Bucketspan
-    0                                   // Bucketcount
-]
-BUCKETIZE
-</code></pre></div></div>
-
-<p>Starting from here, use the <a href="http://www.warp10.io/reference/frameworks/framework-apply/">APPLY</a> framework to compute the <a href="(http://www.warp10.io/reference/frameworks/op_sub/)">difference</a> between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection! Be careful of the equivalence class to choose for this specific step!</p>
-
-<p>To resume, the expected result will contains a list of Time series: with one Time series per record containing the result of the substraction of the initial series with its trend.</p>
-
-<h1 id="to-be-continued">To be continued</h1>
-
-<p>Well done young hunter, let’s continue together on the <a href="/step-4-First-Exo-Detection/4.3-Threshold-test-and-display/">last step</a> of this stage to learn how to isolate a minus threshold and build a nice output!</p>
+<ul>
+  <li>What are exoplanets?</li>
+  <li>Where can be find exoplanets?</li>
+  <li>When were exoplanets discovered?</li>
+  <li>Who does work to find exoplanets?</li>
+  <li>Why do we look for exoplanets?</li>
+</ul>
 
       </div>
     </div>

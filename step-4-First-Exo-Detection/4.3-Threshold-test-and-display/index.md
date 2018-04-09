@@ -3,10 +3,9 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: 'Step 4.3: Threshold and display'
 category: step-4
 ---
-
-# Step-4.3: Threshold and display!
 
 You did a great jobs to compute the difference between the light curve and the trend hunter! But how do you see how you can quickly automate the drop detection?
 

@@ -3,9 +3,9 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: 'Step-5.1: Back to WarpScript bascis: the loop'
 category: step-5
 ---
-# Step-5.1: Back to WarpScript bascis: the loop!
 
 Now that you completed your intial training as an exoplanet hunter, let's see how the loops are implemented in WarpScript to be able to generalize your analysis to all the available Kepler's stars.
 

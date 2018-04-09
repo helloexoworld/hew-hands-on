@@ -3,10 +3,11 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: 'Step 1.1: Getting started with WarpScript'
 category: step-1
 ---
 
-# Step-1.1: Getting started with WarpScript!
+
 
 ## What is WarpScript?
 

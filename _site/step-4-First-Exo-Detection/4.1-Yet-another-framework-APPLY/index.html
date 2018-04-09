@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>HelloExo.World - Hands-on with exoplanets</title>
+    <title>Step 4.1: Yet another framework: APPLY - HelloExo.World - Hands-on with exoplanets</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -247,7 +247,7 @@
         <div class="panel-heading">
             <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-6">
-                6 - Going further
+                6 - Where no man has gone before...
             </a>
             </h4>
         </div>
@@ -256,7 +256,7 @@
         
                 <a class="list-group-item" 
                     href="/helloexoworld-hands-on/step-6-Going-further/">
-                    Going further
+                    Where no man has gone before...
                 </a>
                         
             </div>
@@ -271,10 +271,8 @@
      </div>
       
       <div class="col-sm-9">
-        <h1></h1>
-        <h1 id="step-41-yet-another-framework-apply">Step-4.1: Yet another framework: APPLY!</h1>
-
-<p>Yet an other WarpScript framework: <a href="http://www.warp10.io/reference/frameworks/framework-apply/">APPLY</a>! It’s a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series!</p>
+        <h1>Step 4.1: Yet another framework: APPLY</h1>
+        <p>Yet an other WarpScript framework: <a href="http://www.warp10.io/reference/frameworks/framework-apply/">APPLY</a>! It’s a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series!</p>
 
 <p><strong><em>At the bottom of this page, you will find a practice example showing how to substract two set of Time series.</em></strong></p>
 
@@ -282,7 +280,7 @@
 
 <p>The signature of the <a href="http://www.warp10.io/reference/frameworks/op_sub/">Apply with a sub operator</a> is described below. It takes 4 parameters: a set of Time series that compose the minuend, an other set that compose the subtrahend of the sub operation. A list of labels and the op.sub operation are the last two required parameter.</p>
 
-<pre><code>[
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
     $gtsSetMinuend
     $gtsSetSubtrahend
     []
@@ -290,7 +288,7 @@
 ]
 APPLY
 
-</code></pre>
+</code></pre></div></div>
 
 <p>This will compute the sub operation between the first and the second set (based on the equivalences classes).</p>
 
@@ -323,7 +321,7 @@ Then it’s up to you, hunter, to compute the difference of the earth or mars se
 
 <p><strong>Pro-tips: Use the equivalence class on the label “name” to compute a name based difference</strong></p>
 
-<pre><code>[
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
     NEWGTS "planet.rotation.count" RENAME 
     { 'name' 'earth' } RELABEL
     10 NaN NaN NaN 120 ADDVALUE
@@ -357,7 +355,7 @@ Then it’s up to you, hunter, to compute the difference of the earth or mars se
 ]
 APPLY
 
-</code></pre>
+</code></pre></div></div>
 
 <h2 id="resume">Resume</h2>
 

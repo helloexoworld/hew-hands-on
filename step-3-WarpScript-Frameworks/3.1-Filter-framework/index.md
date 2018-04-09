@@ -3,6 +3,7 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: 'Step-3.1: Framework time: FILTER'
 category: step-3
 ---
 

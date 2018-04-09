@@ -3,9 +3,9 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: 'Step 5.3: Time to focus on the format output'
 category: step-5
 ---
-# Step-5.3: Time to focus on the format output!
 
 ## Rename a time series
 

@@ -3,10 +3,9 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: "Step 4.2: Let's compute the difference"
 category: step-4
 ---
-
-# Step-4.2: Let's compute the difference!
 
 Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet!
 The process is similar to the previous step. Start with the script resuming the data loading, the record split (according to time), the filtering and the downsampling.

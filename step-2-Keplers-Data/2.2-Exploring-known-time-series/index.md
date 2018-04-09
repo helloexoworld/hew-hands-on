@@ -3,10 +3,10 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: 'Step 2.2: Exploring the available time-series'
 category: step-2
 ---
-
-# Step-2.2: Exploring the available time-series! 
+ 
 
 Now that you survive all the WarpScript needed knowledge, we would like to welcome you in our special quest, as an exoplanet hunter!
 

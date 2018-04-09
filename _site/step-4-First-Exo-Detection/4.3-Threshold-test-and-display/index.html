@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>HelloExo.World - Hands-on with exoplanets</title>
+    <title>Step 4.3: Threshold and display - HelloExo.World - Hands-on with exoplanets</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -247,7 +247,7 @@
         <div class="panel-heading">
             <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-6">
-                6 - Going further
+                6 - Where no man has gone before...
             </a>
             </h4>
         </div>
@@ -256,7 +256,7 @@
         
                 <a class="list-group-item" 
                     href="/helloexoworld-hands-on/step-6-Going-further/">
-                    Going further
+                    Where no man has gone before...
                 </a>
                         
             </div>
@@ -271,10 +271,8 @@
      </div>
       
       <div class="col-sm-9">
-        <h1></h1>
-        <h1 id="step-43-threshold-and-display">Step-4.3: Threshold and display!</h1>
-
-<p>You did a great jobs to compute the difference between the light curve and the trend hunter! But how do you see how you can quickly automate the drop detection?</p>
+        <h1>Step 4.3: Threshold and display</h1>
+        <p>You did a great jobs to compute the difference between the light curve and the trend hunter! But how do you see how you can quickly automate the drop detection?</p>
 
 <h2 id="threshold-test">Threshold test</h2>
 
@@ -284,7 +282,7 @@
 
 <p>The map framework works as follow:</p>
 
-<pre><code>// MAP Framework
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// MAP Framework
 [
     SWAP                                // Series list or Singleton
     mapper.function                     // Mapper function operator
@@ -293,7 +291,7 @@
     0                                   // Occurence
 ]
 MAP
-</code></pre>
+</code></pre></div></div>
 
 <p>This time we are going to use the map framework to compute a single value operation! Does the current value below a specified threshold. We can use one of the mapper function indicated upper. Those function would expect a number parameter on top of the stack (2, 5, 10, 15, 20, 25, 30 and so on could be working value here).</p>
 
@@ -309,7 +307,7 @@ MAP
 
 <p>To help you achieve this step, you can complete the following skeleton. The step to complete start with TODO.</p>
 
-<pre><code>// Storing the token into a variable
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
 // FETCH
@@ -385,7 +383,7 @@ APPLY
 // Push the original series to compare with
 $bucketizedSeries
 
-</code></pre>
+</code></pre></div></div>
 
 <h2 id="resume">Resume</h2>
 

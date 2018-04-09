@@ -3,9 +3,9 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: 'Step 5.2: Optimize all stars analysis'
 category: step-5
 ---
-# Step-5.2: Optimize all stars analysis!
 
 You learn how to use some of the WarpScript framework and how to write your first script to detect exoplanet! Let's now try to apply this analysis on all the lightcurve of each stars we have at our disposal.
 

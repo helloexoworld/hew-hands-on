@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>HelloExo.World - Hands-on with exoplanets</title>
+    <title>Step-5.1: Back to WarpScript bascis: the loop - HelloExo.World - Hands-on with exoplanets</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -247,7 +247,7 @@
         <div class="panel-heading">
             <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-6">
-                6 - Going further
+                6 - Where no man has gone before...
             </a>
             </h4>
         </div>
@@ -256,7 +256,7 @@
         
                 <a class="list-group-item" 
                     href="/helloexoworld-hands-on/step-6-Going-further/">
-                    Going further
+                    Where no man has gone before...
                 </a>
                         
             </div>
@@ -271,10 +271,8 @@
      </div>
       
       <div class="col-sm-9">
-        <h1></h1>
-        <h1 id="step-51-back-to-warpscript-bascis-the-loop">Step-5.1: Back to WarpScript bascis: the loop!</h1>
-
-<p>Now that you completed your intial training as an exoplanet hunter, let’s see how the loops are implemented in WarpScript to be able to generalize your analysis to all the available Kepler’s stars.</p>
+        <h1>Step-5.1: Back to WarpScript bascis: the loop</h1>
+        <p>Now that you completed your intial training as an exoplanet hunter, let’s see how the loops are implemented in WarpScript to be able to generalize your analysis to all the available Kepler’s stars.</p>
 
 <h2 id="foreach">FOREACH</h2>
 
@@ -286,7 +284,7 @@
 
 <p>The list will be droped of the stack, so at the start of the FOREACH process only the value 0 is on top of the stack. Then during the process of the foreach, each element will be pushed on top of the stack one after an other. You will just have compute an addition inside the macro. The increasing value will stay on top of the stack until the end of the script.</p>
 
-<pre><code>//
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//
 // FOREACH
 //
 
@@ -305,7 +303,7 @@
 // Call FOREACH function
 
 
-</code></pre>
+</code></pre></div></div>
 
 <h2 id="lmap">LMAP</h2>
 
@@ -315,7 +313,7 @@
 
 <p>As the FOREACH function, LMAP takes two parameter: a list and a macro. LMAP will recompute as output a list. Inside the LMAP macro, you will get two elements pushed inside of the stack: the current element and then the index. In our case to correctly apply only our addition, we will need to delete the index of the stack. This means that the first element to be put inside the LMAP macro is the function DROP (used to delete the current element on top of the stack).</p>
 
-<pre><code>//
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//
 // LMAP
 //
 
@@ -331,7 +329,7 @@
 // Call LMAP function
 
 
-</code></pre>
+</code></pre></div></div>
 
 <h1 id="to-be-continued">To be continued</h1>
 

@@ -3,9 +3,9 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: 'Step 2.3: Load time series raw data'
 category: step-2
 ---
-# Step-2.3: Load time series raw data!
 
 Now that you are used to play with the stack and know the available series, let's manipulate some data!
 

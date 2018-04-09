@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>HelloExo.World - Hands-on with exoplanets</title>
+    <title>Step 1.2: Introducing WarpScript Variables - HelloExo.World - Hands-on with exoplanets</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -247,7 +247,7 @@
         <div class="panel-heading">
             <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-6">
-                6 - Going further
+                6 - Where no man has gone before...
             </a>
             </h4>
         </div>
@@ -256,7 +256,7 @@
         
                 <a class="list-group-item" 
                     href="/helloexoworld-hands-on/step-6-Going-further/">
-                    Going further
+                    Where no man has gone before...
                 </a>
                         
             </div>
@@ -271,10 +271,8 @@
      </div>
       
       <div class="col-sm-9">
-        <h1></h1>
-        <h1 id="step-12-introducing-warpscript-variables">Step-1.2: Introducing WarpScript Variables!</h1>
-
-<h2 id="variables">Variables</h2>
+        <h1>Step 1.2: Introducing WarpScript Variables</h1>
+        <h2 id="variables">Variables</h2>
 
 <p>As any other programming language, WarpScript implements the Variables concept. In WarpScript you can save a specific stack element in a variable (java pointer). This is done using the function <a href="http://www.warp10.io/reference/functions/function_STORE/">STORE</a>.</p>
 
@@ -288,7 +286,7 @@
 
 <p>Let’s try it, save the following string in a variable and then push it back several time on the stack!</p>
 
-<pre><code>// A WarpScript string
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// A WarpScript string
 'Hello World!'
 
 // Save this string in variable
@@ -297,14 +295,14 @@
 // Play with the saved variable
 
 
-</code></pre>
+</code></pre></div></div>
 
 <h2 id="get-a-read-token">Get a read token</h2>
 
 <p>Security in Warp10 instance are handled with crypto tokens. They can be pretty long, so to ease your workflow, we stored it in the platform! You can push the token into the stack using this:</p>
 
-<pre><code>@HELLOEXOWORLD/GETREADTOKEN
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@HELLOEXOWORLD/GETREADTOKEN
+</code></pre></div></div>
 
 <p>You can store it in a variable if you want.</p>
 

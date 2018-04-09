@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>HelloExo.World - Hands-on with exoplanets</title>
+    <title>Step-3.1: Framework time: FILTER - HelloExo.World - Hands-on with exoplanets</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -247,7 +247,7 @@
         <div class="panel-heading">
             <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-6">
-                6 - Going further
+                6 - Where no man has gone before...
             </a>
             </h4>
         </div>
@@ -256,7 +256,7 @@
         
                 <a class="list-group-item" 
                     href="/helloexoworld-hands-on/step-6-Going-further/">
-                    Going further
+                    Where no man has gone before...
                 </a>
                         
             </div>
@@ -271,7 +271,7 @@
      </div>
       
       <div class="col-sm-9">
-        <h1></h1>
+        <h1>Step-3.1: Framework time: FILTER</h1>
         <h1 id="step-31-framework-time-filter">Step-3.1: Framework time: FILTER!</h1>
 
 <p>The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: <a href="http://www.warp10.io/reference/frameworks/framework-filter/">FILTER</a>, <a href="http://www.warp10.io/reference/frameworks/framework-bucketize/">BUCKETIZE</a>, <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP</a>, <a href="http://www.warp10.io/reference/frameworks/framework-reduce/">REDUCE</a> and <a href="http://www.warp10.io/reference/frameworks/framework-apply/">APPLY</a>. Let’s start with the FILTER framework.</p>
@@ -288,7 +288,7 @@
 
 <p><strong>Do not focus on the equivalence class: during this step, and keep an empty list. We will see later how it could be used.</strong></p>
 
-<pre><code>// Filter framwork
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Filter framwork
 [
     $gts                                // Series list or Singleton
     []                                  // Labels to compute equivalence class
@@ -296,7 +296,7 @@
 ]
 FILTER
 
-</code></pre>
+</code></pre></div></div>
 
 <p>To have a working filter, replace the function keyword by an existing filter function: filter.bylabels or filter.byclass for instance. Those specific filter function requires a parameter on top of the stack. A more concret example is detailed below, based on the NASA lightcurve data.</p>
 
@@ -307,7 +307,7 @@ FILTER
 <p>The filter function we will use in our case corresponds to <a href="http://www.warp10.io/reference/frameworks/filter_bylabels/">filter.bylabels</a>. This function expects a selector map on top of the stack that have to be specify.
 As an example you can try to use the selector labels map specifies in the follozing spec in your filter function.</p>
 
-<pre><code>// Store a labels map selector
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Store a labels map selector
 { 'record' '~[2-5]' } 'labelsSelector' STORE
 
 // FILTER Framework
@@ -319,7 +319,7 @@ As an example you can try to use the selector labels map specifies in the folloz
 ]
 FILTER
 
-</code></pre>
+</code></pre></div></div>
 
 <h2 id="resume">Resume</h2>
 

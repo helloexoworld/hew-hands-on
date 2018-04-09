@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>HelloExo.World - Hands-on with exoplanets</title>
+    <title>Step 4.2: Let's compute the difference - HelloExo.World - Hands-on with exoplanets</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -247,7 +247,7 @@
         <div class="panel-heading">
             <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-6">
-                6 - Going further
+                6 - Where no man has gone before...
             </a>
             </h4>
         </div>
@@ -256,7 +256,7 @@
         
                 <a class="list-group-item" 
                     href="/helloexoworld-hands-on/step-6-Going-further/">
-                    Going further
+                    Where no man has gone before...
                 </a>
                         
             </div>
@@ -271,13 +271,11 @@
      </div>
       
       <div class="col-sm-9">
-        <h1></h1>
-        <h1 id="step-42-lets-compute-the-difference">Step-4.2: Let’s compute the difference!</h1>
-
-<p>Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet!
+        <h1>Step 4.2: Let's compute the difference</h1>
+        <p>Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet!
 The process is similar to the previous step. Start with the script resuming the data loading, the record split (according to time), the filtering and the downsampling.</p>
 
-<pre><code>// Storing the token into a variable
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Storing the token into a variable
 'abcd' 'token' STORE 
 
 // FETCH
@@ -337,7 +335,7 @@ FILTER
     0                                   // Bucketcount
 ]
 BUCKETIZE
-</code></pre>
+</code></pre></div></div>
 
 <p>Starting from here, use the <a href="http://www.warp10.io/reference/frameworks/framework-apply/">APPLY</a> framework to compute the <a href="(http://www.warp10.io/reference/frameworks/op_sub/)">difference</a> between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection! Be careful of the equivalence class to choose for this specific step!</p>
 

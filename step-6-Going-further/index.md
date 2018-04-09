@@ -3,10 +3,10 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: "Step 6: Where no man has gone before..."
 category: step-6
 ---
 
-# Going further!
 
 It was not enough for you, you want more WarpScript? You came at the right place hunter. This page is all about extraction a few WarpScript function that can be an help in your quest of exoplanet or any other Time series analysis! You will discover the function to establish a correlation between a series and a set of series, how to use the STL function, the discord function, how to detect Outlier in a Time series and ending with some useful function to compute statistics on Time series. 
 

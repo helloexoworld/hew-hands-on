@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>HelloExo.World - Hands-on with exoplanets</title>
+    <title>Step 1.3: Manipulate a WarpScript List - HelloExo.World - Hands-on with exoplanets</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -247,7 +247,7 @@
         <div class="panel-heading">
             <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-6">
-                6 - Going further
+                6 - Where no man has gone before...
             </a>
             </h4>
         </div>
@@ -256,7 +256,7 @@
         
                 <a class="list-group-item" 
                     href="/helloexoworld-hands-on/step-6-Going-further/">
-                    Going further
+                    Where no man has gone before...
                 </a>
                         
             </div>
@@ -271,21 +271,19 @@
      </div>
       
       <div class="col-sm-9">
-        <h1></h1>
-        <h1 id="step-13-manipulate-a-warpscript-list">Step-1.3: Manipulate a WarpScript List!</h1>
-
-<h2 id="structure-and-function">Structure and function</h2>
+        <h1>Step 1.3: Manipulate a WarpScript List</h1>
+        <h2 id="structure-and-function">Structure and function</h2>
 
 <p>In WarpScript hundreds of functions are available, you can access the documentation <a href="http://www.warp10.io/reference/">here</a>.
 In WarpScript, it’s possible to build structure as <a href="http://www.warp10.io/reference/#functions-lists-maps">List or Map</a>.
 The structure to build a List in WarpScript is as followed. First put a marker to open a list, then the elements to add.</p>
 
-<pre><code>[ 'elem' 'elem2' ]
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ 'elem' 'elem2' ]
+</code></pre></div></div>
 
 <p>Let’s play with it, here’s the squeleton:</p>
 
-<pre><code>// Build a list containing values 1 and 3 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Build a list containing values 1 and 3 
 
 
 // Add the element 2
@@ -295,7 +293,7 @@ The structure to build a List in WarpScript is as followed. First put a marker t
 
 
 // Reverse it
-</code></pre>
+</code></pre></div></div>
 
 <p>build a new list containing two elements: 1 and 3. Then add the elements 2 using the operator <a href="http://www.warp10.io/reference/functions/function_ADD/">+</a> on this list. Now to sort this list, apply the function <a href="http://www.warp10.io/reference/functions/function_LSORT/">LSORT</a> on it. This will sort the list, which is on top of stack, in a ascending order and let as a result this list on top of the stack. To sort the list in a descending order, apply the <a href="http://www.warp10.io/reference/functions/function_REVERSE/">REVERSE</a> function on this list.</p>
 

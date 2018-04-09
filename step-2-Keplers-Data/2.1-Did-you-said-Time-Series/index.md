@@ -3,10 +3,9 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: 'Step 2.1: Did you said Time series'
 category: step-2
 ---
-
-# Step-2.1: Did you said Time series! 
 
 You are now alone in your quest, exoplanet hunter! As your personal assistant, we will teach you some basics knowledge to help you achieve this awesome quest!
 First just to help you, and to lead you, let start with the beginning and introduce the NASA data modelised as Time series.

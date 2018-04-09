@@ -3,10 +3,9 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: 'Step 4.1: Yet another framework: APPLY'
 category: step-4
 ---
-
-# Step-4.1: Yet another framework: APPLY!
 
 Yet an other WarpScript framework: [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/)! It's a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series! 
 

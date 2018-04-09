@@ -3,8 +3,8 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+title: Rediscover the known universe with NASA dataset
 ---
-# Rediscover the known universe with NASA dataset
 
 An hands-on used at differents tech conferences, such as BreizhCamp, Devoxx France and so on. You can also do it online!
 

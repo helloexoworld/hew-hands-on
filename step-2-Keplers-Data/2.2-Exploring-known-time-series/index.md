@@ -44,7 +44,7 @@ Here a preloaded WarpScript that you can use, find all the GTS available!
 
 ```
 
-Wow, a lot of data appeared in my quantum console. They represents all the existing series that are availble to test you exo-planet quest! Each Time series have several meta-data. During this tutorial we are going to focus on the one called "sap.flux" as they represents the raw data of the lightcurve of each stars.
+Wow, a lot of data appeared in my quantum console. They represents all the existing series that are availble to test you exoplanet quest! Each Time series have several meta-data. During this tutorial we are going to focus on the one called "sap.flux" as they represents the raw data of the lightcurve of each stars.
 
 The one that we are looking for has a label KEPLERID=6541920, can you see it? Change the FIND to have only one result: sap.flux for Kepler-11!
 

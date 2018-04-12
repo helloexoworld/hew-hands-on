@@ -1,3 +1,0 @@
-# bye bye and thank you!
-User-agent: *
-Disallow: /drafts/

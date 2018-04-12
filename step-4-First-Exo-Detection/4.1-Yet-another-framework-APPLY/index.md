@@ -11,7 +11,7 @@ Yet an other WarpScript framework: [APPLY](http://www.warp10.io/reference/framew
 
 ***At the bottom of this page, you will find a practice example showing how to substract two set of Time series.***
 
-## The framework 
+## The framework
 
 The signature of the [Apply with a sub operator](http://www.warp10.io/reference/frameworks/op_sub/) is described below. It takes 4 parameters: a set of Time series that compose the minuend, an other set that compose the subtrahend of the sub operation. A list of labels and the op.sub operation are the last two required parameter.
 

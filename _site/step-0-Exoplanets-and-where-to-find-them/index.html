@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title> HelloExo.World - Hands-on with exoplanets - Step 0: Exoplanets and where to find them </title>
+    <title> HelloExo.World - Hands-on with exoplanets - Step 0: What is an exoplanet? </title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -206,7 +206,7 @@
         <div class="panel-heading">
             <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#side-menu" href="#collapse-step-4">
-                4 - First exo-planet detection
+                4 - First exoplanet detection
             </a>
             </h4>
         </div>
@@ -292,16 +292,64 @@
      </div>
       
       <div class="col-sm-9">
-        <h1>Step 0: Exoplanets and where to find them</h1>
-        <p>Exoplanet’s five <em>W</em>s</p>
+        <h1>Step 0: What is an exoplanet?</h1>
+        <p>Let’s quote our good old friend <a href="https://en.wikipedia.org/wiki/Exoplanet"><strong>Wikipedia</strong></a>:</p>
+
+<blockquote>
+  <p><em>An exoplanet or extrasolar planet is a planet outside of our solar system that orbits a star.</em></p>
+</blockquote>
+
+<p>do you know how many exoplanets that have been discovered? <a href="https://exoplanetarchive.ipac.caltech.edu/"><strong>3,711 confirmed planets</strong> as of 04/05/2018</a>.</p>
+
+<h1 id="how-to-detect-it">How to detect it?</h1>
+<p>There are different <a href="https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets"><strong>detection methods</strong></a>. Turns out there is one method heavily used, called <strong>the transit method</strong>. It’s like a eclipse: when the exoplanet is passing in front of the star, the photometry is varying during the transit, as shown below:</p>
+
+<p><img src="/hew-hands-on/img/step-0/exo-nasa.gif" alt="Alt Text" /></p>
+
+<blockquote>
+  <p>Animation illustrating how a dip in the observed brightness of a star may indicate the presence of an exoplanet.
+<em>Credits: NASA’s Goddard Space Flight Center</em></p>
+</blockquote>
+
+<p>To recap, exoplanet detection using the transit method are in reality a <strong>time series analysis problem</strong>.</p>
+
+<hr />
+
+<h1 id="keplerk2-mission">Kepler/K2 mission</h1>
+
+<p><img src="/hew-hands-on/img/step-0/kepler.jpeg" alt="Alt Text" /></p>
+
+<blockquote>
+  <p><em>Image Credit: NASA Ames/W. Stenzel</em></p>
+</blockquote>
+
+<p>Kepler is a <strong>space observatory</strong> launched by NASA in March 2009 to <strong>discover Earth-sized planets orbiting other stars</strong>. <a href="https://www.nasa.gov/feature/ames/nasas-k2-mission-the-kepler-space-telescopes-second-chance-to-shine">The loss of a second of the four reaction wheels during May 2013</a> put an end to the original mission. Fortunately, scientists decided to create an <strong>entirely community-driven mission</strong> called K2, to <strong>reuse the Kepler spacecraft and its assets</strong>. But furthermore, the community is also encouraged to exploit the mission’s unique <strong>open</strong> data archive. Every image taken by the satellite can be <strong>downloaded and analyzed by anyone</strong>.</p>
+
+<p>More information about the telescope itself can be found <a href="https://keplerscience.arc.nasa.gov/the-kepler-space-telescope.html"><strong>here</strong></a>.</p>
+
+<h1 id="what-have-we-done">What have we done?</h1>
+
+<h4 id="what-we-have-done">What we have done:</h4>
 
 <ul>
-  <li>What are exoplanets?</li>
-  <li>Where can be find exoplanets?</li>
-  <li>When were exoplanets discovered?</li>
-  <li>Who does work to find exoplanets?</li>
-  <li>Why do we look for exoplanets?</li>
+  <li>Downloaded and parsed 40M of FITS files</li>
+  <li>Pushed it to a Warp10 instance</li>
+  <li>Select a cool subset for you</li>
 </ul>
+
+<h4 id="what-you-have-to-do">What you have to do:</h4>
+
+<ul>
+  <li>Learn WarpScript and find some exoplanets!</li>
+</ul>
+
+<h1 id="what-does-it-look-like">What does it look like?</h1>
+
+<p>Here’s an observation of a star called Kepler-11:</p>
+
+<p><img src="/hew-hands-on/img/step-0/kepler-11.png" alt="Alt Text" /></p>
+
+<p>Do you see the dropouts? <strong>Those are transiting exoplanets!</strong> Now we’ll need to <strong>write a WarpScript to automatically detect transits.</strong> But first we need to learn how to WarpScript! Let’s discover what is it in the <a href="/hew-hands-on/step-1-WarpScript/1.1-Getting-started-with-WarpScript/">next step</a>.</p>
 
       </div>
     </div>

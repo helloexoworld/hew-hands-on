@@ -3,7 +3,7 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
-title: 'Step 2.1: Did you said Time series'
+title: 'Step 2.1: Did you said Time series?'
 category: step-2
 ---
 
@@ -12,23 +12,98 @@ First just to help you, and to lead you, let start with the beginning and introd
 
 ## Star's data
 
-During this tutorial, you will study the NASA Kepler data-set. You will in charge to discover some exo-planet. But what are an exo-planet ? They are only some planet that turn around other stars that doesn't belong to our solar system. One of the method is to studied the stars lightcurve and to detect drops on them. This means that a planet moved on top of star, and if this sequence is repeated several times, this means that there is an exoplanet graviting near this specific star. This is illustrated by the animated image below.
+During this tutorial, you will study the NASA Kepler data-set. You will in charge to discover some exoplanet. To discover stars, you will be analyzing photometry from differents stars collected by Kepler.
 
-![Alt Text]({{ site.baseurl }}/img/transiting-exoplanet-with-brightness-graph-anim.gif)
+You will be working on the lightcurve called *SAP_FLUX (Simple Aperture Photometry fluxes)*. It represents the flux in units of electrons per second contained in the optimal
+aperture pixels collected by the spacecraft. This is the raw data acquired by Kepler. Here's an example:
 
-*Credits: NASA’s Goddard Space Flight Center*
-
-## Convert to Time series
+![Alt Text]({{ site.baseurl }}/img/step-0/kepler-11.png)
 
 As the lightcurve of a star evolve according to time, it can be considered as a Time-series.
+
+## What are Geo Time series?
+
+
+We call a Time Series, a **sequence** of evolving values over time. These values, named **data points** or **measurements**, are added as they come, with a stable frequency or not.
+
+
+![introduction]({{ site.baseurl }}/img/step-2/intro_1.png)
+
+To ease readability, let's visualise with colors instead of degrees values. We can use the Celcius degree as an Y axis to graph the temperature evolution along the day.
+
+
+![introduction]({{ site.baseurl }}/img/step-2/intro_2.png)
+
+Like in this small example, a graph with a value as an axis, and a time as the second one is just a Time Series visualisation.
+
+
+## Where can we find Time series?
+**Time Series are everywhere**, here are just few examples:
+
+- The evolution of the stock exchange
+- The number of calls on a webserver
+- The fuel consumption of a car
+- The load of a CPU
+- The time a customer is taking to register on your website
+- The time he spent on your website
+- The heart rate of a person measured through a smartwatch
+
+
+## Time Series data model
+In the draw above, we have considered a simple series named **temperature**, but we tend to qualify more our data. There are situations where temperature will not be enough to qualify your series. In a home you could measure temperature at different places like :
+
+- outside
+- room 1
+- garage
+- 1st floor room
+- kitchen
+- etc.
+
+This why we need **labels** (or tags, dimensions,...) to enhance the data modeling. And now our data model looks like :
+
+
+![labels]({{ site.baseurl }}/img/step-2/intro_labels.png)
+
+All rooms with be a simple value associated with a key *room*.
+
+Labels are key/value pairs used to qualify series. They are **immutable**, which means if you change something in the labels set, it won't affect the previous series but it will create a new one. This also means that your Time Series data model need to be designed carefully.
+
+Given the many aspects they can have, the storage, retrieval and analysis of time series cannot be done through standard relational databases, like SQL. Instead it needs a custom built system, not only a Time Series Database, but a whole solution that will enable usability of the data.
+
+We can find here and there many Time Series Databases that claim to solve the same storage system but most of them fail in their mission to provide you the right tools and protocol to let you enjoy your data.
+
+
+## Time Series Values
+Once you have define the good Time Series model for your own need (in the case of monitoring, most of the time your collecting software will choose it for you), you will push data points or measurements.
+
+These data points can be of **multiple types** (Long, Double, String, Boolean)  given the protocol you use. You can refer to the matrix compatibility to know which one fits you best.
+
+
+## Time Series Analysis
+While a common use case for Time Series is to plot them as a graph, using line charts or sparklines, many customers will need to perform custom analysis on their Time Series for domains like :
+
+- Statistics, TopN
+- Signal Processing
+- Pattern Detection
+- Anomaly Detection
+- Approximation (like regressions)
+- Classification
+- Prediction and Forecasting
+- etc.
+
+In order to acheive these goals, many **algorithms** can be used.
+
+## Time Series Predicton or Forecasting
+You can use Time Series to predict the future. By learning from an exsting signal, you can forecast this signal by predicting future points. Using different techniques, like AutoRegressive Integrated Moving Average (ARIMA) for linear models or others (or a combination) more adapted for multivariate Time Series.
+
 
 ## But why would we use Warp 10 ?
 
 Warp 10 is one of the multiple Time series database that exists. It includes also the WarpScript language, saw in the previous step. This language is dedicated to Time-series manipulation.
 
-## And What does a Time-series looks like ?
+## And What does a Time-series looks like in WarpScript ?
 
-If you type the following WarpScript code: 
+If you type the following WarpScript code:
 
 ```
 // Create an empty GTS
@@ -37,7 +112,7 @@ NEWGTS
 
 You will push on top of the stack a Time series. A Time series follow this modelisation:
 
-  - It requires a fix classname (the key "c") in quantum result, which is the main identifier of a Time series (string). 
+  - It requires a fix classname (the key "c") in quantum result, which is the main identifier of a Time series (string).
   - The labels "l" also identifies the existing series. This corresponds to a map object of string key/values.
   - The attributes "a", same as Labels but they are global parameters of a series and can evolve without creating a new series.
   - And finally the values "v" which includes a timestamp (time of the current point), a location and a value (can be Double, Long, Boolean or string)

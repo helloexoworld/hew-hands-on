@@ -102,4 +102,4 @@ As a result you get a list of two series: one containing all the value of the ea
 
 # To be continued
 
-Once you are familiar with this specific operation of the APPLY framework, please continue with the next step, as you initiation as an exoplanet hunter is about to end. As a matter of fact, you now have the knowledge of all the needed tools to start exploring the kepler-11 start to detect it's exoplanet. Let's find together how to process in the [next step](/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/).
+Once you are familiar with this specific operation of the APPLY framework, please continue with the next step, as you initiation as an exoplanet hunter is about to end. As a matter of fact, you now have the knowledge of all the needed tools to start exploring the kepler-11 start to detect it's exoplanet. Let's find together how to process in the [next step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/).

@@ -7,8 +7,6 @@ title: 'Step 3.1: Framework time: FILTER'
 category: step-3
 ---
 
-# Step-3.1: Framework time: FILTER
-
 The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER](http://www.warp10.io/reference/frameworks/framework-filter/), [BUCKETIZE](http://www.warp10.io/reference/frameworks/framework-bucketize/), [MAP](http://www.warp10.io/reference/frameworks/framework-map/), [REDUCE](http://www.warp10.io/reference/frameworks/framework-reduce/) and [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/). Let's start with the FILTER framework.
 
 ## The framework
@@ -66,4 +64,4 @@ The result of this step corresponds to a reduced list. In our case only 4 record
 
 # To be continued
 
-As an exoplanet hunter, you may be asking yourself why you should reduced the amount of data you will be working with. Be patient, and remember that taking your time during the first steps will making you win time in the longer run! Stay strong young hunter, more will come in the [next step](/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/) as a framework very usefull for time-series downsampling will be briefly introduced.
+As an exoplanet hunter, you may be asking yourself why you should reduced the amount of data you will be working with. Be patient, and remember that taking your time during the first steps will making you win time in the longer run! Stay strong young hunter, more will come in the [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/) as a framework very usefull for time-series downsampling will be briefly introduced.

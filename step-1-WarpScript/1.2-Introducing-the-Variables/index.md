@@ -44,4 +44,4 @@ You can store it in a variable if you want.
 
 # To be continued
 
-Great job! Let's continue with some WarpScript list manipulation in the [next step](/step-1-WarpScript/1.3-Manipulate-a-data-list/).
+Great job! Let's continue with some WarpScript list manipulation in the [next step]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/).

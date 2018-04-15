@@ -11,7 +11,7 @@ You did a great jobs to compute the difference between the light curve and the t
 
 ## Threshold test
 
-Let's compute at first a threshold test! In WarpScript you can re-use the MAP framework to do it! The [MAP framework](http://www.warp10.io/reference/frameworks/framework-map/) have the following operator: [gt](http://www.warp10.io/reference/frameworks/mapper_gt/) (greater than), [ge](http://www.warp10.io/reference/frameworks/mapper_ge/) (greater or equals), [eq](http://www.warp10.io/reference/frameworks/mapper_eq/) (equals), [lt](http://www.warp10.io/reference/frameworks/mapper_lt) (lower than), [le](http://www.warp10.io/reference/frameworks/mapper_le/) (lower or equals)... Find out the correct operator and working threshold!
+Let's compute at first a threshold test! In WarpScript you can re-use the MAP framework to do it! The [MAP framework]({{ site.doc_url }}/reference/frameworks/framework-map/) have the following operator: [gt]({{ site.doc_url }}/reference/frameworks/mapper_gt/) (greater than), [ge]({{ site.doc_url }}/reference/frameworks/mapper_ge/) (greater or equals), [eq]({{ site.doc_url }}/reference/frameworks/mapper_eq/) (equals), [lt]({{ site.doc_url }}/reference/frameworks/mapper_lt) (lower than), [le]({{ site.doc_url }}/reference/frameworks/mapper_le/) (lower or equals)... Find out the correct operator and working threshold!
 
 How does we proceed ? The threshold test corresponds finally in the re-using the MAP framework. If you would like to have a reminder see below or to review the lesson on MAP: [go here]((/step-3-WarpScript-Frameworks/3.3-Map-framework/README.md)).
 
@@ -35,9 +35,9 @@ The result will be the same series containing only the points that match the cri
 
 ## Display things nicely
 
-Great now you can successfully detect some exoplanet! You have well earn your badge as an exoplanet hunter! Just one more thing, how to be sure that the periods you have extracted corresponds to exoplanet ? Let's print more nicely the result! To do so, we can convert our result into annotations in WarpScript. This can be done using boolean instead of values! And there is also a mapper to do it: [mapper.toboolean](http://www.warp10.io/reference/frameworks/mapper_toboolean/).
+Great now you can successfully detect some exoplanet! You have well earn your badge as an exoplanet hunter! Just one more thing, how to be sure that the periods you have extracted corresponds to exoplanet ? Let's print more nicely the result! To do so, we can convert our result into annotations in WarpScript. This can be done using boolean instead of values! And there is also a mapper to do it: [mapper.toboolean]({{ site.doc_url }}/reference/frameworks/mapper_toboolean/).
 
-** Pro tip: mapper.toboolean is a single value mapper and would not work correctly on bucketized series. To correct it and get the better result we recommand to use the [UNBUCKETIZE](http://www.warp10.io/reference/functions/function_UNBUCKETIZE/) function right after the BUCKETIZE operation**
+** Pro tip: mapper.toboolean is a single value mapper and would not work correctly on bucketized series. To correct it and get the better result we recommand to use the [UNBUCKETIZE]({{ site.doc_url }}/reference/functions/function_UNBUCKETIZE/) function right after the BUCKETIZE operation**
 
 Then you can push back on the stack the original series using a variable!
 

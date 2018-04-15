@@ -18,6 +18,7 @@ email: contact@helloexo.world
 description: >- # this means to ignore newlines until "baseurl:"
   A hands-on used at different tech conferences, such as BreizhCamp, Devoxx France and so on
 baseurl: "/hew-hands-on" # the subpath of your site, e.g. /blog
+# baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: helloexoworld
 github_username:  helloexoworld
@@ -31,6 +32,9 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+doc_url: http://www.warp10.io
+# doc_url: http://192.168.1.3
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

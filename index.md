@@ -18,7 +18,7 @@ It turns out that NASA has a great public dataset, especially one that is used t
 
 At the end of this workshop, you will:
 
-* Learn about [Warp10](http://warp10.io), a platform designed to collect, store and manipulate sensor data.
+* Learn about [Warp10]({{ site.doc_url }}), a platform designed to collect, store and manipulate sensor data.
 
 * learn about a NASA mission called Kepler
 

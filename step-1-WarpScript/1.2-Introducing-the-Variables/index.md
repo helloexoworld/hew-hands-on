@@ -10,7 +10,7 @@ category: step-1
 
 ## Variables
 
-As any other programming language, WarpScript implements the Variables concept. In WarpScript you can save a specific stack element in a variable (java pointer). This is done using the function [STORE](http://www.warp10.io/reference/functions/function_STORE/). 
+As any other programming language, WarpScript implements the Variables concept. In WarpScript you can save a specific stack element in a variable (java pointer). This is done using the function [STORE]({{ site.doc_url }}/reference/functions/function_STORE/). 
 
 This function expects two elements on the stack : 
 - A stack element to save

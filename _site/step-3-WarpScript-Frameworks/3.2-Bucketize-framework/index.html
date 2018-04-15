@@ -292,13 +292,13 @@
       
       <div class="col-sm-9">
         <h1>Step 3.2: Framework time: BUCKETIZE</h1>
-        <p>The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: <a href="http://www.warp10.io/reference/frameworks/framework-filter/">FILTER</a>, <a href="http://www.warp10.io/reference/frameworks/framework-bucketize/">BUCKETIZE</a>, <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP</a>, <a href="http://www.warp10.io/reference/frameworks/framework-reduce/">REDUCE</a> and <a href="http://www.warp10.io/reference/frameworks/framework-apply/">APPLY</a>. Let’s continue with the BUCKETIZE framework.</p>
+        <p>The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: <a href="http://192.168.1.3/reference/frameworks/framework-filter/">FILTER</a>, <a href="http://192.168.1.3/reference/frameworks/framework-bucketize/">BUCKETIZE</a>, <a href="http://192.168.1.3/reference/frameworks/framework-map/">MAP</a>, <a href="http://192.168.1.3/reference/frameworks/framework-reduce/">REDUCE</a> and <a href="http://192.168.1.3/reference/frameworks/framework-apply/">APPLY</a>. Let’s continue with the BUCKETIZE framework.</p>
 
 <p><strong><em>At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.</em></strong></p>
 
 <h2 id="the-framework">The framework</h2>
 
-<p>In this tutorial we will also discover the <a href="http://www.warp10.io/reference/frameworks/framework-bucketize/">BUCKETIZE framework</a>. It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.</p>
+<p>In this tutorial we will also discover the <a href="http://192.168.1.3/reference/frameworks/framework-bucketize/">BUCKETIZE framework</a>. It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.</p>
 
 <p><strong><em>At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.</em></strong></p>
 
@@ -314,7 +314,7 @@
 
 <h2 id="input-parameters">Input parameters</h2>
 
-<p>The BUCKETIZE framework takes a list of elements as parameter. This list contains one or several GTS list, a <a href="http://www.warp10.io/reference/#framework-bucketizers">bucketizer function</a>, a lastbucket that specify when start the last bucket (0 mean this will be computed automatically), a bucketcount which is the duration of the bucket (if 0 WarpScript will compute it), and finally a bucketcount which is the number of buckets to compute (if 0 WarpScript will compute it).</p>
+<p>The BUCKETIZE framework takes a list of elements as parameter. This list contains one or several GTS list, a <a href="http://192.168.1.3/reference/#framework-bucketizers">bucketizer function</a>, a lastbucket that specify when start the last bucket (0 mean this will be computed automatically), a bucketcount which is the duration of the bucket (if 0 WarpScript will compute it), and finally a bucketcount which is the number of buckets to compute (if 0 WarpScript will compute it).</p>
 
 <p><strong>Pro tips: In order to get a correct number of buckets either Bucketspan or Bucketcount have to be specified!</strong></p>
 
@@ -340,7 +340,7 @@ BUCKETIZE
 
 <p><img src="/hew-hands-on/img/frameworks/Time-series-input.png" alt="Alt Text" /></p>
 
-<p>The second step consists to choose the function to apply on each bucket: first, last, mean, min, max, median, join, and <a href="http://www.warp10.io/reference/reference/#bucketizers">others</a>:</p>
+<p>The second step consists to choose the function to apply on each bucket: first, last, mean, min, max, median, join, and <a href="http://192.168.1.3/reference/reference/#bucketizers">others</a>:</p>
 
 <p><img src="/hew-hands-on/img/frameworks/bucketizer.png" alt="Alt Text" /></p>
 

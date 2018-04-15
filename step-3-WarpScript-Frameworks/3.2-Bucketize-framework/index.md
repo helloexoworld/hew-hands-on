@@ -7,13 +7,13 @@ title: 'Step 3.2: Framework time: BUCKETIZE'
 category: step-3
 ---
 
-The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER](http://www.warp10.io/reference/frameworks/framework-filter/), [BUCKETIZE](http://www.warp10.io/reference/frameworks/framework-bucketize/), [MAP](http://www.warp10.io/reference/frameworks/framework-map/), [REDUCE](http://www.warp10.io/reference/frameworks/framework-reduce/) and [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/). Let's continue with the BUCKETIZE framework.
+The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER]({{ site.doc_url }}/reference/frameworks/framework-filter/), [BUCKETIZE]({{ site.doc_url }}/reference/frameworks/framework-bucketize/), [MAP]({{ site.doc_url }}/reference/frameworks/framework-map/), [REDUCE]({{ site.doc_url }}/reference/frameworks/framework-reduce/) and [APPLY]({{ site.doc_url }}/reference/frameworks/framework-apply/). Let's continue with the BUCKETIZE framework.
 
 ***At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.***
 
 ## The framework
 
-In this tutorial we will also discover the [BUCKETIZE framework](http://www.warp10.io/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.
+In this tutorial we will also discover the [BUCKETIZE framework]({{ site.doc_url }}/reference/frameworks/framework-bucketize/). It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.
 
 ***At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.***
 
@@ -29,7 +29,7 @@ This how the bucketize concept works, let see how it can be implemented with War
 
 ## Input parameters
 
-The BUCKETIZE framework takes a list of elements as parameter. This list contains one or several GTS list, a [bucketizer function](http://www.warp10.io/reference/#framework-bucketizers), a lastbucket that specify when start the last bucket (0 mean this will be computed automatically), a bucketcount which is the duration of the bucket (if 0 WarpScript will compute it), and finally a bucketcount which is the number of buckets to compute (if 0 WarpScript will compute it).
+The BUCKETIZE framework takes a list of elements as parameter. This list contains one or several GTS list, a [bucketizer function]({{ site.doc_url }}/reference/#framework-bucketizers), a lastbucket that specify when start the last bucket (0 mean this will be computed automatically), a bucketcount which is the duration of the bucket (if 0 WarpScript will compute it), and finally a bucketcount which is the number of buckets to compute (if 0 WarpScript will compute it).
 
 **Pro tips: In order to get a correct number of buckets either Bucketspan or Bucketcount have to be specified!**
 
@@ -57,7 +57,7 @@ Let's resume step by step each bucketize element. First BUCKETIZE requires a set
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/Time-series-input.png)
 
-The second step consists to choose the function to apply on each bucket: first, last, mean, min, max, median, join, and [others](http://www.warp10.io/reference/reference/#bucketizers):
+The second step consists to choose the function to apply on each bucket: first, last, mean, min, max, median, join, and [others]({{ site.doc_url }}/reference/reference/#bucketizers):
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/bucketizer.png)
 

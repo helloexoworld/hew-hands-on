@@ -9,13 +9,13 @@ category: step-3
 
 
 
-The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER](http://www.warp10.io/reference/frameworks/framework-filter/), [BUCKETIZE](http://www.warp10.io/reference/frameworks/framework-bucketize/), [MAP](http://www.warp10.io/reference/frameworks/framework-map/), [REDUCE](http://www.warp10.io/reference/frameworks/framework-reduce/) and [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/). Let's end with the MAP framework.
+The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER]({{ site.doc_url }}/reference/frameworks/framework-filter/), [BUCKETIZE]({{ site.doc_url }}/reference/frameworks/framework-bucketize/), [MAP]({{ site.doc_url }}/reference/frameworks/framework-map/), [REDUCE]({{ site.doc_url }}/reference/frameworks/framework-reduce/) and [APPLY]({{ site.doc_url }}/reference/frameworks/framework-apply/). Let's end with the MAP framework.
 
 ***At the bottom of this page, you will find the instructions on how to process to apply a mapper on the NASA lightcurve data.***
 
 ## The framework
 
-Now it is time to update the values of a set of GTS using the [MAP framework](http://www.warp10.io/reference/frameworks/framework-map/). The MAP framework allows you to apply a function on values of a Geo Time SeriesTM that fall into a sliding window.
+Now it is time to update the values of a set of GTS using the [MAP framework]({{ site.doc_url }}/reference/frameworks/framework-map/). The MAP framework allows you to apply a function on values of a Geo Time SeriesTM that fall into a sliding window.
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/mapper.png)
 
@@ -23,7 +23,7 @@ In other words, the MAP framework allows the user to compute the same operation 
 
 ## Input parameters
 
-Map takes as input a list of parameters. The first element of this list can be one or several lists of GTS. Then there is a [mapper function](http://www.warp10.io/reference/#framework-mappers). The third and the fourth elements are related to the sliding window, with first an element corresponding to "pre", the width of the sliding window before the value, and in second an element corresponding to "post", the width of the sliding window after the value. The last element corresponds to "occurences" which is the limit of computation of a number. For all elements except the set of GTS and the mapper function a default value 0 can be used, when those elements aren't required.
+Map takes as input a list of parameters. The first element of this list can be one or several lists of GTS. Then there is a [mapper function]({{ site.doc_url }}/reference/#framework-mappers). The third and the fourth elements are related to the sliding window, with first an element corresponding to "pre", the width of the sliding window before the value, and in second an element corresponding to "post", the width of the sliding window after the value. The last element corresponds to "occurences" which is the limit of computation of a number. For all elements except the set of GTS and the mapper function a default value 0 can be used, when those elements aren't required.
 
 ```
 // MAP Framework
@@ -44,11 +44,11 @@ To get a working mapper, replace the function keyword by an exisiting function a
 
 ## Mapper in pictures
 
-Let's resume step by step each mapper element. First [MAP framework](http://www.warp10.io/reference/frameworks/framework-map/) requires a set of Time series (Singleton or list):
+Let's resume step by step each mapper element. First [MAP framework]({{ site.doc_url }}/reference/frameworks/framework-map/) requires a set of Time series (Singleton or list):
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/Time-series-input.png)
 
-The second step consists to choose the function to apply on each points (resp window): replace, mean, min, max, sd, abs, mul, add, round and [lot of others](http://www.warp10.io/reference/reference/#mappers):
+The second step consists to choose the function to apply on each points (resp window): replace, mean, min, max, sd, abs, mul, add, round and [lot of others]({{ site.doc_url }}/reference/reference/#mappers):
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/mapper-op.png)
 

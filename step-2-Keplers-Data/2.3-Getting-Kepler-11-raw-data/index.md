@@ -11,7 +11,7 @@ Now that you are used to play with the stack and know the available series, let'
 
 ## FETCH 
 
-Now that we found the right star, let's get some data using [FETCH](http://www.warp10.io/reference/functions/function_FETCH/)! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints. The UTC start date is *2009-05-02T00:56:10.000000Z* and the end date is *2013-05-11T12:02:06.000000Z*.
+Now that we found the right star, let's get some data using [FETCH]({{ site.doc_url }}/reference/functions/function_FETCH/)! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints. The UTC start date is *2009-05-02T00:56:10.000000Z* and the end date is *2013-05-11T12:02:06.000000Z*.
 
 ```
 // FETCH
@@ -39,7 +39,7 @@ You should now have only one series on top of stack now.
 
 ## Handling time
 
-As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let's clean that. There is a function called [TIMESPLIT](http://www.warp10.io/reference/functions/function_TIMESPLIT/) that will be able to help us! As stated by the documentation:
+As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let's clean that. There is a function called [TIMESPLIT]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/) that will be able to help us! As stated by the documentation:
 
 > The TIMESPLIT function takes a GTS or a list of GTS and splits each Geo Time SeriesTM into a list multiple GTS instances, cutting the original GTS when it encounters quiet periods when there are no measurements.
 

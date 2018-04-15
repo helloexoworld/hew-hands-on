@@ -7,13 +7,13 @@ title: 'Step 4.1: Yet another framework: APPLY'
 category: step-4
 ---
 
-Yet an other WarpScript framework: [APPLY](http://www.warp10.io/reference/frameworks/framework-apply/)! It's a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series! 
+Yet an other WarpScript framework: [APPLY]({{ site.doc_url }}/reference/frameworks/framework-apply/)! It's a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series! 
 
 ***At the bottom of this page, you will find a practice example showing how to substract two set of Time series.***
 
 ## The framework
 
-The signature of the [Apply with a sub operator](http://www.warp10.io/reference/frameworks/op_sub/) is described below. It takes 4 parameters: a set of Time series that compose the minuend, an other set that compose the subtrahend of the sub operation. A list of labels and the op.sub operation are the last two required parameter.
+The signature of the [Apply with a sub operator]({{ site.doc_url }}/reference/frameworks/op_sub/) is described below. It takes 4 parameters: a set of Time series that compose the minuend, an other set that compose the subtrahend of the sub operation. A list of labels and the op.sub operation are the last two required parameter.
 
 ```
 [

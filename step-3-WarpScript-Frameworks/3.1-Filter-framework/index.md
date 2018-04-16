@@ -62,6 +62,8 @@ To resume, to filter a data set, we have to use the FILTER framework. It expects
 
 The result of this step corresponds to a reduced list. In our case only 4 records (2 to 5) were selected using a regular expression. A list containing 4 Time series is now let on top of the WarpScript stack.
 
-# Next Step
+## To be continued
 
 As an exoplanet hunter, you may be asking yourself why you should reduced the amount of data you will be working with. Be patient, and remember that taking your time during the first steps will making you win time in the longer run! Stay strong young hunter, more will come in the [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/) as a framework very usefull for time-series downsampling will be briefly introduced.
+
+## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/) ... [solutions]() ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/)

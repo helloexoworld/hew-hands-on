@@ -69,6 +69,8 @@ As the FOREACH function, LMAP takes two parameter: a list and a macro. LMAP will
 
 ```
 
-# Next Step
+## To be continued
 
 Now that you understand the theory about the WarpScript loops, let's see in practice how we can use them to process all the stars in the [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.2-Optimize-global-analysis/).
+
+## [previous step]() ... [solutions]() ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/)

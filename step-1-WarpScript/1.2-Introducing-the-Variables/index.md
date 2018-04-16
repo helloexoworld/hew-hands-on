@@ -42,6 +42,8 @@ Security in Warp10 instance are handled with crypto tokens. They can be pretty l
 
 You can store it in a variable if you want.
 
-# Next Step
+## To be continued
 
 Great job! Let's continue with some WarpScript list manipulation in the [next step]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/).
+
+## [previous step]({{ site.baseurl }}/step-1-WarpScript/1.1-Getting-started-with-WarpScript/) ... [solutions]() ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/)

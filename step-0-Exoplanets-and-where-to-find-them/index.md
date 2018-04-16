@@ -13,7 +13,7 @@ Let’s quote our good old friend [**Wikipedia**](https://en.wikipedia.org/wiki/
 
 do you know how many exoplanets that have been discovered? [**3,711 confirmed planets** as of 04/05/2018](https://exoplanetarchive.ipac.caltech.edu/).
 
-#  How to detect it?
+##  How to detect it?
 There are different [**detection methods**](https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets). Turns out there is one method heavily used, called **the transit method**. It’s like a eclipse: when the exoplanet is passing in front of the star, the photometry is varying during the transit, as shown below:
 
 
@@ -27,7 +27,7 @@ To recap, exoplanet detection using the transit method are in reality a **time s
 
 * * *
 
-# Kepler/K2 mission
+## Kepler/K2 mission
 
 
 ![Alt Text]({{ site.baseurl }}/img/step-0/kepler.jpeg)
@@ -38,13 +38,11 @@ Kepler is a **space observatory** launched by NASA in March 2009 to **discover E
 
 More information about the telescope itself can be found [**here**](https://keplerscience.arc.nasa.gov/the-kepler-space-telescope.html).
 
-# Who are we?
+## Who are we?
 
 ![Alt Text]({{ site.baseurl }}/img/step-0/hew.png)
 
 We are not astrophysicists. Not by far, we are **developers**, and WarpScript users looking for timeseries challenges. We want to have fun! So we created [HelloExoWorld](https://helloexo.world), an **association** designed to **promote** and **use** spatial data such as Kepler's.
-
-# What have we done?
 
 #### What we have done:
 
@@ -56,10 +54,12 @@ We are not astrophysicists. Not by far, we are **developers**, and WarpScript us
 
 * Learn WarpScript and find some exoplanets!
 
-# What does it look like?
+## What does it look like?
 
 Here's an observation of a star called Kepler-11:
 
 ![Alt Text]({{ site.baseurl }}/img/step-0/kepler-11.png)
 
-Do you see the dropouts? **Those are transiting exoplanets!** Now we’ll need to **write a WarpScript to automatically detect transits.** But first we need to learn how to WarpScript! Let's discover what is it in the [next step]({{ site.baseurl }}/step-1-WarpScript/1.1-Getting-started-with-WarpScript/).
+Do you see the dropouts? **Those are transiting exoplanets!** Now we’ll need to **write a WarpScript to automatically detect transits.** But first we need to learn how to WarpScript! Let's discover it!
+
+## ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.1-Getting-started-with-WarpScript/)

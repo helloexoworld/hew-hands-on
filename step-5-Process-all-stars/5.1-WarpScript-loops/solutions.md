@@ -28,7 +28,10 @@ category: step-5
 
 // Call FOREACH function
 FOREACH
+">
+</warp10-embeddable-quantum>
 
+<warp10-embeddable-quantum warpscript="
 //
 // LMAP
 //

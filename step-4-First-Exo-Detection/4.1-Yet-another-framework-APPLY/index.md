@@ -15,7 +15,7 @@ Yet an other WarpScript framework: [APPLY]({{ site.doc_url }}/reference/framewor
 
 The signature of the [Apply with a sub operator]({{ site.doc_url }}/reference/frameworks/op_sub/) is described below. It takes 4 parameters: a set of Time series that compose the minuend, an other set that compose the subtrahend of the sub operation. A list of labels and the op.sub operation are the last two required parameter.
 
-```
+<warp10-embeddable-quantum warpscript="
 [
     $gtsSetMinuend
     $gtsSetSubtrahend
@@ -23,8 +23,8 @@ The signature of the [Apply with a sub operator]({{ site.doc_url }}/reference/fr
     op.sub
 ]
 APPLY
-
-```
+">
+</warp10-embeddable-quantum>
 
 This will compute the sub operation between the first and the second set (based on the equivalences classes).
 
@@ -57,13 +57,13 @@ Then it's up to you, hunter, to compute the difference of the earth or mars seri
 
 **Pro-tips: Use the equivalence class on the label "name" to compute a name based difference**
 
-```
+<warp10-embeddable-quantum warpscript="
 [
-    NEWGTS "planet.rotation.count" RENAME 
+    NEWGTS 'planet.rotation.count' RENAME 
     { 'name' 'earth' } RELABEL
     10 NaN NaN NaN 120 ADDVALUE
     20 NaN NaN NaN 123  ADDVALUE
-    NEWGTS "planet.rotation.count" RENAME 
+    NEWGTS 'planet.rotation.count' RENAME 
     { 'name' 'mars' } RELABEL
     10 NaN NaN NaN 124 ADDVALUE
     20 NaN NaN NaN 125 ADDVALUE
@@ -72,11 +72,11 @@ Then it's up to you, hunter, to compute the difference of the earth or mars seri
 'firstResult' STORE
 
 [
-  NEWGTS "planet.rotation.count.to.correct" RENAME 
+  NEWGTS 'planet.rotation.count.to.correct' RENAME 
   { 'name' 'earth' } RELABEL
   10 NaN NaN NaN  1 ADDVALUE
   20 NaN NaN NaN  2 ADDVALUE
-  NEWGTS "planet.rotation.count.to.correct" RENAME 
+  NEWGTS 'planet.rotation.count.to.correct' RENAME 
   { 'name' 'mars' } RELABEL
   10 NaN NaN NaN  1 ADDVALUE
   15 NaN NaN NaN  1 ADDVALUE
@@ -91,8 +91,8 @@ Then it's up to you, hunter, to compute the difference of the earth or mars seri
     op.sub                              // Apply function operator
 ]
 APPLY
-
-```
+">
+</warp10-embeddable-quantum>
 
 ## Resume
 

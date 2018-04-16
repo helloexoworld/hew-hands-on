@@ -68,4 +68,4 @@ Once you completed this tutorial, to remember some details of the WarpScript, fe
 
 Thanks for completed this tutorial! We were happy to introduce you to the analytics of Time series worlds and to present a short initiation to our search of exoplanet! 
 
-## [previous step]() ... [solutions]() ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/)
+## [previous step]({{ site.baseurl }}/step-5-Process-all-stars/5.3-Reformat-the-output/)

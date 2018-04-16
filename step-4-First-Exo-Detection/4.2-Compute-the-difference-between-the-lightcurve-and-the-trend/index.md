@@ -81,4 +81,4 @@ To resume, the expected result will contains a list of Time series: with one Tim
 
 Well done young hunter, let's continue together on the [last step](/step-4-First-Exo-Detection/4.3-Threshold-test-and-display/) of this stage to learn how to isolate a minus threshold and build a nice output!
 
-## [previous step]() ... [solutions]() ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/)
+## [previous step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/) ... [solutions]() ... [next step]({{ site.baseurl }}//step-4-First-Exo-Detection/4.3-Threshold-test-and-display/)

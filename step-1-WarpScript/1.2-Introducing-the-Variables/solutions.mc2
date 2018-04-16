@@ -1,3 +1,4 @@
+<warp10-embeddable-quantum warpscript="
 // A WarpScript string
 'Hello World!'
 
@@ -13,3 +14,5 @@ $myVariable
 
 // And store it if you want
 'token' STORE
+">
+</warp10-embeddable-quantum>

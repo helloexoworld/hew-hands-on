@@ -16,11 +16,14 @@
     <link rel="stylesheet" 
         href="/hew-hands-on/assets/bootstrap/bootstrap.min.css">
 
-    <script src="/hew-hands-on/assets/webcomponents/webcomponents-lite.js"></script>
+
+    <script src="/hew-hands-on/assets/warp10-embeddable-quantum/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="/hew-hands-on/assets/warp10-embeddable-quantum/warp10-embeddable-quantum.html">
+
     <script src="/hew-hands-on/assets/jquery/jquery.js"></script>
     <script src="/hew-hands-on/assets/bootstrap/bootstrap.js"></script>
 
-    <link rel="import" href="/hew-hands-on/assets/quantum/warp10-components.html">
 
     <link rel="stylesheet" href="/hew-hands-on/css/helloexoworld.css">
     <link rel="stylesheet" href="/hew-hands-on/css/helloexoworld-navbar.css">
@@ -46,6 +49,9 @@
   </head>
   
 <body>
+  <warp10-embeddable-quantum-conf 
+    backend='{"id":"helloexoworld","label":"HelloExo.World","url":"https://warp.pierrezemb.org/api/v0"}' 
+    debug></warp10-embeddable-quantum-conf>
   
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -58,6 +64,14 @@
           <span class="icon-bar"></span>
         </button>
       -->
+        <button type="button" 
+            class="navbar-toggle toggle collapsed" 
+            data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <a class="navbar-brand" href="/hew-hands-on/">
           <div class="navbar-id">
             <div class="navbar-id-icon">
@@ -81,14 +95,7 @@
 
   <div class="container top-10" id="main-container">
     <div class="row">
-          <button type="button" 
-            class="navbar-toggle toggle collapsed" 
-            data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
+      
     <div id="sidebar" class="col-sm-3 collapse">
       
         <div class="panel-group" id="side-menu">
@@ -306,23 +313,25 @@
 
 <p>Let’s try it, save the following string in a variable and then push it back several time on the stack!</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// A WarpScript string
+<warp10-embeddable-quantum warpscript="
+// A WarpScript string
 'Hello World!'
 
 // Save this string in variable
 
 
 // Play with the saved variable
-
-
-</code></pre></div></div>
+">
+</warp10-embeddable-quantum>
 
 <h2 id="get-a-read-token">Get a read token</h2>
 
 <p>Security in Warp10 instance are handled with crypto tokens. They can be pretty long, so to ease your workflow, we stored it in the platform! You can push the token into the stack using this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@HELLOEXOWORLD/GETREADTOKEN
-</code></pre></div></div>
+<warp10-embeddable-quantum warpscript="
+@HELLOEXOWORLD/GETREADTOKEN
+">
+</warp10-embeddable-quantum>
 
 <p>You can store it in a variable if you want.</p>
 

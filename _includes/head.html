@@ -14,11 +14,14 @@
     <link rel="stylesheet" 
         href="{{ "/assets" | prepend: site.baseurl }}/bootstrap/bootstrap.min.css">
 
-    <script src="{{ "/assets" | prepend: site.baseurl }}/webcomponents/webcomponents-lite.js"></script>
+
+    <script src="{{ "/assets" | prepend: site.baseurl }}/warp10-embeddable-quantum/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="{{ "/assets" | prepend: site.baseurl }}/warp10-embeddable-quantum/warp10-embeddable-quantum.html">
+
     <script src="{{ "/assets" | prepend: site.baseurl }}/jquery/jquery.js"></script>
     <script src="{{ "/assets" | prepend: site.baseurl }}/bootstrap/bootstrap.js"></script>
 
-    <link rel="import" href="{{ "/assets" | prepend: site.baseurl }}/quantum/warp10-components.html">
 
     <link rel="stylesheet" href="{{ "/css" | prepend: site.baseurl }}/{{ site.filename }}.css">
     <link rel="stylesheet" href="{{ "/css" | prepend: site.baseurl }}/{{ site.filename }}-navbar.css">

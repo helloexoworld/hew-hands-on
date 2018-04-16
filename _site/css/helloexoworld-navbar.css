@@ -56,6 +56,10 @@
   padding: 0px;
 }
 
+.navbar-inverse .navbar-toggle {
+    border: 0;
+}
+
 .navbar-id {
     display: flex;
     flex-flow: row nowrap;
@@ -82,4 +86,9 @@
     width: 64px;
     height: 64px;
     margin: 10px;
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
 }

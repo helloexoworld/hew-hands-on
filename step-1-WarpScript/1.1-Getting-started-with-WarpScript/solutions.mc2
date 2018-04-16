@@ -1,3 +1,4 @@
+<warp10-embeddable-quantum warpscript="
 // Compute 40 + 2
 40 2 +
 
@@ -6,3 +7,5 @@
 
 // Compute 'Hello' + ' world!'
 'Hello' ' world!' +
+">
+</warp10-embeddable-quantum>

@@ -16,11 +16,14 @@
     <link rel="stylesheet" 
         href="/hew-hands-on/assets/bootstrap/bootstrap.min.css">
 
-    <script src="/hew-hands-on/assets/webcomponents/webcomponents-lite.js"></script>
+
+    <script src="/hew-hands-on/assets/warp10-embeddable-quantum/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="/hew-hands-on/assets/warp10-embeddable-quantum/warp10-embeddable-quantum.html">
+
     <script src="/hew-hands-on/assets/jquery/jquery.js"></script>
     <script src="/hew-hands-on/assets/bootstrap/bootstrap.js"></script>
 
-    <link rel="import" href="/hew-hands-on/assets/quantum/warp10-components.html">
 
     <link rel="stylesheet" href="/hew-hands-on/css/helloexoworld.css">
     <link rel="stylesheet" href="/hew-hands-on/css/helloexoworld-navbar.css">
@@ -46,6 +49,9 @@
   </head>
   
 <body>
+  <warp10-embeddable-quantum-conf 
+    backend='{"id":"helloexoworld","label":"HelloExo.World","url":"https://warp.pierrezemb.org/api/v0"}' 
+    debug></warp10-embeddable-quantum-conf>
   
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -58,6 +64,14 @@
           <span class="icon-bar"></span>
         </button>
       -->
+        <button type="button" 
+            class="navbar-toggle toggle collapsed" 
+            data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <a class="navbar-brand" href="/hew-hands-on/">
           <div class="navbar-id">
             <div class="navbar-id-icon">
@@ -81,14 +95,7 @@
 
   <div class="container top-10" id="main-container">
     <div class="row">
-          <button type="button" 
-            class="navbar-toggle toggle collapsed" 
-            data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
+      
     <div id="sidebar" class="col-sm-3 collapse">
       
         <div class="panel-group" id="side-menu">
@@ -387,9 +394,11 @@ aperture pixels collected by the spacecraft. This is the raw data acquired by Ke
 
 <p>If you type the following WarpScript code:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Create an empty GTS
+<warp10-embeddable-quantum warpscript="
+// Create an empty GTS
 NEWGTS
-</code></pre></div></div>
+">
+</warp10-embeddable-quantum>
 
 <p>You will push on top of the stack a Time series. A Time series follow this modelisation:</p>
 
@@ -402,7 +411,8 @@ NEWGTS
 
 <p>To update any of those parameters, you can use one of the following functions that updates the initial Time series to define an example one: the number of time a spefic planet rotates!</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Create an empty Time series
+<warp10-embeddable-quantum warpscript="
+// Create an empty Time series
 NEWGTS
 
 // Rename this Time series
@@ -445,7 +455,8 @@ NaN NaN NaN
 
 // Add the value to current Time series
 ADDVALUE
-</code></pre></div></div>
+">
+</warp10-embeddable-quantum>
 
 <p>This will leave the initial GTS created on top of the stack, updated with each different values.</p>
 

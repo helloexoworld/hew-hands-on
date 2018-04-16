@@ -42,3 +42,7 @@ footer .center {
 footer .small {
   
 }
+
+img {
+  max-width: 100%;
+}

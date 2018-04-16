@@ -9,7 +9,7 @@ category: step-1
 
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 // A WarpScript string
 'Hello World!'
 
@@ -25,6 +25,7 @@ $myVariable
 
 // And store it if you want
 'token' STORE
-```
+">
+</warp10-embeddable-quantum>
 
 ## [previous step]({{ site.baseurl }}/step-1-WarpScript/1.1-Getting-started-with-WarpScript/) ... [back]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/) ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/)

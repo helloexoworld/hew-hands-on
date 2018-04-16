@@ -105,10 +105,11 @@ Warp 10 is one of the multiple Time series database that exists. It includes als
 
 If you type the following WarpScript code:
 
-```
+<warp10-embeddable-quantum warpscript="
 // Create an empty GTS
 NEWGTS
-```
+">
+</warp10-embeddable-quantum>
 
 You will push on top of the stack a Time series. A Time series follow this modelisation:
 
@@ -119,7 +120,8 @@ You will push on top of the stack a Time series. A Time series follow this model
 
 To update any of those parameters, you can use one of the following functions that updates the initial Time series to define an example one: the number of time a spefic planet rotates!
 
-```
+
+<warp10-embeddable-quantum warpscript="
 // Create an empty Time series
 NEWGTS
 
@@ -163,7 +165,9 @@ NaN NaN NaN
 
 // Add the value to current Time series
 ADDVALUE
-```
+">
+</warp10-embeddable-quantum>
+
 
 This will leave the initial GTS created on top of the stack, updated with each different values.
 

@@ -41,13 +41,17 @@ Then OK. Congrats, you can now type your first WarpScript! Type "NOW" in it. The
 Let's compute an operation in WarpScript, but first, in WarpScript, you will find commentary and variable types.
 The following WarpScript example list all the available basic types.
 
-```
+
+
+<warp10-embeddable-quantum warpscript="
 // This is a commentary
 'a'      // string value
 true     // boolean value
 42        // long value
 3.14159    // double value
-```
+">
+</warp10-embeddable-quantum>
+
 
 To compute an operation (for example an addition), put the two elements before the operator [+]({{ site.doc_url }}/reference/functions/function_ADD/) on the stack.
 You will get the result on top of the stack.
@@ -55,7 +59,7 @@ You will get the result on top of the stack.
 
 Let's try it, copy that empty WarpScript in Quantum and implement the simple spec:
 
-```
+<warp10-embeddable-quantum warpscript="
 // Compute 40 + 2
 
 
@@ -63,7 +67,8 @@ Let's try it, copy that empty WarpScript in Quantum and implement the simple spe
 
 
 // Compute 'Hello' + ' world!'
-```
+">
+</warp10-embeddable-quantum>
 
 ## To be continued
 

@@ -9,7 +9,7 @@ category: step-1
 
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 // Compute 40 + 2
 40 2 +
 
@@ -18,6 +18,7 @@ category: step-1
 
 // Compute 'Hello' + ' world!'
 'Hello' ' world!' +
-```
+">
+</warp10-embeddable-quantum>
 
 ## [previous step]({{ site.baseurl }}/step-0-Exoplanets-and-where-to-find-them) ... [back]({{ site.baseurl }}/step-1-WarpScript/1.1-Getting-started-with-WarpScript) ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/)

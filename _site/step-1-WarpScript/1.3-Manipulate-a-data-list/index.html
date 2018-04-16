@@ -16,11 +16,14 @@
     <link rel="stylesheet" 
         href="/hew-hands-on/assets/bootstrap/bootstrap.min.css">
 
-    <script src="/hew-hands-on/assets/webcomponents/webcomponents-lite.js"></script>
+
+    <script src="/hew-hands-on/assets/warp10-embeddable-quantum/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="/hew-hands-on/assets/warp10-embeddable-quantum/warp10-embeddable-quantum.html">
+
     <script src="/hew-hands-on/assets/jquery/jquery.js"></script>
     <script src="/hew-hands-on/assets/bootstrap/bootstrap.js"></script>
 
-    <link rel="import" href="/hew-hands-on/assets/quantum/warp10-components.html">
 
     <link rel="stylesheet" href="/hew-hands-on/css/helloexoworld.css">
     <link rel="stylesheet" href="/hew-hands-on/css/helloexoworld-navbar.css">
@@ -46,6 +49,9 @@
   </head>
   
 <body>
+  <warp10-embeddable-quantum-conf 
+    backend='{"id":"helloexoworld","label":"HelloExo.World","url":"https://warp.pierrezemb.org/api/v0"}' 
+    debug></warp10-embeddable-quantum-conf>
   
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -58,6 +64,14 @@
           <span class="icon-bar"></span>
         </button>
       -->
+        <button type="button" 
+            class="navbar-toggle toggle collapsed" 
+            data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <a class="navbar-brand" href="/hew-hands-on/">
           <div class="navbar-id">
             <div class="navbar-id-icon">
@@ -81,14 +95,7 @@
 
   <div class="container top-10" id="main-container">
     <div class="row">
-          <button type="button" 
-            class="navbar-toggle toggle collapsed" 
-            data-toggle="collapse" data-target="#sidebar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
+      
     <div id="sidebar" class="col-sm-3 collapse">
       
         <div class="panel-group" id="side-menu">
@@ -298,12 +305,15 @@
 In WarpScript, it’s possible to build structure as <a href="http://www.warp10.io/reference/#functions-lists-maps">List or Map</a>.
 The structure to build a List in WarpScript is as followed. First put a marker to open a list, then the elements to add.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ 'elem' 'elem2' ]
-</code></pre></div></div>
+<warp10-embeddable-quantum warpscript="
+[ 'elem' 'elem2' ]
+">
+</warp10-embeddable-quantum>
 
 <p>Let’s play with it, here’s the squeleton:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Build a list containing values 1 and 3 
+<warp10-embeddable-quantum warpscript="
+// Build a list containing values 1 and 3 
 
 
 // Add the element 2
@@ -313,7 +323,8 @@ The structure to build a List in WarpScript is as followed. First put a marker t
 
 
 // Reverse it
-</code></pre></div></div>
+">
+</warp10-embeddable-quantum>
 
 <p>build a new list containing two elements: 1 and 3. Then add the elements 2 using the operator <a href="http://www.warp10.io/reference/functions/function_ADD/">+</a> on this list. Now to sort this list, apply the function <a href="http://www.warp10.io/reference/functions/function_LSORT/">LSORT</a> on it. This will sort the list, which is on top of stack, in a ascending order and let as a result this list on top of the stack. To sort the list in a descending order, apply the <a href="http://www.warp10.io/reference/functions/function_REVERSE/">REVERSE</a> function on this list.</p>
 

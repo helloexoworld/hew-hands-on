@@ -21,7 +21,7 @@ The filter function takes a list containing 3 elements as input parameter: the G
 
 **Do not focus on the equivalence class: during this step, and keep an empty list. We will see later how it could be used.**
 
-```
+<warp10-embeddable-quantum warpscript="
 // Filter framwork
 [
     $gts                                // Series list or Singleton
@@ -29,8 +29,8 @@ The filter function takes a list containing 3 elements as input parameter: the G
     filter.function                     // A selector function 
 ]
 FILTER
-
-```
+">
+</warp10-embeddable-quantum>
 
 To have a working filter, replace the function keyword by an existing filter function: filter.bylabels or filter.byclass for instance. Those specific filter function requires a parameter on top of the stack. A more concret example is detailed below, based on the NASA lightcurve data.
 
@@ -41,20 +41,50 @@ In our data-flow, the goal is now to select only 2 to 3 records of those series 
 The filter function we will use in our case corresponds to [filter.bylabels]({{ site.doc_url }}/reference/frameworks/filter_bylabels/). This function expects a selector map on top of the stack that have to be specify.
 As an example you can try to use the selector labels map specifies in the follozing spec in your filter function.
 
-```
+<warp10-embeddable-quantum warpscript="
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+
+// FETCH
+[ 
+    $token                              // Application authentication
+    'sap.flux'                          // selector for classname
+    { 'KEPLERID' '6541920' }            // Selector for labels
+    '2009-05-02T00:56:10.000000Z'       // Start date
+    '2013-05-11T12:02:06.000000Z'       // End date
+] 
+FETCH
+
+// Get Singleton series
+0 GET
+
+//
+// TIMESPLIT block:
+//
+
+// Quiesce period
+6 h
+
+// Minimal numbers of points per series 
+100
+
+// Labels for each splitted series
+'record'
+
+TIMESPLIT
+
+'splitSeries' STORE
+
+//
+// FILTER block:
+//
+
 // Store a labels map selector
 { 'record' '~[2-5]' } 'labelsSelector' STORE
 
 // FILTER Framework
-[
-                                    // Series list or Singleton
-                                    // Labels to compute equivalence class
-                                    // Labels map for selector
-                                    // Filter function operator
-]
-FILTER
-
-```
+">
+</warp10-embeddable-quantum>
 
 ## Resume
 

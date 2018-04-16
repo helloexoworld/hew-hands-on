@@ -126,6 +126,8 @@ $bucketizedSeries
 
 At the end of this step, two sets of series are now availble on the stack. One containing all the time a specify series were below a threshold converted to boolean annotations. And the second set series contains the original series. We can the compare (when ploting both result) if our method to detect an exoplanet on Kepler-11 is efficient or not. 
 
-# Next Step
+## To be continued
 
 Great, you're now an experimented exoplanet hunter! I am sure you're ready now ready to test you're analysis on lot more of the Kepler's start. That's exactly what we will accomplish in our [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.1-WarpScript-loops/).
+
+## [previous step]() ... [solutions]() ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/)

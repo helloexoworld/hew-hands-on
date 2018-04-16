@@ -77,6 +77,8 @@ Starting from here, use the [APPLY]({{ site.doc_url }}/reference/frameworks/fram
 
 To resume, the expected result will contains a list of Time series: with one Time series per record containing the result of the substraction of the initial series with its trend.
 
-# Next Step
+## To be continued
 
 Well done young hunter, let's continue together on the [last step](/step-4-First-Exo-Detection/4.3-Threshold-test-and-display/) of this stage to learn how to isolate a minus threshold and build a nice output!
+
+## [previous step]() ... [solutions]() ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/)

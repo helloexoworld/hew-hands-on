@@ -100,6 +100,8 @@ To compute a difference between two series, the framework APPLY need to be used.
 
 As a result you get a list of two series: one containing all the value of the earth (resp. mars) rotation Time series substracted of the value to correct of the second earth (resp. mars) Time series.
 
-# Next Step
+## To be continued
 
 Once you are familiar with this specific operation of the APPLY framework, please continue with the next step, as you initiation as an exoplanet hunter is about to end. As a matter of fact, you now have the knowledge of all the needed tools to start exploring the kepler-11 start to detect it's exoplanet. Let's find together how to process in the [next step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/).
+
+## [previous step]() ... [solutions]() ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/)

@@ -167,6 +167,8 @@ ADDVALUE
 
 This will leave the initial GTS created on top of the stack, updated with each different values.
 
-# Next Step
+## To be continued
 
 Luckily for you all the needed Time series for you exoplanet are already available in our back-end! You can start to explore them in our [next step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/).
+
+## [previous step]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/) ... [solutions]() ... [next step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/)

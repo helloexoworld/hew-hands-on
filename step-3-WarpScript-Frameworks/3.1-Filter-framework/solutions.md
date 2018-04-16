@@ -9,7 +9,7 @@ category: step-3
 
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -58,6 +58,7 @@ TIMESPLIT
     filter.bylabels                 // Filter function operator 
 ]
 FILTER
-```
+">
+</warp10-embeddable-quantum>
 
 ## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/) ... [back]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/)

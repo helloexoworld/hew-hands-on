@@ -9,7 +9,7 @@ category: step-2
 
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 // Create an empty Time series
 NEWGTS
 
@@ -53,6 +53,7 @@ NaN NaN NaN
 
 // Add the value to current Time series
 ADDVALUE
-```
+">
+</warp10-embeddable-quantum>
 
 ## [previous step]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/) ... [back]({{ site.baseurl }}/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/) ... [next step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/)

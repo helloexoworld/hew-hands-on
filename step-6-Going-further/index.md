@@ -8,13 +8,15 @@ category: step-6
 ---
 
 
-It was not enough for you, you want more WarpScript? You came at the right place hunter. This page is all about extraction a few WarpScript function that can be an help in your quest of exoplanet or any other Time series analysis! You will discover the function to establish a correlation between a series and a set of series, how to use the STL function, the discord function, how to detect Outlier in a Time series and ending with some useful function to compute statistics on Time series. 
+It was not enough for you, you want more WarpScript? You came at the right place, exoplanet hunter. This page is all about extracting a few WarpScript function that can be an help in your quest of exoplanets (or any other time series analysis)! You will discover functiond to establish a correlation between a series and a set of series, how to use the `STL` or the `DISCORDS` function, how to detect outliers in time series and some useful function to compute statistics on Time series. 
 
-Those functions are listed here to give you an hint of the richness of WarpScript and about what can be quickly tried. At any time, feel free to skip this section to try to hack our code in the [next step]({{ site.baseurl }}/step-7-Strong-enough-to-break-our-code).
+Those functions are listed here to give you a hint of the richness of WarpScript. At any time, feel free to skip this section to try to hack our code in the [next step]({{ site.baseurl }}/step-7-Strong-enough-to-break-our-code).
 
 ## CORRELATE
 
-The [CORRELATE]({{ site.doc_url }}/reference/functions/function_CORRELATE/) function can be used to compute the crosscorrelation between a base Time and a list thereoff. An identical example as in the documtation is put below. The only parameter to add corresponds to a WarpScript list representing the offset to compute the correlation. All Time series must be correctly downsampled (aligned ticks and filled) before as the offset corresponds to a multiple value of the distance between two points. The value 0 as offset will compute the correlation between all ticks of each series.
+The [`CORRELATE`]({{ site.doc_url }}/reference/functions/function_CORRELATE/) function can be used to compute the cross-correlation between a base time series and a list thereoff. 
+
+Here you have the example used in the documentation. An identical example as in the documtation is put below. You need a base time series, a list of the time series to compute the cross-correlation with and a third parameter corresponding to an offset list to compute the correlation. All Time series must be correctly *bucketized* (aligned ticks) and filled (with no empty buckets) before, as the offset corresponds to a multiple of the distance between two points. The value 0 as offset will compute the correlation between all ticks of each series.
 
 <warp10-embeddable-quantum warpscript="
 // Create a COSINE GTS
@@ -58,7 +60,7 @@ CORRELATE
 
 ## STL
 
-The second function of this section is the well known [STL]({{ site.doc_url }}/reference/functions/function_STL/), standing for: Seasonal and Trend decomposition using Loess. This function expects A LIST of two GTS (or a LIST of LIST of two GTS) onto the stack. These GTS are the seasonal part and the trend part of the input GTS. Seasonal and trend are added as suffix. On the [STL]({{ site.doc_url }}/reference/functions/function_STL/) documentation page, you will find a concrete example about its usage in WarpScript. [This page](https://www.otexts.org/fpp/6/5) introduces how the STL decomposition works for Time series. You will find the Warp10.io example below.
+The second function of this section is the well known [`STL`]({{ site.doc_url }}/reference/functions/function_STL/) (Seasonal and Trend decomposition using Losses). This function expects a list of two GTS (or a list of list of two GTS) onto the stack. These GTS are the seasonal part and the trend part of the input GTS. Seasonal and trend are added as suffix. You can look [here](https://www.otexts.org/fpp/6/5) for an introduction on how the STL decomposition works for time series. You will find the Warp10.io example below:
 
 <warp10-embeddable-quantum warpscript="
 // generate periodic GTS of mean 0
@@ -80,9 +82,9 @@ NEWGTS 1 20 <% NaN NaN NaN 4 PICK ADDVALUE %> FOR ]
 
 ## DISCORDS
 
-The third section is about the [DISCORDS]({{ site.doc_url }}/reference/functions/function_DISCORDS/) functions that is based on [pattern recognition](https://en.wikipedia.org/wiki/Pattern_recognition) to detect discontinuities in a time series of a list thereof. This functions expects some parameters to define how to recognize a pattern. The [DISCORDS]({{ site.doc_url }}/reference/functions/function_DISCORDS/) documentation explains more in details all the different parameters and present a working example. 
+The third section is about the [`DISCORDS`]({{ site.doc_url }}/reference/functions/function_DISCORDS/) functions that is based on [pattern recognition](https://en.wikipedia.org/wiki/Pattern_recognition) to detect discontinuities in a time series of a list thereof. This functions expects some parameters to define how to recognize a pattern. The [`DISCORDS`]({{ site.doc_url }}/reference/functions/function_DISCORDS/) documentation explains more in details all the different parameters and present a working example. 
 
-A pattern is defined with first it's window size, then the size of the pattern and finish with it's quantization scale (values ladder dividing the window width). To compute the discord you need to add maximum number of discords to identify, a boolean flag indicating whether or not the DISCORDS function should report overlapping discords and a distance ratio (it is safe to leave it to 0.0). You will find the Warp10.io example below.
+A pattern is defined with first it's window size, then the size of the pattern and finish with it's quantization scale (values ladder dividing the window width). To compute the discord you need to add maximum number of discords to identify, a boolean flag indicating whether or not the `DISCORDS` function should report overlapping discords and a distance ratio (it is safe to leave it to 0.0). You will find the Warp10.io example below.
 
 <warp10-embeddable-quantum warpscript="
 // Create a newgts to generate discords
@@ -108,7 +110,7 @@ DUP
 
 ## Outlier detection
 
-In WarpScript, there is mutliple outlier function detection. You can retrieve for example the basic [THRESHOLDTEST]({{ site.doc_url }}/reference/functions/function_THRESHOLDTEST/) which just need a threshold value. This function will detect values greater than this threshold. There is also the [HYBRIDTEST]({{ site.doc_url }}/reference/functions/function_HYBRIDTEST/) which mix STL and another detection method [ESDTEST]({{ site.doc_url }}/reference/functions/function_ESDTEST/). You will find all the other available outlier method detection [here]({{ site.doc_url }}/reference/#outlier-detection). You will find below the Warp10.io example of the ESDTEST.
+In WarpScript, there is mutliple outlier function detection. You can retrieve for example the basic [`THRESHOLDTEST`]({{ site.doc_url }}/reference/functions/function_THRESHOLDTEST/) which just need a threshold value. This function will detect values greater than this threshold. There is also the [`HYBRIDTEST`]({{ site.doc_url }}/reference/functions/function_HYBRIDTEST/) which mix STL and another detection method [`ESDTEST`]({{ site.doc_url }}/reference/functions/function_ESDTEST/). You will find all the other available outlier method detection [here]({{ site.doc_url }}/reference/#outlier-detection). You will find below the Warp10.io example of the `ESDTEST`.
 
 <warp10-embeddable-quantum warpscript="
 /// Macro used to generate an approximately normal distribution using central limit theorem
@@ -131,7 +133,13 @@ DEDUP
 
 ## Some statisticals functions
 
-WarpScript also have some basic statistics functions that can be apply on Time series. As [MUSIGMA]({{ site.doc_url }}/reference/functions/function_MUSIGMA/) to compute both the mean and the standard deviation of a series. You will also retrieve all the following functions: [NORMALIZE]({{ site.doc_url }}/reference/functions/function_NORMALIZE/#sidebar), [ISONORMALIZE]({{ site.doc_url }}/reference/functions/function_ISONORMALIZE/), [STANDARDIZE]({{ site.doc_url }}/reference/functions/function_STANDARDIZE/), [SINGLEEXPONENTIALSMOOTHING]({{ site.doc_url }}/reference/functions/function_SINGLEEXPONENTIALSMOOTHING/) to smooth and compare different series. To extract more details information on a Time series, you will also retrieve some functions as [MODE]({{ site.doc_url }}/reference/functions/function_MODE/) or [VALUEHISTOGRAM]({{ site.doc_url }}/reference/functions/function_VALUEHISTOGRAM/). The main other available statisticals functions are [CPROB]({{ site.doc_url }}/reference/functions/function_CPROB/), [LOWESS]({{ site.doc_url }}/reference/functions/function_LOWESS/), [LTTB]({{ site.doc_url }}/reference/functions/function_LTTB), [MONOTONIC]({{ site.doc_url }}/reference/functions/function_MONOTONIC/), [NSUMSUMSQ]({{ site.doc_url }}/reference/functions/function_NSUMSUMSQ/), [PROB]({{ site.doc_url }}/reference/functions/function_PROB/), [RLOWESS]({{ site.doc_url }}/reference/functions/function_RLOWESS/) and [TLTTB]({{ site.doc_url }}/reference/functions/function_TLTTB/), if needed one day.
+WarpScript also have some basic statistics functions that can be apply on Time series:
+
+- [`MUSIGMA`]({{ site.doc_url }}/reference/functions/function_MUSIGMA/) to compute both the mean and the standard deviation of a series
+- [`NORMALIZE`]({{ site.doc_url }}/reference/functions/function_NORMALIZE/#sidebar), [`ISONORMALIZE`]({{ site.doc_url }}/reference/functions/function_ISONORMALIZE/), [`STANDARDIZE`]({{ site.doc_url }}/reference/functions/function_STANDARDIZE/)
+- [`SINGLEEXPONENTIALSMOOTHING`]({{ site.doc_url }}/reference/functions/function_SINGLEEXPONENTIALSMOOTHING/) to smooth and compare different series
+- To extract more details information on a Time series, you will also retrieve some functions as [MODE]({{ site.doc_url }}/reference/functions/function_MODE/) or [VALUEHISTOGRAM]({{ site.doc_url }}/reference/functions/function_VALUEHISTOGRAM/)
+- Many other statisticals functions are [CPROB]({{ site.doc_url }}/reference/functions/function_CPROB/), [LOWESS]({{ site.doc_url }}/reference/functions/function_LOWESS/), [LTTB]({{ site.doc_url }}/reference/functions/function_LTTB), [MONOTONIC]({{ site.doc_url }}/reference/functions/function_MONOTONIC/), [NSUMSUMSQ]({{ site.doc_url }}/reference/functions/function_NSUMSUMSQ/), [PROB]({{ site.doc_url }}/reference/functions/function_PROB/), [RLOWESS]({{ site.doc_url }}/reference/functions/function_RLOWESS/) and [TLTTB]({{ site.doc_url }}/reference/functions/function_TLTTB/), if needed one day.
 
 # Bonus, wanna a quick resume of some of the main WarpScript function?
 

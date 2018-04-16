@@ -46,3 +46,9 @@ footer .small {
 img {
   max-width: 100%;
 }
+
+blockquote {
+  font-size: 1em;
+  background-color: #eeeeee;
+  border-left: 5px solid #dddddd;
+}

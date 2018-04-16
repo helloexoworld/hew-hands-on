@@ -18,35 +18,48 @@ How does the function FIND works? This function allows the user to retrieve spec
 
 Before retrieving any data, you need to access data store in a specific application. To simplify the process, an existing token was stored in the platform. You can access it using the following code. HEW stands for HelloExoWorld. 
 
-```
+
+<warp10-embeddable-quantum warpscript="
 // Load handson-hew token
 @HELLOEXOWORLD/GETREADTOKEN
-```
+">
+</warp10-embeddable-quantum>
+
 
 Then store it in a variable, for example token. And starting from now, keep this stored token in all the script as you will need it to load data.
 
-```
+
+<warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
-```
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
+">
+</warp10-embeddable-quantum>
 
 The FIND function finds Geo Time SeriesTM matching some criteria. To work correctly, it expects on top of stack a LIST with 3 parameters: the previous stored Warp10 token, a classname selector and a MAP of label selectors.
 
-The classname selector is a string which represents an exact match if it starts with an ‘=’, or a regular expression if it starts with ‘~’.
+The classname selector is a string which represents an exact match if it starts with an `=`, or a regular expression if it starts with `~`.
 
-The label selectors are packed in a MAP whose keys are the label names and the values the associated selector. Those selectors can also be exact matches if they start with ‘=’ or a regular expression if they start with ‘~’.
+The label selectors are packed in a MAP whose keys are the label names and the values the associated selector. Those selectors can also be exact matches if they start with `=` or a regular expression if they start with `~`.
 
 Here a preloaded WarpScript that you can use, find all the GTS available!
 
-```
-// Start the find with the token as first parameter
-[ $token ...  ] FIND
 
-```
+<warp10-embeddable-quantum warpscript="
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
-Wow, a lot of data appeared in my quantum console. They represents all the existing series that are availble to test you exoplanet quest! Each Time series have several meta-data. During this tutorial we are going to focus on the one called "sap.flux" as they represents the raw data of the lightcurve of each stars.
+// Start the FIND with the token as first parameter
+[ 
+    $token 
+    // Here you must put the classname and label selectors...  
+] FIND
+">
+</warp10-embeddable-quantum>
 
-The one that we are looking for has a label KEPLERID=6541920, can you see it? Change the FIND to have only one result: sap.flux for Kepler-11!
+
+Wow, a lot of data appeared in my quantum console. They represents all the existing series that are availble to test you exoplanet quest! Each Time series have several meta-data. During this tutorial we are going to focus on the one called `sap.flux` as they represents the raw data of the lightcurve of each stars.
+
+The one that we are looking for has a label `KEPLERID=6541920`, can you see it? Change the FIND to have only one result: `sap.flux` for Kepler-11!
 
 ## To be continued
 

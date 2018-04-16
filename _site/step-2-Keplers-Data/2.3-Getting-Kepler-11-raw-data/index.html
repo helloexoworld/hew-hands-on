@@ -303,36 +303,79 @@
 
 <h2 id="fetch">FETCH</h2>
 
-<p>Now that we found the right star, let’s get some data using <a href="http://www.warp10.io/reference/functions/function_FETCH/">FETCH</a>! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints. The UTC start date is <em>2009-05-02T00:56:10.000000Z</em> and the end date is <em>2013-05-11T12:02:06.000000Z</em>.</p>
+<p>Now that we found the right star, let’s get some data using <a href="http://www.warp10.io/reference/functions/function_FETCH/"><code class="highlighter-rouge">FETCH</code></a>! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints. The UTC start date is <code class="highlighter-rouge">2009-05-02T00:56:10.000000Z</code> and the end date is <code class="highlighter-rouge">2013-05-11T12:02:06.000000Z</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// FETCH
+<warp10-embeddable-quantum warpscript="
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+
+// Let's do a FETCH now
 [
-                                        // Application authentication
-                                        // selector for classname
-                                        // Selector for labels
-                                        // Start date
-                                        // End date
+    // Here you must put the parameters used by FETCH:  
+    // - Token for application authentication
+    // - Classname selector
+    // - Labels selector
+    // - Start date
+    // - End date
 ]
 FETCH
-</code></pre></div></div>
+">
+</warp10-embeddable-quantum>
 
-<p>You can click on Execute then Plot. You will see a list of GTS, click on one to view it.</p>
+<p>You will see a list of GTS, click on one to view it.</p>
 
-<h2 id="select-only-kepler-11">Select only Kepler 11</h2>
+<h2 id="getting-the-first-gts-in-the-fetched-list">Getting the first GTS in the fetched list</h2>
 
-<p>The fetch results provides a list of series. To simplify all the following steps, we would like to work only on the first series of this list. Let’s select it using the following warpScript:</p>
+<p>The <code class="highlighter-rouge">FETCH</code> results provides a list of series. To simplify all the following steps, we would like to work only on the first series of this list. In order to do it, we use the <a href="http://www.warp10.io/reference/functions/function_GET/"><code class="highlighter-rouge">GET</code></a>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 GET
-</code></pre></div></div>
+<warp10-embeddable-quantum warpscript="
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+
+// Let's do a FETCH now
+[
+    $token                          // Token for application authentication
+    'sap.flux'                      // Classname selector
+    {}                              // Labels selector
+    '2009-05-02T00:56:10.000000Z'   // Start date
+    '2013-05-11T12:02:06.000000Z'   // End date
+]
+FETCH 
+0 GET
+">
+</warp10-embeddable-quantum>
 
 <p>You should now have only one series on top of stack now.</p>
+
+<h2 id="selecting-only-the-data-from-kepler-11">Selecting only the data from Kepler-11</h2>
+
+<p>Let’s modify the precedent code to fetch only the data from Kepler-11, i.e. data with the label <code class="highlighter-rouge">KEPLERID=6541920</code>:</p>
+
+<warp10-embeddable-quantum warpscript="
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+
+// Let's do a FETCH now
+[
+    $token                          // Token for application authentication
+    'sap.flux'                      // Classname selector
+    { 
+        // Here you put the label selector for Kepler-11
+    }                              // Labels selector
+    '2009-05-02T00:56:10.000000Z'   // Start date
+    '2013-05-11T12:02:06.000000Z'   // End date
+]
+FETCH 
+0 GET
+">
+</warp10-embeddable-quantum>
 
 <h2 id="handling-time">Handling time</h2>
 
 <p>As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let’s clean that. There is a function called <a href="http://www.warp10.io/reference/functions/function_TIMESPLIT/">TIMESPLIT</a> that will be able to help us! As stated by the documentation:</p>
 
 <blockquote>
-  <p>The TIMESPLIT function takes a GTS or a list of GTS and splits each Geo Time SeriesTM into a list multiple GTS instances, cutting the original GTS when it encounters quiet periods when there are no measurements.</p>
+  <p>The TIMESPLIT function takes a GTS or a list of GTS and splits each Geo Time Series<sup>TM</sup> into a list multiple GTS instances, cutting the original GTS when it encounters quiet periods when there are no measurements.</p>
 </blockquote>
 
 <p>That is perfect! Let´s use it!</p>
@@ -347,36 +390,42 @@ FETCH
 
 <p>Go ahead and TIMESPLIT the GTS!</p>
 
-<p><strong>Pro tips: You can use a function called h to easily compute time. For example, putting 1 h into the stack will result with the number of microsecond in a hour in the stack!</strong></p>
+<blockquote>
+  <p>Pro tips: You can use a function called <a href="http://www.warp10.io/reference/functions/function_h/"><code class="highlighter-rouge">h</code></a> to easily compute duration in hours. For example, putting <code class="highlighter-rouge">1 h</code> into the stack will push the number of microsecond in a hour in the stack!</p>
+</blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
-    $token                              // Application authentication
-    'sap.flux'                   // selector for classname
-    { 'KEPLERID' '6541920' }                // Selector for labels
-    '2009-05-02T00:56:10.000000Z'       // Start date
-    '2013-05-11T12:02:06.000000Z'       // End date
-] FETCH
+<warp10-embeddable-quantum warpscript="
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
-// Singleton series
+// Let's do a FETCH now
+[
+    $token                          // Token for application authentication
+    'sap.flux'                      // Classname selector
+    { 'KEPLERID' '6541920' }        // Labels selector
+    '2009-05-02T00:56:10.000000Z'   // Start date
+    '2013-05-11T12:02:06.000000Z'   // End date
+]
+FETCH 
 0 GET
 
-//
-// TIMESPLIT block:
-//
+// Let's do the TIMESPLIT now
 
-// Quiesce period
+// Set TIMESPLIT parameters:
+    // - Quiesce period
+    // - Minimal numbers of points per series
+    // - Labels for each splitted series
+TIMESPLIT
+">
+</warp10-embeddable-quantum>
 
-
-// Minimal numbers of points per series
-
-
-// Labels for each splitted series
-'record'
-
-
-</code></pre></div></div>
-
-<p>Once you managed to set all the needed parameters, you should get as a result a list of splitted series! In fact Timesplit will work as follow: it takes a GTS on top of stack and process it to detect quiet periods. Then it create one series per each period, generating several Time series (if they have at least the minimal required number of points to be considered). A label is also to each series, with an incremental values (1 for the first, 2 for the second,…). And finally, all the new formed series are added inside a result list and pushed on top of stack.</p>
+<p>Once you managed to set all the needed parameters, you should get as a result a list of splitted series! In fact Timesplit will work as follow:</p>
+<ul>
+  <li>it takes a GTS on top of stack and process it to detect quiet periods</li>
+  <li>it create one series per each period, generating several Time series (if they have at least the minimal required number of points to be considered)</li>
+  <li>it adds a label to each series, with an incremental values (1 for the first, 2 for the second,…)</li>
+  <li>all the new formed series are added inside a result list and pushed on top of stack.</li>
+</ul>
 
 <p>Great, each series resulting of TIMESPLIT corresponds to a single <a href="https://www.nasa.gov/mission_pages/kepler/overview/index.html">Kepler record</a>. We can now start to work on each of them and how to reduce the number of series to be able to explore a specific amount of data.</p>
 

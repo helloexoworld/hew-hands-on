@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title> HelloExo.World - Hands-on with exoplanets - Step 2.2: Exploring the available time-series </title>
+    <title> HelloExo.World - Hands-on with exoplanets - Step 1.1: Getting started with WarpScript </title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -120,7 +120,7 @@
             </a>
         </h4>
     </div>
-    <div id="collapse-step-1" class="panel-collapse collapse ">
+    <div id="collapse-step-1" class="panel-collapse collapse  in ">
         <div class="list-group">
 
             <a class="list-group-item" href="/hew-hands-on/step-1-WarpScript/1.1-Getting-started-with-WarpScript/">
@@ -147,7 +147,7 @@
         </a>
         </h4>
     </div>
-    <div id="collapse-step-2" class="panel-collapse collapse  in ">
+    <div id="collapse-step-2" class="panel-collapse collapse ">
         <div class="list-group">
     
         <a class="list-group-item" 
@@ -291,49 +291,20 @@
      </div>
       
       <div class="col-sm-9">
-        <h1>Step 2.2: Exploring the available time-series</h1>
-        <p>Now that you survive all the WarpScript needed knowledge, we would like to welcome you in our special quest, as an exoplanet hunter!</p>
+        <h1>Step 1.1: Getting started with WarpScript</h1>
+        <h2 id="solutions">Solutions</h2>
 
-<h2 id="find">FIND</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Compute 40 + 2
+40 2 +
 
-<p>We preloaded our platform with some stars (around 30). Let’s observe the series structures and find the one that we want! We are going to use a function called <a href="http://www.warp10.io/reference/functions/function_FIND/">FIND</a>.</p>
+// Compute previous result + 0.42
+0.42 + 
 
-<p>How does the function FIND works? This function allows the user to retrieve specific meta-data of Time series store inside a Warp 10 backend. You will need to push on top of the stack a list of specific parameters. The function to work correcty will need a specific cryptographic token, remember, you saw it earlier. Let’s resume how to load it.</p>
-
-<p>Before retrieving any data, you need to access data store in a specific application. To simplify the process, an existing token was stored in the platform. You can access it using the following code. HEW stands for HelloExoWorld.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Load handson-hew token
-@HELLOEXOWORLD/GETREADTOKEN
+// Compute 'Hello' + ' world!'
+'Hello' ' world!' +
 </code></pre></div></div>
 
-<p>Then store it in a variable, for example token. And starting from now, keep this stored token in all the script as you will need it to load data.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
-</code></pre></div></div>
-
-<p>The FIND function finds Geo Time SeriesTM matching some criteria. To work correctly, it expects on top of stack a LIST with 3 parameters: the previous stored Warp10 token, a classname selector and a MAP of label selectors.</p>
-
-<p>The classname selector is a string which represents an exact match if it starts with an ‘=’, or a regular expression if it starts with ‘~’.</p>
-
-<p>The label selectors are packed in a MAP whose keys are the label names and the values the associated selector. Those selectors can also be exact matches if they start with ‘=’ or a regular expression if they start with ‘~’.</p>
-
-<p>Here a preloaded WarpScript that you can use, find all the GTS available!</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Start the find with the token as first parameter
-[ $token ...  ] FIND
-
-</code></pre></div></div>
-
-<p>Wow, a lot of data appeared in my quantum console. They represents all the existing series that are availble to test you exoplanet quest! Each Time series have several meta-data. During this tutorial we are going to focus on the one called “sap.flux” as they represents the raw data of the lightcurve of each stars.</p>
-
-<p>The one that we are looking for has a label KEPLERID=6541920, can you see it? Change the FIND to have only one result: sap.flux for Kepler-11!</p>
-
-<h2 id="to-be-continued">To be continued</h2>
-
-<p>During this step you manipulated a sub-set of series extracted of the FITS data of the NASA. Now to really explore this set of data, let’s obeserve what the lightcurve for the kepler-11 time series looks like. In the <a href="/hew-hands-on/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/">next step</a>, you will learn how to extract raw data using Warp 10.</p>
-
-<h2 id="previous-step--solutions--next-step"><a href="/hew-hands-on/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/">previous step</a> … <a href="/hew-hands-on/step-2-Keplers-Data/2.2-Exploring-known-time-series/solutions">solutions</a> … <a href="/hew-hands-on/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/">next step</a></h2>
+<h2 id="previous-step--back--next-step"><a href="/hew-hands-on/step-0-Exoplanets-and-where-to-find-them">previous step</a> … <a href="/hew-hands-on/step-1-WarpScript/1.1-Getting-started-with-WarpScript">back</a> … <a href="/hew-hands-on/step-1-WarpScript/1.2-Introducing-the-Variables/">next step</a></h2>
 
       </div>
     </div>

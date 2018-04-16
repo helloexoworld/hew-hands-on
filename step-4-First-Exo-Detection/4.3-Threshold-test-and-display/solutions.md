@@ -1,3 +1,6 @@
+## Solutions
+
+```
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -5,36 +8,29 @@
 [ 
     $token                              // Application authentication
     'sap.flux'                          // selector for classname
-    {}                                  // Selector for labels
+    { 'KEPLERID' '6541920' }            // Selector for labels
     '2009-05-02T00:56:10.000000Z'       // Start date
     '2013-05-11T12:02:06.000000Z'       // End date
 ] 
 FETCH
 
-// Apply Timeclip on each stars series
-<%
-    // Delete index
-    DROP
-    
-    //
-    // TIMESPLIT block:
-    //
+// Get Singleton series
+0 GET
 
-    // Quiesce period
-    6 h
+//
+// TIMESPLIT block:
+//
 
-    // Minimal numbers of points per series 
-    100
+// Quiesce period
+6 h
 
-    // Labels for each splitted series
-    'record'
+// Minimal numbers of points per series 
+100
 
-    TIMESPLIT
-%>
-LMAP
+// Labels for each splitted series
+'record'
 
-// Flatten list of list of TIMESPLIT
-FLATTEN
+TIMESPLIT
 
 'splitSeries' STORE
 
@@ -95,7 +91,7 @@ UNBUCKETIZE
     ]
     MAP                                 // Series list or singleton subtrahend
 
-    [ 'KEPLERID' 'record' ]             // Labels to compute equivalence class
+    [ 'record' ]                        // Labels to compute equivalence class
     op.sub                              // Apply function operator
 ]
 APPLY
@@ -115,44 +111,6 @@ APPLY
 
 [ $belowValueSeries mapper.toboolean 0 0 0 ] MAP
 
-//
-// Reformat annotations series
-//
-
-<%
-    // Delete index
-    DROP
-
-    // Duplicate series on top of the stack
-    DUP
-
-    // Get series name
-    NAME
-
-    // Add annotations suffix
-    '-annotations' +
-
-    // RENAME the series on top of the stack
-    RENAME
-%>
-LMAP
-
 // Push the original series to compare with
 $bucketizedSeries
-
-//
-// Split the end record in several stack elements. One elements for each record of each stars containing a list of the record series with its corresponding annotations series 
-//
-
-// Merge both series on top of the stack
-APPEND
-[ 'KEPLERID' 'record' ]
-
-// Generaten equivalence map containing base on KEPLERID and record labels
-PARTITION
-
-// Delete each map keys to keep only the list values 
-<%
-    SWAP DROP
-%>
-FOREACH
+```

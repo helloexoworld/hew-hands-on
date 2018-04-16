@@ -1,3 +1,6 @@
+## Solutions
+
+```
 [
     NEWGTS "planet.rotation.count" RENAME 
     { 'name' 'earth' } RELABEL
@@ -31,3 +34,4 @@
     op.sub                              // Apply function operator
 ]
 APPLY
+```

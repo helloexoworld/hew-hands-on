@@ -1,3 +1,6 @@
+## Solutions
+
+```
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -62,19 +65,4 @@ FILTER
     0                                   // Bucketcount
 ]
 BUCKETIZE
-
-'bucketizedSeries' STORE
-
-//
-// MAP block:
-//
-
-// MAP Framework
-[
-    $bucketizedSeries                   // Series list or Singleton
-    mapper.mean                         // Mapper function operator
-    5                                   // Pre               
-    5                                   // Post
-    0                                   // Occurence
-]
-MAP
+```

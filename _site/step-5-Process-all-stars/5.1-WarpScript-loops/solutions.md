@@ -1,3 +1,6 @@
+## Solutions
+
+```
 //
 // FOREACH
 //
@@ -32,3 +35,4 @@ FOREACH
 
 // Call LMAP function
 LMAP
+```

@@ -91,4 +91,4 @@ Great, each series resulting of TIMESPLIT corresponds to a single [Kepler record
 
 During this step you manipulated a sub-set of series extracted of the FITS data of the NASA. You discovered how to extract raw data from Warp 10 and how to use one of the Time manipulation function WarpScript offers! This is only the beginning of the hunt, there will be more to come in the [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/) with all the basic Times Series framework to start an analysis!
 
-## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/) ... [solutions]() ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/)
+## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/) ... [solutions]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/solutions) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/)

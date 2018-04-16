@@ -1,3 +1,15 @@
+---
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: home
+title: 'Step 2.3: Load time series raw data'
+category: step-2
+---
+
+## Solutions
+
+```
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -28,21 +40,6 @@ FETCH
 'record'
 
 TIMESPLIT
+```
 
-'splitSeries' STORE
-
-//
-// FILTER block:
-//
-
-// Store a labels map selector
-{ 'record' '~[2-5]' } 'labelsSelector' STORE
-
-// FILTER Framework
-[
-    $splitSeries                    // Series list or Singleton
-    []                              // Labels to compute equivalence class
-    $labelsSelector                 // Labels map for selector
-    filter.bylabels                 // Filter function operator 
-]
-FILTER
+## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/) ... [back]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/)

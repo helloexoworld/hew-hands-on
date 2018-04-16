@@ -1,3 +1,15 @@
+---
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: home
+title: 'Step 3.1: Framework time: FILTER'
+category: step-3
+---
+
+## Solutions
+
+```
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -46,3 +58,6 @@ TIMESPLIT
     filter.bylabels                 // Filter function operator 
 ]
 FILTER
+```
+
+## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/) ... [back]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/)

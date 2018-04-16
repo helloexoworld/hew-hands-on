@@ -292,13 +292,13 @@
       
       <div class="col-sm-9">
         <h1>Step 3.1: Framework time: FILTER</h1>
-        <p>The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: <a href="http://192.168.1.3/reference/frameworks/framework-filter/">FILTER</a>, <a href="http://192.168.1.3/reference/frameworks/framework-bucketize/">BUCKETIZE</a>, <a href="http://192.168.1.3/reference/frameworks/framework-map/">MAP</a>, <a href="http://192.168.1.3/reference/frameworks/framework-reduce/">REDUCE</a> and <a href="http://192.168.1.3/reference/frameworks/framework-apply/">APPLY</a>. Let’s start with the FILTER framework.</p>
+        <p>The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: <a href="http://www.warp10.io/reference/frameworks/framework-filter/">FILTER</a>, <a href="http://www.warp10.io/reference/frameworks/framework-bucketize/">BUCKETIZE</a>, <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP</a>, <a href="http://www.warp10.io/reference/frameworks/framework-reduce/">REDUCE</a> and <a href="http://www.warp10.io/reference/frameworks/framework-apply/">APPLY</a>. Let’s start with the FILTER framework.</p>
 
 <h2 id="the-framework">The framework</h2>
 
-<p>The first framework we discover in this tutorial is <a href="http://192.168.1.3/reference/frameworks/framework-filter/">FILTER</a>. It provides the tooling to select specific sub-set of Time-series in a list thereof.</p>
+<p>The first framework we discover in this tutorial is <a href="http://www.warp10.io/reference/frameworks/framework-filter/">FILTER</a>. It provides the tooling to select specific sub-set of Time-series in a list thereof.</p>
 
-<p>Let’s resume what we have on the stack: first the kepler-11 GTS are loaded using the <a href="http://192.168.1.3/reference/functions/function_FETCH/">FETCH</a> function. Then the data are split according to a quiesce period using <a href="http://192.168.1.3/reference/functions/function_TIMESPLIT/">TIMESPLIT</a>.</p>
+<p>Let’s resume what we have on the stack: first the kepler-11 GTS are loaded using the <a href="http://www.warp10.io/reference/functions/function_FETCH/">FETCH</a> function. Then the data are split according to a quiesce period using <a href="http://www.warp10.io/reference/functions/function_TIMESPLIT/">TIMESPLIT</a>.</p>
 
 <h2 id="input-parameters">Input parameters</h2>
 
@@ -322,7 +322,7 @@ FILTER
 
 <p>In our data-flow, the goal is now to select only 2 to 3 records of those series to see if it’s possible to visualize some drops in those series and if we can start to build a working method to detect exoplanet. You will have to use a Variable as seen in the first step to place the Time-series list in first position of the element list.</p>
 
-<p>The filter function we will use in our case corresponds to <a href="http://192.168.1.3/reference/frameworks/filter_bylabels/">filter.bylabels</a>. This function expects a selector map on top of the stack that have to be specify.
+<p>The filter function we will use in our case corresponds to <a href="http://www.warp10.io/reference/frameworks/filter_bylabels/">filter.bylabels</a>. This function expects a selector map on top of the stack that have to be specify.
 As an example you can try to use the selector labels map specifies in the follozing spec in your filter function.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Store a labels map selector
@@ -345,7 +345,7 @@ FILTER
 
 <p>The result of this step corresponds to a reduced list. In our case only 4 records (2 to 5) were selected using a regular expression. A list containing 4 Time series is now let on top of the WarpScript stack.</p>
 
-<h1 id="to-be-continued">To be continued</h1>
+<h1 id="next-step">Next Step</h1>
 
 <p>As an exoplanet hunter, you may be asking yourself why you should reduced the amount of data you will be working with. Be patient, and remember that taking your time during the first steps will making you win time in the longer run! Stay strong young hunter, more will come in the <a href="/hew-hands-on/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/">next step</a> as a framework very usefull for time-series downsampling will be briefly introduced.</p>
 

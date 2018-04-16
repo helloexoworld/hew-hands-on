@@ -296,7 +296,7 @@
 
 <h2 id="threshold-test">Threshold test</h2>
 
-<p>Let’s compute at first a threshold test! In WarpScript you can re-use the MAP framework to do it! The <a href="http://192.168.1.3/reference/frameworks/framework-map/">MAP framework</a> have the following operator: <a href="http://192.168.1.3/reference/frameworks/mapper_gt/">gt</a> (greater than), <a href="http://192.168.1.3/reference/frameworks/mapper_ge/">ge</a> (greater or equals), <a href="http://192.168.1.3/reference/frameworks/mapper_eq/">eq</a> (equals), <a href="http://192.168.1.3/reference/frameworks/mapper_lt">lt</a> (lower than), <a href="http://192.168.1.3/reference/frameworks/mapper_le/">le</a> (lower or equals)… Find out the correct operator and working threshold!</p>
+<p>Let’s compute at first a threshold test! In WarpScript you can re-use the MAP framework to do it! The <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP framework</a> have the following operator: <a href="http://www.warp10.io/reference/frameworks/mapper_gt/">gt</a> (greater than), <a href="http://www.warp10.io/reference/frameworks/mapper_ge/">ge</a> (greater or equals), <a href="http://www.warp10.io/reference/frameworks/mapper_eq/">eq</a> (equals), <a href="http://www.warp10.io/reference/frameworks/mapper_lt">lt</a> (lower than), <a href="http://www.warp10.io/reference/frameworks/mapper_le/">le</a> (lower or equals)… Find out the correct operator and working threshold!</p>
 
 <p>How does we proceed ? The threshold test corresponds finally in the re-using the MAP framework. If you would like to have a reminder see below or to review the lesson on MAP: <a href="(/step-3-WarpScript-Frameworks/3.3-Map-framework/README.md)">go here</a>.</p>
 
@@ -319,9 +319,9 @@ MAP
 
 <h2 id="display-things-nicely">Display things nicely</h2>
 
-<p>Great now you can successfully detect some exoplanet! You have well earn your badge as an exoplanet hunter! Just one more thing, how to be sure that the periods you have extracted corresponds to exoplanet ? Let’s print more nicely the result! To do so, we can convert our result into annotations in WarpScript. This can be done using boolean instead of values! And there is also a mapper to do it: <a href="http://192.168.1.3/reference/frameworks/mapper_toboolean/">mapper.toboolean</a>.</p>
+<p>Great now you can successfully detect some exoplanet! You have well earn your badge as an exoplanet hunter! Just one more thing, how to be sure that the periods you have extracted corresponds to exoplanet ? Let’s print more nicely the result! To do so, we can convert our result into annotations in WarpScript. This can be done using boolean instead of values! And there is also a mapper to do it: <a href="http://www.warp10.io/reference/frameworks/mapper_toboolean/">mapper.toboolean</a>.</p>
 
-<p>** Pro tip: mapper.toboolean is a single value mapper and would not work correctly on bucketized series. To correct it and get the better result we recommand to use the <a href="http://192.168.1.3/reference/functions/function_UNBUCKETIZE/">UNBUCKETIZE</a> function right after the BUCKETIZE operation**</p>
+<p>** Pro tip: mapper.toboolean is a single value mapper and would not work correctly on bucketized series. To correct it and get the better result we recommand to use the <a href="http://www.warp10.io/reference/functions/function_UNBUCKETIZE/">UNBUCKETIZE</a> function right after the BUCKETIZE operation**</p>
 
 <p>Then you can push back on the stack the original series using a variable!</p>
 
@@ -409,7 +409,7 @@ $bucketizedSeries
 
 <p>At the end of this step, two sets of series are now availble on the stack. One containing all the time a specify series were below a threshold converted to boolean annotations. And the second set series contains the original series. We can the compare (when ploting both result) if our method to detect an exoplanet on Kepler-11 is efficient or not.</p>
 
-<h1 id="to-be-continued">To be continued</h1>
+<h1 id="next-step">Next Step</h1>
 
 <p>Great, you’re now an experimented exoplanet hunter! I am sure you’re ready now ready to test you’re analysis on lot more of the Kepler’s start. That’s exactly what we will accomplish in our <a href="/hew-hands-on/step-5-Process-all-stars/5.1-WarpScript-loops/">next step</a>.</p>
 

@@ -34,6 +34,8 @@ During this tutorial, you will have the role of a trainee exoplanet hunter in it
 
 There is several possibilities depending of your exopanet hunter skills:
 
-* To start with a short resume of WarpScript start with our first step [here](./step-1-WarpScript/1.1-Getting-started-with-WarpScript/).
+* To start with a short resume of what is an exoplanet, you can start with our [step 0](./step-0-Exoplanets-and-where-to-find-them).
 
-* To skip this WarpScript initiation and start working on the Nasa Kepler mission data start with our second step [here](./step-2-Keplers-Data/2.1-Did-you-said-Time-Series/).
+* To start with a short resume of WarpScript start with our [step 1](./step-1-WarpScript/1.1-Getting-started-with-WarpScript/).
+
+* To skip this WarpScript initiation and start working on the Nasa Kepler mission data start with our [step 2](./step-2-Keplers-Data/2.1-Did-you-said-Time-Series/).

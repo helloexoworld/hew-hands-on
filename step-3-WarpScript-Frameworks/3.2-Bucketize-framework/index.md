@@ -99,6 +99,6 @@ The main goal of this step is to downsample some raw data. To do so, you have to
 
 The result of this step corresponds to a downsampled list. In our case the 4 selected Time series are now on top of stack containing regular bucket and one value per bucket.
 
-# To be continued
+# Next Step
 
 It look's simple as first look, but truts us it isn't. When you will be working on complex time-series analytics, keep in mind this framework and try to be familiar with it! You will quickly see how it will improves your exoplanet discovery quest! In the [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.3-Map-framework/), we are guiding you in the usage of an other usefull framework: MAP or how to apply the same function on all data-point of a set of time-series.

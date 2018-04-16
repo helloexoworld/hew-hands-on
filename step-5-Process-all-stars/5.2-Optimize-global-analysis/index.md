@@ -15,6 +15,6 @@ In the first script you write only one function: [TIMESPLIT]({{ site.doc_url }}/
 
 Then all the WarpScript framework functions can be applied on Time-series list. Just be careful on the equivalence class!
 
-# To be continued
+# Next Step
 
 Once you manage to compute the analysis on all the start, you should get two elements on top of the stack: the sampled list and the annotations. In the [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.3-Reformat-the-output/), the output format will be a bit updated.

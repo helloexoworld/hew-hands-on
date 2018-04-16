@@ -63,6 +63,6 @@ FOREACH
 
 ```
 
-# To be continued
+# Next Step
 
 Wow, you did an awesome job exoplanet hunter! You manage to discover some of the existing exoplanet and format nicely your output! Now it's time to relax a bit before continuing your quest. It's time to let you have your own practice, to learn a little bit more about the existing WarpScript function, continue with the [next step]({{ site.baseurl }}/step-6-Going-further/) or continue to develop your script using all the skills your already learned.

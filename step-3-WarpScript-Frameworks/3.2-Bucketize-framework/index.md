@@ -36,7 +36,7 @@ The BUCKETIZE framework takes a list of elements as parameter. This list contain
 **Pro tips 2: Bucketcount indicate the number of bucket to keep starting from the last bucket computed when a Bucketspan is also set!**
 
 
-```
+<warp10-embeddable-quantum warpscript="
 // BUCKETIZE Framework
 [
     SWAP                                // Series list or Singleton
@@ -46,8 +46,8 @@ The BUCKETIZE framework takes a list of elements as parameter. This list contain
     0                                   // Bucketcount
 ]
 BUCKETIZE
-
-```
+">
+</warp10-embeddable-quantum>
 
 To get a working bucketizer, replace the function keyword by an exisiting function as first, last, mean, min, max, median, join...
 
@@ -80,18 +80,65 @@ Now we would like to apply this specific framework to compute a downsampling ope
 Only a single amount of series were kept in our previous step, it's already possible to observe some drops in the data. Now we would like to write a script automasing the detection of those drops. But first, to gain some data readibilty, a downsampling step is included. In our case we are intersted in a downsampling conserving the minimal point of each generated bucket for each series.
 Let's do it! Try the bucketizer.min with a bucketize window of 2 h.
 
-```
-// BUCKETIZE Framework
-[
-                                        // Series list or Singleton
-                                        // Bucketize function operator
-                                        // Lastbucket
-                                        // Bucketspan
-                                        // Bucketcount
-]
-BUCKETIZE
+<warp10-embeddable-quantum warpscript="
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
-```
+// FETCH
+[ 
+    $token                              // Application authentication
+    'sap.flux'                          // selector for classname
+    { 'KEPLERID' '6541920' }            // Selector for labels
+    '2009-05-02T00:56:10.000000Z'       // Start date
+    '2013-05-11T12:02:06.000000Z'       // End date
+] 
+FETCH
+
+// Get Singleton series
+0 GET
+
+//
+// TIMESPLIT block:
+//
+
+// Quiesce period
+6 h
+
+// Minimal numbers of points per series 
+100
+
+// Labels for each splitted series
+'record'
+
+TIMESPLIT
+
+'splitSeries' STORE
+
+//
+// FILTER block:
+//
+
+// Store a labels map selector
+{ 'record' '~[2-5]' } 'labelsSelector' STORE
+
+// FILTER Framework
+[
+    $splitSeries                    // Series list or Singleton
+    []                              // Labels to compute equivalence class
+    $labelsSelector                 // Labels map for selector
+    filter.bylabels                 // Filter function operator 
+]
+FILTER
+
+'filteredSeries' STORE
+
+//
+// BUCKETIZE block:
+//
+
+// BUCKETIZE Framework
+">
+</warp10-embeddable-quantum>
 
 ## Resume
 

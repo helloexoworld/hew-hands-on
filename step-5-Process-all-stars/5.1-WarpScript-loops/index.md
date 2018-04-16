@@ -19,7 +19,7 @@ What will do the FOREACH function?
 
 The list will be droped of the stack, so at the start of the FOREACH process only the value 0 is on top of the stack. Then during the process of the foreach, each element will be pushed on top of the stack one after an other. You will just have compute an addition inside the macro. The increasing value will stay on top of the stack until the end of the script.
 
-```
+<warp10-embeddable-quantum warpscript="
 //
 // FOREACH
 //
@@ -37,9 +37,8 @@ The list will be droped of the stack, so at the start of the FOREACH process onl
 
 
 // Call FOREACH function
-
-
-```
+">
+</warp10-embeddable-quantum>
 
 ## LMAP
 
@@ -49,8 +48,7 @@ Let's say that for example, we would like to add 1 to each element of the previo
 
 As the FOREACH function, LMAP takes two parameter: a list and a macro. LMAP will recompute as output a list. Inside the LMAP macro, you will get two elements pushed inside of the stack: the current element and then the index. In our case to correctly apply only our addition, we will need to delete the index of the stack. This means that the first element to be put inside the LMAP macro is the function DROP (used to delete the current element on top of the stack).
 
-
-```
+<warp10-embeddable-quantum warpscript="
 //
 // LMAP
 //
@@ -65,9 +63,8 @@ As the FOREACH function, LMAP takes two parameter: a list and a macro. LMAP will
  
 
 // Call LMAP function
-
-
-```
+">
+</warp10-embeddable-quantum>
 
 ## To be continued
 

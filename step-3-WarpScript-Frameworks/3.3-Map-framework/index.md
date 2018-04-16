@@ -23,7 +23,7 @@ In other words, the MAP framework allows the user to compute the same operation 
 
 Map takes as input a list of parameters. The first element of this list can be one or several lists of GTS. Then there is a [mapper function]({{ site.doc_url }}/reference/#framework-mappers). The third and the fourth elements are related to the sliding window, with first an element corresponding to "pre", the width of the sliding window before the value, and in second an element corresponding to "post", the width of the sliding window after the value. The last element corresponds to "occurences" which is the limit of computation of a number. For all elements except the set of GTS and the mapper function a default value 0 can be used, when those elements aren't required.
 
-```
+<warp10-embeddable-quantum warpscript="
 // MAP Framework
 [
     SWAP                                // Series list or Singleton
@@ -33,8 +33,8 @@ Map takes as input a list of parameters. The first element of this list can be o
     0                                   // Occurence
 ]
 MAP
-
-```
+">
+</warp10-embeddable-quantum>
 
 **Pro tips: A mmapper with the pre, post and occurence parameters at zero is called a single value mapper, meaning that the mapper function will be applied to all points of a series!**
 
@@ -70,18 +70,81 @@ In previous step we saw how to downsample the data, but what if to get the main 
 
 Let's try it! Try the mapper.mean with a moving window!
 
-```
-// MAP Framework
-[
-                                        // Series list or Singleton
-                                        // Mapper function operator
-                                        // Pre
-                                        // Post
-                                        // Occurence
-]
-MAP
+<warp10-embeddable-quantum warpscript="
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
-```
+// FETCH
+[ 
+    $token                              // Application authentication
+    'sap.flux'                          // selector for classname
+    { 'KEPLERID' '6541920' }            // Selector for labels
+    '2009-05-02T00:56:10.000000Z'       // Start date
+    '2013-05-11T12:02:06.000000Z'       // End date
+] 
+FETCH
+
+// Get Singleton series
+0 GET
+
+//
+// TIMESPLIT block:
+//
+
+// Quiesce period
+6 h
+
+// Minimal numbers of points per series 
+100
+
+// Labels for each splitted series
+'record'
+
+TIMESPLIT
+
+'splitSeries' STORE
+
+//
+// FILTER block:
+//
+
+// Store a labels map selector
+{ 'record' '~[2-5]' } 'labelsSelector' STORE
+
+// FILTER Framework
+[
+    $splitSeries                    // Series list or Singleton
+    []                              // Labels to compute equivalence class
+    $labelsSelector                 // Labels map for selector
+    filter.bylabels                 // Filter function operator 
+]
+FILTER
+
+'filteredSeries' STORE
+
+//
+// BUCKETIZE block:
+//
+
+// BUCKETIZE Framework
+[
+    $filteredSeries                     // Series list or Singleton
+    bucketizer.min                      // Bucketize function operator
+    0                                   // Lastbucket 				
+    2 h                                 // Bucketspan
+    0                                   // Bucketcount
+]
+BUCKETIZE
+
+'bucketizedSeries' STORE
+
+//
+// MAP block:
+//
+
+// MAP Framework
+">
+</warp10-embeddable-quantum>
 
 ## Resume
 

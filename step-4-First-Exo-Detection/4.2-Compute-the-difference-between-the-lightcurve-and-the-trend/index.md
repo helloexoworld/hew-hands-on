@@ -10,7 +10,7 @@ category: step-4
 Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet!
 The process is similar to the previous step. Start with the script resuming the data loading, the record split (according to time), the filtering and the downsampling.
 
-```
+<warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 'abcd' 'token' STORE 
 
@@ -71,7 +71,15 @@ FILTER
     0                                   // Bucketcount
 ]
 BUCKETIZE
-```
+
+'bucketizedSeries' STORE
+
+//
+// APPLY block:
+//
+
+">
+</warp10-embeddable-quantum>
 
 Starting from here, use the [APPLY]({{ site.doc_url }}/reference/frameworks/framework-apply/) framework to compute the [difference](({{ site.doc_url }}/reference/frameworks/op_sub/)) between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection! Be careful of the equivalence class to choose for this specific step!
 

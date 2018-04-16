@@ -43,7 +43,7 @@ Then you can push back on the stack the original series using a variable!
 
 To help you achieve this step, you can complete the following skeleton. The step to complete start with TODO.
 
-```
+<warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -119,8 +119,8 @@ APPLY
 
 // Push the original series to compare with
 $bucketizedSeries
-
-```
+">
+</warp10-embeddable-quantum>
 
 ## Resume
 

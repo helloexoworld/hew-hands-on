@@ -38,7 +38,11 @@ Kepler is a **space observatory** launched by NASA in March 2009 to **discover E
 
 More information about the telescope itself can be found [**here**](https://keplerscience.arc.nasa.gov/the-kepler-space-telescope.html).
 
-## What have we done?
+## Who are we?
+
+![Alt Text]({{ site.baseurl }}/img/step-0/hew.png)
+
+We are not astrophysicists. Not by far, we are **developers**, and WarpScript users looking for timeseries challenges. We want to have fun! So we created [HelloExoWorld](https://helloexo.world), an **association** designed to **promote** and **use** spatial data such as Kepler's.
 
 #### What we have done:
 

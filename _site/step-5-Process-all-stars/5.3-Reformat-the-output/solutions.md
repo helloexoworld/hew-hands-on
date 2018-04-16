@@ -1,3 +1,6 @@
+## Solutions
+
+```
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -115,5 +118,45 @@ APPLY
 
 [ $belowValueSeries mapper.toboolean 0 0 0 ] MAP
 
+//
+// Reformat annotations series
+//
+
+<%
+    // Delete index
+    DROP
+
+    // Duplicate series on top of the stack
+    DUP
+
+    // Get series name
+    NAME
+
+    // Add annotations suffix
+    '-annotations' +
+
+    // RENAME the series on top of the stack
+    RENAME
+%>
+LMAP
+
 // Push the original series to compare with
 $bucketizedSeries
+
+//
+// Split the end record in several stack elements. One elements for each record of each stars containing a list of the record series with its corresponding annotations series 
+//
+
+// Merge both series on top of the stack
+APPEND
+[ 'KEPLERID' 'record' ]
+
+// Generaten equivalence map containing base on KEPLERID and record labels
+PARTITION
+
+// Delete each map keys to keep only the list values 
+<%
+    SWAP DROP
+%>
+FOREACH
+```

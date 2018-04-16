@@ -52,4 +52,4 @@ The one that we are looking for has a label KEPLERID=6541920, can you see it? Ch
 
 During this step you manipulated a sub-set of series extracted of the FITS data of the NASA. Now to really explore this set of data, let's obeserve what the lightcurve for the kepler-11 time series looks like. In the [next step]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/), you will learn how to extract raw data using Warp 10.
 
-## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/) ... [solutions]() ... [next step]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/)
+## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/) ... [solutions]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/solutions) ... [next step]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/)

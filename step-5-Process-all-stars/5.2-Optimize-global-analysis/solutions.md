@@ -1,3 +1,6 @@
+## Solutions
+
+```
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -5,29 +8,36 @@
 [ 
     $token                              // Application authentication
     'sap.flux'                          // selector for classname
-    { 'KEPLERID' '6541920' }            // Selector for labels
+    {}                                  // Selector for labels
     '2009-05-02T00:56:10.000000Z'       // Start date
     '2013-05-11T12:02:06.000000Z'       // End date
 ] 
 FETCH
 
-// Get Singleton series
-0 GET
+// Apply Timeclip on each stars series
+<%
+    // Delete index
+    DROP
+    
+    //
+    // TIMESPLIT block:
+    //
 
-//
-// TIMESPLIT block:
-//
+    // Quiesce period
+    6 h
 
-// Quiesce period
-6 h
+    // Minimal numbers of points per series 
+    100
 
-// Minimal numbers of points per series 
-100
+    // Labels for each splitted series
+    'record'
 
-// Labels for each splitted series
-'record'
+    TIMESPLIT
+%>
+LMAP
 
-TIMESPLIT
+// Flatten list of list of TIMESPLIT
+FLATTEN
 
 'splitSeries' STORE
 
@@ -88,7 +98,7 @@ UNBUCKETIZE
     ]
     MAP                                 // Series list or singleton subtrahend
 
-    [ 'record' ]                        // Labels to compute equivalence class
+    [ 'KEPLERID' 'record' ]             // Labels to compute equivalence class
     op.sub                              // Apply function operator
 ]
 APPLY
@@ -110,3 +120,4 @@ APPLY
 
 // Push the original series to compare with
 $bucketizedSeries
+```

@@ -1,3 +1,6 @@
+## Solutions
+
+```
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -66,26 +69,16 @@ BUCKETIZE
 'bucketizedSeries' STORE
 
 //
-// APPLY block:
+// MAP block:
 //
 
+// MAP Framework
 [
-    $bucketizedSeries                    // Series list or singleton minuend
-
-    //
-    // MAP block: Compute moving mean 
-    //
-
-    [
-        $bucketizedSeries               // Series list or Singleton
-        mapper.mean                     // Mapper function operator
-        5                               // Pre
-        5                               // Post
-        0                               // Occurences
-    ]
-    MAP                                 // Series list or singleton subtrahend
-
-    [ 'record' ]                        // Labels to compute equivalence class
-    op.sub                              // Apply function operator
+    $bucketizedSeries                   // Series list or Singleton
+    mapper.mean                         // Mapper function operator
+    5                                   // Pre               
+    5                                   // Post
+    0                                   // Occurence
 ]
-APPLY
+MAP
+```

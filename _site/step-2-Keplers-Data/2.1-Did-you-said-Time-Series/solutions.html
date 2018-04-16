@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title> HelloExo.World - Hands-on with exoplanets - Step 5.2: Optimize all stars analysis </title>
+    <title> HelloExo.World - Hands-on with exoplanets - Step 2.1: Did you said Time series? </title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -154,7 +154,7 @@
         </a>
         </h4>
     </div>
-    <div id="collapse-step-2" class="panel-collapse collapse ">
+    <div id="collapse-step-2" class="panel-collapse collapse  in ">
         <div class="list-group">
     
         <a class="list-group-item" 
@@ -247,7 +247,7 @@
             </a>
             </h4>
         </div>
-        <div id="collapse-step-5" class="panel-collapse collapse  in ">
+        <div id="collapse-step-5" class="panel-collapse collapse ">
             <div class="list-group">
         
                 <a class="list-group-item" 
@@ -298,20 +298,55 @@
      </div>
       
       <div class="col-sm-9">
-        <h1>Step 5.2: Optimize all stars analysis</h1>
-        <p>You learn how to use some of the WarpScript framework and how to write your first script to detect exoplanet! Let’s now try to apply this analysis on all the lightcurve of each stars we have at our disposal.</p>
+        <h1>Step 2.1: Did you said Time series?</h1>
+        <h2 id="solutions">Solutions</h2>
 
-<h2 id="practice">Practice</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Create an empty Time series
+NEWGTS
 
-<p>In the first script you write only one function: <a href="http://www.warp10.io/reference/functions/function_TIMESPLIT/">TIMESPLIT</a> request single GTS. Encapsuled this instruction inside a LOOP. When using LMAP, you can replace a time-series by a list thereof. Then to flat the list the <a href="http://www.warp10.io/reference/functions/function_FLATTEN/">FLATTEN</a> warpscript function can be used.</p>
+// Rename this Time series
+'planet.rotation.count' RENAME
 
-<p>Then all the WarpScript framework functions can be applied on Time-series list. Just be careful on the equivalence class!</p>
+// Relabel this Time series
+{ 'name' 'earth' } RELABEL
 
-<h2 id="to-be-continued">To be continued</h2>
+// Gives an Attribute to this Time series
+{ 'main-nickname' 'blue-planet' } SETATTRIBUTES  // This attribute could evolve in the future without re-creating a series once they are stored in Warp 10.
 
-<p>Once you manage to compute the analysis on all the start, you should get two elements on top of the stack: the sampled list and the annotations. In the <a href="/hew-hands-on/step-5-Process-all-stars/5.3-Reformat-the-output/">next step</a>, the output format will be a bit updated.</p>
+//
+// Add today's value to this Time series
+//
 
-<h2 id="previous-step--solutions--next-step"><a href="/hew-hands-on/step-5-Process-all-stars/5.1-WarpScript-loops/">previous step</a> … <a href="/hew-hands-on/step-5-Process-all-stars/5.2-Optimize-global-analysis/">solutions</a> … <a href="/hew-hands-on/step-5-Process-all-stars/5.3-Reformat-the-output/">next step</a></h2>
+// Push Today's time
+NOW 
+
+// Push location
+NaN NaN NaN 
+
+// Push 121 as value 
+121
+
+// Add today's value in current Time series
+ADDVALUE
+
+//
+// Now we will also add yesterday value to the earth rotation Time series
+//
+
+// Compute Yesterday time (Today minus one day)
+NOW 1 d - 
+
+// Push location
+NaN NaN NaN 
+
+// Push the value 120
+120
+
+// Add the value to current Time series
+ADDVALUE
+</code></pre></div></div>
+
+<h2 id="previous-step--back--next-step"><a href="/hew-hands-on/step-1-WarpScript/1.3-Manipulate-a-data-list/">previous step</a> … <a href="/hew-hands-on/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/">back</a> … <a href="/hew-hands-on/step-2-Keplers-Data/2.2-Exploring-known-time-series/">next step</a></h2>
 
       </div>
     </div>

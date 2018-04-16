@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title> HelloExo.World - Hands-on with exoplanets - Step 5.2: Optimize all stars analysis </title>
+    <title> HelloExo.World - Hands-on with exoplanets - Step 1.1: Getting started with WarpScript </title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -127,7 +127,7 @@
             </a>
         </h4>
     </div>
-    <div id="collapse-step-1" class="panel-collapse collapse ">
+    <div id="collapse-step-1" class="panel-collapse collapse  in ">
         <div class="list-group">
 
             <a class="list-group-item" href="/hew-hands-on/step-1-WarpScript/1.1-Getting-started-with-WarpScript/">
@@ -247,7 +247,7 @@
             </a>
             </h4>
         </div>
-        <div id="collapse-step-5" class="panel-collapse collapse  in ">
+        <div id="collapse-step-5" class="panel-collapse collapse ">
             <div class="list-group">
         
                 <a class="list-group-item" 
@@ -298,20 +298,22 @@
      </div>
       
       <div class="col-sm-9">
-        <h1>Step 5.2: Optimize all stars analysis</h1>
-        <p>You learn how to use some of the WarpScript framework and how to write your first script to detect exoplanet! Let’s now try to apply this analysis on all the lightcurve of each stars we have at our disposal.</p>
+        <h1>Step 1.1: Getting started with WarpScript</h1>
+        <h2 id="solutions">Solutions</h2>
 
-<h2 id="practice">Practice</h2>
+<warp10-embeddable-quantum warpscript="
+// Compute 40 + 2
+40 2 +
 
-<p>In the first script you write only one function: <a href="http://www.warp10.io/reference/functions/function_TIMESPLIT/">TIMESPLIT</a> request single GTS. Encapsuled this instruction inside a LOOP. When using LMAP, you can replace a time-series by a list thereof. Then to flat the list the <a href="http://www.warp10.io/reference/functions/function_FLATTEN/">FLATTEN</a> warpscript function can be used.</p>
+// Compute previous result + 0.42
+0.42 + 
 
-<p>Then all the WarpScript framework functions can be applied on Time-series list. Just be careful on the equivalence class!</p>
+// Compute 'Hello' + ' world!'
+'Hello' ' world!' +
+">
+</warp10-embeddable-quantum>
 
-<h2 id="to-be-continued">To be continued</h2>
-
-<p>Once you manage to compute the analysis on all the start, you should get two elements on top of the stack: the sampled list and the annotations. In the <a href="/hew-hands-on/step-5-Process-all-stars/5.3-Reformat-the-output/">next step</a>, the output format will be a bit updated.</p>
-
-<h2 id="previous-step--solutions--next-step"><a href="/hew-hands-on/step-5-Process-all-stars/5.1-WarpScript-loops/">previous step</a> … <a href="/hew-hands-on/step-5-Process-all-stars/5.2-Optimize-global-analysis/">solutions</a> … <a href="/hew-hands-on/step-5-Process-all-stars/5.3-Reformat-the-output/">next step</a></h2>
+<h2 id="previous-step--back--next-step"><a href="/hew-hands-on/step-0-Exoplanets-and-where-to-find-them">previous step</a> … <a href="/hew-hands-on/step-1-WarpScript/1.1-Getting-started-with-WarpScript">back</a> … <a href="/hew-hands-on/step-1-WarpScript/1.2-Introducing-the-Variables/">next step</a></h2>
 
       </div>
     </div>

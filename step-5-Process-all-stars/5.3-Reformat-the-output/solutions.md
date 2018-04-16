@@ -1,6 +1,15 @@
+---
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: home
+title: 'Step 5.3: Time to focus on the format output'
+category: step-5
+---
+
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -159,4 +168,7 @@ PARTITION
     SWAP DROP
 %>
 FOREACH
-```
+">
+</warp10-embeddable-quantum>
+
+## [previous step]({{ site.baseurl }}/step-5-Process-all-stars/5.2-Optimize-global-analysis/) ... [back]({{ site.baseurl }}/step-5-Process-all-stars/5.3-Reformat-the-output/) ... [next step]({{ site.baseurl }}/step-6-Going-further/)

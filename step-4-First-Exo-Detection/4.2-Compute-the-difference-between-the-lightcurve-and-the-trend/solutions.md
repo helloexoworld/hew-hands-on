@@ -1,6 +1,15 @@
+---
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: home
+title: "Step 4.2: Let's compute the difference"
+category: step-4
+---
+
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -92,4 +101,7 @@ BUCKETIZE
     op.sub                              // Apply function operator
 ]
 APPLY
-```
+">
+</warp10-embeddable-quantum>
+
+## [previous step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/) ... [back]({{ site.baseurl }}/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/) ... [next step]({{ site.baseurl }}//step-4-First-Exo-Detection/4.3-Threshold-test-and-display/)

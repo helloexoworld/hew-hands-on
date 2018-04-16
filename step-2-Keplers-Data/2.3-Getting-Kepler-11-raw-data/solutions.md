@@ -9,7 +9,7 @@ category: step-2
 
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -40,6 +40,7 @@ FETCH
 'record'
 
 TIMESPLIT
-```
+">
+</warp10-embeddable-quantum>
 
 ## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/) ... [back]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/)

@@ -34,7 +34,10 @@ plugins:
   - jekyll-feed
 
 doc_url: http://www.warp10.io
-# doc_url: http://192.168.1.3
+
+warp10:
+  endpoint: https://warp.pierrezemb.org/api/v0
+  
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

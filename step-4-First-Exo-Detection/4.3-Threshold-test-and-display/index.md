@@ -130,4 +130,4 @@ At the end of this step, two sets of series are now availble on the stack. One c
 
 Great, you're now an experimented exoplanet hunter! I am sure you're ready now ready to test you're analysis on lot more of the Kepler's start. That's exactly what we will accomplish in our [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.1-WarpScript-loops/).
 
-## [previous step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/) ... [solutions]({{ site.baseurl }}//step-4-First-Exo-Detection/4.3-Threshold-test-and-display/) ... [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.1-WarpScript-loops/)
+## [previous step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/) ... [solutions]({{ site.baseurl }}//step-4-First-Exo-Detection/4.3-Threshold-test-and-display/solutions) ... [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.1-WarpScript-loops/)

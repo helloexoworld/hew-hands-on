@@ -1,6 +1,15 @@
+---
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: home
+title: 'Step 3.3: Framework time: MAP'
+category: step-3
+---
+
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -81,4 +90,7 @@ BUCKETIZE
     0                                   // Occurence
 ]
 MAP
-```
+">
+</warp10-embeddable-quantum>
+
+## [previous step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/) ... [back]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.3-Map-framework/) ... [next step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/)

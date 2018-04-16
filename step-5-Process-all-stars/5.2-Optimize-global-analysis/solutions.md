@@ -1,6 +1,15 @@
+---
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: home
+title: 'Step 5.2: Optimize all stars analysis'
+category: step-5
+---
+
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -120,4 +129,7 @@ APPLY
 
 // Push the original series to compare with
 $bucketizedSeries
-```
+">
+</warp10-embeddable-quantum>
+
+## [previous step]({{ site.baseurl }}/step-5-Process-all-stars/5.1-WarpScript-loops/) ... [back]({{ site.baseurl }}/step-5-Process-all-stars/5.2-Optimize-global-analysis/) ... [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.3-Reformat-the-output/)

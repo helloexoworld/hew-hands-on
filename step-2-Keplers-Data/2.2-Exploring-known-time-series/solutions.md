@@ -9,7 +9,7 @@ category: step-2
  
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -18,6 +18,7 @@ category: step-2
 
 // Select only Kepler-11 series
 [ $token '~.*' { 'KEPLERID' '6541920' } ] FIND
-```
+">
+</warp10-embeddable-quantum>
 
 ## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/) ... [back]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/) ... [next step]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/)

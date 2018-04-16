@@ -1,6 +1,15 @@
+---
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: home
+title: 'Step 5.1: Back to WarpScript bascis: the loop'
+category: step-5
+---
+
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 //
 // FOREACH
 //
@@ -35,4 +44,7 @@ FOREACH
 
 // Call LMAP function
 LMAP
-```
+">
+</warp10-embeddable-quantum>
+
+## [previous step]({{ site.baseurl }}//step-4-First-Exo-Detection/4.3-Threshold-test-and-display/) ... [back]({{ site.baseurl }}/step-5-Process-all-stars/5.1-WarpScript-loops/) ... [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.2-Optimize-global-analysis/)

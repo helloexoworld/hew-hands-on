@@ -1,6 +1,15 @@
+---
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: home
+title: 'Step 3.2: Framework time: BUCKETIZE'
+category: step-3
+---
+
 ## Solutions
 
-```
+<warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
@@ -65,4 +74,7 @@ FILTER
     0                                   // Bucketcount
 ]
 BUCKETIZE
-```
+">
+</warp10-embeddable-quantum>
+
+## [previous step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/) ... [back]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.3-Map-framework/)

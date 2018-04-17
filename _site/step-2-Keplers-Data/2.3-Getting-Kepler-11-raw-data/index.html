@@ -303,7 +303,7 @@
 
 <h2 id="fetch">FETCH</h2>
 
-<p>Now that we found the right star, let’s get some data using <a href="http://www.warp10.io/reference/functions/function_FETCH/"><code class="highlighter-rouge">FETCH</code></a>! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints. The UTC start date is <code class="highlighter-rouge">2009-05-02T00:56:10.000000Z</code> and the end date is <code class="highlighter-rouge">2013-05-11T12:02:06.000000Z</code>.</p>
+<p>Now that we have identified the right star, let’s get some data using <a href="http://www.warp10.io/reference/functions/function_FETCH/"><code class="highlighter-rouge">FETCH</code></a>! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints. The UTC start date is <code class="highlighter-rouge">2009-05-02T00:56:10.000000Z</code> and the end date is <code class="highlighter-rouge">2013-05-11T12:02:06.000000Z</code>. Remember that the regular expression <code class="highlighter-rouge">~.*</code> allow you to request all the series available in the platform. Limit it to only the <code class="highlighter-rouge">sap.flux</code> ones. In order to keep a restreint amount of data, update the labels sector to load only the data from Kepler-11, i.e. data with the label <code class="highlighter-rouge">KEPLERID=6541920</code>:</p>
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
@@ -315,6 +315,9 @@
     // - Token for application authentication
     // - Classname selector
     // - Labels selector
+    { 
+        // Here you put the label selector for Kepler-11
+    } 
     // - Start date
     // - End date
 ]
@@ -322,7 +325,7 @@ FETCH
 ">
 </warp10-embeddable-quantum>
 
-<p>You will see a list of GTS, click on one to view it.</p>
+<p>You will see a list of a single GTS, click on it to view it. As an exercise, you can re-use the find and create a regular expresssion to load a small amount of the stars data. Loading the complete set of data <strong>will</strong> probably crash your navigator.</p>
 
 <h2 id="getting-the-first-gts-in-the-fetched-list">Getting the first GTS in the fetched list</h2>
 
@@ -335,45 +338,21 @@ FETCH
 // Let's do a FETCH now
 [
     $token                          // Token for application authentication
-    'sap.flux'                      // Classname selector
-    {}                              // Labels selector
-    '2009-05-02T00:56:10.000000Z'   // Start date
-    '2013-05-11T12:02:06.000000Z'   // End date
-]
-FETCH 
-
-// Get Singleton series
-
-">
-</warp10-embeddable-quantum>
-
-<p>You should now have only one series on top of stack now.</p>
-
-<h2 id="selecting-only-the-data-from-kepler-11">Selecting only the data from Kepler-11</h2>
-
-<p>Let’s modify the precedent code to fetch only the data from Kepler-11, i.e. data with the label <code class="highlighter-rouge">KEPLERID=6541920</code>:</p>
-
-<warp10-embeddable-quantum warpscript="
-// Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
-
-// Let's do a FETCH now
-[
-    $token                          // Token for application authentication
-    'sap.flux'                      // Classname selector
+    'sap.flux'                      // Classname selector                         
     { 
-        // Here you put the label selector for Kepler-11
-    }                              // Labels selector
+        'KEPLERID' '6541920'        // Labels selector
+    }                              
     '2009-05-02T00:56:10.000000Z'   // Start date
     '2013-05-11T12:02:06.000000Z'   // End date
 ]
 FETCH 
 
 // Get Singleton series
-0 GET
 
 ">
 </warp10-embeddable-quantum>
+
+<p>You should now have only the Kepler-11 series on top of stack as singleton.</p>
 
 <h2 id="handling-time">Handling time</h2>
 

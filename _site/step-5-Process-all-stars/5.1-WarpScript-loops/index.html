@@ -305,11 +305,11 @@
 
 <p>Let’s admit that you want to compute an <strong>addition</strong> on WarpScript of all the elements inside a list.</p>
 
-<p>The <a href="http://www.warp10.io/reference/functions/function_FOREACH/">FOREACH</a> function can be used to implement it. Complete the skeleton below were the value 0 is the first element pushed in the stack. In WarpScript the FOREACH functions expect a MACRO on top of the stack and a list of element. To start a macro use the keyword “&lt;%” and to end it use the keyword “%&gt;”.</p>
+<p>The <a href="http://www.warp10.io/reference/functions/function_FOREACH/"><code class="highlighter-rouge">FOREACH</code></a> function can be used to implement it. Complete the skeleton below were the value 0 is the first element pushed in the stack. In WarpScript the <code class="highlighter-rouge">FOREACH</code> functions expect a <code class="highlighter-rouge">MACRO</code> on top of the stack and a list of element. To start a macro use the keyword <code class="highlighter-rouge">&lt;%</code> and to end it use the keyword <code class="highlighter-rouge">%&gt;</code>.</p>
 
-<p>What will do the FOREACH function?</p>
+<p>What will do the <code class="highlighter-rouge">FOREACH</code> function?</p>
 
-<p>The list will be droped of the stack, so at the start of the FOREACH process only the value 0 is on top of the stack. Then during the process of the foreach, each element will be pushed on top of the stack one after an other. You will just have compute an addition inside the macro. The increasing value will stay on top of the stack until the end of the script.</p>
+<p>The list will be droped of the stack, so at the start of the <code class="highlighter-rouge">FOREACH</code> process only the value 0 is on top of the stack. Then during the process of the foreach, each element will be pushed on top of the stack one after an other. You will just have compute an addition inside the macro. The increasing value will stay on top of the stack until the end of the script.</p>
 
 <warp10-embeddable-quantum warpscript="
 //
@@ -334,11 +334,11 @@
 
 <h2 id="lmap">LMAP</h2>
 
-<p>The <a href="http://www.warp10.io/reference/functions/function_LMAP/">LMAP</a> function will on the other side compute an operation on each elements of a List.</p>
+<p>The <a href="http://www.warp10.io/reference/functions/function_LMAP/"><code class="highlighter-rouge">LMAP</code></a> function will on the other side compute an operation on each elements of a list.</p>
 
 <p>Let’s say that for example, we would like to add 1 to each element of the previous list.</p>
 
-<p>As the FOREACH function, LMAP takes two parameter: a list and a macro. LMAP will recompute as output a list. Inside the LMAP macro, you will get two elements pushed inside of the stack: the current element and then the index. In our case to correctly apply only our addition, we will need to delete the index of the stack. This means that the first element to be put inside the LMAP macro is the function DROP (used to delete the current element on top of the stack).</p>
+<p>As the <code class="highlighter-rouge">FOREACH</code> function, <code class="highlighter-rouge">LMAP</code> takes two parameter: a list and a macro. <code class="highlighter-rouge">LMAP</code> will recompute as output a list. Inside the <code class="highlighter-rouge">LMAP</code> macro, you will get two elements pushed inside of the stack: the current element and then the index. In our case to correctly apply only our addition, we will need to delete the index of the stack. This means that the first element to be put inside the <code class="highlighter-rouge">LMAP</code> macro is the function <code class="highlighter-rouge">DROP</code> (used to delete the current element on top of the stack).</p>
 
 <warp10-embeddable-quantum warpscript="
 //

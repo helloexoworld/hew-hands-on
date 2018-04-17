@@ -319,14 +319,13 @@
 
 <h2 id="input-parameters">Input parameters</h2>
 
-<p>The <code class="highlighter-rouge">BUCKETIZE</code> framework takes a list of elements as parameter. This list contains one or several GTS list, a <a href="http://www.warp10.io/reference/#framework-bucketizers"><code class="highlighter-rouge">bucketizer function</code></a>, a <code class="highlighter-rouge">lastbucket</code> that specify when start the last bucket (0 mean this will be computed automatically), a <code class="highlighter-rouge">bucketspan</code> which is the duration of the bucket (if 0 WarpScript will compute it), and finally a <code class="highlighter-rouge">bucketcount</code> which is the number of buckets to compute (if 0 WarpScript will compute it).</p>
+<p>The <code class="highlighter-rouge">BUCKETIZE</code> framework takes a list of elements as parameter. This list contains one or several time series list, a <a href="http://www.warp10.io/reference/#framework-bucketizers"><code class="highlighter-rouge">bucketizer function</code></a>, a <code class="highlighter-rouge">lastbucket</code> that specify when start the last bucket (0 mean this will be computed automatically), a <code class="highlighter-rouge">bucketspan</code> which is the duration of the bucket (if 0 WarpScript will compute it), and finally a <code class="highlighter-rouge">bucketcount</code> which is the number of buckets to compute (if 0 WarpScript will compute it).</p>
 
 <p><strong>Pro tips: In order to get a correct number of buckets either Bucketspan or Bucketcount have to be specified!</strong></p>
 
 <p><strong>Pro tips 2: Bucketcount indicate the number of bucket to keep starting from the last bucket computed when a Bucketspan is also set!</strong></p>
 
-<warp10-embeddable-quantum warpscript="
-// BUCKETIZE Framework
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// BUCKETIZE Framework
 [
     SWAP                                // Series list or Singleton
     bucketizer.function                 // Bucketize function operator
@@ -335,8 +334,7 @@
     0                                   // Bucketcount
 ]
 BUCKETIZE
-">
-</warp10-embeddable-quantum>
+</code></pre></div></div>
 
 <p>To get a working bucketizer, replace the function keyword by an exisiting function as <code class="highlighter-rouge">first</code>, <code class="highlighter-rouge">last</code>, <code class="highlighter-rouge">mean</code>, <code class="highlighter-rouge">min</code>, <code class="highlighter-rouge">max</code>, <code class="highlighter-rouge">median</code>, <code class="highlighter-rouge">join</code>…</p>
 

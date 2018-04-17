@@ -299,24 +299,23 @@
       
       <div class="col-sm-9">
         <h1>Step 3.3: Framework time: MAP</h1>
-        <p>Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: <a href="http://www.warp10.io/reference/frameworks/framework-filter/">FILTER</a>, <a href="http://www.warp10.io/reference/frameworks/framework-bucketize/">BUCKETIZE</a>, <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP</a>, <a href="http://www.warp10.io/reference/frameworks/framework-reduce/">REDUCE</a> and <a href="http://www.warp10.io/reference/frameworks/framework-apply/">APPLY</a>. Let’s end with the MAP framework.</p>
+        <p>Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: <a href="http://www.warp10.io/reference/frameworks/framework-filter/"><code class="highlighter-rouge">FILTER</code></a>, <a href="http://www.warp10.io/reference/frameworks/framework-bucketize/"><code class="highlighter-rouge">BUCKETIZE</code></a>, <a href="http://www.warp10.io/reference/frameworks/framework-map/"><code class="highlighter-rouge">MAP</code></a>, <a href="http://www.warp10.io/reference/frameworks/framework-reduce/"><code class="highlighter-rouge">REDUCE</code></a> and <a href="http://www.warp10.io/reference/frameworks/framework-apply/"><code class="highlighter-rouge">APPLY</code></a>. Let’s end with the <code class="highlighter-rouge">MAP</code> framework.</p>
 
 <p><strong><em>At the bottom of this page, you will find the instructions on how to process to apply a mapper on the NASA lightcurve data.</em></strong></p>
 
 <h2 id="the-framework">The framework</h2>
 
-<p>Now it is time to update the values of a set of GTS using the <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP framework</a>. The MAP framework allows you to apply a function on values of a Geo time seriesTM that fall into a sliding window.</p>
+<p>Now it is time to update the values of a set of time series using the <a href="http://www.warp10.io/reference/frameworks/framework-map/"><code class="highlighter-rouge">MAP</code> framework</a>. The <code class="highlighter-rouge">MAP</code> framework allows you to apply a function on values of a Geo time seriesTM that fall into a sliding window.</p>
 
 <p><img src="/hew-hands-on/img/frameworks/mapper.png" alt="Alt Text" /></p>
 
-<p>In other words, the MAP framework allows the user to compute the same operation on all the points of a series. For specific kind of operations (means, min, max…), some points directly before and after the current point can be added to the computation. This resume the concept of sliding window around each points.</p>
+<p>In other words, the <code class="highlighter-rouge">MAP</code> framework allows the user to compute the same operation on all the points of a series. For specific kind of operations (<code class="highlighter-rouge">means</code>, <code class="highlighter-rouge">min</code>, <code class="highlighter-rouge">max</code>…), some points directly before and after the current point can be added to the computation. This resume the concept of sliding window around each points.</p>
 
 <h2 id="input-parameters">Input parameters</h2>
 
-<p>Map takes as input a list of parameters. The first element of this list can be one or several lists of GTS. Then there is a <a href="http://www.warp10.io/reference/#framework-mappers">mapper function</a>. The third and the fourth elements are related to the sliding window, with first an element corresponding to “pre”, the width of the sliding window before the value, and in second an element corresponding to “post”, the width of the sliding window after the value. The last element corresponds to “occurences” which is the limit of computation of a number. For all elements except the set of GTS and the mapper function a default value 0 can be used, when those elements aren’t required.</p>
+<p>Map takes as input a list of parameters. The first element of this list can be one or several lists of time series. Then there is a <a href="http://www.warp10.io/reference/#framework-mappers">mapper function</a>. The third and the fourth elements are related to the sliding window, with first an element corresponding to <code class="highlighter-rouge">pre</code>, the width of the sliding window before the value. In second, there is an element corresponding to <code class="highlighter-rouge">post</code>, the width of the sliding window after the value. The last element corresponds to <code class="highlighter-rouge">occurences</code> which is the limit of computation of a number. For all elements except the set of time series and the mapper function a default value 0 can be used, and those parameters would not be used.</p>
 
-<warp10-embeddable-quantum warpscript="
-// MAP Framework
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// MAP Framework
 [
     SWAP                                // Series list or Singleton
     mapper.function                     // Mapper function operator
@@ -325,32 +324,31 @@
     0                                   // Occurence
 ]
 MAP
-">
-</warp10-embeddable-quantum>
+</code></pre></div></div>
 
 <p><strong>Pro tips: A mmapper with the pre, post and occurence parameters at zero is called a single value mapper, meaning that the mapper function will be applied to all points of a series!</strong></p>
 
-<p>To get a working mapper, replace the function keyword by an exisiting function as replace, mean, min, max, sd, abs, mul, add, round…</p>
+<p>To get a working mapper, replace the function keyword by an exisiting function as <code class="highlighter-rouge">replace</code>, <code class="highlighter-rouge">mean</code>, <code class="highlighter-rouge">min</code>, <code class="highlighter-rouge">max</code>, <code class="highlighter-rouge">sd</code>, <code class="highlighter-rouge">abs</code>, <code class="highlighter-rouge">mul</code>, <code class="highlighter-rouge">add</code>, <code class="highlighter-rouge">round</code>…</p>
 
 <h2 id="mapper-in-pictures">Mapper in pictures</h2>
 
-<p>Let’s resume step by step each mapper element. First <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP framework</a> requires a set of time series (Singleton or list):</p>
+<p>Let’s resume step by step each mapper element. First <a href="http://www.warp10.io/reference/frameworks/framework-map/"><code class="highlighter-rouge">MAP</code> framework</a> requires a set of time series (Singleton or list):</p>
 
 <p><img src="/hew-hands-on/img/frameworks/Time-series-input.png" alt="Alt Text" /></p>
 
-<p>The second step consists to choose the function to apply on each points (resp window): replace, mean, min, max, sd, abs, mul, add, round and <a href="http://www.warp10.io/reference/reference/#mappers">lot of others</a>:</p>
+<p>The second step consists to choose the function to apply on each points (resp window): <code class="highlighter-rouge">replace</code>, <code class="highlighter-rouge">mean</code>, <code class="highlighter-rouge">min</code>, <code class="highlighter-rouge">max</code>, <code class="highlighter-rouge">sd</code>, <code class="highlighter-rouge">abs</code>, <code class="highlighter-rouge">mul</code>, <code class="highlighter-rouge">add</code>, <code class="highlighter-rouge">round</code> and <a href="http://www.warp10.io/reference/reference/#mappers">lot of others</a>:</p>
 
 <p><img src="/hew-hands-on/img/frameworks/mapper-op.png" alt="Alt Text" /></p>
 
-<p>A mapper can be tuned according to three parameters: pre which corresponds to the number of points to integrate to the sliding window <strong>before</strong> the current point:</p>
+<p>A mapper can be tuned according to three parameters: <code class="highlighter-rouge">pre</code> which corresponds to the number of points to integrate to the sliding window <strong>before</strong> the current point:</p>
 
 <p><img src="/hew-hands-on/img/frameworks/mapper-pre.png" alt="Alt Text" /></p>
 
-<p>The second parameter to tun a mapper consists of post: which corresponds to the number of points to integrate to the sliding window <strong>after</strong> the current point:</p>
+<p>The second parameter to tun a mapper consists of <code class="highlighter-rouge">post</code>: which corresponds to the number of points to integrate to the sliding window <strong>after</strong> the current point:</p>
 
 <p><img src="/hew-hands-on/img/frameworks/mapper-post.png" alt="Alt Text" /></p>
 
-<p>And finally the last parameter used to tun a mapper is occurences which specify the maximal number of computation of each points!</p>
+<p>And finally the last parameter used to tun a mapper is <code class="highlighter-rouge">occurences</code> which specify the maximal number of computation of each points!</p>
 
 <p><img src="/hew-hands-on/img/frameworks/mapper-occurences.png" alt="Alt Text" /></p>
 
@@ -360,7 +358,7 @@ MAP
 
 <p>In previous step we saw how to downsample the data, but what if to get the main aspect of the lightcurve we would like now to compute its approximate trend? In statistics, we could compute a moving average as example. In WarpScript, the map framework can be used to approximate such a computation. For a example we can define a window containing 5 elements before and as many after the current point and compute its mean value.</p>
 
-<p>Let’s try it! Try the mapper.mean with a moving window!</p>
+<p>Let’s try it! Try the <code class="highlighter-rouge">mapper.mean</code> with a moving window!</p>
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
@@ -440,7 +438,7 @@ BUCKETIZE
 
 <h2 id="resume">Resume</h2>
 
-<p>The main goal of this step is to compute a moving average of some time series. To do so, you used the MAP framework, it expects on top of the stack a list of parameters containing: the time series as list or as singleton to bucketize, a mapper function, and three long parameter: pre, post and occurences.</p>
+<p>The main goal of this step is to compute a moving average of some time series. To do so, you used the <code class="highlighter-rouge">MAP</code> framework, it expects on top of the stack a list of parameters containing: the time series as list or as singleton to bucketize, a mapper function, and three long parameter: <code class="highlighter-rouge">pre</code>, <code class="highlighter-rouge">post</code> and <code class="highlighter-rouge">occurences</code>.</p>
 
 <p>The result of this step corresponds to a computed time series list. In our case the 4 selected time series are now on top of stack containing averaged value of all the values inside a moving window (for each point).</p>
 

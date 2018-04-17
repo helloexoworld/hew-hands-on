@@ -301,7 +301,7 @@
         <h1>Step 2.4: Split Kepler-11 data</h1>
         <p>Using the <code class="highlighter-rouge">FETCH</code> function all the available Kepler-11 have been loaded from a Warp10 backend and are pushed on the WarpScript stack. Observing more in details the stack result, even when only a single series is fetched, <code class="highlighter-rouge">FETCH</code> creates a WarpScript list. Let’s see how to extract its first element before seeing a method to split a single series according to your exoplanet quest need.</p>
 
-<h2 id="getting-the-first-gts-in-the-fetched-list">Getting the first GTS in the fetched list</h2>
+<h2 id="getting-the-first-time-series-in-the-fetched-list">Getting the first time series in the fetched list</h2>
 
 <p>The <code class="highlighter-rouge">FETCH</code> results provides a list of series. To simplify all the following steps, we would like to work only on the first series of this list. In order to do it, we use the <a href="http://www.warp10.io/reference/functions/function_GET/"><code class="highlighter-rouge">GET</code></a>:</p>
 
@@ -330,10 +330,10 @@ FETCH
 
 <h2 id="handling-time">Handling time</h2>
 
-<p>As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let’s clean that. There is a function called <a href="http://www.warp10.io/reference/functions/function_TIMESPLIT/">TIMESPLIT</a> that will be able to help us! As stated by the documentation:</p>
+<p>As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let’s clean that. There is a function called <a href="http://www.warp10.io/reference/functions/function_TIMESPLIT/"><code class="highlighter-rouge">TIMESPLIT</code></a> that will be able to help us! As stated by the documentation:</p>
 
 <blockquote>
-  <p>The TIMESPLIT function takes a GTS or a list of GTS and splits each Geo time series<sup>TM</sup> into a list multiple GTS instances, cutting the original GTS when it encounters quiet periods when there are no measurements.</p>
+  <p>The <code class="highlighter-rouge">TIMESPLIT</code> function takes a time series or a list thereof and splits each Geo time series<sup>TM</sup> into a list multiple time series instances, cutting the original time series when it encounters quiet periods when there are no measurements.</p>
 </blockquote>
 
 <p>That is perfect! Let´s use it!</p>
@@ -342,11 +342,11 @@ FETCH
 
 <ul>
   <li>the length of the quiet period (in microseconds)</li>
-  <li>the minimum number of values each resulting GTS should have</li>
-  <li>the name of the label which will hold the sequence of the resulting GTS (1 being the oldest).</li>
+  <li>the minimum number of values each resulting time series should have</li>
+  <li>the name of the label which will hold the sequence of the resulting time series (1 being the oldest).</li>
 </ul>
 
-<p>Go ahead and TIMESPLIT the GTS!</p>
+<p>Go ahead and <code class="highlighter-rouge">TIMESPLIT</code> the time series!</p>
 
 <blockquote>
   <p>Pro tips: You can use a function called <a href="http://www.warp10.io/reference/functions/function_h/"><code class="highlighter-rouge">h</code></a> to easily compute duration in hours. For example, putting <code class="highlighter-rouge">1 h</code> into the stack will push the number of microsecond in a hour in the stack!</p>
@@ -379,15 +379,15 @@ TIMESPLIT
 ">
 </warp10-embeddable-quantum>
 
-<p>Once you managed to set all the needed parameters, you should get as a result a list of splitted series! In fact Timesplit will work as follow:</p>
+<p>Once you managed to set all the needed parameters, you should get as a result a list of splitted series! In fact <code class="highlighter-rouge">TIMESPLIT</code> will work as follow:</p>
 <ul>
-  <li>it takes a GTS on top of stack and process it to detect quiet periods</li>
+  <li>it takes a time series on top of stack and process it to detect quiet periods</li>
   <li>it create one series per each period, generating several time series (if they have at least the minimal required number of points to be considered)</li>
   <li>it adds a label to each series, with an incremental values (1 for the first, 2 for the second,…)</li>
   <li>all the new formed series are added inside a result list and pushed on top of stack.</li>
 </ul>
 
-<p>Great, each series resulting of TIMESPLIT corresponds to a single <a href="https://www.nasa.gov/mission_pages/kepler/overview/index.html">Kepler record</a>. We can now start to work on each of them and how to reduce the number of series to be able to explore a specific amount of data.</p>
+<p>Great, each series resulting of <code class="highlighter-rouge">TIMESPLIT</code> corresponds to a single <a href="https://www.nasa.gov/mission_pages/kepler/overview/index.html">Kepler record</a>. We can now start to work on each of them and how to reduce the number of series to be able to explore a specific amount of data.</p>
 
 <h2 id="to-be-continued">To be continued</h2>
 

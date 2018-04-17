@@ -299,13 +299,13 @@
       
       <div class="col-sm-9">
         <h1>Step 4.1: Yet another framework: APPLY</h1>
-        <p>Yet an other WarpScript framework: <a href="http://www.warp10.io/reference/frameworks/framework-apply/">APPLY</a>! It’s a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series!</p>
+        <p>Yet an other WarpScript framework: <a href="http://www.warp10.io/reference/frameworks/framework-apply/"><code class="highlighter-rouge">APPLY</code></a>! It’s a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series!</p>
 
 <p><strong><em>At the bottom of this page, you will find a practice example showing how to substract two set of time series.</em></strong></p>
 
 <h2 id="the-framework">The framework</h2>
 
-<p>The signature of the <a href="http://www.warp10.io/reference/frameworks/op_sub/">Apply with a sub operator</a> is described below. It takes 4 parameters: a set of time series that compose the minuend, an other set that compose the subtrahend of the sub operation. A list of labels and the op.sub operation are the last two required parameter.</p>
+<p>The signature of the <a href="http://www.warp10.io/reference/frameworks/op_sub/"><code class="highlighter-rouge">APPLY</code> with a sub operator</a> is described below. It takes 4 parameters: a set of time series that compose the <code class="highlighter-rouge">minuend</code>, an other set that compose the <code class="highlighter-rouge">subtrahend</code> of the <code class="highlighter-rouge">sub operation</code>. A list of labels and the <code class="highlighter-rouge">op.sub</code> operation are the last two required parameter.</p>
 
 <warp10-embeddable-quantum warpscript="
 [
@@ -322,17 +322,17 @@ APPLY
 
 <h2 id="appy-in-pictures">Appy in pictures</h2>
 
-<p>To get a better understanding of the APPLY framework, let’s decompose the APPLY operation on several steps.</p>
+<p>To get a better understanding of the <code class="highlighter-rouge">APPLY</code> framework, let’s decompose the <code class="highlighter-rouge">APPLY</code> operation on several steps.</p>
 
-<p>First several set of time series are needed as input. In our case, for the sub operation, a minuend is first needed:</p>
-
-<p><img src="/hew-hands-on/img/frameworks/Time-series-input.png" alt="Alt Text" /></p>
-
-<p>Still in our case, a second set of time series is needed, the subtrahend:</p>
+<p>First several set of time series are needed as input. In our case, for the sub operation, a <code class="highlighter-rouge">minuend</code> is first needed:</p>
 
 <p><img src="/hew-hands-on/img/frameworks/Time-series-input.png" alt="Alt Text" /></p>
 
-<p>After this operation an equivalence class have to be computed to split the series (in the example below) based on the record labels. This mean that we compute the APPLY operation only between the series of both set that belongs to the <strong>same equivalence class</strong>.</p>
+<p>Still in our case, a second set of time series is needed, the <code class="highlighter-rouge">subtrahend</code>:</p>
+
+<p><img src="/hew-hands-on/img/frameworks/Time-series-input.png" alt="Alt Text" /></p>
+
+<p>After this operation an equivalence class have to be computed to split the series (in the example below) based on the record labels. This mean that we compute the <code class="highlighter-rouge">APPLY</code> operation only between the series of both set that belongs to the <strong>same equivalence class</strong>.</p>
 
 <p><img src="/hew-hands-on/img/frameworks/equivalence-class.png" alt="Alt Text" /></p>
 
@@ -344,8 +344,8 @@ APPLY
 
 <h2 id="practice">Practice</h2>
 
-<p>The following example show you a quick demonstration on how to use it with the sub operator. In this example 4 series are first created and put in two diffrent set. 
-Then it’s up to you, hunter, to compute the difference of the earth or mars series of the first set with the one related contained in the second one! The base code is available in the APPLY skeleton below.</p>
+<p>The following example show you a quick demonstration on how to use it with the sub operator. In this example 4 time series are first created and put in two diffrent set. 
+Then it’s up to you, hunter, to compute the difference of the earth or mars series of the first set with the one related contained in the second one! The base code is available in the <code class="highlighter-rouge">APPLY</code> skeleton below.</p>
 
 <p><strong>Pro-tips: Use the equivalence class on the label “name” to compute a name based difference</strong></p>
 
@@ -388,13 +388,13 @@ APPLY
 
 <h2 id="resume">Resume</h2>
 
-<p>To compute a difference between two series, the framework APPLY need to be used. It’s also better to synchronize the ticks of each series using BUCKETIZE before computing this operation. The APPLY framework for the sub operation expects two set of list and an equivalence class. Where you careful when you set this parameter to be sure to compute a substraction on only the earth or mars series ?</p>
+<p>To compute a difference between two series, the framework <code class="highlighter-rouge">APPLY</code> need to be used. It’s also better to synchronize the ticks of each series using <code class="highlighter-rouge">BUCKETIZE</code> before computing this operation. The <code class="highlighter-rouge">APPLY</code> framework for the sub operation expects two set of list and an equivalence class. Where you careful when you set this parameter to be sure to compute a substraction on only the earth or mars series ?</p>
 
 <p>As a result you get a list of two series: one containing all the value of the earth (resp. mars) rotation time series substracted of the value to correct of the second earth (resp. mars) time series.</p>
 
 <h2 id="to-be-continued">To be continued</h2>
 
-<p>Once you are familiar with this specific operation of the APPLY framework, please continue with the next step, as you initiation as an exoplanet hunter is about to end. As a matter of fact, you now have the knowledge of all the needed tools to start exploring the kepler-11 start to detect it’s exoplanet.</p>
+<p>Once you are familiar with this specific operation of the <code class="highlighter-rouge">APPLY</code> framework, please continue with the next step, as you initiation as an exoplanet hunter is about to end. As a matter of fact, you now have the knowledge of all the needed tools to start exploring the kepler-11 start to detect it’s exoplanet.</p>
 
         <div class='before-solution-next'>
 

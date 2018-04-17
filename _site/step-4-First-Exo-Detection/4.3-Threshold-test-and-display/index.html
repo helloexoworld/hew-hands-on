@@ -303,9 +303,9 @@
 
 <h2 id="threshold-test">Threshold test</h2>
 
-<p>Let’s compute at first a threshold test! In WarpScript you can re-use the MAP framework to do it! The <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP framework</a> have the following operator: <a href="http://www.warp10.io/reference/frameworks/mapper_gt/">gt</a> (greater than), <a href="http://www.warp10.io/reference/frameworks/mapper_ge/">ge</a> (greater or equals), <a href="http://www.warp10.io/reference/frameworks/mapper_eq/">eq</a> (equals), <a href="http://www.warp10.io/reference/frameworks/mapper_lt">lt</a> (lower than), <a href="http://www.warp10.io/reference/frameworks/mapper_le/">le</a> (lower or equals)… Find out the correct operator and working threshold!</p>
+<p>Let’s compute at first a threshold test! In WarpScript you can re-use the MAP framework to do it! The <a href="http://www.warp10.io/reference/frameworks/framework-map/"><code class="highlighter-rouge">MAP</code> framework</a> have the following operator: <a href="http://www.warp10.io/reference/frameworks/mapper_gt/"><code class="highlighter-rouge">gt</code></a> (greater than), <a href="http://www.warp10.io/reference/frameworks/mapper_ge/"><code class="highlighter-rouge">ge</code></a> (greater or equals), <a href="http://www.warp10.io/reference/frameworks/mapper_eq/"><code class="highlighter-rouge">eq</code></a> (equals), <a href="http://www.warp10.io/reference/frameworks/mapper_lt"><code class="highlighter-rouge">lt</code></a> (lower than), <a href="http://www.warp10.io/reference/frameworks/mapper_le/"><code class="highlighter-rouge">le</code></a> (lower or equals)… Find out the correct operator and working threshold!</p>
 
-<p>How does we proceed ? The threshold test corresponds finally in the re-using the MAP framework. If you would like to have a reminder see below or to review the lesson on MAP: <a href="(/step-3-WarpScript-Frameworks/3.3-Map-framework/README.md)">go here</a>.</p>
+<p>How does we proceed ? The threshold test corresponds finally in the re-using the <code class="highlighter-rouge">MAP</code> framework. If you would like to have a reminder see below or to review the lesson on <code class="highlighter-rouge">MAP</code>: <a href="(/step-3-WarpScript-Frameworks/3.3-Map-framework/README.md)">go here</a>.</p>
 
 <p>The map framework works as follow:</p>
 
@@ -322,13 +322,13 @@ MAP
 
 <p>This time we are going to use the map framework to compute a single value operation! Does the current value below a specified threshold. We can use one of the mapper function indicated upper. Those function would expect a number parameter on top of the stack (2, 5, 10, 15, 20, 25, 30 and so on could be working value here).</p>
 
-<p>The result will be the same series containing only the points that match the criteria specified with the function. For example with a mapper.le and a threshold of 30, only the points that are equals to 30 or lower are kept in the result series.</p>
+<p>The result will be the same series containing only the points that match the criteria specified with the function. For example with a <code class="highlighter-rouge">mapper.le</code> and a threshold of 30, only the points that are equals to 30 or lower are kept in the result series.</p>
 
 <h2 id="display-things-nicely">Display things nicely</h2>
 
 <p>Great now you can successfully detect some exoplanet! You have well earn your badge as an exoplanet hunter! Just one more thing, how to be sure that the periods you have extracted corresponds to exoplanet ? Let’s print more nicely the result! To do so, we can convert our result into annotations in WarpScript. This can be done using boolean instead of values! And there is also a mapper to do it: <a href="http://www.warp10.io/reference/frameworks/mapper_toboolean/">mapper.toboolean</a>.</p>
 
-<p>** Pro tip: mapper.toboolean is a single value mapper and would not work correctly on bucketized series. To correct it and get the better result we recommand to use the <a href="http://www.warp10.io/reference/functions/function_UNBUCKETIZE/">UNBUCKETIZE</a> function right after the BUCKETIZE operation**</p>
+<p><strong>Pro tip: <code class="highlighter-rouge">mapper.toboolean</code> is a single value mapper and would not work correctly on bucketized series. To correct it and get the better result we recommand to use the <a href="http://www.warp10.io/reference/functions/function_UNBUCKETIZE/"><code class="highlighter-rouge">UNBUCKETIZE</code></a> function right after the <code class="highlighter-rouge">BUCKETIZE</code> operation</strong></p>
 
 <p>Then you can push back on the stack the original series using a variable!</p>
 

@@ -5,6 +5,9 @@
 layout: home
 title: "Step 4.2: Let's compute the difference"
 category: step-4
+before: 'step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY'
+next: 'step-4-First-Exo-Detection/4.3-Threshold-test-and-display'
+solution: 'step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/solutions'
 ---
 
 Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet!
@@ -83,10 +86,8 @@ BUCKETIZE
 
 Starting from here, use the [APPLY]({{ site.doc_url }}/reference/frameworks/framework-apply/) framework to compute the [difference](({{ site.doc_url }}/reference/frameworks/op_sub/)) between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection! Be careful of the equivalence class to choose for this specific step!
 
-To resume, the expected result will contains a list of Time series: with one Time series per record containing the result of the substraction of the initial series with its trend.
+To resume, the expected result will contains a list of time series: with one time series per record containing the result of the substraction of the initial series with its trend.
 
 ## To be continued
 
-Well done young hunter, let's continue together on the [last step](/step-4-First-Exo-Detection/4.3-Threshold-test-and-display/) of this stage to learn how to isolate a minus threshold and build a nice output!
-
-## [previous step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/) ... [solutions]({{ site.baseurl }}/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/solutions) ... [next step]({{ site.baseurl }}//step-4-First-Exo-Detection/4.3-Threshold-test-and-display/)
+Well done young hunter, let's continue together this exo-planet quest! In the next stage, you will learn how to isolate a minus threshold and build a nice output!

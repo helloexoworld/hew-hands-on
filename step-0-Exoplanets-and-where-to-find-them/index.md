@@ -5,6 +5,7 @@
 layout: home
 title: 'Step 0: What is an exoplanet?'
 category: step-0
+next: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript'
 ---
 
 Let’s quote our good old friend [**Wikipedia**](https://en.wikipedia.org/wiki/Exoplanet):
@@ -61,5 +62,3 @@ Here's an observation of a star called Kepler-11:
 ![Alt Text]({{ site.baseurl }}/img/step-0/kepler-11.png)
 
 Do you see the dropouts? **Those are transiting exoplanets!** Now we’ll need to **write a WarpScript to automatically detect transits.** But first we need to learn how to WarpScript! Let's discover it!
-
-## ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.1-Getting-started-with-WarpScript/)

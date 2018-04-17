@@ -3,13 +3,16 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
-title: 'Step 2.1: Did you said Time series?'
+title: 'Step 2.1: Did you said time series?'
 category: step-2
+before: 'step-1-WarpScript/1.3-Manipulate-a-data-list'
+next: 'step-2-Keplers-Data/2.2-Exploring-known-time-series'
+solution: 'step-2-Keplers-Data/2.1-Did-you-said-Time-Series/solutions'
 ---
 
 You are not alone in your quest, exoplanet hunter! As your personal assistants, we will teach you some basics knowledge to help you achieve this awesome quest!
 
-First, just to help you, and to lead you, let start at the beginning and introduce the NASA data modelised as Time series.
+First, just to help you, and to lead you, let start at the beginning and introduce the NASA data modelised as time series.
 
 ## Star's data
 
@@ -40,7 +43,7 @@ Like in this small example, a graph with a value in an axis, and a time in the s
 
 ## Where can we find time series?
 
-**Time series are everywhere**, here are just few examples:
+**time series are everywhere**, here are just few examples:
 
 - The evolution of the stock exchange
 - The number of calls on a webserver
@@ -51,7 +54,7 @@ Like in this small example, a graph with a value in an axis, and a time in the s
 - The heart rate of a person measured through a smartwatch
 
 
-## Time series data model
+## time series data model
 
 We call the magnitude measured in the time series **classname**.  In the previous examples,
 the classnames could be *dollars*, *calls*, *gallons*, *percentage*, *time spent* or *heart rate*
@@ -71,23 +74,23 @@ This why we need **labels** (or tags, dimensions,...) to enhance the data modeli
 
 ![labels]({{ site.baseurl }}/img/step-2/intro_labels.png)
 
-Labels are key/value pairs used to qualify series. They are **immutable**, which means if you change something in the labels set, it won't affect the previous series but it will create a new one. This also means that your Time Series data model need to be designed carefully.
+Labels are key/value pairs used to qualify series. They are **immutable**, which means if you change something in the labels set, it won't affect the previous series but it will create a new one. This also means that your time series data model need to be designed carefully.
 
-Given the many aspects they can have, the storage, retrieval and analysis of time series cannot be done through standard relational databases, like SQL. Instead it needs a custom built system, not only a Time Series Database, but a whole solution that will enable usability of the data.
+Given the many aspects they can have, the storage, retrieval and analysis of time series cannot be done through standard relational databases, like SQL. Instead it needs a custom built system, not only a time series Database, but a whole solution that will enable usability of the data.
 
-We can find here and there many Time Series Databases that claim to solve the same storage system but most of them fail in their mission to provide you the right tools and protocol to let you enjoy your data.
+We can find here and there many time series Databases that claim to solve the same storage system but most of them fail in their mission to provide you the right tools and protocol to let you enjoy your data.
 
 
-## Time Series Values
+## time series Values
 
-Once you have define the good Time Series model for your own need (in the case of monitoring, most of the time your collecting software will choose it for you), you will push data points or measurements.
+Once you have define the good time series model for your own need (in the case of monitoring, most of the time your collecting software will choose it for you), you will push data points or measurements.
 
 These data points can be of **multiple types** (*Long*, *Double*, *String*, *Boolean*)  given the protocol you use. You can refer to the matrix compatibility to know which one fits you best.
 
 
-## Time Series Analysis
+## time series Analysis
 
-While a common use case for Time Series is to plot them as a graph, using line charts or sparklines, many customers will need to perform custom analysis on their Time Series for domains like :
+While a common use case for time series is to plot them as a graph, using line charts or sparklines, many customers will need to perform custom analysis on their time series for domains like :
 
 - Statistics, TopN
 - Signal Processing
@@ -102,9 +105,9 @@ There have been a lot of research effort around time series analytics, as they a
 
 And, of course, you can combine thise specific techniques with generic statistical or signal processing analytics.  
 
-## Time series applications
+## time series applications
 
-![Time series spplications](../../img/step-2/time-series-applications.jpg)
+![time series spplications](../../img/step-2/time-series-applications.jpg)
 
 There are two main kinds of time series applications:
 
@@ -126,31 +129,31 @@ NEWGTS
 ">
 </warp10-embeddable-quantum>
 
-You will push on top of the stack a Time series. A Time series follow this modelisation:
+You will push on top of the stack a time series. A time series follow this modelisation:
 
-  - It requires a fix classname (the key "c") in quantum result, which is the main identifier of a Time series (string).
+  - It requires a fix classname (the key "c") in quantum result, which is the main identifier of a time series (string).
   - The labels "l" also identifies the existing series. This corresponds to a map object of string key/values.
   - The attributes "a", same as Labels but they are global parameters of a series and can evolve without creating a new series.
   - And finally the values "v" which includes a timestamp (time of the current point), a location and a value (can be Double, Long, Boolean or string)
 
-To update any of those parameters, you can use one of the following functions that updates the initial Time series to define an example one: the number of time a spefic planet rotates!
+To update any of those parameters, you can use one of the following functions that updates the initial time series to define an example one: the number of time a spefic planet rotates!
 
 
 <warp10-embeddable-quantum warpscript="
-// Create an empty Time series
+// Create an empty time series
 NEWGTS
 
-// Rename this Time series
+// Rename this time series
 'planet.rotation.count' RENAME
 
-// Relabel this Time series
+// Relabel this time series
 { 'name' 'earth' } RELABEL
 
-// Gives an Attribute to this Time series
+// Gives an Attribute to this time series
 { 'main-nickname' 'blue-planet' } SETATTRIBUTES  // This attribute could evolve in the future without re-creating a series once they are stored in Warp 10.
 
 //
-// Add today's value to this Time series
+// Add today's value to this time series
 //
 
 // Push Today's time
@@ -162,11 +165,11 @@ NaN NaN NaN
 // Push 121 as value 
 121
 
-// Add today's value in current Time series
+// Add today's value in current time series
 ADDVALUE
 
 //
-// Now we will also add yesterday value to the earth rotation Time series
+// Now we will also add yesterday value to the earth rotation time series
 //
 
 // Compute Yesterday time (Today minus one day)
@@ -178,7 +181,7 @@ NaN NaN NaN
 // Push the value 120
 120
 
-// Add the value to current Time series
+// Add the value to current time series
 ADDVALUE
 ">
 </warp10-embeddable-quantum>
@@ -188,6 +191,4 @@ This will leave the initial GTS created on top of the stack, updated with each d
 
 ## To be continued
 
-Luckily for you all the needed Time series for you exoplanet are already available in our back-end! You can start to explore them in our [next step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/).
-
-## [previous step]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/) ... [solutions]({{ site.baseurl }}/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/solutions) ... [next step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/)
+Luckily for you all the needed time series for you exoplanet are already available in our back-end! Let's now start to explore them!

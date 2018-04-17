@@ -5,8 +5,8 @@
 layout: home
 title: "Step 6: Where no man has gone before..."
 category: step-6
+before: 'step-5-Process-all-stars/5.3-Reformat-the-output'
 ---
-
 
 It was not enough for you, you want more WarpScript? You came at the right place, exoplanet hunter. This page is all about extracting a few WarpScript function that can be an help in your quest of exoplanets (or any other time series analysis)! You will discover functiond to establish a correlation between a series and a set of series, how to use the `STL` or the `DISCORDS` function, how to detect outliers in time series and some useful function to compute statistics on time series. 
 
@@ -148,5 +148,3 @@ Once you completed this tutorial, to remember some details of the WarpScript, fe
 # This is the end
 
 Thanks for completed this tutorial! We were happy to introduce you to the analytics of time series worlds and to present a short initiation to our search of exoplanet! 
-
-## [previous step]({{ site.baseurl }}/step-5-Process-all-stars/5.3-Reformat-the-output/)

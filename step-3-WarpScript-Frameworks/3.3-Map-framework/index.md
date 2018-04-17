@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 3.3: Framework time: MAP'
 category: step-3
+before: 'step-3-WarpScript-Frameworks/3.2-Bucketize-framework'
+next: 'step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY'
+solution: 'step-3-WarpScript-Frameworks/3.3-Map-framework/solutions'
 ---
 
 The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER]({{ site.doc_url }}/reference/frameworks/framework-filter/), [BUCKETIZE]({{ site.doc_url }}/reference/frameworks/framework-bucketize/), [MAP]({{ site.doc_url }}/reference/frameworks/framework-map/), [REDUCE]({{ site.doc_url }}/reference/frameworks/framework-reduce/) and [APPLY]({{ site.doc_url }}/reference/frameworks/framework-apply/). Let's end with the MAP framework.
@@ -13,7 +16,7 @@ The function used allow some small GTS manipulation but WarpScript offers other 
 
 ## The framework
 
-Now it is time to update the values of a set of GTS using the [MAP framework]({{ site.doc_url }}/reference/frameworks/framework-map/). The MAP framework allows you to apply a function on values of a Geo Time SeriesTM that fall into a sliding window.
+Now it is time to update the values of a set of GTS using the [MAP framework]({{ site.doc_url }}/reference/frameworks/framework-map/). The MAP framework allows you to apply a function on values of a Geo time seriesTM that fall into a sliding window.
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/mapper.png)
 
@@ -42,7 +45,7 @@ To get a working mapper, replace the function keyword by an exisiting function a
 
 ## Mapper in pictures
 
-Let's resume step by step each mapper element. First [MAP framework]({{ site.doc_url }}/reference/frameworks/framework-map/) requires a set of Time series (Singleton or list):
+Let's resume step by step each mapper element. First [MAP framework]({{ site.doc_url }}/reference/frameworks/framework-map/) requires a set of time series (Singleton or list):
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/Time-series-input.png)
 
@@ -62,7 +65,7 @@ And finally the last parameter used to tun a mapper is occurences which specify 
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/mapper-occurences.png)
 
-Now we would like to apply this specific framework to compute the same operation on all the Time series points of the NASA lightcurve data. Let's see how to process!
+Now we would like to apply this specific framework to compute the same operation on all the time series points of the NASA lightcurve data. Let's see how to process!
 
 ## Hello Exo World step
 
@@ -148,12 +151,10 @@ BUCKETIZE
 
 ## Resume
 
-The main goal of this step is to compute a moving average of some Time series. To do so, you used the MAP framework, it expects on top of the stack a list of parameters containing: the Time series as list or as singleton to bucketize, a mapper function, and three long parameter: pre, post and occurences.
+The main goal of this step is to compute a moving average of some time series. To do so, you used the MAP framework, it expects on top of the stack a list of parameters containing: the time series as list or as singleton to bucketize, a mapper function, and three long parameter: pre, post and occurences.
 
-The result of this step corresponds to a computed Time series list. In our case the 4 selected Time series are now on top of stack containing averaged value of all the values inside a moving window (for each point).
+The result of this step corresponds to a computed time series list. In our case the 4 selected time series are now on top of stack containing averaged value of all the values inside a moving window (for each point).
 
 ## To be continued
 
-Congrats, you reached the end of the framework step! Understanding the help providing by those framework is really important to help a young hunter to complete its quest to retrieve Kepler-11 exoplanet. In the [next step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/) we will focus, now that we have all the needed tools, on writing a working exploratory script to discover existing exoplanet for kepler-11!
-
-## [previous step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/) ... [solutions]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.3-Map-framework/solutions) ... [next step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/)
+Congrats, you reached the end of the framework step! Understanding the help providing by those framework is really important to help a young hunter to complete its quest to retrieve Kepler-11 exoplanet. In the next step we will focus, now that we have all the needed tools, on writing a working exploratory script to discover existing exoplanet for kepler-11!

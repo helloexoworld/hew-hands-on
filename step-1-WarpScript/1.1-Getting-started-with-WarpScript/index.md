@@ -6,7 +6,7 @@ layout: home
 title: 'Step 1.1: Getting started with WarpScript'
 category: step-1
 before: 'step-0-Exoplanets-and-where-to-find-them'
-after: 'step-1-WarpScript/1.2-Introducing-the-Variables'
+next: 'step-1-WarpScript/1.2-Introducing-the-Variables'
 solution: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript/solutions'
 ---
 
@@ -40,7 +40,7 @@ WarpScript is a stack related programming language. This means that to compute a
 Let's start with a simple WarpScript function: [NOW]({{ site.doc_url }}/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch. Let's play with it, as quantum was set to reach an available backend, just type NOW in the quantum editor below:
 
 <warp10-embeddable-quantum warpscript="
-NOW
+
 ">
 </warp10-embeddable-quantum>
 

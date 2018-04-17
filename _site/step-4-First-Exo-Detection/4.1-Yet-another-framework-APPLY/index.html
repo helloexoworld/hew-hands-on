@@ -301,11 +301,11 @@
         <h1>Step 4.1: Yet another framework: APPLY</h1>
         <p>Yet an other WarpScript framework: <a href="http://www.warp10.io/reference/frameworks/framework-apply/">APPLY</a>! It’s a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series!</p>
 
-<p><strong><em>At the bottom of this page, you will find a practice example showing how to substract two set of Time series.</em></strong></p>
+<p><strong><em>At the bottom of this page, you will find a practice example showing how to substract two set of time series.</em></strong></p>
 
 <h2 id="the-framework">The framework</h2>
 
-<p>The signature of the <a href="http://www.warp10.io/reference/frameworks/op_sub/">Apply with a sub operator</a> is described below. It takes 4 parameters: a set of Time series that compose the minuend, an other set that compose the subtrahend of the sub operation. A list of labels and the op.sub operation are the last two required parameter.</p>
+<p>The signature of the <a href="http://www.warp10.io/reference/frameworks/op_sub/">Apply with a sub operator</a> is described below. It takes 4 parameters: a set of time series that compose the minuend, an other set that compose the subtrahend of the sub operation. A list of labels and the op.sub operation are the last two required parameter.</p>
 
 <warp10-embeddable-quantum warpscript="
 [
@@ -324,11 +324,11 @@ APPLY
 
 <p>To get a better understanding of the APPLY framework, let’s decompose the APPLY operation on several steps.</p>
 
-<p>First several set of Time series are needed as input. In our case, for the sub operation, a minuend is first needed:</p>
+<p>First several set of time series are needed as input. In our case, for the sub operation, a minuend is first needed:</p>
 
 <p><img src="/hew-hands-on/img/frameworks/Time-series-input.png" alt="Alt Text" /></p>
 
-<p>Still in our case, a second set of Time series is needed, the subtrahend:</p>
+<p>Still in our case, a second set of time series is needed, the subtrahend:</p>
 
 <p><img src="/hew-hands-on/img/frameworks/Time-series-input.png" alt="Alt Text" /></p>
 
@@ -390,19 +390,23 @@ APPLY
 
 <p>To compute a difference between two series, the framework APPLY need to be used. It’s also better to synchronize the ticks of each series using BUCKETIZE before computing this operation. The APPLY framework for the sub operation expects two set of list and an equivalence class. Where you careful when you set this parameter to be sure to compute a substraction on only the earth or mars series ?</p>
 
-<p>As a result you get a list of two series: one containing all the value of the earth (resp. mars) rotation Time series substracted of the value to correct of the second earth (resp. mars) Time series.</p>
+<p>As a result you get a list of two series: one containing all the value of the earth (resp. mars) rotation time series substracted of the value to correct of the second earth (resp. mars) time series.</p>
 
 <h2 id="to-be-continued">To be continued</h2>
 
-<p>Once you are familiar with this specific operation of the APPLY framework, please continue with the next step, as you initiation as an exoplanet hunter is about to end. As a matter of fact, you now have the knowledge of all the needed tools to start exploring the kepler-11 start to detect it’s exoplanet. Let’s find together how to process in the <a href="/hew-hands-on/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/">next step</a>.</p>
-
-<h2 id="previous-step--solutions--next-step"><a href="/hew-hands-on/step-3-WarpScript-Frameworks/3.3-Map-framework/">previous step</a> … <a href="/hew-hands-on/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/solutions">solutions</a> … <a href="/hew-hands-on/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/">next step</a></h2>
+<p>Once you are familiar with this specific operation of the APPLY framework, please continue with the next step, as you initiation as an exoplanet hunter is about to end. As a matter of fact, you now have the knowledge of all the needed tools to start exploring the kepler-11 start to detect it’s exoplanet.</p>
 
         <div class='before-solution-next'>
 
     
+        <div class='before'><a href="/hew-hands-on/step-3-WarpScript-Frameworks/3.3-Map-framework">Previous</a></div>
     
     
+        <div class='solution'><a href="/hew-hands-on/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/solutions">Solution</a></div>
+    
+    
+    
+        <div class='next'><a href="/hew-hands-on/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend">Next</a></div>
     
 </div>
       </div>

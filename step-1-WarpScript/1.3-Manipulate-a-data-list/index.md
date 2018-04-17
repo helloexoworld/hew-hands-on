@@ -5,8 +5,10 @@
 layout: home
 title: 'Step 1.3: Manipulate a WarpScript List'
 category: step-1
+before: 'step-1-WarpScript/1.2-Introducing-the-Variables'
+next: 'step-2-Keplers-Data/2.1-Did-you-said-Time-Series'
+solution: 'step-1-WarpScript/1.3-Manipulate-a-data-list/solutions'
 ---
-
 
 ## Structure and function
 
@@ -41,6 +43,4 @@ Let's play with it, here's the squeleton:
 
 ## To be continued
 
-Great job! You now have all the basic WarpScript knowlegde to get started with the analyse of the recorded Nasa Time-series! To start, continue with our second step [here](/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/).
-
-## [previous step]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/) ... [solutions]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/solutions) ... [next step]({{ site.baseurl }}/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/)
+Great job! You now have all the basic WarpScript knowlegde to get started with the analyse of the recorded Nasa Time-series! To start, continue with our second main stage!

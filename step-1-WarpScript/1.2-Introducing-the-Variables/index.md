@@ -5,8 +5,10 @@
 layout: home
 title: 'Step 1.2: Introducing WarpScript Variables'
 category: step-1
+before: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript'
+next: 'step-1-WarpScript/1.3-Manipulate-a-data-list'
+solution: 'step-1-WarpScript/1.2-Introducing-the-Variables/solutions'
 ---
-
 
 ## Variables
 
@@ -46,6 +48,4 @@ You can store it in a variable if you want.
 
 ## To be continued
 
-Great job! Let's continue with some WarpScript list manipulation in the [next step]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/).
-
-## [previous step]({{ site.baseurl }}/step-1-WarpScript/1.1-Getting-started-with-WarpScript/) ... [solutions]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/solutions) ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/)
+Great job! Let's continue with some WarpScript list manipulation in the next step!

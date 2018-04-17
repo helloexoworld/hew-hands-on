@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 3.2: Framework time: BUCKETIZE'
 category: step-3
+before: 'step-3-WarpScript-Frameworks/3.1-Filter-framework'
+next: 'step-3-WarpScript-Frameworks/3.3-Map-framework'
+solution: 'step-3-WarpScript-Frameworks/3.2-Bucketize-framework/solutions'
 ---
 
 The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER]({{ site.doc_url }}/reference/frameworks/framework-filter/), [BUCKETIZE]({{ site.doc_url }}/reference/frameworks/framework-bucketize/), [MAP]({{ site.doc_url }}/reference/frameworks/framework-map/), [REDUCE]({{ site.doc_url }}/reference/frameworks/framework-reduce/) and [APPLY]({{ site.doc_url }}/reference/frameworks/framework-apply/). Let's continue with the BUCKETIZE framework.
@@ -17,7 +20,7 @@ In this tutorial we will also discover the [BUCKETIZE framework]({{ site.doc_url
 
 ***At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.***
 
-We will use this bucket to downsample our data, let's give it a try! In other words, downsampling some Time series consists to reduce locally the number of points and to synchronize different series. There is several ways to process, one of the common one is to create small regular bucket into each series and to compute a value that resume this bucket. The following graphs shows the downsampling process:
+We will use this bucket to downsample our data, let's give it a try! In other words, downsampling some time series consists to reduce locally the number of points and to synchronize different series. There is several ways to process, one of the common one is to create small regular bucket into each series and to compute a value that resume this bucket. The following graphs shows the downsampling process:
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/downsampling.png) 
 
@@ -53,7 +56,7 @@ To get a working bucketizer, replace the function keyword by an exisiting functi
 
 ## Bucketize in pictures
 
-Let's resume step by step each bucketize element. First BUCKETIZE requires a set of Time series (Singleton or list):
+Let's resume step by step each bucketize element. First BUCKETIZE requires a set of time series (Singleton or list):
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/Time-series-input.png)
 
@@ -61,7 +64,7 @@ The second step consists to choose the function to apply on each bucket: first, 
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/bucketizer.png)
 
-A bucketizer can be tuned according to three parameters: lastbucket which specifies the last tick (for all the series) to start computing each bucket. This parameter is very usefull to synchronize different Time series.
+A bucketizer can be tuned according to three parameters: lastbucket which specifies the last tick (for all the series) to start computing each bucket. This parameter is very usefull to synchronize different time series.
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/lastbucket.png)
 
@@ -142,12 +145,10 @@ FILTER
 
 ## Resume
 
-The main goal of this step is to downsample some raw data. To do so, you have to use the BUCKETIZE framework, it expects on top of the stack a list of parameters containing: the Time series as list or as singleton to bucketize, a bucketizer function, and three long parameter: lastbucket, bucketspan and bucketcount.
+The main goal of this step is to downsample some raw data. To do so, you have to use the BUCKETIZE framework, it expects on top of the stack a list of parameters containing: the time series as list or as singleton to bucketize, a bucketizer function, and three long parameter: lastbucket, bucketspan and bucketcount.
 
-The result of this step corresponds to a downsampled list. In our case the 4 selected Time series are now on top of stack containing regular bucket and one value per bucket.
+The result of this step corresponds to a downsampled list. In our case the 4 selected time series are now on top of stack containing regular bucket and one value per bucket.
 
 ## To be continued
 
-It look's simple as first look, but truts us it isn't. When you will be working on complex time-series analytics, keep in mind this framework and try to be familiar with it! You will quickly see how it will improves your exoplanet discovery quest! In the [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.3-Map-framework/), we are guiding you in the usage of an other usefull framework: MAP or how to apply the same function on all data-point of a set of time-series.
-
-## [previous step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/) ... [solutions]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/solutions) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.3-Map-framework/)
+It look's simple as first look, but truts us it isn't. When you will be working on complex time-series analytics, keep in mind this framework and try to be familiar with it! You will quickly see how it will improves your exoplanet discovery quest! In the next step, we are guiding you in the usage of an other usefull framework: MAP or how to apply the same function on all data-point of a set of time-series.

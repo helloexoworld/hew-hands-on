@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 3.1: Framework time: FILTER'
 category: step-3
+before: 'step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data'
+next: 'step-3-WarpScript-Frameworks/3.2-Bucketize-framework'
+solution: 'step-3-WarpScript-Frameworks/3.1-Filter-framework/solutions'
 ---
 
 The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER]({{ site.doc_url }}/reference/frameworks/framework-filter/), [BUCKETIZE]({{ site.doc_url }}/reference/frameworks/framework-bucketize/), [MAP]({{ site.doc_url }}/reference/frameworks/framework-map/), [REDUCE]({{ site.doc_url }}/reference/frameworks/framework-reduce/) and [APPLY]({{ site.doc_url }}/reference/frameworks/framework-apply/). Let's start with the FILTER framework.
@@ -88,12 +91,10 @@ TIMESPLIT
 
 ## Resume
 
-To resume, to filter a data set, we have to use the FILTER framework. It expects on the stack a list of parameter: the Time series as list or as singleton to filter, then a list of labels to compute an equivalence class, and finally a filter function. The filter function as we see the filter.bylabels can also need some parameter on top of stack.
+To resume, to filter a data set, we have to use the FILTER framework. It expects on the stack a list of parameter: the time series as list or as singleton to filter, then a list of labels to compute an equivalence class, and finally a filter function. The filter function as we see the filter.bylabels can also need some parameter on top of stack.
 
-The result of this step corresponds to a reduced list. In our case only 4 records (2 to 5) were selected using a regular expression. A list containing 4 Time series is now let on top of the WarpScript stack.
+The result of this step corresponds to a reduced list. In our case only 4 records (2 to 5) were selected using a regular expression. A list containing 4 time series is now let on top of the WarpScript stack.
 
 ## To be continued
 
-As an exoplanet hunter, you may be asking yourself why you should reduced the amount of data you will be working with. Be patient, and remember that taking your time during the first steps will making you win time in the longer run! Stay strong young hunter, more will come in the [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/) as a framework very usefull for time-series downsampling will be briefly introduced.
-
-## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/) ... [solutions]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/solutions) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/)
+As an exoplanet hunter, you may be asking yourself why you should reduced the amount of data you will be working with. Be patient, and remember that taking your time during the first steps will making you win time in the longer run! Stay strong young hunter, more will come in the next step as a framework very usefull for time series downsampling will be briefly introduced.

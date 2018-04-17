@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 5.1: Back to WarpScript bascis: the loop'
 category: step-5
+before: 'step-4-First-Exo-Detection/4.3-Threshold-test-and-display'
+next: 'step-5-Process-all-stars/5.2-Optimize-global-analysis'
+solution: 'step-5-Process-all-stars/5.1-WarpScript-loops/solutions'
 ---
 
 Now that you completed your intial training as an exoplanet hunter, let's see how the loops are implemented in WarpScript to be able to generalize your analysis to all the available Kepler's stars.
@@ -68,6 +71,5 @@ As the FOREACH function, LMAP takes two parameter: a list and a macro. LMAP will
 
 ## To be continued
 
-Now that you understand the theory about the WarpScript loops, let's see in practice how we can use them to process all the stars in the [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.2-Optimize-global-analysis/).
+Now that you understand the theory about the WarpScript loops, let's now see in practice how we can use them to process all the stars!
 
-## [previous step]({{ site.baseurl }}//step-4-First-Exo-Detection/4.3-Threshold-test-and-display/) ... [solutions]({{ site.baseurl }}/step-5-Process-all-stars/5.1-WarpScript-loops/solutions) ... [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.2-Optimize-global-analysis/)

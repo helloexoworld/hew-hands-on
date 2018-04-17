@@ -5,11 +5,14 @@
 layout: home
 title: 'Step 5.3: Time to focus on the format output'
 category: step-5
+before: 'step-5-Process-all-stars/5.2-Optimize-global-analysis'
+next: 'step-6-Going-further'
+solution: 'step-5-Process-all-stars/5.3-Reformat-the-output/solutions'
 ---
 
 ## Rename a time series
 
-The following block can be add at the end of the script to reformat all names of Time series list.
+The following block can be add at the end of the script to reformat all names of time series list.
 
 ```
 //
@@ -191,6 +194,5 @@ $bucketizedSeries
 
 ## To be continued
 
-Wow, you did an awesome job exoplanet hunter! You manage to discover some of the existing exoplanet and format nicely your output! Now it's time to relax a bit before continuing your quest. It's time to let you have your own practice, to learn a little bit more about the existing WarpScript function, continue with the [next step]({{ site.baseurl }}/step-6-Going-further/) or continue to develop your script using all the skills your already learned.
+Wow, you did an awesome job exoplanet hunter! You manage to discover some of the existing exoplanet and format nicely your output! Now it's time to relax a bit before continuing your quest. It's time to let you have your own practice you can now edit your own method to detect exoplanet! Or reach the next step to discover new existing WarpScript functions.
 
-## [previous step]({{ site.baseurl }}/step-5-Process-all-stars/5.2-Optimize-global-analysis/) ... [solutions]({{ site.baseurl }}/step-5-Process-all-stars/5.3-Reformat-the-output/solutions) ... [next step]({{ site.baseurl }}/step-6-Going-further/)

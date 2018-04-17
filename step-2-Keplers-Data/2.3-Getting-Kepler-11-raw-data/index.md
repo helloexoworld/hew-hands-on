@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 2.3: Load time series raw data'
 category: step-2
+before: 'step-2-Keplers-Data/2.2-Exploring-known-time-series'
+next: 'step-3-WarpScript-Frameworks/3.1-Filter-framework'
+solution: 'step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/solutions'
 ---
 
 Now that you are used to play with the stack and know the available series, let's manipulate some data!
@@ -86,7 +89,7 @@ FETCH
 
 As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let's clean that. There is a function called [TIMESPLIT]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/) that will be able to help us! As stated by the documentation:
 
-> The TIMESPLIT function takes a GTS or a list of GTS and splits each Geo Time Series<sup>TM</sup> into a list multiple GTS instances, cutting the original GTS when it encounters quiet periods when there are no measurements.
+> The TIMESPLIT function takes a GTS or a list of GTS and splits each Geo time series<sup>TM</sup> into a list multiple GTS instances, cutting the original GTS when it encounters quiet periods when there are no measurements.
 
 That is perfect! Let´s use it!
 
@@ -128,7 +131,7 @@ TIMESPLIT
 
 Once you managed to set all the needed parameters, you should get as a result a list of splitted series! In fact Timesplit will work as follow: 
 - it takes a GTS on top of stack and process it to detect quiet periods
-- it create one series per each period, generating several Time series (if they have at least the minimal required number of points to be considered)
+- it create one series per each period, generating several time series (if they have at least the minimal required number of points to be considered)
 - it adds a label to each series, with an incremental values (1 for the first, 2 for the second,...) 
 - all the new formed series are added inside a result list and pushed on top of stack.
 
@@ -136,6 +139,4 @@ Great, each series resulting of TIMESPLIT corresponds to a single [Kepler record
 
 ## To be continued
 
-During this step you manipulated a sub-set of series extracted of the FITS data of the NASA. You discovered how to extract raw data from Warp 10 and how to use one of the Time manipulation function WarpScript offers! This is only the beginning of the hunt, there will be more to come in the [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/) with all the basic Times Series framework to start an analysis!
-
-## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/) ... [solutions]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/solutions) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/)
+During this step you manipulated a sub-set of series extracted of the FITS data of the NASA. You discovered how to extract raw data from Warp 10 and how to use one of the Time manipulation function WarpScript offers! This is only the beginning of the hunt, there will be more to come with all the basic times series framework to start an analysis!

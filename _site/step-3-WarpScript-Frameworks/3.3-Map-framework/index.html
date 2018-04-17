@@ -305,7 +305,7 @@
 
 <h2 id="the-framework">The framework</h2>
 
-<p>Now it is time to update the values of a set of GTS using the <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP framework</a>. The MAP framework allows you to apply a function on values of a Geo Time SeriesTM that fall into a sliding window.</p>
+<p>Now it is time to update the values of a set of GTS using the <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP framework</a>. The MAP framework allows you to apply a function on values of a Geo time seriesTM that fall into a sliding window.</p>
 
 <p><img src="/hew-hands-on/img/frameworks/mapper.png" alt="Alt Text" /></p>
 
@@ -334,7 +334,7 @@ MAP
 
 <h2 id="mapper-in-pictures">Mapper in pictures</h2>
 
-<p>Let’s resume step by step each mapper element. First <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP framework</a> requires a set of Time series (Singleton or list):</p>
+<p>Let’s resume step by step each mapper element. First <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP framework</a> requires a set of time series (Singleton or list):</p>
 
 <p><img src="/hew-hands-on/img/frameworks/Time-series-input.png" alt="Alt Text" /></p>
 
@@ -354,7 +354,7 @@ MAP
 
 <p><img src="/hew-hands-on/img/frameworks/mapper-occurences.png" alt="Alt Text" /></p>
 
-<p>Now we would like to apply this specific framework to compute the same operation on all the Time series points of the NASA lightcurve data. Let’s see how to process!</p>
+<p>Now we would like to apply this specific framework to compute the same operation on all the time series points of the NASA lightcurve data. Let’s see how to process!</p>
 
 <h2 id="hello-exo-world-step">Hello Exo World step</h2>
 
@@ -440,21 +440,25 @@ BUCKETIZE
 
 <h2 id="resume">Resume</h2>
 
-<p>The main goal of this step is to compute a moving average of some Time series. To do so, you used the MAP framework, it expects on top of the stack a list of parameters containing: the Time series as list or as singleton to bucketize, a mapper function, and three long parameter: pre, post and occurences.</p>
+<p>The main goal of this step is to compute a moving average of some time series. To do so, you used the MAP framework, it expects on top of the stack a list of parameters containing: the time series as list or as singleton to bucketize, a mapper function, and three long parameter: pre, post and occurences.</p>
 
-<p>The result of this step corresponds to a computed Time series list. In our case the 4 selected Time series are now on top of stack containing averaged value of all the values inside a moving window (for each point).</p>
+<p>The result of this step corresponds to a computed time series list. In our case the 4 selected time series are now on top of stack containing averaged value of all the values inside a moving window (for each point).</p>
 
 <h2 id="to-be-continued">To be continued</h2>
 
-<p>Congrats, you reached the end of the framework step! Understanding the help providing by those framework is really important to help a young hunter to complete its quest to retrieve Kepler-11 exoplanet. In the <a href="/hew-hands-on/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/">next step</a> we will focus, now that we have all the needed tools, on writing a working exploratory script to discover existing exoplanet for kepler-11!</p>
-
-<h2 id="previous-step--solutions--next-step"><a href="/hew-hands-on/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/">previous step</a> … <a href="/hew-hands-on/step-3-WarpScript-Frameworks/3.3-Map-framework/solutions">solutions</a> … <a href="/hew-hands-on/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/">next step</a></h2>
+<p>Congrats, you reached the end of the framework step! Understanding the help providing by those framework is really important to help a young hunter to complete its quest to retrieve Kepler-11 exoplanet. In the next step we will focus, now that we have all the needed tools, on writing a working exploratory script to discover existing exoplanet for kepler-11!</p>
 
         <div class='before-solution-next'>
 
     
+        <div class='before'><a href="/hew-hands-on/step-3-WarpScript-Frameworks/3.2-Bucketize-framework">Previous</a></div>
     
     
+        <div class='solution'><a href="/hew-hands-on/step-3-WarpScript-Frameworks/3.3-Map-framework/solutions">Solution</a></div>
+    
+    
+    
+        <div class='next'><a href="/hew-hands-on/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY">Next</a></div>
     
 </div>
       </div>

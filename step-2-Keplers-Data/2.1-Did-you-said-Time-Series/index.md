@@ -12,11 +12,11 @@ solution: 'step-2-Keplers-Data/2.1-Did-you-said-Time-Series/solutions'
 
 You are not alone in your quest, exoplanet hunter! As your personal assistants, we will teach you some basics knowledge to help you achieve this awesome quest!
 
-First, just to help you, and to lead you, let start at the beginning and introduce the NASA data modelised as time series.
+First, to begin your training, let start with the introduction of the NASA data modelised as time series.
 
 ## Star's data
 
-During this tutorial, you will study the NASA Kepler data-set. You will in charge to discover some exoplanet by analyzing photometry from differents stars collected by Kepler.
+During this tutorial, you will study the NASA Kepler data-set. You will be in charge to discover some exoplanet by analyzing photometry from differents stars collected by Kepler.
 
 You will be working on the photometric series called *SAP_FLUX (Simple Aperture Photometry fluxes)*. It represents the flux in electrons per second contained in the optimal
 aperture pixels collected by the spacecraft. This is the raw data acquired by Kepler. Here's an example:
@@ -43,7 +43,7 @@ Like in this small example, a graph with a value in an axis, and a time in the s
 
 ## Where can we find time series?
 
-**time series are everywhere**, here are just few examples:
+**Time series are everywhere**, here are just few examples:
 
 - The evolution of the stock exchange
 - The number of calls on a webserver

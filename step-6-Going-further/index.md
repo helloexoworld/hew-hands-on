@@ -19,7 +19,7 @@ The [`CORRELATE`]({{ site.doc_url }}/reference/functions/function_CORRELATE/) fu
 Here you have the example used in the documentation. An identical example as in the documtation is put below. You need a base time series, a list of the time series to compute the cross-correlation with and a third parameter corresponding to an offset list to compute the correlation. All time series must be correctly *bucketized* (aligned ticks) and filled (with no empty buckets) before, as the offset corresponds to a multiple of the distance between two points. The value 0 as offset will compute the correlation between all ticks of each series.
 
 <warp10-embeddable-quantum warpscript="
-// Create a COSINE GTS
+// Create a COSINE time series
 NEWGTS 'cos' RENAME
 
 // Generate 360 random values
@@ -34,7 +34,7 @@ FOR
 // Create a list
 [
 
-    // Create a SINE GTS
+    // Create a SINE time series
     NEWGTS 'sin' RENAME
     
     // Generate 360 random values
@@ -60,13 +60,13 @@ CORRELATE
 
 ## STL
 
-The second function of this section is the well known [`STL`]({{ site.doc_url }}/reference/functions/function_STL/) (Seasonal and Trend decomposition using Losses). This function expects a list of two GTS (or a list of list of two GTS) onto the stack. These GTS are the seasonal part and the trend part of the input GTS. Seasonal and trend are added as suffix. You can look [here](https://www.otexts.org/fpp/6/5) for an introduction on how the STL decomposition works for time series. You will find the Warp10.io example below:
+The second function of this section is the well known [`STL`]({{ site.doc_url }}/reference/functions/function_STL/) (Seasonal and Trend decomposition using Losses). This function expects a list of two time series (or a list of list of two time series) onto the stack. These time series are the seasonal part and the trend part of the input time series. Seasonal and trend are added as suffix. You can look [here](https://www.otexts.org/fpp/6/5) for an introduction on how the STL decomposition works for time series. You will find the Warp10.io example below:
 
 <warp10-embeddable-quantum warpscript="
-// generate periodic GTS of mean 0
+// generate a periodic time series of mean 0
 [ NEWGTS 1 20 <% NaN NaN NaN 4 PICK 10 % 4.5 - ADDVALUE %> FOR
 
-// generate trend GTS (linear raise y=x)
+// generate a trend time series (linear raise y=x)
 NEWGTS 1 20 <% NaN NaN NaN 4 PICK ADDVALUE %> FOR ]
 
 // sum up
@@ -87,7 +87,7 @@ The third section is about the [`DISCORDS`]({{ site.doc_url }}/reference/functio
 A pattern is defined with first it's window size, then the size of the pattern and finish with it's quantization scale (values ladder dividing the window width). To compute the discord you need to add maximum number of discords to identify, a boolean flag indicating whether or not the `DISCORDS` function should report overlapping discords and a distance ratio (it is safe to leave it to 0.0). You will find the Warp10.io example below.
 
 <warp10-embeddable-quantum warpscript="
-// Create a newgts to generate discords
+// Create a new time series to generate discords
 NEWGTS
 
 // Add 7200 datapoints, with 0.1% of anomalies
@@ -116,7 +116,7 @@ In WarpScript, there is mutliple outlier function detection. You can retrieve fo
 /// Macro used to generate an approximately normal distribution using central limit theorem
 <% RAND RAND RAND RAND RAND RAND + + + + + 3.0 - %> 'normal' STORE
 
-// we create a GTS with an approximately normal distribution
+// we create a time series with an approximately normal distribution
 NEWGTS 1 1000 <% NaN NaN NaN @normal ADDVALUE %> FOR
 
 // we add outliers (> 3.0 in absolute value)

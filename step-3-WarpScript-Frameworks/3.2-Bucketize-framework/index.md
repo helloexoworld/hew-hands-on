@@ -30,14 +30,13 @@ This how the bucketize concept works, let see how it can be implemented with War
 
 ## Input parameters
 
-The `BUCKETIZE` framework takes a list of elements as parameter. This list contains one or several GTS list, a [`bucketizer function`]({{ site.doc_url }}/reference/#framework-bucketizers), a `lastbucket` that specify when start the last bucket (0 mean this will be computed automatically), a `bucketspan` which is the duration of the bucket (if 0 WarpScript will compute it), and finally a `bucketcount` which is the number of buckets to compute (if 0 WarpScript will compute it).
+The `BUCKETIZE` framework takes a list of elements as parameter. This list contains one or several time series list, a [`bucketizer function`]({{ site.doc_url }}/reference/#framework-bucketizers), a `lastbucket` that specify when start the last bucket (0 mean this will be computed automatically), a `bucketspan` which is the duration of the bucket (if 0 WarpScript will compute it), and finally a `bucketcount` which is the number of buckets to compute (if 0 WarpScript will compute it).
 
 **Pro tips: In order to get a correct number of buckets either Bucketspan or Bucketcount have to be specified!**
 
 **Pro tips 2: Bucketcount indicate the number of bucket to keep starting from the last bucket computed when a Bucketspan is also set!**
 
-
-<warp10-embeddable-quantum warpscript="
+```
 // BUCKETIZE Framework
 [
     SWAP                                // Series list or Singleton
@@ -47,8 +46,7 @@ The `BUCKETIZE` framework takes a list of elements as parameter. This list conta
     0                                   // Bucketcount
 ]
 BUCKETIZE
-">
-</warp10-embeddable-quantum>
+```
 
 To get a working bucketizer, replace the function keyword by an exisiting function as `first`, `last`, `mean`, `min`, `max`, `median`, `join`...
 

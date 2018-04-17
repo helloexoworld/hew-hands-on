@@ -16,7 +16,7 @@ Using `TIMESPLIT` we compute our first time series operation but WarpScript offe
 
 The first framework we discover in this tutorial is [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/). It provides the tooling to select specific sub-set of Time-series in a list thereof.
 
-Let's resume what we have on the stack: first the kepler-11 GTS are loaded using the [`FETCH`]({{ site.doc_url }}/reference/functions/function_FETCH/) function. Then the data are split according to a quiesce period using [`TIMESPLIT`]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/).
+Let's resume what we have on the stack: first a kepler-11 time series are loaded using the [`FETCH`]({{ site.doc_url }}/reference/functions/function_FETCH/) function. Then the data are split according to a quiesce period using [`TIMESPLIT`]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/).
 
 ## Input parameters
 

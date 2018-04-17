@@ -84,7 +84,7 @@ BUCKETIZE
 ">
 </warp10-embeddable-quantum>
 
-Starting from here, use the [APPLY]({{ site.doc_url }}/reference/frameworks/framework-apply/) framework to compute the [difference](({{ site.doc_url }}/reference/frameworks/op_sub/)) between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection! Be careful of the equivalence class to choose for this specific step!
+Starting from here, use the [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/) framework to compute the [difference](({{ site.doc_url }}/reference/frameworks/op_sub/)) between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection! Be careful of the equivalence class to choose for this specific step!
 
 To resume, the expected result will contains a list of time series: with one time series per record containing the result of the substraction of the initial series with its trend.
 

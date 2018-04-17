@@ -35,7 +35,7 @@ WarpScript is a stack related programming language. This means that to compute a
 
 ## Single operator
 
-Let's start with a simple WarpScript function: [NOW]({{ site.doc_url }}/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch. Let's play with it, as quantum was set to reach an available backend, just type NOW in the quantum editor below:
+Let's start with a simple WarpScript function: [`NOW`]({{ site.doc_url }}/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch. Let's play with it, as quantum was set to reach an available backend, just type `NOW` in the quantum editor below:
 
 <warp10-embeddable-quantum warpscript="
 
@@ -61,7 +61,7 @@ true     // boolean value
 </warp10-embeddable-quantum>
 
 
-To compute an operation (for example an addition), put the two elements before the operator [+]({{ site.doc_url }}/reference/functions/function_ADD/) on the stack.
+To compute an operation (for example an addition), put the two elements before the operator [`+`]({{ site.doc_url }}/reference/functions/function_ADD/) on the stack.
 You will get the result on top of the stack.
 
 

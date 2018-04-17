@@ -35,7 +35,7 @@ The classname selector is a string which represents an exact match if it starts 
 
 The label selectors are packed in a MAP whose keys are the label names and the values the associated selector. Those selectors can also be exact matches if they start with `=` or a regular expression if they start with `~`.
 
-Here a preloaded WarpScript that you can use, find all the GTS available!
+Here a preloaded WarpScript that you can use, find all the time series available!
 
 
 <warp10-embeddable-quantum warpscript="

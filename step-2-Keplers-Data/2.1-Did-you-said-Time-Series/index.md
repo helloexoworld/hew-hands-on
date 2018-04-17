@@ -124,7 +124,7 @@ Warp 10 is one of the multiple currently available time series databases. It als
 If you type the following WarpScript code:
 
 <warp10-embeddable-quantum warpscript="
-// Create an empty GTS
+// Create an empty time series
 NEWGTS
 ">
 </warp10-embeddable-quantum>
@@ -187,7 +187,7 @@ ADDVALUE
 </warp10-embeddable-quantum>
 
 
-This will leave the initial GTS created on top of the stack, updated with each different values.
+This will leave the initial time series created on top of the stack, updated with each different values.
 
 ## To be continued
 

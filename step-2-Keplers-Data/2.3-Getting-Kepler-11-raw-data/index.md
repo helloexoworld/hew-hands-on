@@ -55,7 +55,9 @@ The `FETCH` results provides a list of series. To simplify all the following ste
     '2013-05-11T12:02:06.000000Z'   // End date
 ]
 FETCH 
-0 GET
+
+// Get Singleton series
+
 ">
 </warp10-embeddable-quantum>
 
@@ -80,7 +82,10 @@ Let's modify the precedent code to fetch only the data from Kepler-11, i.e. data
     '2013-05-11T12:02:06.000000Z'   // End date
 ]
 FETCH 
+
+// Get Singleton series
 0 GET
+
 ">
 </warp10-embeddable-quantum>
 
@@ -116,6 +121,8 @@ Go ahead and TIMESPLIT the GTS!
     '2013-05-11T12:02:06.000000Z'   // End date
 ]
 FETCH 
+
+// Get Singleton series
 0 GET
 
 // Let's do the TIMESPLIT now

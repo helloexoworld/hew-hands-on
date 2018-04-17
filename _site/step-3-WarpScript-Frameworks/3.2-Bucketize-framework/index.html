@@ -299,17 +299,15 @@
       
       <div class="col-sm-9">
         <h1>Step 3.2: Framework time: BUCKETIZE</h1>
-        <p>Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: <a href="http://www.warp10.io/reference/frameworks/framework-filter/">FILTER</a>, <a href="http://www.warp10.io/reference/frameworks/framework-bucketize/">BUCKETIZE</a>, <a href="http://www.warp10.io/reference/frameworks/framework-map/">MAP</a>, <a href="http://www.warp10.io/reference/frameworks/framework-reduce/">REDUCE</a> and <a href="http://www.warp10.io/reference/frameworks/framework-apply/">APPLY</a>. Let’s continue with the BUCKETIZE framework.</p>
+        <p>Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: <a href="http://www.warp10.io/reference/frameworks/framework-filter/"><code class="highlighter-rouge">FILTER</code></a>, <a href="http://www.warp10.io/reference/frameworks/framework-bucketize/"><code class="highlighter-rouge">BUCKETIZE</code></a>, <a href="http://www.warp10.io/reference/frameworks/framework-map/"><code class="highlighter-rouge">MAP</code></a>, <a href="http://www.warp10.io/reference/frameworks/framework-reduce/"><code class="highlighter-rouge">REDUCE</code></a> and <a href="http://www.warp10.io/reference/frameworks/framework-apply/"><code class="highlighter-rouge">APPLY</code></a>. Let’s continue with the <code class="highlighter-rouge">BUCKETIZE</code> framework.</p>
 
 <p><strong><em>At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.</em></strong></p>
 
 <h2 id="the-framework">The framework</h2>
 
-<p>In this tutorial we will also discover the <a href="http://www.warp10.io/reference/frameworks/framework-bucketize/">BUCKETIZE framework</a>. It provides the tooling for putting the data of a geo time serie into regularly spaced buckets. A bucket corresponds to a time interval.</p>
+<p>In this tutorial we will discover the <a href="http://www.warp10.io/reference/frameworks/framework-bucketize/"><code class="highlighter-rouge">BUCKETIZE</code> framework</a>. It provides the tooling to put a time series data into regularly spaced buckets. A bucket corresponds to a time interval.</p>
 
-<p><strong><em>At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.</em></strong></p>
-
-<p>We will use this bucket to downsample our data, let’s give it a try! In other words, downsampling some time series consists to reduce locally the number of points and to synchronize different series. There is several ways to process, one of the common one is to create small regular bucket into each series and to compute a value that resume this bucket. The following graphs shows the downsampling process:</p>
+<p>We will use this bucket to downsample our data, let’s give it a try! In other words, downsampling some time series consists to reduce locally the number of points and to synchronize different series. There is several ways to process, one of the common one is to create small regular bucket into each series and to compute a value that resume this bucket. The following graphs shows this process:</p>
 
 <p><img src="/hew-hands-on/img/frameworks/downsampling.png" alt="Alt Text" /></p>
 
@@ -321,7 +319,7 @@
 
 <h2 id="input-parameters">Input parameters</h2>
 
-<p>The BUCKETIZE framework takes a list of elements as parameter. This list contains one or several GTS list, a <a href="http://www.warp10.io/reference/#framework-bucketizers">bucketizer function</a>, a lastbucket that specify when start the last bucket (0 mean this will be computed automatically), a bucketcount which is the duration of the bucket (if 0 WarpScript will compute it), and finally a bucketcount which is the number of buckets to compute (if 0 WarpScript will compute it).</p>
+<p>The <code class="highlighter-rouge">BUCKETIZE</code> framework takes a list of elements as parameter. This list contains one or several GTS list, a <a href="http://www.warp10.io/reference/#framework-bucketizers"><code class="highlighter-rouge">bucketizer function</code></a>, a <code class="highlighter-rouge">lastbucket</code> that specify when start the last bucket (0 mean this will be computed automatically), a <code class="highlighter-rouge">bucketspan</code> which is the duration of the bucket (if 0 WarpScript will compute it), and finally a <code class="highlighter-rouge">bucketcount</code> which is the number of buckets to compute (if 0 WarpScript will compute it).</p>
 
 <p><strong>Pro tips: In order to get a correct number of buckets either Bucketspan or Bucketcount have to be specified!</strong></p>
 
@@ -340,27 +338,27 @@ BUCKETIZE
 ">
 </warp10-embeddable-quantum>
 
-<p>To get a working bucketizer, replace the function keyword by an exisiting function as first, last, mean, min, max, median, join…</p>
+<p>To get a working bucketizer, replace the function keyword by an exisiting function as <code class="highlighter-rouge">first</code>, <code class="highlighter-rouge">last</code>, <code class="highlighter-rouge">mean</code>, <code class="highlighter-rouge">min</code>, <code class="highlighter-rouge">max</code>, <code class="highlighter-rouge">median</code>, <code class="highlighter-rouge">join</code>…</p>
 
 <h2 id="bucketize-in-pictures">Bucketize in pictures</h2>
 
-<p>Let’s resume step by step each bucketize element. First BUCKETIZE requires a set of time series (Singleton or list):</p>
+<p>Let’s resume step by step each bucketize element. First <code class="highlighter-rouge">BUCKETIZE</code> requires a set of time series (Singleton or list):</p>
 
 <p><img src="/hew-hands-on/img/frameworks/Time-series-input.png" alt="Alt Text" /></p>
 
-<p>The second step consists to choose the function to apply on each bucket: first, last, mean, min, max, median, join, and <a href="http://www.warp10.io/reference/reference/#bucketizers">others</a>:</p>
+<p>The second step consists to choose the function to apply on each bucket: <code class="highlighter-rouge">first</code>, <code class="highlighter-rouge">last</code>, <code class="highlighter-rouge">mean</code>, <code class="highlighter-rouge">min</code>, <code class="highlighter-rouge">max</code>, <code class="highlighter-rouge">median</code>, <code class="highlighter-rouge">join</code>, and <a href="http://www.warp10.io/reference/reference/#bucketizers">others</a>:</p>
 
 <p><img src="/hew-hands-on/img/frameworks/bucketizer.png" alt="Alt Text" /></p>
 
-<p>A bucketizer can be tuned according to three parameters: lastbucket which specifies the last tick (for all the series) to start computing each bucket. This parameter is very usefull to synchronize different time series.</p>
+<p>A bucketizer can be tuned according to three parameters: <code class="highlighter-rouge">lastbucket</code> which specifies the last tick (for all the series) to start computing each bucket. This parameter is very usefull to synchronize different time series.</p>
 
 <p><img src="/hew-hands-on/img/frameworks/lastbucket.png" alt="Alt Text" /></p>
 
-<p>The second parameter to tun a bucketizer consists of the bucketspan. Bucketspan is the width of each bucket:</p>
+<p>The second parameter to tun a bucketizer consists of the <code class="highlighter-rouge">bucketspan</code>: the width of each buckets:</p>
 
 <p><img src="/hew-hands-on/img/frameworks/bucketspan.png" alt="Alt Text" /></p>
 
-<p>And finally the last parameter used to tun a bucketizer is the bucketcount to specify the maximal number of bucket to compute!</p>
+<p>And finally the last parameter used to tun a bucketizer is the <code class="highlighter-rouge">bucketcount</code> to specify the maximal number of bucket to compute!</p>
 
 <p><img src="/hew-hands-on/img/frameworks/bucketcount.png" alt="Alt Text" /></p>
 
@@ -368,8 +366,8 @@ BUCKETIZE
 
 <h2 id="hello-exo-world-step">Hello Exo World step</h2>
 
-<p>Only a single amount of series were kept in our previous step, it’s already possible to observe some drops in the data. Now we would like to write a script automasing the detection of those drops. But first, to gain some data readibilty, a downsampling step is included. In our case we are intersted in a downsampling conserving the minimal point of each generated bucket for each series.
-Let’s do it! Try the bucketizer.min with a bucketize window of 2 h.</p>
+<p>Only a single amount of series were kept in our previous step, it’s already possible to observe some drops in the data. Now we would like to write a script to detect those drops, which will means that an exoplanet could exists for this star. But first, to gain some data readibilty, a downsampling step is included. In our case we are interested in a one conserving the minimal point of each generated bucket for each series.
+Let’s do it! Try the <code class="highlighter-rouge">bucketizer.min</code> with a bucketize window of 2 h.</p>
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
@@ -433,13 +431,13 @@ FILTER
 
 <h2 id="resume">Resume</h2>
 
-<p>The main goal of this step is to downsample some raw data. To do so, you have to use the BUCKETIZE framework, it expects on top of the stack a list of parameters containing: the time series as list or as singleton to bucketize, a bucketizer function, and three long parameter: lastbucket, bucketspan and bucketcount.</p>
+<p>The main goal of this step is to downsample some raw data. To do so, you used the <code class="highlighter-rouge">BUCKETIZE</code> framework, it expects on top of the stack a list of parameters containing: the time series as list or as singleton to bucketize, a bucketizer function, and three long parameter: <code class="highlighter-rouge">lastbucket</code>, <code class="highlighter-rouge">bucketspan</code> and <code class="highlighter-rouge">bucketcount</code>.</p>
 
 <p>The result of this step corresponds to a downsampled list. In our case the 4 selected time series are now on top of stack containing regular bucket and one value per bucket.</p>
 
 <h2 id="to-be-continued">To be continued</h2>
 
-<p>It look’s simple as first look, but truts us it isn’t. When you will be working on complex time-series analytics, keep in mind this framework and try to be familiar with it! You will quickly see how it will improves your exoplanet discovery quest! In the next step, we are guiding you in the usage of an other usefull framework: MAP or how to apply the same function on all data-point of a set of time-series.</p>
+<p>It look’s simple as first look, but truts us it isn’t. When you will be working on complex time series analytics, keep in mind this framework and try to be familiar with it! You will quickly see how it will improves your exoplanet discovery quest! In the next step, we are guiding you in the usage of an other usefull framework: <code class="highlighter-rouge">MAP</code> or how to apply the same function on all datapoints of a set of time series.</p>
 
         <div class='before-solution-next'>
 

@@ -299,7 +299,7 @@
       
       <div class="col-sm-9">
         <h1>Step 6: Where no man has gone before...</h1>
-        <p>It was not enough for you, you want more WarpScript? You came at the right place, exoplanet hunter. This page is all about extracting a few WarpScript function that can be an help in your quest of exoplanets (or any other time series analysis)! You will discover functiond to establish a correlation between a series and a set of series, how to use the <code class="highlighter-rouge">STL</code> or the <code class="highlighter-rouge">DISCORDS</code> function, how to detect outliers in time series and some useful function to compute statistics on Time series.</p>
+        <p>It was not enough for you, you want more WarpScript? You came at the right place, exoplanet hunter. This page is all about extracting a few WarpScript function that can be an help in your quest of exoplanets (or any other time series analysis)! You will discover functiond to establish a correlation between a series and a set of series, how to use the <code class="highlighter-rouge">STL</code> or the <code class="highlighter-rouge">DISCORDS</code> function, how to detect outliers in time series and some useful function to compute statistics on time series.</p>
 
 <p>Those functions are listed here to give you a hint of the richness of WarpScript. At any time, feel free to skip this section to try to hack our code in the <a href="/hew-hands-on/step-7-Strong-enough-to-break-our-code">next step</a>.</p>
 
@@ -307,7 +307,7 @@
 
 <p>The <a href="http://www.warp10.io/reference/functions/function_CORRELATE/"><code class="highlighter-rouge">CORRELATE</code></a> function can be used to compute the cross-correlation between a base time series and a list thereoff.</p>
 
-<p>Here you have the example used in the documentation. An identical example as in the documtation is put below. You need a base time series, a list of the time series to compute the cross-correlation with and a third parameter corresponding to an offset list to compute the correlation. All Time series must be correctly <em>bucketized</em> (aligned ticks) and filled (with no empty buckets) before, as the offset corresponds to a multiple of the distance between two points. The value 0 as offset will compute the correlation between all ticks of each series.</p>
+<p>Here you have the example used in the documentation. An identical example as in the documtation is put below. You need a base time series, a list of the time series to compute the cross-correlation with and a third parameter corresponding to an offset list to compute the correlation. All time series must be correctly <em>bucketized</em> (aligned ticks) and filled (with no empty buckets) before, as the offset corresponds to a multiple of the distance between two points. The value 0 as offset will compute the correlation between all ticks of each series.</p>
 
 <warp10-embeddable-quantum warpscript="
 // Create a COSINE GTS
@@ -424,13 +424,13 @@ DEDUP
 
 <h2 id="some-statisticals-functions">Some statisticals functions</h2>
 
-<p>WarpScript also have some basic statistics functions that can be apply on Time series:</p>
+<p>WarpScript also have some basic statistics functions that can be apply on time series:</p>
 
 <ul>
   <li><a href="http://www.warp10.io/reference/functions/function_MUSIGMA/"><code class="highlighter-rouge">MUSIGMA</code></a> to compute both the mean and the standard deviation of a series</li>
   <li><a href="http://www.warp10.io/reference/functions/function_NORMALIZE/#sidebar"><code class="highlighter-rouge">NORMALIZE</code></a>, <a href="http://www.warp10.io/reference/functions/function_ISONORMALIZE/"><code class="highlighter-rouge">ISONORMALIZE</code></a>, <a href="http://www.warp10.io/reference/functions/function_STANDARDIZE/"><code class="highlighter-rouge">STANDARDIZE</code></a></li>
   <li><a href="http://www.warp10.io/reference/functions/function_SINGLEEXPONENTIALSMOOTHING/"><code class="highlighter-rouge">SINGLEEXPONENTIALSMOOTHING</code></a> to smooth and compare different series</li>
-  <li>To extract more details information on a Time series, you will also retrieve some functions as <a href="http://www.warp10.io/reference/functions/function_MODE/">MODE</a> or <a href="http://www.warp10.io/reference/functions/function_VALUEHISTOGRAM/">VALUEHISTOGRAM</a></li>
+  <li>To extract more details information on a time series, you will also retrieve some functions as <a href="http://www.warp10.io/reference/functions/function_MODE/">MODE</a> or <a href="http://www.warp10.io/reference/functions/function_VALUEHISTOGRAM/">VALUEHISTOGRAM</a></li>
   <li>Many other statisticals functions are <a href="http://www.warp10.io/reference/functions/function_CPROB/">CPROB</a>, <a href="http://www.warp10.io/reference/functions/function_LOWESS/">LOWESS</a>, <a href="http://www.warp10.io/reference/functions/function_LTTB">LTTB</a>, <a href="http://www.warp10.io/reference/functions/function_MONOTONIC/">MONOTONIC</a>, <a href="http://www.warp10.io/reference/functions/function_NSUMSUMSQ/">NSUMSUMSQ</a>, <a href="http://www.warp10.io/reference/functions/function_PROB/">PROB</a>, <a href="http://www.warp10.io/reference/functions/function_RLOWESS/">RLOWESS</a> and <a href="http://www.warp10.io/reference/functions/function_TLTTB/">TLTTB</a>, if needed one day.</li>
 </ul>
 
@@ -440,7 +440,7 @@ DEDUP
 
 <h1 id="this-is-the-end">This is the end</h1>
 
-<p>Thanks for completed this tutorial! We were happy to introduce you to the analytics of Time series worlds and to present a short initiation to our search of exoplanet!</p>
+<p>Thanks for completed this tutorial! We were happy to introduce you to the analytics of time series worlds and to present a short initiation to our search of exoplanet!</p>
 
 <h2 id="previous-step"><a href="/hew-hands-on/step-5-Process-all-stars/5.3-Reformat-the-output/">previous step</a></h2>
 

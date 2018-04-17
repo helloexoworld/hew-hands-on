@@ -39,7 +39,7 @@ Let's play with it, here's the squeleton:
 
 
 
- build a new list containing two elements: 1 and 3. Then add the elements 2 using the operator [+]({{ site.doc_url }}/reference/functions/function_ADD/) on this list. Now to sort this list, apply the function [LSORT]({{ site.doc_url }}/reference/functions/function_LSORT/) on it. This will sort the list, which is on top of stack, in a ascending order and let as a result this list on top of the stack. To sort the list in a descending order, apply the [REVERSE]({{ site.doc_url }}/reference/functions/function_REVERSE/) function on this list.
+ build a new list containing two elements: 1 and 3. Then add the elements 2 using the operator [`+`]({{ site.doc_url }}/reference/functions/function_ADD/) on this list. Now to sort this list, apply the function [`LSORT`]({{ site.doc_url }}/reference/functions/function_LSORT/) on it. This will sort the list, which is on top of stack, in a ascending order and let as a result this list on top of the stack. To sort the list in a descending order, apply the [`REVERSE`]({{ site.doc_url }}/reference/functions/function_REVERSE/) function on this list.
 
 ## To be continued
 

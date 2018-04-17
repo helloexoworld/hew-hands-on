@@ -14,9 +14,9 @@ Now that you survive all the WarpScript needed knowledge, we would like to welco
 
 ## FIND
 
-We preloaded our platform with some stars (around 30). Let's observe the series structures and find the one that we want! We are going to use a function called [FIND]({{ site.doc_url }}/reference/functions/function_FIND/).
+We preloaded our platform with some stars (around 30). Let's observe the series structures and find the one that we want! We are going to use a function called [`FIND`]({{ site.doc_url }}/reference/functions/function_FIND/).
 
-How does the function FIND works? This function allows the user to retrieve specific meta-data of time series stored inside a Warp 10 backend. You will need to push on top of the stack a list of specific parameters. The function to work correcty will need a specific cryptographic token, remember, you saw it earlier. Let's resume how to load it. 
+How does the function `FIND` works? This function allows the user to retrieve specific meta-data of time series stored inside a Warp 10 backend. You will need to push on top of the stack a list of specific parameters. The function to work correcty will need a specific cryptographic token, remember, you saw it earlier. Let's resume how to load it. 
 
 Before retrieving any data, you need to access data store in a specific application. To simplify the process, an existing token was stored in the platform. You can access it using the following code. HEW stands for HelloExoWorld. 
 

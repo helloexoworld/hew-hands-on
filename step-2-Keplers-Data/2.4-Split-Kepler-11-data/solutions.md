@@ -3,11 +3,11 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
-title: 'Step 2.3: Load time series raw data'
+title: 'Step 2.4: Split Kepler-11 data'
 category: step-2
-before: 'step-2-Keplers-Data/2.2-Exploring-known-time-series'
+before: 'step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data'
 next: 'step-3-WarpScript-Frameworks/3.1-Filter-framework'
-back: 'step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data'
+back: 'step-2-Keplers-Data/2.4-Split-Kepler-11-data'
 ---
 
 ## Solutions
@@ -25,5 +25,23 @@ back: 'step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data'
     '2013-05-11T12:02:06.000000Z'       // End date
 ] 
 FETCH
+
+// Get Singleton series
+0 GET
+
+//
+// TIMESPLIT block:
+//
+
+// Quiesce period
+6 h
+
+// Minimal numbers of points per series 
+100
+
+// Labels for each splitted series
+'record'
+
+TIMESPLIT
 ">
 </warp10-embeddable-quantum>

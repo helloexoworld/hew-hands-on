@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title> HelloExo.World - Hands-on with exoplanets - Step 2.3: Load time series raw data </title>
+    <title> HelloExo.World - Hands-on with exoplanets - Step 2.4: Split Kepler-11 data </title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -298,50 +298,54 @@
      </div>
       
       <div class="col-sm-9">
-        <h1>Step 2.3: Load time series raw data</h1>
-        <p>Now that you are used to play with the stack and know the available series, let’s manipulate some data!</p>
-
-<h2 id="fetch">FETCH</h2>
-
-<p>Now that we have identified the right star, let’s get some data using <a href="http://www.warp10.io/reference/functions/function_FETCH/"><code class="highlighter-rouge">FETCH</code></a>! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints. The UTC start date is <code class="highlighter-rouge">2009-05-02T00:56:10.000000Z</code> and the end date is <code class="highlighter-rouge">2013-05-11T12:02:06.000000Z</code>. Remember that the regular expression <code class="highlighter-rouge">~.*</code> allow you to request all the series available in the platform. Limit it to only the <code class="highlighter-rouge">sap.flux</code> ones. In order to keep a restreint amount of data, update the labels sector to load only the data from Kepler-11, i.e. data with the label <code class="highlighter-rouge">KEPLERID=6541920</code>:</p>
+        <h1>Step 2.4: Split Kepler-11 data</h1>
+        <h2 id="solutions">Solutions</h2>
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
-// Let's do a FETCH now
-[
-    // Here you must put the parameters used by FETCH:  
-    // - Token for application authentication
-    // - Classname selector
-    // - Labels selector
-    { 
-        // Here you put the label selector for Kepler-11
-    } 
-    // - Start date
-    // - End date
-]
+// FETCH
+[ 
+    $token                              // Application authentication
+    'sap.flux'                          // selector for classname
+    { 'KEPLERID' '6541920' }            // Selector for labels
+    '2009-05-02T00:56:10.000000Z'       // Start date
+    '2013-05-11T12:02:06.000000Z'       // End date
+] 
 FETCH
+
+// Get Singleton series
+0 GET
+
+//
+// TIMESPLIT block:
+//
+
+// Quiesce period
+6 h
+
+// Minimal numbers of points per series 
+100
+
+// Labels for each splitted series
+'record'
+
+TIMESPLIT
 ">
 </warp10-embeddable-quantum>
-
-<p>You will see a list of a single GTS, click on it to view it. As an exercise, you can re-use the find and create a regular expresssion to load a small amount of the stars data. Loading the complete set of data <strong>will</strong> probably crash your navigator.</p>
-
-<h1 id="to-be-continued">To be continued</h1>
-
-<p>The full subset of data of Kepler-11 is now on top of a WarpScript stack. It includes around 65000 points. In the next steps, we will start to write a WarpScript data-flow to detect Kepler-11 exoplanet.</p>
 
         <div class='before-solution-next'>
 
     
-        <div class='before'><a href="/hew-hands-on/step-2-Keplers-Data/2.2-Exploring-known-time-series">Previous</a></div>
-    
-    
-        <div class='solution'><a href="/hew-hands-on/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/solutions">Solution</a></div>
+        <div class='before'><a href="/hew-hands-on/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data">Previous</a></div>
     
     
     
-        <div class='next'><a href="/hew-hands-on/step-2-Keplers-Data/2.4-Split-Kepler-11-data">Next</a></div>
+        <div class='back'><a href="/hew-hands-on/step-2-Keplers-Data/2.4-Split-Kepler-11-data">Back</a></div>
+    
+    
+        <div class='next'><a href="/hew-hands-on/step-3-WarpScript-Frameworks/3.1-Filter-framework">Next</a></div>
     
 </div>
       </div>

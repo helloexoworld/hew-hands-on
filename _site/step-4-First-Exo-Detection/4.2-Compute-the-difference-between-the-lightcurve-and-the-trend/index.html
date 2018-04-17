@@ -388,12 +388,9 @@ BUCKETIZE
 
 <ul>
   <li>compute the trend using <a href="http://www.warp10.io/reference/frameworks/mapper_mean/"><code class="highlighter-rouge">mapper.mean</code></a>. We recommend 5 datapoints before and after.</li>
-  <li>use the <a href="http://www.warp10.io/reference/frameworks/framework-apply/"><code class="highlighter-rouge">APPLY</code></a> framework to compute the <a href="(http://www.warp10.io/reference/frameworks/op_sub/)">difference</a> between the originial series and the series trend (computing using an average mean for example).</li>
+  <li>Store the result into a variable</li>
+  <li>use the <a href="http://www.warp10.io/reference/frameworks/framework-apply/"><code class="highlighter-rouge">APPLY</code></a> framework to compute the difference using <a href="http://www.warp10.io/reference/frameworks/op_sub/"><code class="highlighter-rouge">op.sub</code></a>  between the originial series and the series trend (computing using an average mean for example).</li>
 </ul>
-
-<blockquote>
-  <p>Be careful of the equivalence class to choose for this specific step!</p>
-</blockquote>
 
 <p>To resume, the expected result will contains a list of time series: with one time series per record containing the result of the substraction of the initial series with its trend.</p>
 

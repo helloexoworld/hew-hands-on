@@ -98,9 +98,9 @@ BUCKETIZE
 Starting from here, you now have to:
 
 * compute the trend using [`mapper.mean`]({{ site.doc_url }}/reference/frameworks/mapper_mean/). We recommend 5 datapoints before and after.
-* use the [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/) framework to compute the [difference](({{ site.doc_url }}/reference/frameworks/op_sub/)) between the originial series and the series trend (computing using an average mean for example). 
+* Store the result into a variable
+* use the [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/) framework to compute the difference using [`op.sub`]({{ site.doc_url }}/reference/frameworks/op_sub/)  between the originial series and the series trend (computing using an average mean for example).
 
-> Be careful of the equivalence class to choose for this specific step!
 
 To resume, the expected result will contains a list of time series: with one time series per record containing the result of the substraction of the initial series with its trend.
 

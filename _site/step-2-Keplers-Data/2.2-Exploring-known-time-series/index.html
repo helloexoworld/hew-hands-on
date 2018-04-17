@@ -299,21 +299,15 @@
       
       <div class="col-sm-9">
         <h1>Step 2.2: Exploring the available time-series</h1>
-        <p>Now that you survive all the WarpScript needed knowledge, we would like to welcome you in our special quest, as an exoplanet hunter!</p>
+        <p>Now that you survive all the WarpScript needed knowledge, we would like to welcome warmly in our exoplanet quest! We can now observe more concretly what the NASA data looks like.</p>
 
 <h2 id="find">FIND</h2>
 
 <p>We preloaded our platform with some stars (around 30). Let’s observe the series structures and find the one that we want! We are going to use a function called <a href="http://www.warp10.io/reference/functions/function_FIND/">FIND</a>.</p>
 
-<p>How does the function FIND works? This function allows the user to retrieve specific meta-data of time series store inside a Warp 10 backend. You will need to push on top of the stack a list of specific parameters. The function to work correcty will need a specific cryptographic token, remember, you saw it earlier. Let’s resume how to load it.</p>
+<p>How does the function FIND works? This function allows the user to retrieve specific meta-data of time series stored inside a Warp 10 backend. You will need to push on top of the stack a list of specific parameters. The function to work correcty will need a specific cryptographic token, remember, you saw it earlier. Let’s resume how to load it.</p>
 
 <p>Before retrieving any data, you need to access data store in a specific application. To simplify the process, an existing token was stored in the platform. You can access it using the following code. HEW stands for HelloExoWorld.</p>
-
-<warp10-embeddable-quantum warpscript="
-// Load handson-hew token
-@HELLOEXOWORLD/GETREADTOKEN
-">
-</warp10-embeddable-quantum>
 
 <p>Then store it in a variable, for example token. And starting from now, keep this stored token in all the script as you will need it to load data.</p>
 
@@ -323,7 +317,7 @@
 ">
 </warp10-embeddable-quantum>
 
-<p>The FIND function finds Geo time seriesTM matching some criteria. To work correctly, it expects on top of stack a LIST with 3 parameters: the previous stored Warp10 token, a classname selector and a MAP of label selectors.</p>
+<p>The FIND function finds Geo time seriesTM matching some criteria. To work correctly, it expects on top of the stack a LIST with 3 parameters: the previous stored Warp10 token, a classname selector and a MAP of label selectors.</p>
 
 <p>The classname selector is a string which represents an exact match if it starts with an <code class="highlighter-rouge">=</code>, or a regular expression if it starts with <code class="highlighter-rouge">~</code>.</p>
 
@@ -339,11 +333,13 @@
 [ 
     $token 
     // Here you must put the classname and label selectors...  
+
+
 ] FIND
 ">
 </warp10-embeddable-quantum>
 
-<p>Wow, a lot of data appeared in my quantum console. They represents all the existing series that are availble to test you exoplanet quest! Each time series have several meta-data. During this tutorial we are going to focus on the one called <code class="highlighter-rouge">sap.flux</code> as they represents the raw data of the lightcurve of each stars.</p>
+<p>Wow, a lot of data appeared in my quantum console. They represents all the existing series that are availble to test your exoplanet quest! Each time series have several meta-data. During this tutorial we are going to focus on the one called <code class="highlighter-rouge">sap.flux</code> as they represents the raw data of the lightcurve of each stars.</p>
 
 <p>The one that we are looking for has a label <code class="highlighter-rouge">KEPLERID=6541920</code>, can you see it? Change the FIND to have only one result: <code class="highlighter-rouge">sap.flux</code> for Kepler-11!</p>
 

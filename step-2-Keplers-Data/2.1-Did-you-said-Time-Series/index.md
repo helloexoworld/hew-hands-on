@@ -54,7 +54,7 @@ Like in this small example, a graph with a value in an axis, and a time in the s
 - The heart rate of a person measured through a smartwatch
 
 
-## time series data model
+## Time series data model
 
 We call the magnitude measured in the time series **classname**.  In the previous examples,
 the classnames could be *dollars*, *calls*, *gallons*, *percentage*, *time spent* or *heart rate*
@@ -81,14 +81,14 @@ Given the many aspects they can have, the storage, retrieval and analysis of tim
 We can find here and there many time series Databases that claim to solve the same storage system but most of them fail in their mission to provide you the right tools and protocol to let you enjoy your data.
 
 
-## time series Values
+## Time series values
 
 Once you have define the good time series model for your own need (in the case of monitoring, most of the time your collecting software will choose it for you), you will push data points or measurements.
 
 These data points can be of **multiple types** (*Long*, *Double*, *String*, *Boolean*)  given the protocol you use. You can refer to the matrix compatibility to know which one fits you best.
 
 
-## time series Analysis
+## Time series analysis
 
 While a common use case for time series is to plot them as a graph, using line charts or sparklines, many customers will need to perform custom analysis on their time series for domains like :
 
@@ -105,9 +105,9 @@ There have been a lot of research effort around time series analytics, as they a
 
 And, of course, you can combine thise specific techniques with generic statistical or signal processing analytics.  
 
-## time series applications
+## Time series applications
 
-![time series spplications](../../img/step-2/time-series-applications.jpg)
+![Time series spplications](../../img/step-2/time-series-applications.jpg)
 
 There are two main kinds of time series applications:
 
@@ -191,4 +191,4 @@ This will leave the initial GTS created on top of the stack, updated with each d
 
 ## To be continued
 
-Luckily for you all the needed time series for you exoplanet are already available in our back-end! Let's now start to explore them!
+Luckily for you all the needed time series for your exoplanet quest are already available in our back-end! We will now start exploring them.

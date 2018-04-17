@@ -12,18 +12,18 @@ solution: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript/solutions'
 
 ## What is WarpScript?
 
-WarpScript is a programming language specific to Geo time series® analysis. For security reason, WarpScript is an interpreted language, which means that a Warp 10 backend have to be reached to execute your script. Fortunately for you, we set-up a platform on a Raspberry Pi that should be nearby. You should be able to connect to this elements like this:
+WarpScript is a programming language specific to Geo time series® analysis. For security reason, WarpScript is an interpreted language, which means that a Warp 10 backend have to be reached to execute your script. Fortunately for you, we set-up everything you need in this tutoriel. Otherwise, you should be able to connect to each elements like this:
 
 * [Quantum](https://quantum.metrics.ovh.net/)
 * [Warp10 official documentation]({{ site.doc_url }}/reference/)
 
-If you would like to use the web [Quantum](https://quantum.metrics.ovh.net/) editor, you will need to add some configuration to hit one of our Warp10 instance. Otherwise during a conference or this tutorial, the correct Quantum backend to reach was set by default.
+If you would like to use the web [Quantum](https://quantum.metrics.ovh.net/) editor, you will need to add some configuration to hit one of our Warp10 instance. Otherwise during a conference or during this tutorial, the correct quantum backend was directly integrated in each pages.
 
-To configure [Quantum](https://quantum.metrics.ovh.net/), click on "Choose another backend", then the pencil and add:
+To configure your local or web [Quantum](https://quantum.metrics.ovh.net/), click on "Choose another backend", then on the pencil and add:
 
 * https://warp.pierrezemb.org/api/v0 if you are doing the online version
 * http://127.0.0.1:8080/api/v0 if you are using the docker version 
-* http://warp-1:8080 if you are in a conference
+* http://warp-1:8080 if you are in a conference to reach a local backend
 
 > Please note that you'll have better performance using chromium. Firefox support is on his way.
 
@@ -65,7 +65,7 @@ To compute an operation (for example an addition), put the two elements before t
 You will get the result on top of the stack.
 
 
-Let's try it, copy that empty WarpScript in Quantum and implement the simple spec:
+Let's try it, by implementing the follwing spec:
 
 <warp10-embeddable-quantum warpscript="
 // Compute 40 + 2
@@ -80,5 +80,5 @@ Let's try it, copy that empty WarpScript in Quantum and implement the simple spe
 
 ## To be continued
 
-WarpScript allow the user to save specific data inside Variable, let's discover them now!
+WarpScript allow the user to save specific data inside variable, the follwing page will detail how to use them!
 

@@ -12,7 +12,7 @@ solution: 'step-1-WarpScript/1.2-Introducing-the-Variables/solutions'
 
 ## Variables
 
-As any other programming language, WarpScript implements the Variables concept. In WarpScript you can save a specific stack element in a variable (java pointer). This is done using the function [STORE]({{ site.doc_url }}/reference/functions/function_STORE/). 
+As any other programming language, WarpScript allow the developer to store it's own variables. In WarpScript you can save a specific stack element in a variable (java pointer). This is done using the function [STORE]({{ site.doc_url }}/reference/functions/function_STORE/). 
 
 This function expects two elements on the stack : 
 - A stack element to save
@@ -44,7 +44,7 @@ Security in Warp10 instance are handled with crypto tokens. They can be pretty l
 ">
 </warp10-embeddable-quantum>
 
-You can store it in a variable if you want.
+This token can then be stored in a variable for example.
 
 ## To be continued
 

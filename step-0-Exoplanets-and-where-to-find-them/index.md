@@ -35,15 +35,15 @@ To recap, exoplanet detection using the transit method are in reality a **time s
 
 > _Image Credit: NASA Ames/W. Stenzel_
 
-Kepler is a **space observatory** launched by NASA in March 2009 to **discover Earth-sized planets orbiting other stars**. [The loss of a second of the four reaction wheels during May 2013](https://www.nasa.gov/feature/ames/nasas-k2-mission-the-kepler-space-telescopes-second-chance-to-shine) put an end to the original mission. Fortunately, scientists decided to create an **entirely community-driven mission** called K2, to **reuse the Kepler spacecraft and its assets**. But furthermore, the community is also encouraged to exploit the mission’s unique **open** data archive. Every image taken by the satellite can be **downloaded and analyzed by anyone**.
+Kepler is a **space observatory** launched by NASA in March 2009 to discover Earth-sized planets orbiting other stars. [The loss of a reaction wheel during May 2013](https://www.nasa.gov/feature/ames/nasas-k2-mission-the-kepler-space-telescopes-second-chance-to-shine) put an end to the original mission. Fortunately, scientists decided to create an entirely community-driven mission called K2, to **reuse the Kepler spacecraft and its assets**. But furthermore, the community is also encouraged to exploit the mission’s unique **open** data archive. Every image taken by the satellite can be downloaded and analyzed by all of us.
 
-More information about the telescope itself can be found [**here**](https://keplerscience.arc.nasa.gov/the-kepler-space-telescope.html).
+More information about the telescope itself can be found [here](https://keplerscience.arc.nasa.gov/the-kepler-space-telescope.html).
 
 ## Who are we?
 
 ![Alt Text]({{ site.baseurl }}/img/step-0/hew.png)
 
-We are not astrophysicists. Not by far, we are **developers**, and WarpScript users looking for time series challenges. We want to have fun! So we created [HelloExoWorld](https://helloexo.world), an **association** designed to **promote** and **use** spatial data such as Kepler's.
+We are not astrophysicists. Not by far, we are **developers**, and WarpScript users looking for time series challenges. We want to have fun! So we created [HelloExoWorld](https://helloexo.world), an **association** designed to promote and use spatial data such as Kepler's.
 
 #### What we have done:
 
@@ -61,4 +61,4 @@ Here's an observation of a star called Kepler-11:
 
 ![Alt Text]({{ site.baseurl }}/img/step-0/kepler-11.png)
 
-Do you see the dropouts? **Those are transiting exoplanets!** Now we’ll need to **write a WarpScript to automatically detect transits.** But first we need to learn how to WarpScript! Let's discover it!
+Do you see the dropouts? **Those are transiting exoplanets!** Now we’ll need to write a WarpScript to automatically detect transits. First let's now discover some basics of WarpScript!

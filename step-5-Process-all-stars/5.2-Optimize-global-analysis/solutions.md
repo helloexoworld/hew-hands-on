@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 5.2: Optimize all stars analysis'
 category: step-5
+before: 'step-5-Process-all-stars/5.1-WarpScript-loops'
+next: 'step-5-Process-all-stars/5.3-Reformat-the-output'
+back: 'step-5-Process-all-stars/5.2-Optimize-global-analysis'
 ---
 
 ## Solutions
@@ -131,5 +134,3 @@ APPLY
 $bucketizedSeries
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}/step-5-Process-all-stars/5.1-WarpScript-loops/) ... [back]({{ site.baseurl }}/step-5-Process-all-stars/5.2-Optimize-global-analysis/) ... [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.3-Reformat-the-output/)

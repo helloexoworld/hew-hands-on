@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 3.3: Framework time: MAP'
 category: step-3
+before: 'step-3-WarpScript-Frameworks/3.2-Bucketize-framework'
+next: 'step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY'
+back: 'step-3-WarpScript-Frameworks/3.3-Map-framework'
 ---
 
 ## Solutions
@@ -92,5 +95,3 @@ BUCKETIZE
 MAP
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/) ... [back]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.3-Map-framework/) ... [next step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/)

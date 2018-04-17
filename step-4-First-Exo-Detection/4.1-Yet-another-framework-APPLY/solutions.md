@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 4.1: Yet another framework: APPLY'
 category: step-4
+before: 'step-3-WarpScript-Frameworks/3.3-Map-framework'
+next: 'step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend'
+back: 'step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY'
 ---
 
 ## Solutions
@@ -45,5 +48,3 @@ category: step-4
 APPLY
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.3-Map-framework/) ... [back]({{ site.baseurl }}/step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/) ... [next step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/)

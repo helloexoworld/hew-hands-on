@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 4.3: Threshold and display'
 category: step-4
+before: 'step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend'
+next: 'step-5-Process-all-stars/5.1-WarpScript-loops'
+back: 'step-4-First-Exo-Detection/4.3-Threshold-test-and-display'
 ---
 
 ## Solutions
@@ -124,5 +127,3 @@ APPLY
 $bucketizedSeries
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}/step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/) ... [back]({{ site.baseurl }}//step-4-First-Exo-Detection/4.3-Threshold-test-and-display/) ... [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.1-WarpScript-loops/)

@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 3.2: Framework time: BUCKETIZE'
 category: step-3
+before: 'step-3-WarpScript-Frameworks/3.1-Filter-framework'
+next: 'step-3-WarpScript-Frameworks/3.3-Map-framework'
+back: 'step-3-WarpScript-Frameworks/3.2-Bucketize-framework'
 ---
 
 ## Solutions
@@ -76,5 +79,3 @@ FILTER
 BUCKETIZE
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/) ... [back]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.3-Map-framework/)

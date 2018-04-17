@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title> HelloExo.World - Hands-on with exoplanets - Step 2.1: Did you said Time series? </title>
+    <title> HelloExo.World - Hands-on with exoplanets - Step 2.1: Did you said time series? </title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   
@@ -298,24 +298,24 @@
      </div>
       
       <div class="col-sm-9">
-        <h1>Step 2.1: Did you said Time series?</h1>
+        <h1>Step 2.1: Did you said time series?</h1>
         <h2 id="solutions">Solutions</h2>
 
 <warp10-embeddable-quantum warpscript="
-// Create an empty Time series
+// Create an empty time series
 NEWGTS
 
-// Rename this Time series
+// Rename this time series
 'planet.rotation.count' RENAME
 
-// Relabel this Time series
+// Relabel this time series
 { 'name' 'earth' } RELABEL
 
-// Gives an Attribute to this Time series
+// Gives an Attribute to this time series
 { 'main-nickname' 'blue-planet' } SETATTRIBUTES  // This attribute could evolve in the future without re-creating a series once they are stored in Warp 10.
 
 //
-// Add today's value to this Time series
+// Add today's value to this time series
 //
 
 // Push Today's time
@@ -327,11 +327,11 @@ NaN NaN NaN
 // Push 121 as value 
 121
 
-// Add today's value in current Time series
+// Add today's value in current time series
 ADDVALUE
 
 //
-// Now we will also add yesterday value to the earth rotation Time series
+// Now we will also add yesterday value to the earth rotation time series
 //
 
 // Compute Yesterday time (Today minus one day)
@@ -343,18 +343,22 @@ NaN NaN NaN
 // Push the value 120
 120
 
-// Add the value to current Time series
+// Add the value to current time series
 ADDVALUE
 ">
 </warp10-embeddable-quantum>
 
-<h2 id="previous-step--back--next-step"><a href="/hew-hands-on/step-1-WarpScript/1.3-Manipulate-a-data-list/">previous step</a> … <a href="/hew-hands-on/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/">back</a> … <a href="/hew-hands-on/step-2-Keplers-Data/2.2-Exploring-known-time-series/">next step</a></h2>
-
         <div class='before-solution-next'>
 
     
+        <div class='before'><a href="/hew-hands-on/step-1-WarpScript/1.3-Manipulate-a-data-list">Previous</a></div>
     
     
+    
+        <div class='back'><a href="/hew-hands-on/step-2-Keplers-Data/2.1-Did-you-said-Time-Series">Back</a></div>
+    
+    
+        <div class='next'><a href="/hew-hands-on/step-2-Keplers-Data/2.2-Exploring-known-time-series">Next</a></div>
     
 </div>
       </div>

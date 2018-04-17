@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 5.3: Time to focus on the format output'
 category: step-5
+before: 'step-5-Process-all-stars/5.2-Optimize-global-analysis'
+next: 'step-6-Going-further'
+back: 'step-5-Process-all-stars/5.3-Reformat-the-output'
 ---
 
 ## Solutions
@@ -170,5 +173,3 @@ PARTITION
 FOREACH
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}/step-5-Process-all-stars/5.2-Optimize-global-analysis/) ... [back]({{ site.baseurl }}/step-5-Process-all-stars/5.3-Reformat-the-output/) ... [next step]({{ site.baseurl }}/step-6-Going-further/)

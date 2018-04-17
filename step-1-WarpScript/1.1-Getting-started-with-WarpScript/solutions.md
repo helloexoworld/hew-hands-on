@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 1.1: Getting started with WarpScript'
 category: step-1
+before: 'step-0-Exoplanets-and-where-to-find-them'
+next: 'step-1-WarpScript/1.2-Introducing-the-Variables'
+back: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript'
 ---
 
 ## Solutions
@@ -20,5 +23,3 @@ category: step-1
 'Hello' ' world!' +
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}/step-0-Exoplanets-and-where-to-find-them) ... [back]({{ site.baseurl }}/step-1-WarpScript/1.1-Getting-started-with-WarpScript) ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/)

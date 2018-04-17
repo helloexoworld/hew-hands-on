@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 1.2: Introducing WarpScript Variables'
 category: step-1
+before: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript'
+next: 'step-1-WarpScript/1.3-Manipulate-a-data-list'
+back: 'step-1-WarpScript/1.2-Introducing-the-Variables'
 ---
 
 ## Solutions
@@ -27,5 +30,3 @@ $myVariable
 'token' STORE
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}/step-1-WarpScript/1.1-Getting-started-with-WarpScript/) ... [back]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/) ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/)

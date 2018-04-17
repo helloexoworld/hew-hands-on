@@ -3,27 +3,30 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
-title: 'Step 2.1: Did you said Time series?'
+title: 'Step 2.1: Did you said time series?'
 category: step-2
+before: 'step-1-WarpScript/1.3-Manipulate-a-data-list'
+next: 'step-2-Keplers-Data/2.2-Exploring-known-time-series'
+back: 'step-2-Keplers-Data/2.1-Did-you-said-Time-Series'
 ---
 
 ## Solutions
 
 <warp10-embeddable-quantum warpscript="
-// Create an empty Time series
+// Create an empty time series
 NEWGTS
 
-// Rename this Time series
+// Rename this time series
 'planet.rotation.count' RENAME
 
-// Relabel this Time series
+// Relabel this time series
 { 'name' 'earth' } RELABEL
 
-// Gives an Attribute to this Time series
+// Gives an Attribute to this time series
 { 'main-nickname' 'blue-planet' } SETATTRIBUTES  // This attribute could evolve in the future without re-creating a series once they are stored in Warp 10.
 
 //
-// Add today's value to this Time series
+// Add today's value to this time series
 //
 
 // Push Today's time
@@ -35,11 +38,11 @@ NaN NaN NaN
 // Push 121 as value 
 121
 
-// Add today's value in current Time series
+// Add today's value in current time series
 ADDVALUE
 
 //
-// Now we will also add yesterday value to the earth rotation Time series
+// Now we will also add yesterday value to the earth rotation time series
 //
 
 // Compute Yesterday time (Today minus one day)
@@ -51,9 +54,7 @@ NaN NaN NaN
 // Push the value 120
 120
 
-// Add the value to current Time series
+// Add the value to current time series
 ADDVALUE
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}/step-1-WarpScript/1.3-Manipulate-a-data-list/) ... [back]({{ site.baseurl }}/step-2-Keplers-Data/2.1-Did-you-said-Time-Series/) ... [next step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/)

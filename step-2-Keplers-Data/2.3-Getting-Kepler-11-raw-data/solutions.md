@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 2.3: Load time series raw data'
 category: step-2
+before: 'step-2-Keplers-Data/2.2-Exploring-known-time-series'
+next: 'step-3-WarpScript-Frameworks/3.1-Filter-framework'
+back: 'step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data'
 ---
 
 ## Solutions
@@ -42,5 +45,3 @@ FETCH
 TIMESPLIT
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.2-Exploring-known-time-series/) ... [back]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/)

@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 5.1: Back to WarpScript bascis: the loop'
 category: step-5
+before: 'step-4-First-Exo-Detection/4.3-Threshold-test-and-display'
+next: 'step-5-Process-all-stars/5.2-Optimize-global-analysis'
+back: 'step-5-Process-all-stars/5.1-WarpScript-loops'
 ---
 
 ## Solutions
@@ -49,5 +52,3 @@ FOREACH
 LMAP
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}//step-4-First-Exo-Detection/4.3-Threshold-test-and-display/) ... [back]({{ site.baseurl }}/step-5-Process-all-stars/5.1-WarpScript-loops/) ... [next step]({{ site.baseurl }}/step-5-Process-all-stars/5.2-Optimize-global-analysis/)

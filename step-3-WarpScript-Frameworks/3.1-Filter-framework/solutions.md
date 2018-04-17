@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 3.1: Framework time: FILTER'
 category: step-3
+before: 'step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data'
+next: 'step-3-WarpScript-Frameworks/3.2-Bucketize-framework'
+back: 'step-3-WarpScript-Frameworks/3.1-Filter-framework'
 ---
 
 ## Solutions
@@ -60,5 +63,3 @@ TIMESPLIT
 FILTER
 ">
 </warp10-embeddable-quantum>
-
-## [previous step]({{ site.baseurl }}/step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/) ... [back]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.1-Filter-framework/) ... [next step]({{ site.baseurl }}/step-3-WarpScript-Frameworks/3.2-Bucketize-framework/)

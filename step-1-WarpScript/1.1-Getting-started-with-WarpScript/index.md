@@ -10,8 +10,6 @@ next: 'step-1-WarpScript/1.2-Introducing-the-Variables'
 solution: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript/solutions'
 ---
 
-
-
 ## What is WarpScript?
 
 WarpScript is a programming language specific to Geo time series® analysis. For security reason, WarpScript is an interpreted language, which means that a Warp 10 backend have to be reached to execute your script. Fortunately for you, we set-up a platform on a Raspberry Pi that should be nearby. You should be able to connect to this elements like this:

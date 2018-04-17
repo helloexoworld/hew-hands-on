@@ -5,6 +5,9 @@
 layout: home
 title: 'Step 1.1: Getting started with WarpScript'
 category: step-1
+before: 'step-0-Exoplanets-and-where-to-find-them'
+after: 'step-1-WarpScript/1.2-Introducing-the-Variables'
+solution: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript/solutions'
 ---
 
 
@@ -81,4 +84,3 @@ Let's try it, copy that empty WarpScript in Quantum and implement the simple spe
 
 WarpScript allow the user to save specific data inside Variable, let's discover them now!
 
-## [previous step]({{ site.baseurl }}/step-0-Exoplanets-and-where-to-find-them) ... [solutions]({{ site.baseurl }}/step-1-WarpScript/1.1-Getting-started-with-WarpScript/solutions) ... [next step]({{ site.baseurl }}/step-1-WarpScript/1.2-Introducing-the-Variables/)

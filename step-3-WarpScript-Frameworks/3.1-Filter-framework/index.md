@@ -10,21 +10,21 @@ next: 'step-3-WarpScript-Frameworks/3.2-Bucketize-framework'
 solution: 'step-3-WarpScript-Frameworks/3.1-Filter-framework/solutions'
 ---
 
-The function used allow some small GTS manipulation but WarpScript offers other rich tools for manipulating the GTS. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [FILTER]({{ site.doc_url }}/reference/frameworks/framework-filter/), [BUCKETIZE]({{ site.doc_url }}/reference/frameworks/framework-bucketize/), [MAP]({{ site.doc_url }}/reference/frameworks/framework-map/), [REDUCE]({{ site.doc_url }}/reference/frameworks/framework-reduce/) and [APPLY]({{ site.doc_url }}/reference/frameworks/framework-apply/). Let's start with the FILTER framework.
+Using `TIMESPLIT` we compute our first time series operation but WarpScript offers other richer tools to manipulate them. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/), [`BUCKETIZE`]({{ site.doc_url }}/reference/frameworks/framework-bucketize/), [`MAP`]({{ site.doc_url }}/reference/frameworks/framework-map/), [`REDUCE`]({{ site.doc_url }}/reference/frameworks/framework-reduce/) and [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/). Let's start with the FILTER framework.
 
 ## The framework
 
-The first framework we discover in this tutorial is [FILTER]({{ site.doc_url }}/reference/frameworks/framework-filter/). It provides the tooling to select specific sub-set of Time-series in a list thereof.
+The first framework we discover in this tutorial is [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/). It provides the tooling to select specific sub-set of Time-series in a list thereof.
 
-Let's resume what we have on the stack: first the kepler-11 GTS are loaded using the [FETCH]({{ site.doc_url }}/reference/functions/function_FETCH/) function. Then the data are split according to a quiesce period using [TIMESPLIT]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/).
+Let's resume what we have on the stack: first the kepler-11 GTS are loaded using the [`FETCH`]({{ site.doc_url }}/reference/functions/function_FETCH/) function. Then the data are split according to a quiesce period using [`TIMESPLIT`]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/).
 
 ## Input parameters
 
-The filter function takes a list containing 3 elements as input parameter: the GTS as list or singleton to filter, then a list of labels to compute an equivalence class, and finally a filter function.
+The filter function takes a list containing 3 elements as input parameter: the time series as list or singleton to filter, then a list of labels to compute an equivalence class, and finally a filter function.
 
 **Do not focus on the equivalence class: during this step, and keep an empty list. We will see later how it could be used.**
 
-<warp10-embeddable-quantum warpscript="
+```
 // Filter framwork
 [
     $gts                                // Series list or Singleton
@@ -32,16 +32,15 @@ The filter function takes a list containing 3 elements as input parameter: the G
     filter.function                     // A selector function 
 ]
 FILTER
-">
-</warp10-embeddable-quantum>
+```
 
 To have a working filter, replace the function keyword by an existing filter function: filter.bylabels or filter.byclass for instance. Those specific filter function requires a parameter on top of the stack. A more concret example is detailed below, based on the NASA lightcurve data.
 
 ## Hello Exo World step
 
-In our data-flow, the goal is now to select only 2 to 3 records of those series to see if it's possible to visualize some drops in those series and if we can start to build a working method to detect exoplanet. You will have to use a Variable as seen in the first step to place the Time-series list in first position of the element list.
+In our data-flow, the goal is now to select only 2 to 3 records of those series to see if it's possible to visualize specific drops corresponding to an exoplanet in those series. As a result we will then be able to build a generic method to detect exoplanet. You will have to use a variable as seen in the first step to place the time series list in first position of the element list of the `FILTER`.
 
-The filter function we will use in our case corresponds to [filter.bylabels]({{ site.doc_url }}/reference/frameworks/filter_bylabels/). This function expects a selector map on top of the stack that have to be specify.
+The filter function we will use in our case corresponds to [`filter.bylabels`]({{ site.doc_url }}/reference/frameworks/filter_bylabels/). This function expects a selector map on top of the stack that have to be specify.
 As an example you can try to use the selector labels map specifies in the follozing spec in your filter function.
 
 <warp10-embeddable-quantum warpscript="
@@ -91,7 +90,7 @@ TIMESPLIT
 
 ## Resume
 
-To resume, to filter a data set, we have to use the FILTER framework. It expects on the stack a list of parameter: the time series as list or as singleton to filter, then a list of labels to compute an equivalence class, and finally a filter function. The filter function as we see the filter.bylabels can also need some parameter on top of stack.
+To resume, to filter a data set, we have to use the `FILTER` framework. It expects on the stack a list of parameter: the time series as list or as singleton to filter, then a list of labels to compute an equivalence class, and finally a filter function. The filter function as we saw with the `filter.bylabels` can also need some parameter(s) on top of stack.
 
 The result of this step corresponds to a reduced list. In our case only 4 records (2 to 5) were selected using a regular expression. A list containing 4 time series is now let on top of the WarpScript stack.
 

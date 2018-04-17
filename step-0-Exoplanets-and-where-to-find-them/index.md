@@ -9,12 +9,12 @@ category: step-0
 
 Let’s quote our good old friend [**Wikipedia**](https://en.wikipedia.org/wiki/Exoplanet):
 
-> _An exoplanet or extrasolar planet is a planet outside of our solar system that orbits a star._
+> _An exoplanet or extrasolar planet is a planet outside our solar system that orbits a star._
 
 do you know how many exoplanets that have been discovered? [**3,711 confirmed planets** as of 04/05/2018](https://exoplanetarchive.ipac.caltech.edu/).
 
 ##  How to detect it?
-There are different [**detection methods**](https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets). Turns out there is one method heavily used, called **the transit method**. It’s like a eclipse: when the exoplanet is passing in front of the star, the photometry is varying during the transit, as shown below:
+There are different [**detection methods**](https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets). Turns out there is one method heavily used, called **the transit method**. It’s like an eclipse: when the exoplanet is passing in front of the star, the photometry is varying during the transit, as shown below:
 
 
 ![Alt Text]({{ site.baseurl }}/img/step-0/exo-nasa.gif)
@@ -42,7 +42,7 @@ More information about the telescope itself can be found [**here**](https://kepl
 
 ![Alt Text]({{ site.baseurl }}/img/step-0/hew.png)
 
-We are not astrophysicists. Not by far, we are **developers**, and WarpScript users looking for timeseries challenges. We want to have fun! So we created [HelloExoWorld](https://helloexo.world), an **association** designed to **promote** and **use** spatial data such as Kepler's.
+We are not astrophysicists. Not by far, we are **developers**, and WarpScript users looking for time series challenges. We want to have fun! So we created [HelloExoWorld](https://helloexo.world), an **association** designed to **promote** and **use** spatial data such as Kepler's.
 
 #### What we have done:
 

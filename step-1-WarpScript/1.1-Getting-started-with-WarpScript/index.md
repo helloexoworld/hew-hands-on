@@ -12,44 +12,34 @@ solution: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript/solutions'
 
 ## What is WarpScript?
 
-WarpScript is a programming language specific to Geo time series® analysis. For security reason, WarpScript is an interpreted language, which means that a Warp 10 backend have to be reached to execute your script. Fortunately for you, we set-up everything you need in this tutoriel. Otherwise, you should be able to connect to each elements like this:
+WarpScript is a programming language specific to Geo time series® analysis. For security reason, WarpScript is an interpreted language, which means that a Warp 10 backend have to be reached to execute your script. Fortunately for you, we set-up everything you need in this tutorial.
 
-* [Quantum](https://quantum.metrics.ovh.net/)
-* [Warp10 official documentation]({{ site.doc_url }}/reference/)
-
-If you would like to use the web [Quantum](https://quantum.metrics.ovh.net/) editor, you will need to add some configuration to hit one of our Warp10 instance. Otherwise during a conference or during this tutorial, the correct quantum backend was directly integrated in each pages.
-
-To configure your local or web [Quantum](https://quantum.metrics.ovh.net/), click on "Choose another backend", then on the pencil and add:
-
-* https://warp.pierrezemb.org/api/v0 if you are doing the online version
-* http://127.0.0.1:8080/api/v0 if you are using the docker version 
-* http://warp-1:8080 if you are in a conference to reach a local backend
-
-> Please note that you'll have better performance using chromium. Firefox support is on his way.
-
-As WarpScript is a stack language, you will learn some basic information about the stack manipulation before starting some data-mining.
+> If you are at a conference and you want want to use Quantum directly, here's a direct [link](http://localhost:8083/#/warpscript//eyJ1cmwiOiJodHRwOi8vMTkyLjE2OC4xLjQ6ODA4MC9hcGkvdjAiLCJmZXRjaEVuZHBvaW50IjoiL2ZldGNoIiwiaGVhZGVyTmFtZSI6IlgtV2FycDEwIn0%3D)
 
 ## WarpScript Stack
 
-WarpScript is a stack related programming language. This means that to compute an operation you first have to put all the parameters on the stack, then put the operator. Then if a result is produced, it will be pushed on top of the stack.
+WarpScript is a stack related programming language. This means that to compute an operation, you first have to:
+
+* put all the parameters on the stack
+* then put the operator
+
+If a result is produced, it will be pushed on top of the stack.
 
 ## Single operator
 
 Let's start with a simple WarpScript function: [`NOW`]({{ site.doc_url }}/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch. Let's play with it, as quantum was set to reach an available backend, just type `NOW` in the quantum editor below:
 
-<warp10-embeddable-quantum warpscript="
-
-">
+<warp10-embeddable-quantum warpscript="">
 </warp10-embeddable-quantum>
 
 Then click on execute. Congratulation, you wrote and exectute your first WarpScript! You should see the current time (in microsecond) in the answer session.
+
+> Warp10 is by default configured to use the micro-second as a time-unit.
 
 ## Basic operation in WarpScript
 
 Let's compute an operation in WarpScript, but first, in WarpScript, you will find commentary and variable types.
 The following WarpScript example list all the available basic types.
-
-
 
 <warp10-embeddable-quantum warpscript="
 // This is a commentary
@@ -60,10 +50,8 @@ true     // boolean value
 ">
 </warp10-embeddable-quantum>
 
-
 To compute an operation (for example an addition), put the two elements before the operator [`+`]({{ site.doc_url }}/reference/functions/function_ADD/) on the stack.
 You will get the result on top of the stack.
-
 
 Let's try it, by implementing the follwing spec:
 
@@ -81,4 +69,3 @@ Let's try it, by implementing the follwing spec:
 ## To be continued
 
 WarpScript allow the user to save specific data inside variable, the follwing page will detail how to use them!
-

@@ -301,43 +301,35 @@
         <h1>Step 1.1: Getting started with WarpScript</h1>
         <h2 id="what-is-warpscript">What is WarpScript?</h2>
 
-<p>WarpScript is a programming language specific to Geo time series® analysis. For security reason, WarpScript is an interpreted language, which means that a Warp 10 backend have to be reached to execute your script. Fortunately for you, we set-up everything you need in this tutoriel. Otherwise, you should be able to connect to each elements like this:</p>
-
-<ul>
-  <li><a href="https://quantum.metrics.ovh.net/">Quantum</a></li>
-  <li><a href="http://www.warp10.io/reference/">Warp10 official documentation</a></li>
-</ul>
-
-<p>If you would like to use the web <a href="https://quantum.metrics.ovh.net/">Quantum</a> editor, you will need to add some configuration to hit one of our Warp10 instance. Otherwise during a conference or during this tutorial, the correct quantum backend was directly integrated in each pages.</p>
-
-<p>To configure your local or web <a href="https://quantum.metrics.ovh.net/">Quantum</a>, click on “Choose another backend”, then on the pencil and add:</p>
-
-<ul>
-  <li>https://warp.pierrezemb.org/api/v0 if you are doing the online version</li>
-  <li>http://127.0.0.1:8080/api/v0 if you are using the docker version</li>
-  <li>http://warp-1:8080 if you are in a conference to reach a local backend</li>
-</ul>
+<p>WarpScript is a programming language specific to Geo time series® analysis. For security reason, WarpScript is an interpreted language, which means that a Warp 10 backend have to be reached to execute your script. Fortunately for you, we set-up everything you need in this tutorial.</p>
 
 <blockquote>
-  <p>Please note that you’ll have better performance using chromium. Firefox support is on his way.</p>
+  <p>If you are at a conference and you want want to use Quantum directly, here’s a direct <a href="http://localhost:8083/#/warpscript//eyJ1cmwiOiJodHRwOi8vMTkyLjE2OC4xLjQ6ODA4MC9hcGkvdjAiLCJmZXRjaEVuZHBvaW50IjoiL2ZldGNoIiwiaGVhZGVyTmFtZSI6IlgtV2FycDEwIn0%3D">link</a></p>
 </blockquote>
-
-<p>As WarpScript is a stack language, you will learn some basic information about the stack manipulation before starting some data-mining.</p>
 
 <h2 id="warpscript-stack">WarpScript Stack</h2>
 
-<p>WarpScript is a stack related programming language. This means that to compute an operation you first have to put all the parameters on the stack, then put the operator. Then if a result is produced, it will be pushed on top of the stack.</p>
+<p>WarpScript is a stack related programming language. This means that to compute an operation, you first have to:</p>
+
+<ul>
+  <li>put all the parameters on the stack</li>
+  <li>then put the operator</li>
+</ul>
+
+<p>If a result is produced, it will be pushed on top of the stack.</p>
 
 <h2 id="single-operator">Single operator</h2>
 
 <p>Let’s start with a simple WarpScript function: <a href="http://www.warp10.io/reference/functions/function_NOW/"><code class="highlighter-rouge">NOW</code></a>. This function will put on the stack the current time (in microseconds) since the Unix epoch. Let’s play with it, as quantum was set to reach an available backend, just type <code class="highlighter-rouge">NOW</code> in the quantum editor below:</p>
 
-<warp10-embeddable-quantum warpscript="
-
-">
+<warp10-embeddable-quantum warpscript="">
 </warp10-embeddable-quantum>
 
 <p>Then click on execute. Congratulation, you wrote and exectute your first WarpScript! You should see the current time (in microsecond) in the answer session.</p>
+
+<blockquote>
+  <p>Warp10 is by default configured to use the micro-second as a time-unit.</p>
+</blockquote>
 
 <h2 id="basic-operation-in-warpscript">Basic operation in WarpScript</h2>
 
@@ -372,7 +364,6 @@ You will get the result on top of the stack.</p>
 <h2 id="to-be-continued">To be continued</h2>
 
 <p>WarpScript allow the user to save specific data inside variable, the follwing page will detail how to use them!</p>
-
 
         <div class='before-solution-next'>
 

@@ -299,8 +299,19 @@
       
       <div class="col-sm-9">
         <h1>Step 4.2: Let's compute the difference</h1>
-        <p>Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet!
-The process is similar to the previous step. Start with the script resuming the data loading, the record split (according to time), the filtering and the downsampling.</p>
+        <p>Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet! For this we are going to use <a href="http://www.warp10.io/reference/frameworks/framework-apply/"><code class="highlighter-rouge">APPLY</code></a> framework to compute the <a href="(http://www.warp10.io/reference/frameworks/op_sub/)">difference</a>. We are going to take record-5 to illustrate the APPLY. Here’s record-5:</p>
+
+<p><img src="/hew-hands-on/img/step-4/actual.png" alt="Alt Text" /></p>
+
+<p>We are first going to compute a trend like this one:</p>
+
+<p><img src="/hew-hands-on/img/step-4/mean.png" alt="Alt Text" /></p>
+
+<p>Now what is happening if we are doing a simple substraction between the two time-series? Here’s the result:</p>
+
+<p><img src="/hew-hands-on/img/step-4/sum.png" alt="Alt Text" />.</p>
+
+<p>Well the dropouts are pretty clear now! Let’s do it!</p>
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
@@ -373,7 +384,16 @@ BUCKETIZE
 ">
 </warp10-embeddable-quantum>
 
-<p>Starting from here, use the <a href="http://www.warp10.io/reference/frameworks/framework-apply/"><code class="highlighter-rouge">APPLY</code></a> framework to compute the <a href="(http://www.warp10.io/reference/frameworks/op_sub/)">difference</a> between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection! Be careful of the equivalence class to choose for this specific step!</p>
+<p>Starting from here, you now have to:</p>
+
+<ul>
+  <li>compute the trend using <a href="http://www.warp10.io/reference/frameworks/mapper_mean/"><code class="highlighter-rouge">mapper.mean</code></a>. We recommend 5 datapoints before and after.</li>
+  <li>use the <a href="http://www.warp10.io/reference/frameworks/framework-apply/"><code class="highlighter-rouge">APPLY</code></a> framework to compute the <a href="(http://www.warp10.io/reference/frameworks/op_sub/)">difference</a> between the originial series and the series trend (computing using an average mean for example).</li>
+</ul>
+
+<blockquote>
+  <p>Be careful of the equivalence class to choose for this specific step!</p>
+</blockquote>
 
 <p>To resume, the expected result will contains a list of time series: with one time series per record containing the result of the substraction of the initial series with its trend.</p>
 

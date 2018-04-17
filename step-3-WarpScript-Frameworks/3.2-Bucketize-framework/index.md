@@ -14,13 +14,13 @@ Five frameworks are available and they all have their specific usage and importa
 
 ***At the bottom of this page, you will find the instructions on how to process to apply the bucketize on the NASA lightcurve data.***
 
-## The framework
+## The BUCKETIZE framework
 
 In this tutorial we will discover the [`BUCKETIZE` framework]({{ site.doc_url }}/reference/frameworks/framework-bucketize/). It provides the tooling to put a time series data into regularly spaced buckets. A bucket corresponds to a time interval.
 
-We will use this bucket to downsample our data, let's give it a try! In other words, downsampling some time series consists to reduce locally the number of points and to synchronize different series. There is several ways to process, one of the common one is to create small regular bucket into each series and to compute a value that resume this bucket. The following graphs shows this process:
+We will use this bucket to *downsample* our data, let's give it a try! In other words, downsampling some time series consists to reduce locally the number of points and to synchronize different series. There is several ways to process, one of the common one is to create small regular bucket into each series and to compute a value that resume this bucket. The following graphs shows this process:
 
-![Alt Text]({{ site.baseurl }}/img/frameworks/downsampling.png) 
+![Alt Text]({{ site.baseurl }}/img/frameworks/downsampling.png)
 
 What happen in each bucket? All the points inside the selected bucket are loaded and given to a function. This function will then be executed and one value will be selected (first, last, min, max) or computed (mean, median, count, join). The graphs below and upper show a working example of the bucketize framework. In the graph below we takes only the first bucket: there is two ticks inside with value 20 and 10. Using, for example, the function mean, this will generate only one tick at the end of the bucket with value: mean(20 and 10) which equals 15: 
 

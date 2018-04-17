@@ -14,10 +14,9 @@ Using `TIMESPLIT` we compute our first time series operation but WarpScript offe
 
 ## The framework
 
-The first framework we discover in this tutorial is [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/). It provides the tooling to select specific sub-set of Time-series in a list thereof.
+The first framework we are going to discover in this tutorial is [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/). It provides the tooling to select specific sub-set of Time-series in a list thereof.
 
-Let's resume what we have on the stack: first a kepler-11 time series are loaded using the [`FETCH`]({{ site.doc_url }}/reference/functions/function_FETCH/) function. Then the data are split according to a quiesce period using [`TIMESPLIT`]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/).
-
+Let's resume what we have on the stack: first a kepler-11 time series are loaded using the [`FETCH`]({{ site.doc_url }}/reference/functions/function_FETCH/) function. Then the data are split according to a quiesce period using [`TIMESPLIT`]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/). We are now going to select only a few records to work on using `FILTER`.
 ## Input parameters
 
 The filter function takes a list containing 3 elements as input parameter: the time series as list or singleton to filter, then a list of labels to compute an equivalence class, and finally a filter function.
@@ -96,4 +95,4 @@ The result of this step corresponds to a reduced list. In our case only 4 record
 
 ## To be continued
 
-As an exoplanet hunter, you may be asking yourself why you should reduced the amount of data you will be working with. Be patient, and remember that taking your time during the first steps will making you win time in the longer run! Stay strong young hunter, more will come in the next step as a framework very usefull for time series downsampling will be briefly introduced.
+As an exoplanet hunter, you may be asking yourself why you should reduced the amount of data you will be working with. Be patient, and remember that taking your time during the first steps will making you win a lot of time in the longer run! Stay strong young hunter, more will come in the next step as a framework very useful for time series downsampling will be briefly introduced.

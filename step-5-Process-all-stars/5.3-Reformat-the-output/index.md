@@ -195,4 +195,3 @@ $bucketizedSeries
 ## To be continued
 
 Wow, you did an awesome job exoplanet hunter! You manage to discover some of the existing exoplanet and format nicely your output! Now it's time to relax a bit before continuing your quest. It's time to let you have your own practice you can now edit your own method to detect exoplanet! Or reach the next step to discover new existing WarpScript functions.
-

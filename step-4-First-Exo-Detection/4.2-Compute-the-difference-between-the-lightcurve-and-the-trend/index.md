@@ -10,8 +10,19 @@ next: 'step-4-First-Exo-Detection/4.3-Threshold-test-and-display'
 solution: 'step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/solutions'
 ---
 
-Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet!
-The process is similar to the previous step. Start with the script resuming the data loading, the record split (according to time), the filtering and the downsampling.
+Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet! For this we are going to use [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/) framework to compute the [difference](({{ site.doc_url }}/reference/frameworks/op_sub/)). We are going to take record-5 to illustrate the APPLY. Here's record-5:
+
+![Alt Text]({{ site.baseurl }}/img/step-4/actual.png)
+
+We are first going to compute a trend like this one:
+
+![Alt Text]({{ site.baseurl }}/img/step-4/mean.png)
+
+Now what is happening if we are doing a simple substraction between the two time-series? Here's the result:
+
+![Alt Text]({{ site.baseurl }}/img/step-4/sum.png).
+
+Well the dropouts are pretty clear now! Let's do it!
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
@@ -84,7 +95,12 @@ BUCKETIZE
 ">
 </warp10-embeddable-quantum>
 
-Starting from here, use the [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/) framework to compute the [difference](({{ site.doc_url }}/reference/frameworks/op_sub/)) between the originial series and the series trend (computing using an average mean for example). Feel free to search for a script optimizing the drop detection! Be careful of the equivalence class to choose for this specific step!
+Starting from here, you now have to:
+
+* compute the trend using [`mapper.mean`]({{ site.doc_url }}/reference/frameworks/mapper_mean/). We recommend 5 datapoints before and after.
+* use the [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/) framework to compute the [difference](({{ site.doc_url }}/reference/frameworks/op_sub/)) between the originial series and the series trend (computing using an average mean for example). 
+
+> Be careful of the equivalence class to choose for this specific step!
 
 To resume, the expected result will contains a list of time series: with one time series per record containing the result of the substraction of the initial series with its trend.
 

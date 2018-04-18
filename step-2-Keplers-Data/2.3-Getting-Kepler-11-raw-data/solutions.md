@@ -6,7 +6,7 @@ layout: home
 title: 'Step 2.3: Load time series raw data'
 category: step-2
 before: 'step-2-Keplers-Data/2.2-Exploring-known-time-series'
-next: 'step-3-WarpScript-Frameworks/3.1-Filter-framework'
+next: 'step-2-Keplers-Data/2.4-Split-Kepler-11-data'
 back: 'step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data'
 ---
 

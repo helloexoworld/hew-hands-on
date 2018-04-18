@@ -10,9 +10,21 @@ next: 'step-3-WarpScript-Frameworks/3.2-Bucketize-framework'
 solution: 'step-3-WarpScript-Frameworks/3.1-Filter-framework/solutions'
 ---
 
-Using `TIMESPLIT` we compute our first time series operation but WarpScript offers other richer tools to manipulate them. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/), [`BUCKETIZE`]({{ site.doc_url }}/reference/frameworks/framework-bucketize/), [`MAP`]({{ site.doc_url }}/reference/frameworks/framework-map/), [`REDUCE`]({{ site.doc_url }}/reference/frameworks/framework-reduce/) and [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/). Let's start with the FILTER framework.
+Using `TIMESPLIT` we compute our first time series operation but WarpScript offers other richer tools to manipulate them. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics:
 
-## The framework
+* [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/)
+
+* [`BUCKETIZE`]({{ site.doc_url }}/reference/frameworks/framework-bucketize/)
+
+* [`MAP`]({{ site.doc_url }}/reference/frameworks/framework-map/)
+
+* [`REDUCE`]({{ site.doc_url }}/reference/frameworks/framework-reduce/)
+
+* [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/)
+
+Let's start with the FILTER framework.
+
+## The FILTER framework
 
 The first framework we are going to discover in this tutorial is [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/). It provides the tooling to select specific sub-set of Time-series in a list thereof.
 

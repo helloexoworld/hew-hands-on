@@ -10,11 +10,22 @@ next: 'step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY'
 solution: 'step-3-WarpScript-Frameworks/3.3-Map-framework/solutions'
 ---
 
-Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/), [`BUCKETIZE`]({{ site.doc_url }}/reference/frameworks/framework-bucketize/), [`MAP`]({{ site.doc_url }}/reference/frameworks/framework-map/), [`REDUCE`]({{ site.doc_url }}/reference/frameworks/framework-reduce/) and [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/). Let's end with the `MAP` framework.
+Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: 
 
-***At the bottom of this page, you will find the instructions on how to process to apply a mapper on the NASA lightcurve data.***
+* [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/)
 
-## The framework
+* [`BUCKETIZE`]({{ site.doc_url }}/reference/frameworks/framework-bucketize/)
+
+* [`MAP`]({{ site.doc_url }}/reference/frameworks/framework-map/)
+
+* [`REDUCE`]({{ site.doc_url }}/reference/frameworks/framework-reduce/)
+
+* [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/)
+
+Let's end with the `MAP` framework.
+
+
+## The MAP framework
 
 Now it is time to update the values of a set of time series using the [`MAP` framework]({{ site.doc_url }}/reference/frameworks/framework-map/). The `MAP` framework allows you to apply a function on values of a Geo time seriesTM that fall into a sliding window.
 

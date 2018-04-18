@@ -14,7 +14,7 @@ solution: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript/solutions'
 
 WarpScript is a programming language specific to Geo time series® analysis. For security reason, WarpScript is an interpreted language, which means that a Warp 10 backend have to be reached to execute your script. Fortunately for you, we set-up everything you need in this tutorial.
 
-> If you are at a conference and you want want to use Quantum directly, here's a direct [link](http://localhost:8083/#/warpscript//eyJ1cmwiOiJodHRwOi8vMTkyLjE2OC4xLjQ6ODA4MC9hcGkvdjAiLCJmZXRjaEVuZHBvaW50IjoiL2ZldGNoIiwiaGVhZGVyTmFtZSI6IlgtV2FycDEwIn0%3D)
+> If you are at a conference and you want want to use Quantum directly, here's a direct [link](http://localhost:8083/#/warpscript//eyJ1cmwiOiJodHRwOi8vMTkyLjE2OC4xLjQ6ODA4MC9hcGkvdjAiLCJmZXRjaEVuZHBvaW50IjoiL2ZldGNoIiwiaGVhZGVyTmFtZSI6IlgtV2FycDEwIn0%3D). Be aware that you will need to copy/paste the scripts.
 
 ## WarpScript Stack
 
@@ -65,6 +65,8 @@ Let's try it, by implementing the follwing spec:
 // Compute 'Hello' + ' world!'
 ">
 </warp10-embeddable-quantum>
+
+> Pro tips: You can always use `STOP`. This function is useful when debugging WarpScript code as it allows you to interrupt your code at specific points of the execution.
 
 ## To be continued
 

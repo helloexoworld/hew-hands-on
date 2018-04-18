@@ -31,7 +31,7 @@ APPLY
 
 This will compute the sub operation between the first and the second set (based on the equivalences classes).
 
-## Appy in pictures
+## Apply in pictures
 
 To get a better understanding of the `APPLY` framework, let's decompose the `APPLY` operation on several steps.
 

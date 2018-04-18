@@ -26,7 +26,7 @@ Well the dropouts are pretty clear now! Let's do it!
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-'abcd' 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
 // FETCH
 [ 

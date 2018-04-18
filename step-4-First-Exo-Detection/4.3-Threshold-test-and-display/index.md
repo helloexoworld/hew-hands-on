@@ -60,7 +60,43 @@ To help you achieve this step, you can complete the following skeleton. The step
 ] 
 FETCH
 
-... 
+// Get Singleton series
+0 GET
+
+//
+// TIMESPLIT block:
+//
+
+// Quiesce period
+6 h
+
+// Minimal numbers of points per series 
+100
+
+// Labels for each splitted series
+'record'
+
+TIMESPLIT
+
+'splitSeries' STORE
+
+//
+// FILTER block:
+//
+
+// Store a labels map selector
+{ 'record' '~[2-5]' } 'labelsSelector' STORE
+
+// FILTER Framework
+[
+    $splitSeries                    // Series list or Singleton
+    []                              // Labels to compute equivalence class
+    $labelsSelector                 // Labels map for selector
+    filter.bylabels                 // Filter function operator 
+]
+FILTER
+
+'filteredSeries' STORE
 
 //
 // BUCKETIZE block:

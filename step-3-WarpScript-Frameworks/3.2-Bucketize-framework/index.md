@@ -51,7 +51,7 @@ The `BUCKETIZE` framework takes a list of elements as parameter. This list conta
 ```
 // BUCKETIZE Framework
 [
-    SWAP                                // Series list or Singleton
+    $gts                                // Series list or Singleton
     bucketizer.function                 // Bucketize function operator
     0                                   // Lastbucket
     1 d                                 // Bucketspan

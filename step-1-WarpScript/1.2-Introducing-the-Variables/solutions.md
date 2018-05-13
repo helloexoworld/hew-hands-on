@@ -6,7 +6,7 @@ layout: home
 title: 'Step 1.2: Introducing WarpScript Variables'
 category: step-1
 before: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript'
-next: 'step-1-WarpScript/1.3-Manipulate-a-data-list'
+next: 'step-2-Keplers-Data/2.1-Did-you-said-Time-Series'
 back: 'step-1-WarpScript/1.2-Introducing-the-Variables'
 ---
 

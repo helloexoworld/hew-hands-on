@@ -23,7 +23,7 @@ The map framework works as follow:
 ```
 // MAP Framework
 [
-    SWAP                                // Series list or Singleton
+    $gts                                // Series list or Singleton
     mapper.function                     // Mapper function operator
     0                                   // Pre
     0                                   // Post

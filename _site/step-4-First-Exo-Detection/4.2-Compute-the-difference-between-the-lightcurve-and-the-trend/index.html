@@ -138,10 +138,6 @@
                 Introducing the variables
             </a>
 
-            <a class="list-group-item" href="/hew-hands-on/step-1-WarpScript/1.3-Manipulate-a-data-list/">
-                Manipulate a data list
-            </a>
-
         </div>
 
     </div>
@@ -320,7 +316,7 @@
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-'abcd' 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
 // FETCH
 [ 
@@ -359,7 +355,7 @@ TIMESPLIT
 
 // FILTER Framework
 [
-    SWAP                            // Series list or Singleton
+    $gts                            // Series list or Singleton
     []                              // Labels to compute equivalence class
     $labelsSelector                 // Labels map for selector
     filter.bylabels                 // Filter function operator 
@@ -372,7 +368,7 @@ FILTER
 
 // BUCKETIZE Framework
 [
-    SWAP                                // Series list or Singleton
+    $gts                                // Series list or Singleton
     bucketizer.min                      // Bucketize function operator
     0                                   // Lastbucket
     2 h                                 // Bucketspan

@@ -36,7 +36,7 @@ FETCH
 ">
 </warp10-embeddable-quantum>
 
-You will see a list containing a single time series, click on it to view it. As an exercise, you can re-use the find and create a regular expresssion to load a small amount of the stars data. Loading the complete set of data **will** probably crash your navigator.
+You will see a list containing a single time series, **click on it to view it**. As an exercise, you can re-use the find and create a regular expresssion to load a small amount of the stars data. Loading the complete set of data **will** probably crash your navigator.
 
 # To be continued
 

@@ -65,7 +65,7 @@ TIMESPLIT
 
 // FILTER Framework
 [
-    SWAP                            // Series list or Singleton
+    $gts                            // Series list or Singleton
     []                              // Labels to compute equivalence class
     $labelsSelector                 // Labels map for selector
     filter.bylabels                 // Filter function operator 
@@ -78,7 +78,7 @@ FILTER
 
 // BUCKETIZE Framework
 [
-    SWAP                                // Series list or Singleton
+    $gts                                // Series list or Singleton
     bucketizer.min                      // Bucketize function operator
     0                                   // Lastbucket
     2 h                                 // Bucketspan

@@ -6,7 +6,7 @@ layout: home
 title: 'Step 1.2: Introducing WarpScript Variables'
 category: step-1
 before: 'step-1-WarpScript/1.1-Getting-started-with-WarpScript'
-next: 'step-1-WarpScript/1.3-Manipulate-a-data-list'
+next: 'step-2-Keplers-Data/2.1-Did-you-said-Time-Series'
 solution: 'step-1-WarpScript/1.2-Introducing-the-Variables/solutions'
 ---
 
@@ -34,18 +34,6 @@ Let's try it, save the following string in a variable and then push it back seve
 // Play with the saved variable
 ">
 </warp10-embeddable-quantum>
-
-
-## Get a read token
-
-Security in Warp10 instance are handled with crypto tokens. They can be pretty long, so to ease your workflow, we stored it in the platform! You can push the token into the stack using this:
-
-<warp10-embeddable-quantum warpscript="
-@HELLOEXOWORLD/GETREADTOKEN
-">
-</warp10-embeddable-quantum>
-
-This token can then be stored in a variable for example.
 
 ## To be continued
 

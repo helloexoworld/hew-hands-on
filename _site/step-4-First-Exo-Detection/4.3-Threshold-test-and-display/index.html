@@ -138,10 +138,6 @@
                 Introducing the variables
             </a>
 
-            <a class="list-group-item" href="/hew-hands-on/step-1-WarpScript/1.3-Manipulate-a-data-list/">
-                Manipulate a data list
-            </a>
-
         </div>
 
     </div>
@@ -316,7 +312,7 @@
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// MAP Framework
 [
-    SWAP                                // Series list or Singleton
+    $gts                                // Series list or Singleton
     mapper.function                     // Mapper function operator
     0                                   // Pre
     0                                   // Post
@@ -353,7 +349,43 @@ MAP
 ] 
 FETCH
 
-... 
+// Get Singleton series
+0 GET
+
+//
+// TIMESPLIT block:
+//
+
+// Quiesce period
+6 h
+
+// Minimal numbers of points per series 
+100
+
+// Labels for each splitted series
+'record'
+
+TIMESPLIT
+
+'splitSeries' STORE
+
+//
+// FILTER block:
+//
+
+// Store a labels map selector
+{ 'record' '~[2-5]' } 'labelsSelector' STORE
+
+// FILTER Framework
+[
+    $splitSeries                    // Series list or Singleton
+    []                              // Labels to compute equivalence class
+    $labelsSelector                 // Labels map for selector
+    filter.bylabels                 // Filter function operator 
+]
+FILTER
+
+'filteredSeries' STORE
 
 //
 // BUCKETIZE block:

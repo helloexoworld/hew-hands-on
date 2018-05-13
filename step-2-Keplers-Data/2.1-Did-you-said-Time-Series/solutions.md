@@ -5,7 +5,7 @@
 layout: home
 title: 'Step 2.1: Did you said time series?'
 category: step-2
-before: 'step-1-WarpScript/1.3-Manipulate-a-data-list'
+before: 'step-1-WarpScript/1.2-Introducing-the-Variables'
 next: 'step-2-Keplers-Data/2.2-Exploring-known-time-series'
 back: 'step-2-Keplers-Data/2.1-Did-you-said-Time-Series'
 ---

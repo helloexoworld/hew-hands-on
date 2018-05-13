@@ -12,6 +12,17 @@ solution: 'step-2-Keplers-Data/2.2-Exploring-known-time-series/solutions'
 
 Now that you survive all the WarpScript needed knowledge, we would like to welcome warmly in our exoplanet quest! We can now observe more concretly what the NASA data looks like.
 
+## Get a read token
+
+Security in Warp10 instance are handled with crypto tokens. They can be pretty long, so to ease your workflow, we stored it in the platform! You can push the token into the stack using this:
+
+<warp10-embeddable-quantum warpscript="
+@HELLOEXOWORLD/GETREADTOKEN
+">
+</warp10-embeddable-quantum>
+
+> You should store it as a variable using `STORE`.
+
 ## FIND
 
 We preloaded our platform with some stars (around 30). Let's observe the series structures and find the one that we want! We are going to use a function called [`FIND`]({{ site.doc_url }}/reference/functions/function_FIND/).
@@ -21,7 +32,6 @@ How does the function `FIND` works? This function allows the user to retrieve sp
 Before retrieving any data, you need to access data store in a specific application. To simplify the process, an existing token was stored in the platform. You can access it using the following code. HEW stands for HelloExoWorld. 
 
 Then store it in a variable, for example token. And starting from now, keep this stored token in all the script as you will need it to load data.
-
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
@@ -40,12 +50,12 @@ Here a preloaded WarpScript that you can use, find all the time series available
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
 
 // Start the FIND with the token as first parameter
 [ 
     $token 
-    // Here you must put the classname and label selectors...  
+    // Here you must put the classname and label selectors...
 
 
 ] FIND
@@ -55,7 +65,9 @@ Here a preloaded WarpScript that you can use, find all the time series available
 
 Wow, a lot of data appeared in my quantum console. They represents all the existing series that are availble to test your exoplanet quest! Each time series have several meta-data. During this tutorial we are going to focus on the one called `sap.flux` as they represents the raw data of the lightcurve of each stars.
 
-The one that we are looking for has a label `KEPLERID=6541920`, can you see it? Change the FIND to have only one result: `sap.flux` for Kepler-11!
+The one that we are looking for has a label `KEPLERID=6541920`, can you see it? Change the FIND to have only one result: `sap.flux` for Kepler-11! 
+
+> To create a map, you can write something like this `{ 'key' 'value' }`
 
 ## To be continued
 

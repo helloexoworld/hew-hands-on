@@ -138,10 +138,6 @@
                 Introducing the variables
             </a>
 
-            <a class="list-group-item" href="/hew-hands-on/step-1-WarpScript/1.3-Manipulate-a-data-list/">
-                Manipulate a data list
-            </a>
-
         </div>
 
     </div>
@@ -306,6 +302,19 @@
         <h1>Step 2.2: Exploring the available time-series</h1>
         <p>Now that you survive all the WarpScript needed knowledge, we would like to welcome warmly in our exoplanet quest! We can now observe more concretly what the NASA data looks like.</p>
 
+<h2 id="get-a-read-token">Get a read token</h2>
+
+<p>Security in Warp10 instance are handled with crypto tokens. They can be pretty long, so to ease your workflow, we stored it in the platform! You can push the token into the stack using this:</p>
+
+<warp10-embeddable-quantum warpscript="
+@HELLOEXOWORLD/GETREADTOKEN
+">
+</warp10-embeddable-quantum>
+
+<blockquote>
+  <p>You should store it as a variable using <code class="highlighter-rouge">STORE</code>.</p>
+</blockquote>
+
 <h2 id="find">FIND</h2>
 
 <p>We preloaded our platform with some stars (around 30). Let’s observe the series structures and find the one that we want! We are going to use a function called <a href="http://www.warp10.io/reference/functions/function_FIND/"><code class="highlighter-rouge">FIND</code></a>.</p>
@@ -332,12 +341,12 @@
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
 
 // Start the FIND with the token as first parameter
 [ 
     $token 
-    // Here you must put the classname and label selectors...  
+    // Here you must put the classname and label selectors...
 
 
 ] FIND
@@ -347,6 +356,10 @@
 <p>Wow, a lot of data appeared in my quantum console. They represents all the existing series that are availble to test your exoplanet quest! Each time series have several meta-data. During this tutorial we are going to focus on the one called <code class="highlighter-rouge">sap.flux</code> as they represents the raw data of the lightcurve of each stars.</p>
 
 <p>The one that we are looking for has a label <code class="highlighter-rouge">KEPLERID=6541920</code>, can you see it? Change the FIND to have only one result: <code class="highlighter-rouge">sap.flux</code> for Kepler-11!</p>
+
+<blockquote>
+  <p>To create a map, you can write something like this <code class="highlighter-rouge">{ 'key' 'value' }</code></p>
+</blockquote>
 
 <h2 id="to-be-continued">To be continued</h2>
 

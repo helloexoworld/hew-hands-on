@@ -40,7 +40,7 @@ Map takes as input a list of parameters. The first element of this list can be o
 ```
 // MAP Framework
 [
-    SWAP                                // Series list or Singleton
+    $gts                                // Series list or Singleton
     mapper.function                     // Mapper function operator
     0                                   // Pre
     0                                   // Post

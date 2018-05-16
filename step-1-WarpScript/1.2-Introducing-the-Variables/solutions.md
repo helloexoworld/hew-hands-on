@@ -22,11 +22,5 @@ back: 'step-1-WarpScript/1.2-Introducing-the-Variables'
 // Play with the saved variable
 $myVariable
 $myVariable
-
-// Get the read token
-@HELLOEXOWORLD/GETREADTOKEN
-
-// And store it if you want
-'token' STORE
 ">
 </warp10-embeddable-quantum>

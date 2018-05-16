@@ -93,8 +93,6 @@ BUCKETIZE
 
 'bucketizedSeries' STORE
 
-$bucketizedSeries                    // Series list or singleton minuend
-
 //
 // MAP block: Compute moving mean 
 //

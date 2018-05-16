@@ -29,15 +29,7 @@ We preloaded our platform with some stars (around 30). Let's observe the series 
 
 How does the function `FIND` works? This function allows the user to retrieve specific meta-data of time series stored inside a Warp 10 backend. You will need to push on top of the stack a list of specific parameters. The function to work correcty will need a specific cryptographic token, remember, you saw it earlier. Let's resume how to load it. 
 
-Before retrieving any data, you need to access data store in a specific application. To simplify the process, an existing token was stored in the platform. You can access it using the following code. HEW stands for HelloExoWorld. 
-
-Then store it in a variable, for example token. And starting from now, keep this stored token in all the script as you will need it to load data.
-
-<warp10-embeddable-quantum warpscript="
-// Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
-">
-</warp10-embeddable-quantum>
+Before retrieving any data, you need to access data store in a specific application. To simplify the process, an existing token was stored in the platform. You can access it using the macro seen previously: `@HELLOEXOWORLD/GETREADTOKEN`. Macro corresponds to a custom user function or module in WarpScript. Starting from now, this token will be put in a variable called `token` on each script where a token is necessary to load data.
 
 The FIND function finds Geo time seriesTM matching some criteria. To work correctly, it expects on top of the stack a LIST with 3 parameters: the previous stored Warp10 token, a classname selector and a MAP of label selectors.
 

@@ -27,12 +27,12 @@ If a result is produced, it will be pushed on top of the stack.
 
 ## Single operator
 
-Let's start with a simple WarpScript function: [`NOW`]({{ site.doc_url }}/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch. Let's play with it, as quantum was set to reach an available backend, just type `NOW` in the quantum editor below:
+Let's start with a simple WarpScript function: [`NOW`]({{ site.doc_url }}/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch. Let's play with it, as quantum was set to reach an available backend, just type `NOW` in the quantum editor, then click on execute.
 
 <warp10-embeddable-quantum warpscript="">
 </warp10-embeddable-quantum>
 
-Then click on execute. Congratulation, you wrote and exectute your first WarpScript! You should see the current time (in microsecond) in the answer session.
+Congratulation, you wrote and exectute your first WarpScript! You should see the current time (in microsecond) in the answer session below.
 
 > Warp10 is by default configured to use the micro-second as a time-unit.
 

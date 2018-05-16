@@ -16,13 +16,13 @@ You learn how to use some of the WarpScript framework and how to write your firs
 
 In the first script you write only one function: [`TIMESPLIT`]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/) request single time series. Encapsuled this instruction inside a `LOOP`. When using `LMAP`, you can replace a time series by a list thereof. Then to flat the list the [`FLATTEN`]({{ site.doc_url }}/reference/functions/function_FLATTEN/) warpscript function can be used.
 
-Then all the WarpScript framework functions can be applied on time series list. Just be careful on the equivalence class!
+Then all the WarpScript framework functions can be applied on time series list. Just be careful on the equivalence class! Look at each to TODO directly added in the code!
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
-// FETCH
+// TODO: Update the FETCH query to remove the star 6541920 selection
 [ 
     $token                              // Application authentication
     'sap.flux'                          // selector for classname
@@ -32,8 +32,7 @@ Then all the WarpScript framework functions can be applied on time series list. 
 ] 
 FETCH
 
-// Get Singleton series
-0 GET
+// TODO: Update TIMESPLIT function to use a LOOP over FETCH result and split all stars series
 
 //
 // TIMESPLIT block:
@@ -50,7 +49,14 @@ FETCH
 
 TIMESPLIT
 
+// TODO: End the loop and execute a FLATTEN operation on result List, to get a list of time series.
+
 'splitSeries' STORE
+
+//
+// FILTER, BUCKETIZE and MAP block should not be updated!
+//
+
 
 //
 // FILTER block:
@@ -106,6 +112,7 @@ MAP
 
 //
 // APPLY block:
+// TODO: update labels list to apply the reduction on each start ID and record
 //
 
 [

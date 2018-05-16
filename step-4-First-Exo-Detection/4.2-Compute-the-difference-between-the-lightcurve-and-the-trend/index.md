@@ -93,6 +93,20 @@ BUCKETIZE
 
 'bucketizedSeries' STORE
 
+$bucketizedSeries                    // Series list or singleton minuend
+
+//
+// MAP block: Compute moving mean 
+//
+
+[
+    $bucketizedSeries               // Series list or Singleton
+    mapper.mean                     // Mapper function operator
+    5                               // Pre
+    5                               // Post
+    0                               // Occurences
+]
+MAP      
 
 //
 // APPLY block:

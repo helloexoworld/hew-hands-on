@@ -120,25 +120,27 @@ BUCKETIZE
 'bucketizedSeries' STORE
 
 //
+// MAP block: Compute moving mean 
+//
+
+[
+    $bucketizedSeries               // Series list or Singleton
+    mapper.mean                     // Mapper function operator
+    5                               // Pre
+    5                               // Post
+    0                               // Occurences
+]
+MAP      
+
+'mappedSeries' STORE
+
+//
 // APPLY block:
 //
 
 [
-    $bucketizedSeries                    // Series list or singleton minuend
-
-    //
-    // MAP block: Compute moving mean 
-    //
-
-    [
-        $bucketizedSeries               // Series list or Singleton
-        mapper.mean                     // Mapper function operator
-        5                               // Pre
-        5                               // Post
-        0                               // Occurences
-    ]
-    MAP                                 // Series list or singleton subtrahend
-
+    $bucketizedSeries                   // Series list or singleton minuend
+    $mappedSeries                       // Trend result
     [ 'record' ]                        // Labels to compute equivalence class
     op.sub                              // Apply function operator
 ]

@@ -106,6 +106,8 @@ BUCKETIZE
 ]
 MAP      
 
+'mappedSeries' STORE
+
 //
 // APPLY block:
 //

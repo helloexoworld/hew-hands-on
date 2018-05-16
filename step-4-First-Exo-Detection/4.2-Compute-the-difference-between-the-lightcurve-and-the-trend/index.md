@@ -56,6 +56,9 @@ FETCH
 
 TIMESPLIT
 
+
+'splitSeries' STORE
+
 //
 // FILTER block:
 //
@@ -65,12 +68,14 @@ TIMESPLIT
 
 // FILTER Framework
 [
-    $gts                            // Series list or Singleton
+    $splitSeries                    // Series list or Singleton
     []                              // Labels to compute equivalence class
     $labelsSelector                 // Labels map for selector
     filter.bylabels                 // Filter function operator 
 ]
 FILTER
+
+'filteredSeries' STORE
 
 //
 // BUCKETIZE block:
@@ -78,15 +83,16 @@ FILTER
 
 // BUCKETIZE Framework
 [
-    $gts                                // Series list or Singleton
+    $filteredSeries                     // Series list or Singleton
     bucketizer.min                      // Bucketize function operator
-    0                                   // Lastbucket
+    0                                   // Lastbucket 				
     2 h                                 // Bucketspan
     0                                   // Bucketcount
 ]
 BUCKETIZE
 
 'bucketizedSeries' STORE
+
 
 //
 // APPLY block:

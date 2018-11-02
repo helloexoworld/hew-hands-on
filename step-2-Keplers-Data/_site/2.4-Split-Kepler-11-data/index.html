@@ -1,0 +1,93 @@
+<p>Using the <code class="highlighter-rouge">FETCH</code> function all the available Kepler-11 have been loaded from a Warp10 backend and are pushed on the WarpScript stack. Observing more in details the stack result, even when only a single series is fetched, <code class="highlighter-rouge">FETCH</code> creates a WarpScript list. Let’s see how to extract its first element before seeing a method to split a single series according to your exoplanet quest need.</p>
+
+<h2 id="getting-the-first-time-series-in-the-fetched-list">Getting the first time series in the fetched list</h2>
+
+<p>The <code class="highlighter-rouge">FETCH</code> results provides a list of series. To simplify all the following steps, we would like to work only on the first series of this list. In order to do it, we use the <a href="/reference/functions/function_GET/"><code class="highlighter-rouge">GET</code></a>:</p>
+
+<warp10-embeddable-quantum warpscript="
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+
+// Let's do a FETCH now
+[
+    $token                          // Token for application authentication
+    'sap.flux'                      // Classname selector                         
+    { 
+        'KEPLERID' '6541920'        // Labels selector
+    }                              
+    '2009-05-02T00:56:10.000000Z'   // Start date
+    '2013-05-11T12:02:06.000000Z'   // End date
+]
+FETCH 
+
+// Get Singleton series
+
+">
+</warp10-embeddable-quantum>
+
+<p>You should now have only the Kepler-11 series on top of stack as singleton. You can verify it using the WarpScript function <code class="highlighter-rouge">TYPEOF</code>. This function will push replace the element on top of the stack by it’s type. The result should be <code class="highlighter-rouge">GTS</code>.</p>
+
+<h2 id="handling-time">Handling time</h2>
+
+<p>As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let’s clean that. There is a function called <a href="/reference/functions/function_TIMESPLIT/"><code class="highlighter-rouge">TIMESPLIT</code></a> that will be able to help us! As stated by the documentation:</p>
+
+<blockquote>
+  <p>The <code class="highlighter-rouge">TIMESPLIT</code> function takes a time series or a list thereof and splits each Geo time series<sup>TM</sup> into a list multiple time series instances, cutting the original time series when it encounters quiet periods when there are no measurements.</p>
+</blockquote>
+
+<p>That is perfect! Let´s use it!</p>
+
+<p>The needed parameter are :</p>
+
+<ul>
+  <li>the length of the quiet period (in microseconds)</li>
+  <li>the minimum number of values each resulting time series should have</li>
+  <li>the name of the label which will hold the sequence of the resulting time series (1 being the oldest).</li>
+</ul>
+
+<p>Go ahead and <code class="highlighter-rouge">TIMESPLIT</code> the time series!</p>
+
+<blockquote>
+  <p>Pro tips: You can use a function called <a href="/reference/functions/function_h/"><code class="highlighter-rouge">h</code></a> to easily compute duration in hours. For example, putting <code class="highlighter-rouge">1 h</code> into the stack will push the number of microsecond in a hour in the stack!</p>
+</blockquote>
+
+<warp10-embeddable-quantum warpscript="
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+
+// Let's do a FETCH now
+[
+    $token                          // Token for application authentication
+    'sap.flux'                      // Classname selector
+    { 'KEPLERID' '6541920' }        // Labels selector
+    '2009-05-02T00:56:10.000000Z'   // Start date
+    '2013-05-11T12:02:06.000000Z'   // End date
+]
+FETCH 
+
+// Get Singleton series
+0 GET
+
+// Let's do the TIMESPLIT now
+
+// Set TIMESPLIT parameters:
+    // - Quiesce period
+    // - Minimal numbers of points per series
+    // - Labels for each splitted series
+TIMESPLIT
+">
+</warp10-embeddable-quantum>
+
+<p>Once you managed to set all the needed parameters, you should get as a result a list of splitted series! In fact <code class="highlighter-rouge">TIMESPLIT</code> will work as follow:</p>
+<ul>
+  <li>it takes a time series on top of stack and process it to detect quiet periods</li>
+  <li>it create one series per each period, generating several time series (if they have at least the minimal required number of points to be considered)</li>
+  <li>it adds a label to each series, with an incremental values (1 for the first, 2 for the second,…)</li>
+  <li>all the new formed series are added inside a result list and pushed on top of stack.</li>
+</ul>
+
+<p>Great, each series resulting of <code class="highlighter-rouge">TIMESPLIT</code> corresponds to a single <a href="https://www.nasa.gov/mission_pages/kepler/overview/index.html">Kepler record</a>. We can now start to work on each of them and how to reduce the number of series to be able to explore a specific amount of data.</p>
+
+<h2 id="to-be-continued">To be continued</h2>
+
+<p>During this step you manipulated a sub-set of series extracted of the FITS data of the NASA. You discovered how to extract raw data from Warp 10 and how to use one of the Time manipulation function WarpScript offers! This is only the beginning of the hunt, there will be more to come with all the basic times series framework to start an analysis!</p>

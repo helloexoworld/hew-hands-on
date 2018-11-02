@@ -455,8 +455,8 @@ NEWGTS
 
 
 // Understanding the WARP data structure helps a lot:
-// timestamps                    | Time serie UID     | attribute                      | Lat                 | Long                | Alt                    | Value
-// timestamp_of_mesure           | combine name + tag | like a timeserie custom status | lattitude_of_mesure | longitute_of_mesure | altitude_of_the_mesure | mesure
+// timestamps | Time serie UID | attribute | Lat | Long | Alt | Value
+// timestamp_of_mesure | combine name + tag | like a timeserie custom status | lattitude_of_mesure | longitute_of_mesure | altitude_of_the_mesure | mesure
 
 
 // lets bootstrap a new mesure (metric)
@@ -479,8 +479,8 @@ ADDVALUE
 // push the mesure we build previously to the WARP storage engine
 // to sum up we just pushed
 //
-// timestamps | Time serie UID                          | attribute   | Lat | Long | Alt | Value
-// NOW        | HASH('planet.rotation.count' + 'earth') | blue-planet | NaN | NaN  | NaN | 121
+// timestamps | Time serie UID | attribute | Lat | Long | Alt | Value
+// NOW | HASH('planet.rotation.count' + 'name=earth') | 'main-nickname=blue-planet' | NaN | NaN  | NaN | 121
 
 
 //

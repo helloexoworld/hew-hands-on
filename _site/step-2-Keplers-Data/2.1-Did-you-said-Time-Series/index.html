@@ -431,41 +431,78 @@ NEWGTS
 <warp10-embeddable-quantum warpscript="
 // Create an empty time series
 NEWGTS
+// NEWGTS stands for NEW Geo Time Serie
+// now the NEWGTS object is loaded
+
+
 
 // Rename this time series
 'planet.rotation.count' RENAME
+// means this.rename('planet.rotation.count')
 
 // Relabel this time series
 { 'name' 'earth' } RELABEL
+// means this.relabel(key='name', value='earth')
+
 
 // Gives an Attribute to this time series
 { 'main-nickname' 'blue-planet' } SETATTRIBUTES  // This attribute could evolve in the future without re-creating a series once they are stored in Warp 10.
+// means this.setattributes(key='main-nickname', value='blue-planet')
 
 //
 // Add today's value to this time series
 //
 
+
+// Understanding the WARP data structure helps a lot:
+// timestamps                    | Time serie UID     | attribute                      | Lat                 | Long                | Alt                    | Value
+// timestamp_of_mesure           | combine name + tag | like a timeserie custom status | lattitude_of_mesure | longitute_of_mesure | altitude_of_the_mesure | mesure
+
+
+// lets bootstrap a new mesure (metric)
 // Push Today's time
 NOW 
+// timestamp of the mesure is now : NOW
 
-// Push location
-NaN NaN NaN 
+// Push location using format Lat Long Alt
+NaN NaN NaN
+// Lattitude of the mesure is now : NaN (empty value because not used)
+// Longitude of the mesure is now : NaN (empty value because not used)
+// Altitude of the mesure is now : NaN (empty value because not used)
 
-// Push 121 as value 
+
+// Push 121 as value (mesure)
 121
 
 // Add today's value in current time series
 ADDVALUE
+// push the mesure we build previously to the WARP storage engine
+// to sum up we just pushed
+//
+// timestamps | Time serie UID                          | attribute   | Lat | Long | Alt | Value
+// NOW        | HASH('planet.rotation.count' + 'earth') | blue-planet | NaN | NaN  | NaN | 121
+
 
 //
 // Now we will also add yesterday value to the earth rotation time series
 //
 
+// WARP is a stacked-orentied programming
+// see https://en.wikipedia.org/wiki/Stack-oriented_programming
+// which uses postfix notation for instance
+// while most prgramming languages uses infix notation : 2 multiply 3 (for 2*3)
+// postfix notation is used in WARP resulting in 2, 3, multiply (for 2*3)
+
+// therefore for Yesterday
 // Compute Yesterday time (Today minus one day)
-NOW 1 d - 
+NOW 1 d -
+// as d is a function : http://www.warp10.io/reference/reference/#time-unit-conversions
+// it is taking 1 as an argument : 1 d in postfix notation is like d(1)
+// therefore: NOW 1 d -   &lt;=&gt;   NOW d(1) -  &lt;=&gt;  NOW - d(1)
+// the timestamp of the new mesure is now NOW-d(1)
 
 // Push location
-NaN NaN NaN 
+NaN NaN NaN
 
 // Push the value 120
 120

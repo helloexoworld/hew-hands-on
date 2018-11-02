@@ -329,11 +329,11 @@ MAP
 
 <p>Great now you can successfully detect some exoplanet! You have well earn your badge as an exoplanet hunter! Just one more thing, how to be sure that the periods you have extracted corresponds to exoplanet ? Let’s print more nicely the result! To do so, we can convert our result into annotations in WarpScript. This can be done using boolean instead of values! And there is also a mapper to do it: <a href="http://www.warp10.io/reference/frameworks/mapper_toboolean/">mapper.toboolean</a>.</p>
 
-<p><strong>Pro tip: <code class="highlighter-rouge">mapper.toboolean</code> is a single value mapper and would not work correctly on bucketized series. To correct it and get the better result we recommand to use the <a href="http://www.warp10.io/reference/functions/function_UNBUCKETIZE/"><code class="highlighter-rouge">UNBUCKETIZE</code></a> function right after the <code class="highlighter-rouge">BUCKETIZE</code> operation</strong></p>
+<p><strong>Pro tip: <code class="highlighter-rouge">mapper.toboolean</code> is a single value mapper and would not work correctly on bucketized series. To correct it and get the better result we recommand to use the <a href="http://www.warp10.io/reference/functions/function_UNBUCKETIZE/"><code class="highlighter-rouge">UNBUCKETIZE</code></a> function right after the <code class="highlighter-rouge">BUCKETIZE</code> operation. A TODO was included in the sampled code for this task.</strong></p>
 
 <p>Then you can push back on the stack the original series using a variable!</p>
 
-<p>To help you achieve this step, you can complete the following skeleton. The step to complete start with TODO.</p>
+<p>To help you achieve this step, you can complete the following skeleton. Fix each TODO directly included in the code!</p>
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
@@ -409,25 +409,27 @@ BUCKETIZE
 'bucketizedSeries' STORE
 
 //
+// MAP block: Compute moving mean 
+//
+
+[
+    $bucketizedSeries               // Series list or Singleton
+    mapper.mean                     // Mapper function operator
+    5                               // Pre
+    5                               // Post
+    0                               // Occurences
+]
+MAP      
+
+'mappedSeries' STORE
+
+//
 // APPLY block:
 //
 
 [
-    $bucketizedSeries                    // Series list or singleton minuend
-
-    //
-    // MAP block: Compute moving mean 
-    //
-
-    [
-        $bucketizedSeries               // Series list or Singleton
-        mapper.mean                     // Mapper function operator
-        5                               // Pre
-        5                               // Post
-        0                               // Occurences
-    ]
-    MAP                                 // Series list or singleton subtrahend
-
+    $bucketizedSeries                   // Series list or singleton minuend
+    $mappedSeries                       // Trend result
     [ 'record' ]                        // Labels to compute equivalence class
     op.sub                              // Apply function operator
 ]

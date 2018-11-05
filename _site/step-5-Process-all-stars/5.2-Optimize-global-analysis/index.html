@@ -306,13 +306,13 @@
 
 <p>In the first script you write only one function: <a href="http://www.warp10.io/reference/functions/function_TIMESPLIT/"><code class="highlighter-rouge">TIMESPLIT</code></a> request single time series. Encapsuled this instruction inside a <code class="highlighter-rouge">LOOP</code>. When using <code class="highlighter-rouge">LMAP</code>, you can replace a time series by a list thereof. Then to flat the list the <a href="http://www.warp10.io/reference/functions/function_FLATTEN/"><code class="highlighter-rouge">FLATTEN</code></a> warpscript function can be used.</p>
 
-<p>Then all the WarpScript framework functions can be applied on time series list. Just be careful on the equivalence class!</p>
+<p>Then all the WarpScript framework functions can be applied on time series list. Just be careful on the equivalence class! Look at each to TODO directly added in the code!</p>
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
 @HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
 
-// FETCH
+// TODO: Update the FETCH query to remove the star 6541920 selection
 [ 
     $token                              // Application authentication
     'sap.flux'                          // selector for classname
@@ -322,8 +322,7 @@
 ] 
 FETCH
 
-// Get Singleton series
-0 GET
+// TODO: Update TIMESPLIT function to use a LOOP over FETCH result and split all stars series
 
 //
 // TIMESPLIT block:
@@ -340,7 +339,14 @@ FETCH
 
 TIMESPLIT
 
+// TODO: End the loop and execute a FLATTEN operation on result List, to get a list of time series.
+
 'splitSeries' STORE
+
+//
+// FILTER, BUCKETIZE and MAP block should not be updated!
+//
+
 
 //
 // FILTER block:
@@ -380,25 +386,28 @@ UNBUCKETIZE
 'bucketizedSeries' STORE
 
 //
-// APPLY block:
+// MAP block: Compute moving mean 
 //
 
 [
-    $bucketizedSeries                    // Series list or singleton minuend
+    $bucketizedSeries               // Series list or Singleton
+    mapper.mean                     // Mapper function operator
+    5                               // Pre
+    5                               // Post
+    0                               // Occurences
+]
+MAP      
 
-    //
-    // MAP block: Compute moving mean 
-    //
+'mappedSeries' STORE
 
-    [
-        $bucketizedSeries               // Series list or Singleton
-        mapper.mean                     // Mapper function operator
-        5                               // Pre
-        5                               // Post
-        0                               // Occurences
-    ]
-    MAP                                 // Series list or singleton subtrahend
+//
+// APPLY block:
+// TODO: update labels list to apply the reduction on each start ID and record
+//
 
+[
+    $bucketizedSeries                   // Series list or singleton minuend
+    $mappedSeries                       // Trend result
     [ 'record' ]                        // Labels to compute equivalence class
     op.sub                              // Apply function operator
 ]

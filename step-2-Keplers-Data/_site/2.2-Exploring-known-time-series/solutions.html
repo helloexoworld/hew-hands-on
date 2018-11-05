@@ -1,0 +1,13 @@
+<h2 id="solutions">Solutions</h2>
+
+<warp10-embeddable-quantum warpscript="
+// Storing the token into a variable
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+
+// Start the find with the token as first parameter
+[ $token '~.*' {} ] FIND
+
+// Select only Kepler-11 series
+[ $token '~.*' { 'KEPLERID' '6541920' } ] FIND
+">
+</warp10-embeddable-quantum>

@@ -1,0 +1,48 @@
+<h2 id="solutions">Solutions</h2>
+
+<warp10-embeddable-quantum warpscript="
+// Create an empty time series
+NEWGTS
+
+// Rename this time series
+'planet.rotation.count' RENAME
+
+// Relabel this time series
+{ 'name' 'earth' } RELABEL
+
+// Gives an Attribute to this time series
+{ 'main-nickname' 'blue-planet' } SETATTRIBUTES  // This attribute could evolve in the future without re-creating a series once they are stored in Warp 10.
+
+//
+// Add today's value to this time series
+//
+
+// Push Today's time
+NOW 
+
+// Push location
+NaN NaN NaN 
+
+// Push 121 as value 
+121
+
+// Add today's value in current time series
+ADDVALUE
+
+//
+// Now we will also add yesterday value to the earth rotation time series
+//
+
+// Compute Yesterday time (Today minus one day)
+NOW 1 d - 
+
+// Push location
+NaN NaN NaN 
+
+// Push the value 120
+120
+
+// Add the value to current time series
+ADDVALUE
+">
+</warp10-embeddable-quantum>

@@ -12,13 +12,13 @@ solution: 'step-2-Keplers-Data/2.3-Getting-Kepler-11-raw-data/solutions'
 
 Now that you are used to play with the stack and know the available series, let's manipulate some data!
 
-## FETCH 
+## FETCH
 
-Now that we have identified the right star, let's get some data using [`FETCH`]({{ site.doc_url }}/reference/functions/function_FETCH/)! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints. The UTC start date is `2009-05-02T00:56:10.000000Z` and the end date is `2013-05-11T12:02:06.000000Z`. Remember that the regular expression `~.*` allow you to request all the series available in the platform. Limit it to only the `sap.flux` ones. In order to keep a restreint amount of data, update the labels sector to load only the data from Kepler-11, i.e. data with the label `KEPLERID=6541920`:
+Now that we have identified the right star, let's get some data using [`FETCH`]({{ site.doc_url }}/doc/FETCH)! It is a function similar to find, with more arguments that gives the boundaries of a window to get raw datapoints. The UTC start date is `2009-05-02T00:56:10.000000Z` and the end date is `2013-05-11T12:02:06.000000Z`. Remember that the regular expression `~.*` allow you to request all the series available in the platform. Limit it to only the `sap.flux` ones. In order to keep a restreint amount of data, update the labels sector to load only the data from Kepler-11, i.e. data with the label `KEPLERID=6541920`:
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
 
 // Let's do a FETCH now
 [
@@ -26,9 +26,9 @@ Now that we have identified the right star, let's get some data using [`FETCH`](
     // - Token for application authentication
     // - Classname selector
     // - Labels selector
-    { 
+    {
         // Here you put the label selector for Kepler-11
-    } 
+    }
     // - Start date
     // - End date
 ]

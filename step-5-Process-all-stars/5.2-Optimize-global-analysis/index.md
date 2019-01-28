@@ -14,22 +14,22 @@ You learn how to use some of the WarpScript framework and how to write your firs
 
 ## Practice
 
-In the first script you write only one function: [`TIMESPLIT`]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/) request single time series. Encapsuled this instruction inside a `LOOP`. When using `LMAP`, you can replace a time series by a list thereof. Then to flat the list the [`FLATTEN`]({{ site.doc_url }}/reference/functions/function_FLATTEN/) warpscript function can be used.
+In the first script you write only one function: [`TIMESPLIT`]({{ site.doc_url }}/doc/TIMESPLIT) request single time series. Encapsuled this instruction inside a `LOOP`. When using `LMAP`, you can replace a time series by a list thereof. Then to flat the list the [`FLATTEN`]({{ site.doc_url }}/doc/FLATTEN) warpscript function can be used.
 
 Then all the WarpScript framework functions can be applied on time series list. Just be careful on the equivalence class! Look at each to TODO directly added in the code!
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
 
 // TODO: Update the FETCH query to remove the star 6541920 selection
-[ 
+[
     $token                              // Application authentication
     'sap.flux'                          // selector for classname
     { 'KEPLERID' '6541920' }            // Selector for labels
     '2009-05-02T00:56:10.000000Z'       // Start date
     '2013-05-11T12:02:06.000000Z'       // End date
-] 
+]
 FETCH
 
 // TODO: Update TIMESPLIT function to use a LOOP over FETCH result and split all stars series
@@ -41,7 +41,7 @@ FETCH
 // Quiesce period
 6 h
 
-// Minimal numbers of points per series 
+// Minimal numbers of points per series
 100
 
 // Labels for each splitted series
@@ -70,7 +70,7 @@ TIMESPLIT
     $splitSeries                    // Series list or Singleton
     []                              // Labels to compute equivalence class
     $labelsSelector                 // Labels map for selector
-    filter.bylabels                 // Filter function operator 
+    filter.bylabels                 // Filter function operator
 ]
 FILTER
 
@@ -96,7 +96,7 @@ UNBUCKETIZE
 'bucketizedSeries' STORE
 
 //
-// MAP block: Compute moving mean 
+// MAP block: Compute moving mean
 //
 
 [
@@ -125,14 +125,14 @@ APPLY
 
 'applyResult' STORE
 
-// 
+//
 // Threshold
 //
 
-[ $applyResult [] -15.0 mapper.lt 0 0 0 ] MAP 
+[ $applyResult [] -15.0 mapper.lt 0 0 0 ] MAP
 'belowValueSeries' STORE
 
-// 
+//
 // Print initial series and annotations
 //
 

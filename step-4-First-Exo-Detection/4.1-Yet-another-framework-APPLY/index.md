@@ -10,13 +10,13 @@ next: 'step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcu
 solution: 'step-4-First-Exo-Detection/4.1-Yet-another-framework-APPLY/solutions'
 ---
 
-Yet an other WarpScript framework: [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/)! It's a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series! 
+Yet an other WarpScript framework: [`APPLY`]({{ site.doc_url }}/doc/APPLY)! It's a framework used to compute operation (like add, sub or mask) on multiple set of series. In this tutorial we will no enter in the details of this framework, but notice it exists and can but used to substract two set of series!
 
 ***At the bottom of this page, you will find a practice example showing how to substract two set of time series.***
 
 ## The framework
 
-The signature of the [`APPLY` with a sub operator]({{ site.doc_url }}/reference/frameworks/op_sub/) is described below. It takes 4 parameters: a set of time series that compose the `minuend`, an other set that compose the `subtrahend` of the `sub operation`. A list of labels and the `op.sub` operation are the last two required parameter.
+The signature of the [`APPLY` with a sub operator]({{ site.doc_url }}/doc/op.sub) is described below. It takes 4 parameters: a set of time series that compose the `minuend`, an other set that compose the `subtrahend` of the `sub operation`. A list of labels and the `op.sub` operation are the last two required parameter.
 
 <warp10-embeddable-quantum warpscript="
 [
@@ -55,18 +55,18 @@ In our case it would be the sub operation! Let's practice it before applying thi
 
 ## Practice
 
-The following example show you a quick demonstration on how to use it with the sub operator. In this example 4 time series are first created and put in two diffrent set. 
+The following example show you a quick demonstration on how to use it with the sub operator. In this example 4 time series are first created and put in two diffrent set.
 Then it's up to you, hunter, to compute the difference of the earth or mars series of the first set with the one related contained in the second one! The base code is available in the `APPLY` skeleton below.
 
 **Pro-tips: Use the equivalence class on the label "name" to compute a name based difference**
 
 <warp10-embeddable-quantum warpscript="
 [
-    NEWGTS 'planet.rotation.count' RENAME 
+    NEWGTS 'planet.rotation.count' RENAME
     { 'name' 'earth' } RELABEL
     10 NaN NaN NaN 120 ADDVALUE
     20 NaN NaN NaN 123  ADDVALUE
-    NEWGTS 'planet.rotation.count' RENAME 
+    NEWGTS 'planet.rotation.count' RENAME
     { 'name' 'mars' } RELABEL
     10 NaN NaN NaN 124 ADDVALUE
     20 NaN NaN NaN 125 ADDVALUE
@@ -75,11 +75,11 @@ Then it's up to you, hunter, to compute the difference of the earth or mars seri
 'firstResult' STORE
 
 [
-  NEWGTS 'planet.rotation.count.to.correct' RENAME 
+  NEWGTS 'planet.rotation.count.to.correct' RENAME
   { 'name' 'earth' } RELABEL
   10 NaN NaN NaN  1 ADDVALUE
   20 NaN NaN NaN  2 ADDVALUE
-  NEWGTS 'planet.rotation.count.to.correct' RENAME 
+  NEWGTS 'planet.rotation.count.to.correct' RENAME
   { 'name' 'mars' } RELABEL
   10 NaN NaN NaN  1 ADDVALUE
   15 NaN NaN NaN  1 ADDVALUE

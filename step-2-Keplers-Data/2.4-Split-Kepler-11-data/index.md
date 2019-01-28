@@ -14,24 +14,24 @@ Using the `FETCH` function all the available Kepler-11 have been loaded from a W
 
 ## Getting the first time series in the fetched list
 
-The `FETCH` results provides a list of series. To simplify all the following steps, we would like to work only on the first series of this list. In order to do it, we use the [`GET`]({{ site.doc_url }}/reference/functions/function_GET/): 
+The `FETCH` results provides a list of series. To simplify all the following steps, we would like to work only on the first series of this list. In order to do it, we use the [`GET`]({{ site.doc_url }}/doc/GET):
 
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
 
 // Let's do a FETCH now
 [
     $token                          // Token for application authentication
     'sap.flux'                      // Classname selector                         
-    { 
+    {
         'KEPLERID' '6541920'        // Labels selector
     }                              
     '2009-05-02T00:56:10.000000Z'   // Start date
     '2013-05-11T12:02:06.000000Z'   // End date
 ]
-FETCH 
+FETCH
 
 // Get Singleton series
 
@@ -42,7 +42,7 @@ You should now have only the Kepler-11 series on top of stack as singleton. You 
 
 ## Handling time
 
-As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let's clean that. There is a function called [`TIMESPLIT`]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/) that will be able to help us! As stated by the documentation:
+As you may have seen, the data-window is pretty long, and they are drops. Drops are period where they are no data. Let's clean that. There is a function called [`TIMESPLIT`]({{ site.doc_url }}/doc/TIMESPLIT) that will be able to help us! As stated by the documentation:
 
 > The `TIMESPLIT` function takes a time series or a list thereof and splits each Geo time series<sup>TM</sup> into a list multiple time series instances, cutting the original time series when it encounters quiet periods when there are no measurements.
 
@@ -60,7 +60,7 @@ Go ahead and `TIMESPLIT` the time series!
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
 
 // Let's do a FETCH now
 [
@@ -70,7 +70,7 @@ Go ahead and `TIMESPLIT` the time series!
     '2009-05-02T00:56:10.000000Z'   // Start date
     '2013-05-11T12:02:06.000000Z'   // End date
 ]
-FETCH 
+FETCH
 
 // Get Singleton series
 0 GET
@@ -86,10 +86,10 @@ TIMESPLIT
 </warp10-embeddable-quantum>
 
 
-Once you managed to set all the needed parameters, you should get as a result a list of splitted series! In fact `TIMESPLIT` will work as follow: 
+Once you managed to set all the needed parameters, you should get as a result a list of splitted series! In fact `TIMESPLIT` will work as follow:
 - it takes a time series on top of stack and process it to detect quiet periods
 - it create one series per each period, generating several time series (if they have at least the minimal required number of points to be considered)
-- it adds a label to each series, with an incremental values (1 for the first, 2 for the second,...) 
+- it adds a label to each series, with an incremental values (1 for the first, 2 for the second,...)
 - all the new formed series are added inside a result list and pushed on top of stack.
 
 Great, each series resulting of `TIMESPLIT` corresponds to a single [Kepler record](https://www.nasa.gov/mission_pages/kepler/overview/index.html). We can now start to work on each of them and how to reduce the number of series to be able to explore a specific amount of data.

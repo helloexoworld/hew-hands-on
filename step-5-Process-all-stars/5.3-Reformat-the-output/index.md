@@ -38,7 +38,7 @@ The following block can be add at the end of the script to reformat all names of
 LMAP
 ```
 
-Did you understood all the instructions? Otherwise have a look at the [warp10.io documentation page]({{ site.doc_url }}/reference/)!
+Did you understood all the instructions? Otherwise have a look at the [warp10.io documentation page]({{ site.doc_url }}/doc/reference)!
 
 You can write the same block of code to refactor the name of the sampled series.
 
@@ -48,7 +48,7 @@ To generate an element on the stack containing both the original record and the 
 
 ```
 //
-// Split the end record in several stack elements. One elements for each record of each stars containing a list of the record series with its corresponding annotations series 
+// Split the end record in several stack elements. One elements for each record of each stars containing a list of the record series with its corresponding annotations series
 //
 
 // Merge both series on top of the stack
@@ -58,7 +58,7 @@ APPEND
 // Generaten equivalence map containing base on KEPLERID and record labels
 PARTITION
 
-// Delete each map keys to keep only the list values 
+// Delete each map keys to keep only the list values
 <%
     SWAP DROP
 %>
@@ -71,23 +71,23 @@ Let's integrate them now in our previous script to reformat the generated output
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
 
 // FETCH
-[ 
+[
     $token                              // Application authentication
     'sap.flux'                          // selector for classname
     {}                                  // Selector for labels
     '2009-05-02T00:56:10.000000Z'       // Start date
     '2013-05-11T12:02:06.000000Z'       // End date
-] 
+]
 FETCH
 
 // Apply Timeclip on each stars series
 <%
     // Delete index
     DROP
-    
+
     //
     // TIMESPLIT block:
     //
@@ -95,7 +95,7 @@ FETCH
     // Quiesce period
     6 h
 
-    // Minimal numbers of points per series 
+    // Minimal numbers of points per series
     100
 
     // Labels for each splitted series
@@ -122,7 +122,7 @@ FLATTEN
     $splitSeries                    // Series list or Singleton
     []                              // Labels to compute equivalence class
     $labelsSelector                 // Labels map for selector
-    filter.bylabels                 // Filter function operator 
+    filter.bylabels                 // Filter function operator
 ]
 FILTER
 
@@ -148,7 +148,7 @@ UNBUCKETIZE
 'bucketizedSeries' STORE
 
 //
-// MAP block: Compute moving mean 
+// MAP block: Compute moving mean
 //
 
 [
@@ -176,14 +176,14 @@ APPLY
 
 'applyResult' STORE
 
-// 
+//
 // Threshold
 //
 
-[ $applyResult [] -15.0 mapper.lt 0 0 0 ] MAP 
+[ $applyResult [] -15.0 mapper.lt 0 0 0 ] MAP
 'belowValueSeries' STORE
 
-// 
+//
 // Print initial series and annotations
 //
 

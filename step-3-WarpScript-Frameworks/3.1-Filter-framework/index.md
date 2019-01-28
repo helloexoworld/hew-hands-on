@@ -12,23 +12,23 @@ solution: 'step-3-WarpScript-Frameworks/3.1-Filter-framework/solutions'
 
 Using `TIMESPLIT` we compute our first time series operation but WarpScript offers other richer tools to manipulate them. Five frameworks are available and they all have their specific usage and important place in Time-Series analytics:
 
-* [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/)
+* [`FILTER`]({{ site.doc_url }}/doc/FILTER)
 
-* [`BUCKETIZE`]({{ site.doc_url }}/reference/frameworks/framework-bucketize/)
+* [`BUCKETIZE`]({{ site.doc_url }}/doc/BUCKETIZE)
 
-* [`MAP`]({{ site.doc_url }}/reference/frameworks/framework-map/)
+* [`MAP`]({{ site.doc_url }}/doc/MAP)
 
-* [`REDUCE`]({{ site.doc_url }}/reference/frameworks/framework-reduce/)
+* [`REDUCE`]({{ site.doc_url }}/doc/REDUCE)
 
-* [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/)
+* [`APPLY`]({{ site.doc_url }}/doc/APPLY)
 
 Let's start with the FILTER framework.
 
 ## The FILTER framework
 
-The first framework we are going to discover in this tutorial is [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/). It provides the tooling to select specific sub-set of Time-series in a list thereof.
+The first framework we are going to discover in this tutorial is [`FILTER`]({{ site.doc_url }}/doc/FILTER). It provides the tooling to select specific sub-set of Time-series in a list thereof.
 
-Let's resume what we have on the stack: first a kepler-11 time series are loaded using the [`FETCH`]({{ site.doc_url }}/reference/functions/function_FETCH/) function. Then the data are split according to a quiesce period using [`TIMESPLIT`]({{ site.doc_url }}/reference/functions/function_TIMESPLIT/). We are now going to select only a few records to work on using `FILTER`.
+Let's resume what we have on the stack: first a kepler-11 time series are loaded using the [`FETCH`]({{ site.doc_url }}/doc/FETCH) function. Then the data are split according to a quiesce period using [`TIMESPLIT`]({{ site.doc_url }}/doc/TIMESPLIT). We are now going to select only a few records to work on using `FILTER`.
 ## Input parameters
 
 The filter function takes a list containing 3 elements as input parameter: the time series as list or singleton to filter, then a list of labels to compute an equivalence class, and finally a filter function.
@@ -40,7 +40,7 @@ The filter function takes a list containing 3 elements as input parameter: the t
 [
     $gts                                // Series list or Singleton
     []                                  // Labels to compute equivalence class
-    filter.function                     // A selector function 
+    filter.function                     // A selector function
 ]
 FILTER
 ```
@@ -51,21 +51,21 @@ To have a working filter, replace the function keyword by an existing filter fun
 
 In our data-flow, the goal is now to select only 2 to 3 records of those series to see if it's possible to visualize specific drops corresponding to an exoplanet in those series. As a result we will then be able to build a generic method to detect exoplanet. You will have to use a variable as seen in the first step to place the time series list in first position of the element list of the `FILTER`.
 
-The filter function we will use in our case corresponds to [`filter.bylabels`]({{ site.doc_url }}/reference/frameworks/filter_bylabels/). This function expects a selector map on top of the stack that have to be specify.
+The filter function we will use in our case corresponds to [`filter.bylabels`]({{ site.doc_url }}/doc/filter.bylabels). This function expects a selector map on top of the stack that have to be specify.
 As an example you can try to use the selector labels map specifies in the follozing spec in your filter function.
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
 
 // FETCH
-[ 
+[
     $token                              // Application authentication
     'sap.flux'                          // selector for classname
     { 'KEPLERID' '6541920' }            // Selector for labels
     '2009-05-02T00:56:10.000000Z'       // Start date
     '2013-05-11T12:02:06.000000Z'       // End date
-] 
+]
 FETCH
 
 // Get Singleton series
@@ -78,7 +78,7 @@ FETCH
 // Quiesce period
 6 h
 
-// Minimal numbers of points per series 
+// Minimal numbers of points per series
 100
 
 // Labels for each splitted series

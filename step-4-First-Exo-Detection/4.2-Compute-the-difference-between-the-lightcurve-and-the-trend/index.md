@@ -10,7 +10,7 @@ next: 'step-4-First-Exo-Detection/4.3-Threshold-test-and-display'
 solution: 'step-4-First-Exo-Detection/4.2-Compute-the-difference-between-the-lightcurve-and-the-trend/solutions'
 ---
 
-Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet! For this we are going to use [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/) framework to compute the [difference](({{ site.doc_url }}/reference/frameworks/op_sub/)). We are going to take record-5 to illustrate the APPLY. Here's record-5:
+Congrats young hunter in reaching this step! Here you will learn how to use all the knowledge gain in previous step to build your first script to search for exoplanet! For this we are going to use [`APPLY`]({{ site.doc_url }}/doc/APPLY) framework to compute the [difference](({{ site.doc_url }}/doc/op.sub)). We are going to take record-5 to illustrate the APPLY. Here's record-5:
 
 ![Alt Text]({{ site.baseurl }}/img/step-4/actual.png)
 
@@ -26,16 +26,16 @@ Well the dropouts are pretty clear now! Let's do it!
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
 
 // FETCH
-[ 
+[
     $token                              // Application authentication
     'sap.flux'                   // selector for classname
     { 'KEPLERID' '6541920' }                // Selector for labels
     '2009-05-02T00:56:10.000000Z'       // Start date
     '2013-05-11T12:02:06.000000Z'       // End date
-] 
+]
 FETCH
 
 // Get Singleton series
@@ -48,7 +48,7 @@ FETCH
 // Quiesce period
 6 h
 
-// Minimal numbers of points per series 
+// Minimal numbers of points per series
 100
 
 // Labels for each splitted series
@@ -71,7 +71,7 @@ TIMESPLIT
     $splitSeries                    // Series list or Singleton
     []                              // Labels to compute equivalence class
     $labelsSelector                 // Labels map for selector
-    filter.bylabels                 // Filter function operator 
+    filter.bylabels                 // Filter function operator
 ]
 FILTER
 
@@ -94,7 +94,7 @@ BUCKETIZE
 'bucketizedSeries' STORE
 
 //
-// MAP block: Compute moving mean 
+// MAP block: Compute moving mean
 //
 
 [
@@ -117,9 +117,9 @@ MAP
 
 Starting from here, you now have to:
 
-* compute the trend using [`mapper.mean`]({{ site.doc_url }}/reference/frameworks/mapper_mean/). We recommend 5 datapoints before and after.
+* compute the trend using [`mapper.mean`]({{ site.doc_url }}/doc/mapper.mean). We recommend 5 datapoints before and after.
 * Store the result into a variable
-* use the [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/) framework to compute the difference using [`op.sub`]({{ site.doc_url }}/reference/frameworks/op_sub/)  between the originial series and the series trend (computing using an average mean for example).
+* use the [`APPLY`]({{ site.doc_url }}/doc/APPLY) framework to compute the difference using [`op.sub`]({{ site.doc_url }}/doc/op.sub)  between the originial series and the series trend (computing using an average mean for example).
 
 
 To resume, the expected result will contains a list of time series: with one time series per record containing the result of the substraction of the initial series with its trend.

@@ -27,7 +27,7 @@ If a result is produced, it will be pushed on top of the stack.
 
 ## Single operator
 
-Let's start with a simple WarpScript function: [`NOW`]({{ site.doc_url }}/reference/functions/function_NOW/). This function will put on the stack the current time (in microseconds) since the Unix epoch. Let's play with it, as quantum was set to reach an available backend, just type `NOW` in the quantum editor, then click on execute.
+Let's start with a simple WarpScript function: [`NOW`]({{ site.doc_url }}/doc/NOW). This function will put on the stack the current time (in microseconds) since the Unix epoch. Let's play with it, as quantum was set to reach an available backend, just type `NOW` in the quantum editor, then click on execute.
 
 <warp10-embeddable-quantum warpscript="">
 </warp10-embeddable-quantum>
@@ -50,7 +50,7 @@ true     // boolean value
 ">
 </warp10-embeddable-quantum>
 
-To compute an operation (for example an addition), put the two elements before the operator [`+`]({{ site.doc_url }}/reference/functions/function_ADD/) on the stack.
+To compute an operation (for example an addition), put the two elements before the operator [`+`]({{ site.doc_url }}/doc/9k) on the stack.
 You will get the result on top of the stack.
 
 Let's try it, by implementing the follwing spec:

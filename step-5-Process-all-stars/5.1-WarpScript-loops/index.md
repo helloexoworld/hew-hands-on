@@ -16,9 +16,9 @@ Now that you completed your intial training as an exoplanet hunter, let's see ho
 
 Let's admit that you want to compute an **addition** on WarpScript of all the elements inside a list.
 
-The [`FOREACH`]({{ site.doc_url }}/reference/functions/function_FOREACH/) function can be used to implement it. Complete the skeleton below were the value 0 is the first element pushed in the stack. In WarpScript the `FOREACH` functions expect a `MACRO` on top of the stack and a list of element. To start a macro use the keyword `<%` and to end it use the keyword `%>`. 
+The [`FOREACH`]({{ site.doc_url }}/doc/FOREACH) function can be used to implement it. Complete the skeleton below were the value 0 is the first element pushed in the stack. In WarpScript the `FOREACH` functions expect a `MACRO` on top of the stack and a list of element. To start a macro use the keyword `<%` and to end it use the keyword `%>`. 
 
-What will do the `FOREACH` function? 
+What will do the `FOREACH` function?
 
 The list will be droped of the stack, so at the start of the `FOREACH` process only the value 0 is on top of the stack. Then during the process of the foreach, each element will be pushed on top of the stack one after an other. You will just have compute an addition inside the macro. The increasing value will stay on top of the stack until the end of the script.
 
@@ -61,9 +61,9 @@ As the `FOREACH` function, `LMAP` takes two parameter: a list and a macro. `LMAP
 
 // Write the MACRO
 
- 
- 
- 
+
+
+
 
 // Call LMAP function
 ">
@@ -72,4 +72,3 @@ As the `FOREACH` function, `LMAP` takes two parameter: a list and a macro. `LMAP
 ## To be continued
 
 Now that you understand the theory about the WarpScript loops, let's now see in practice how we can use them to process all the stars!
-

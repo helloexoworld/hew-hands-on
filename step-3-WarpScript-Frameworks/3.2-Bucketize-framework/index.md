@@ -10,31 +10,31 @@ next: 'step-3-WarpScript-Frameworks/3.3-Map-framework'
 solution: 'step-3-WarpScript-Frameworks/3.2-Bucketize-framework/solutions'
 ---
 
-Five frameworks are available and they all have their specific usage and important place in Time-Series analytics: 
+Five frameworks are available and they all have their specific usage and important place in Time-Series analytics:
 
-* [`FILTER`]({{ site.doc_url }}/reference/frameworks/framework-filter/)
+* [`FILTER`]({{ site.doc_url }}/doc/FILTER)
 
-* [`BUCKETIZE`]({{ site.doc_url }}/reference/frameworks/framework-bucketize/)
+* [`BUCKETIZE`]({{ site.doc_url }}/doc/BUCKETIZE)
 
-* [`MAP`]({{ site.doc_url }}/reference/frameworks/framework-map/)
+* [`MAP`]({{ site.doc_url }}/doc/MAP)
 
-* [`REDUCE`]({{ site.doc_url }}/reference/frameworks/framework-reduce/)
+* [`REDUCE`]({{ site.doc_url }}/doc/REDUCE)
 
-* [`APPLY`]({{ site.doc_url }}/reference/frameworks/framework-apply/)
+* [`APPLY`]({{ site.doc_url }}/doc/APPLY)
 
 Let's continue with the `BUCKETIZE` framework. Thanks to it, you will be able to apply some downsampling on the NASA lightcurve data.
 
 ## The BUCKETIZE framework
 
-In this tutorial we will discover the [`BUCKETIZE` framework]({{ site.doc_url }}/reference/frameworks/framework-bucketize/). It provides the tooling to put a time series data into regularly spaced buckets. A bucket corresponds to a time interval. We will use this bucket to *downsample* our data.
+In this tutorial we will discover the [`BUCKETIZE` framework]({{ site.doc_url }}/doc/BUCKETIZE). It provides the tooling to put a time series data into regularly spaced buckets. A bucket corresponds to a time interval. We will use this bucket to *downsample* our data.
 
 Downsampling some time series consists to reduce locally the number of points and to synchronize different series. There is several ways to process, one of the common one is to create small regular bucket into each series and to compute a value that resume this bucket. The following graphs shows this process:
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/downsampling.png)
 
-What happen in each bucket? All the points inside the selected bucket are loaded and given to a function. This function will then be executed and one value will be selected (first, last, min, max) or computed (mean, median, count, join). 
+What happen in each bucket? All the points inside the selected bucket are loaded and given to a function. This function will then be executed and one value will be selected (first, last, min, max) or computed (mean, median, count, join).
 
-The graphs below and upper show a working example of the bucketize framework. In the graph below we takes only the first bucket: there is two ticks inside with value 20 and 10. Using, for example, the function mean, this will generate only one tick at the end of the bucket with value: mean(20 and 10) which equals 15: 
+The graphs below and upper show a working example of the bucketize framework. In the graph below we takes only the first bucket: there is two ticks inside with value 20 and 10. Using, for example, the function mean, this will generate only one tick at the end of the bucket with value: mean(20 and 10) which equals 15:
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/bucketize-sample.png)
 
@@ -42,7 +42,7 @@ This how the bucketize concept works, let see how it can be implemented with War
 
 ## Input parameters
 
-The `BUCKETIZE` framework takes a list of elements as parameter. This list contains one or several time series list, a [`bucketizer function`]({{ site.doc_url }}/reference/#framework-bucketizers), a `lastbucket` that specify when start the last bucket (0 mean this will be computed automatically), a `bucketspan` which is the duration of the bucket (if 0 WarpScript will compute it), and finally a `bucketcount` which is the number of buckets to compute (if 0 WarpScript will compute it).
+The `BUCKETIZE` framework takes a list of elements as parameter. This list contains one or several time series list, a [`bucketizer function`]({{ site.doc_url }}/doc/bucketizer), a `lastbucket` that specify when start the last bucket (0 mean this will be computed automatically), a `bucketspan` which is the duration of the bucket (if 0 WarpScript will compute it), and finally a `bucketcount` which is the number of buckets to compute (if 0 WarpScript will compute it).
 
 **Pro tips: In order to get a correct number of buckets either Bucketspan or Bucketcount have to be specified!**
 
@@ -68,7 +68,7 @@ Let's resume step by step each bucketize element. First `BUCKETIZE` requires a s
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/Time-series-input.png)
 
-The second step consists to choose the function to apply on each bucket: `first`, `last`, `mean`, `min`, `max`, `median`, `join`, and [others]({{ site.doc_url }}/reference/reference/#bucketizers):
+The second step consists to choose the function to apply on each bucket: `first`, `last`, `mean`, `min`, `max`, `median`, `join`, and [others]({{ site.doc_url }}/tags/bucketizer):
 
 ![Alt Text]({{ site.baseurl }}/img/frameworks/bucketizer.png)
 
@@ -93,16 +93,16 @@ Let's do it! Try the `bucketizer.min` with a bucketize window of 2 h.
 
 <warp10-embeddable-quantum warpscript="
 // Storing the token into a variable
-@HELLOEXOWORLD/GETREADTOKEN 'token' STORE 
+@HELLOEXOWORLD/GETREADTOKEN 'token' STORE
 
 // FETCH
-[ 
+[
     $token                              // Application authentication
     'sap.flux'                          // selector for classname
     { 'KEPLERID' '6541920' }            // Selector for labels
     '2009-05-02T00:56:10.000000Z'       // Start date
     '2013-05-11T12:02:06.000000Z'       // End date
-] 
+]
 FETCH
 
 // Get Singleton series
@@ -115,7 +115,7 @@ FETCH
 // Quiesce period
 6 h
 
-// Minimal numbers of points per series 
+// Minimal numbers of points per series
 100
 
 // Labels for each splitted series
@@ -137,7 +137,7 @@ TIMESPLIT
     $splitSeries                    // Series list or Singleton
     []                              // Labels to compute equivalence class
     $labelsSelector                 // Labels map for selector
-    filter.bylabels                 // Filter function operator 
+    filter.bylabels                 // Filter function operator
 ]
 FILTER
 

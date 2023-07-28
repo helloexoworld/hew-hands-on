@@ -37,7 +37,8 @@ doc_url: https://www.warp10.io
 # doc_url: http://192.168.1.4:8082
 
 warp10:
-  endpoint: https://hew.pierrezemb.fr/api/v0
+  #  endpoint: https://hew.pierrezemb.fr/api/v0
+  endpoint: https://app-e7fa84d2-1506-494a-a5ec-9baeafa828ba.cleverapps.io/api/v0
 #  endpoint: http://192.168.1.4:8080/api/v0
 
 
